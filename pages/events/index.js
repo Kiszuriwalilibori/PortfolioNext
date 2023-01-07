@@ -6,9 +6,11 @@ const EventsPage = ({ data }) => {
             <h1>Events Page</h1>
             <div>
                 {data.map(ev => (
-                    <Link key={ev.id} href={`/events/${ev.id}`}>
-                        <Image alt={ev.title} src={ev.image} width={300} height={160} />
-                        <h2>{ev.title}</h2>
+                    <Link key={ev.id} href={`/events/${ev.id}`} legacyBehavior>
+                        <>
+                            <Image alt={ev.title} src={ev.image} width={300} height={160} />
+                            <h2>{ev.title}</h2>
+                        </>
                     </Link>
                 ))}
             </div>

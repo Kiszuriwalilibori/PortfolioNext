@@ -21,18 +21,18 @@ export default function Home({ data }: any) {
 
                         <Link href="/">Home</Link>
                         <Link href="/events">Events</Link>
-                        <Link href="about-us">
-                            <a>About us</a>
-                        </Link>
+                        <Link href="about-us">About us</Link>
                     </nav>
                 </header>
 
                 {data.map((item: any) => (
-                    <a key={item.id} href={`/events/${item.id}`}>
-                        <Image alt={item.title} width={200} height={160} src={item.image} />
-                        <h2>{item.title}</h2>
-                        <p>{item.description}</p>
-                    </a>
+                    <Link key={item.id} href={`/events/${item.id}`}>
+                        <a>
+                            <Image alt={item.title} width={200} height={160} src={item.image} />
+                            <h2>{item.title}</h2>
+                            <p>{item.description}</p>
+                        </a>
+                    </Link>
                 ))}
             </main>
             <footer className={styles.footer}>
