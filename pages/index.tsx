@@ -18,12 +18,12 @@ export default function Home({ data }: any) {
                 <header>
                     <nav>
                         <img />
-                        {/* <Link href="/"> */}
-                        <a href="/">Home</a>
-                        {/* </Link> */}
 
-                        <a href="/events">Events</a>
-                        <a href="about-us">About us</a>
+                        <Link href="/">Home</Link>
+                        <Link href="/events">Events</Link>
+                        <Link href="about-us">
+                            <a>About us</a>
+                        </Link>
                     </nav>
                 </header>
 
