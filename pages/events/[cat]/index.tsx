@@ -31,11 +31,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-    //console.log("context", context);
+    console.log("context", context);
     const { allEvents } = await import("../../../data/data.json");
     const id = context?.params.cat;
     //console.log(id);
     const data = allEvents.filter(ev => ev.city === id);
-    //console.log(data);
+    console.log(data);
     return { props: { data, pageName: id } };
 }

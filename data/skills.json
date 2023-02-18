@@ -1,0 +1,17 @@
+{
+    "skills": [
+        { "skill": "HTML", "level": "3" },
+        { "skill": "React.js", "level": "4" },
+        { "skill": "Redux", "level": "4" },
+        { "skill": "CSS/SASS", "level": "4" },
+        { "skill": "Typescript", "level": "2" },
+        { "skill": "Material UI", "level": "2" },
+        { "skill": "React-Router", "level": "2" },
+        { "skill": "jQuery", "level": "1" },
+        { "skill": "JavaScript", "level": "4" },
+        { "skill": "Pug", "level": "1" },
+        { "skill": "PWE", "level": "2" },
+        { "skill": "Web Workers", "level": "1" },
+        { "skill": "PHP", "level": "1" }
+    ]
+}
