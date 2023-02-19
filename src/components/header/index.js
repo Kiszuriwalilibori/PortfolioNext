@@ -8,8 +8,9 @@ export const Header = () => {
 
     const toggleMenu = useCallback(() => {
         setIsMenuVisible(!isMenuVisible);
+        console.log(isMenuVisible);
     }, [isMenuVisible]);
-
+    console.log(isMenuVisible);
     return (
         <header className="header">
             <Navbar isVisible={isMenuVisible} clickHandler={toggleMenu} />

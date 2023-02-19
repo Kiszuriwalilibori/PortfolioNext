@@ -3,18 +3,11 @@ import { memo } from "react";
 
 const Sidebar = () => {
     return (
-        <article className="section--aboutme__sidebar sidebar">
-            <article className="section--aboutme__author">
-                <Image
-                    className="author-image section--aboutme__image growImage"
-                    src="/images/author.jpg"
-                    alt="author foto"
-                    width={500}
-                    height={500}
-                />
-                <h1 className="section--aboutme__name">Piotr Maksymiuk</h1>
-                <h2 className="section--aboutme__description">Front-End Developer</h2>
-                <ul className="section--aboutme__person-experience"></ul>
+        <article className="aboutme__sidebar">
+            <article className="author">
+                <Image className="image" src="/images/author.jpg" alt="author foto" width={500} height={500} />
+                <h1 className="name">Piotr Maksymiuk</h1>
+                <h2 className="description">Front-End Developer</h2>
             </article>
         </article>
     );

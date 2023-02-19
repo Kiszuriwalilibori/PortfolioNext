@@ -1,0 +1,37 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    &:disabled {
+        cursor: default;
+    }
+    &-normal {
+        @include box-shadow--basic;
+        display: flex;
+        align-items: center;
+        box-sizing: initial;
+        right: 0px;
+        width: 140px;
+        height: 40px;
+        padding: 5px;
+        background: none repeat scroll 0% 0% $text-lighter-color;
+        border-radius: 5px;
+
+        & span {
+            display: inline;
+            vertical-align: middle;
+            font-size: 16px;
+            color: #fff;
+            font-family: sans-serif;
+            font-weight: 700;
+            text-transform: capitalize;
+            padding-left: 15px;
+        }
+    }
+    &-hamburger {
+        @include block-fixed(top, right);
+        @include size(40px);
+        justify-content: center;
+        margin: $mobile-top-distance 0px;
+        border-radius: 5px 0 0 5px;
+    }
+}

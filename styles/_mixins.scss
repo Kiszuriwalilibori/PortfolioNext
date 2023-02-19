@@ -289,17 +289,6 @@
     }
 }
 
-.right_3_4 {
-    left: 25%;
-    right: 0;
-    width: 75%;
-}
-
-@mixin right_3_4 {
-    left: 25%;
-    right: 0;
-    width: 75%;
-}
 .white-paragraph {
     color: #fff;
     font-family: "Raleway";
@@ -313,5 +302,3 @@
         line-height: 1.2;
     }
 }
-
-

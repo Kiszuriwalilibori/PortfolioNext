@@ -1,126 +1,4 @@
-.section--aboutme {
-    min-height: 100vh;
-    background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
-    background-size: cover;
-
-    &__main {
-        position: absolute;
-        @include mobile {
-            display: none;
-        }
-        @include media-above-xsm {
-            height: 75vh;
-            top: 0;
-            position: absolute;
-            padding-top: 5 * $grid;
-        }
-        padding-left: 1.5 * $grid;
-        padding-left: $mobile-top-distance;
-        padding-right: $mobile-top-distance;
-        @extend .white-paragraph;
-        @include above-mobile {
-            @include right_3_4;
-            padding-right: $mobile-top-distance;
-            padding-top: 3 * $grid;
-        }
-
-        & p {
-            @include media-sm {
-                font-size: 16px;
-            }
-        }
-
-        & p:nth-last-child(2) {
-            @include media-xsm {
-                display: none;
-            }
-        }
-    }
-
-    &__sidebar {
-        display: none;
-        @include above-mobile {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            z-index: 2;
-            width: 25%;
-            min-width: 190px;
-            font-size: 14px;
-            color: #fff;
-            text-align: left;
-            background-color: $sidebar-background-color;
-        }
-    }
-
-    &__author {
-        display: block;
-        text-align: center;
-        color: white;
-        padding: calc($grid * 2 / 3);
-        padding-top: $grid;
-    }
-
-    &__image {
-        margin-bottom: 0.5 * $grid;
-    }
-
-    &__name {
-        font-size: 22px;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-
-    &__description {
-        font-size: 12px;
-        font-weight: 100;
-        text-transform: uppercase;
-    }
-
-    &__header--mobile {
-        display: none;
-        @include mobile {
-            display: block;
-            background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
-            background-size: cover;
-            @include block-top-fixed;
-            @include size(100vw, 250px);
-            color: white;
-        }
-        & .section--aboutme__person-name {
-            position: relative;
-            top: $mobile-top-distance;
-            padding-left: $mobile-padding;
-            font-size: 22px;
-            font-weight: 500;
-            text-transform: uppercase;
-            @include media-xsm {
-                padding-left: unset;
-                text-align: center;
-                top: $author-image-mobile-size + $mobile-top-distance;
-                font-size: 16px;
-                letter-spacing: 1.8px;
-            }
-        }
-        & .section--aboutme__person-description {
-            position: relative;
-            top: $mobile-top-distance + 16px;
-            padding-left: calc($mobile-top-distance / 2);
-            @include media-xsm {
-                padding-left: unset;
-                text-align: center;
-                top: $author-image-mobile-size + $mobile-top-distance;
-            }
-        }
-    }
-}
-
-.author-image {
+.author-base-image {
     @include box-shadow--basic;
     @include size($author-image-mobile-size);
     @include media-md {
@@ -131,95 +9,135 @@
     }
     border-radius: 50%;
     opacity: 1;
-    &--mobile {
-        position: fixed;
-        top: $mobile-top-distance;
-        left: calc(50vw - 130px / 2);
+}
 
-        @include above-mobile {
-            display: none;
+.aboutme {
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-y: auto;
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 2;
+        width: 25%;
+        min-width: 190px;
+        font-size: 14px;
+        color: #fff;
+        text-align: left;
+        background-color: $sidebar-background-color;
+
+        & .author {
+            display: block;
+            text-align: center;
+            color: white;
+            padding: calc($grid * 2 / 3);
+            padding-top: $grid;
+        }
+        & .name {
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        & .description {
+            font-size: 12px;
+            font-weight: 100;
+            text-transform: uppercase;
+        }
+        & .image {
+            @extend .author-base-image;
+            margin-bottom: 0.5 * $grid;
         }
     }
-}
+    &__content {
+        &-mobile {
+            @extend .white-paragraph;
+            line-height: 1.4;
+            font-stretch: condensed;
+            display: block;
+            min-height: 100vh;
+            font-weight: 200;
+            letter-spacing: 0.6px;
+            padding-left: calc($mobile-top-distance / 2);
+            padding-right: $mobile-top-distance;
+            padding-bottom: $grid;
+            margin-top: 250px;
+            background-color: $mobile-aboutme-background-color;
+        }
+        &-above-mobile {
+            @extend .white-paragraph;
+            position: absolute;
+            left: 25%;
+            right: 0;
+            width: 75%;
+            padding-left: $mobile-top-distance;
+            padding-right: $mobile-top-distance;
+            padding-top: 3 * $grid;
 
-.section-aboutme__content--mobile {
-    display: none;
-    @extend .white-paragraph;
-    line-height: 1.4;
-    font-stretch: condensed;
-
-    @include mobile {
-        display: block;
-        min-height: 100vh;
-        font-weight: 200;
-        letter-spacing: 0.6px;
-        padding-left: calc($mobile-top-distance / 2);
-        padding-right: $mobile-top-distance;
-        padding-bottom: $grid;
-        margin-top: 250px;
-        background-color: $olive-light;
-        background-color: $rest-background-color;
-        // background-image: url("../assets/45-degree-fabric-light.png");
+            & p {
+                @include media-sm {
+                    font-size: 16px;
+                }
+            }
+        }
     }
-}
 
-.section--aboutme-mobile__top {
-    display: none;
-    @include mobile {
+    & .mobile-header {
         display: block;
         background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
         background-size: cover;
         @include block-top-fixed;
         @include size(100vw, 250px);
         color: white;
-    }
-    & .section--aboutme__person-name {
-        position: relative;
-        top: $mobile-top-distance;
-        padding-left: $mobile-padding;
-        font-size: 22px;
-        font-weight: 500;
-        text-transform: uppercase;
-        @include media-xsm {
-            padding-left: unset;
-            text-align: center;
-            top: $author-image-mobile-size + $mobile-top-distance;
-            font-size: 16px;
-            letter-spacing: 1.8px;
-        }
-    }
-    & .section--aboutme__person-description {
-        position: relative;
-        top: $mobile-top-distance + 16px;
-        padding-left: $mobile-top-distance / 2;
-        font-size: 12px;
-        font-weight: 100;
-        text-transform: uppercase;
-        @include media-xsm {
-            padding-left: unset;
-            text-align: center;
-            top: $author-image-mobile-size + $mobile-top-distance;
-        }
-    }
-}
+        & .name {
+            position: relative;
+            top: $mobile-top-distance;
+            padding-left: $mobile-padding;
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
 
-.section--aboutme-mobile__rest {
-    display: none;
-    @extend .white-paragraph;
-    line-height: 1.4;
-    font-stretch: condensed;
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+                font-size: 16px;
+                letter-spacing: 1.8px;
+                margin-top: 24px;
+            }
+        }
+        & .description {
+            position: relative;
+            top: $mobile-top-distance + 16px;
+            padding-left: calc($mobile-top-distance / 2);
+            font-size: 12px;
+            font-weight: 100;
+            text-transform: uppercase;
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+            }
+        }
 
-    @include mobile {
-        display: block;
-        min-height: 100vh;
-        font-weight: 200;
-        letter-spacing: 0.6px;
-        padding-left: $mobile-top-distance / 2;
-        padding-right: $mobile-top-distance;
-        padding-bottom: $grid;
-        margin-top: 250px;
-        background-color: $olive-light;
-        background-color: $rest-background-color;
-        background-image: url("../public/backgrounds/fabric.png");
+        & .image {
+            @extend .author-base-image;
+            position: fixed;
+            top: $mobile-top-distance;
+            left: calc(50vw - 130px / 2);
+        }
     }
 }

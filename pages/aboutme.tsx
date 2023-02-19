@@ -10,10 +10,10 @@ export default function AboutMe() {
     const { desktopSize } = useBreakpoints();
     if (!desktopSize) return null;
     return (
-        <section className="section section--aboutme">
-            <Sidebar />
-            <MobileHeader />
-            <article className={small.has(desktopSize) ? "section--aboutme-mobile__rest" : "section--aboutme__main"}>
+        <section className=/*"section section--aboutme*/ "aboutme">
+            {!small.has(desktopSize) && <Sidebar />}
+            {small.has(desktopSize) && <MobileHeader />}
+            <article className={small.has(desktopSize) ? "aboutme__content-mobile" : "aboutme__content-above-mobile"}>
                 <Content />
             </article>
         </section>
