@@ -657,40 +657,6 @@ body {
   background-color: #555;
   color: white;
 }
-.contact__content-mobile .wrapper {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.contact__content-mobile .wrapper h2 {
-  line-height: 1;
-  font-size: 36px;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-bottom: 45px;
-  padding-top: 45px;
-}
-.contact__content-mobile .wrapper dl {
-  line-height: 1.8;
-  padding-top: 20px;
-}
-.contact__content-mobile .wrapper dl dt {
-  display: block;
-  clear: both;
-  width: 150px;
-  float: left;
-}
-.contact__content-mobile .wrapper dl dd {
-  display: block;
-  margin: 0;
-  float: left;
-}
-.contact__content-mobile .wrapper dl dd svg {
-  color: #d3101c;
-}
-.contact__content-mobile .wrapper dl dd a span {
-  padding-left: 6px;
-}
 .contact__content-above-mobile {
   min-height: 100vh;
   display: flex;
