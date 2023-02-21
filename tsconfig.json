@@ -21,7 +21,9 @@
         "**/*.tsx",
         "pages/about-us.js",
         "pages/events/event1.js",
-        "pages/events/[cat]/[id].jsx"
-, "src/components/skills"    ],
+        "pages/events/[cat]/[id].jsx",
+        "src/components/skills",
+        "src/components/header/index.js"
+    ],
     "exclude": ["node_modules"]
 }

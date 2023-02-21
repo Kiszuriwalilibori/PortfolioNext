@@ -1,0 +1,53 @@
+.header-mobile {
+    display: block;
+    @include block-top-fixed;
+    @include size(100vw, $header-mobile-height);
+    color: white;
+
+    &--contact {
+        background: url(../public/mobile-backgrounds/contact.jpg) top right no-repeat;
+        background-size: cover;
+    }
+    &--aboutme {
+        background: url(../public/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+        background-size: cover;
+    }
+
+    & .name {
+        position: relative;
+        top: $mobile-top-distance;
+        padding-left: $mobile-padding;
+        font-size: 22px;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        @include media-xsm {
+            padding-left: unset;
+            text-align: center;
+            top: $author-image-mobile-size + $mobile-top-distance;
+            font-size: 16px;
+            letter-spacing: 1.8px;
+            margin-top: $mobile-top-distance;
+        }
+    }
+    & .description {
+        position: relative;
+        top: $mobile-top-distance + 16px;
+        padding-left: calc($mobile-top-distance / 2);
+        font-size: 12px;
+        font-weight: 100;
+        text-transform: uppercase;
+        @include media-xsm {
+            padding-left: unset;
+            text-align: center;
+            top: $author-image-mobile-size + $mobile-top-distance;
+        }
+    }
+
+    & .image {
+        @extend .author-base-image;
+        position: fixed;
+        top: $mobile-top-distance;
+        left: calc(50vw - 130px / 2);
+    }
+}

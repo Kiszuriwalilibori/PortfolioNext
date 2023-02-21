@@ -12,56 +12,9 @@
 }
 
 .aboutme {
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    @extend .section;
     background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
-    background-size: cover;
-    overflow-y: scroll;
-    overflow-y: auto;
 
-    &__sidebar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        z-index: 2;
-        width: 25%;
-        min-width: 190px;
-        font-size: 14px;
-        color: #fff;
-        text-align: left;
-        background-color: $sidebar-background-color;
-
-        & .author {
-            display: block;
-            text-align: center;
-            color: white;
-            padding: calc($grid * 2 / 3);
-            padding-top: $grid;
-        }
-        & .name {
-            font-size: 22px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        & .description {
-            font-size: 12px;
-            font-weight: 100;
-            text-transform: uppercase;
-        }
-        & .image {
-            @extend .author-base-image;
-            margin-bottom: 0.5 * $grid;
-        }
-    }
     &__content {
         &-mobile {
             @extend .white-paragraph;
@@ -78,11 +31,12 @@
             background-color: $mobile-aboutme-background-color;
         }
         &-above-mobile {
+            @extend .content-above-mobile;
             @extend .white-paragraph;
-            position: absolute;
-            left: 25%;
-            right: 0;
-            width: 75%;
+            // position: absolute;
+            // left: 25%;
+            // right: 0;
+            // width: 75%;
             padding-left: $mobile-top-distance;
             padding-right: $mobile-top-distance;
             padding-top: 3 * $grid;
@@ -116,7 +70,7 @@
                 top: $author-image-mobile-size + $mobile-top-distance;
                 font-size: 16px;
                 letter-spacing: 1.8px;
-                margin-top: 24px;
+                margin-top: $mobile-top-distance;
             }
         }
         & .description {

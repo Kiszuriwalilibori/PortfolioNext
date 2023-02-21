@@ -1,0 +1,169 @@
+.author-base-image {
+    @include box-shadow--basic;
+    @include size($author-image-mobile-size);
+    @include media-md {
+        @include size($author-image-medium-size);
+    }
+    @include media-above-md {
+        @include size($author-image-large-size);
+    }
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.contact {
+    @extend .section;
+    background: url(../public/backgrounds/contact.jpg) top right no-repeat;
+    & .wrapper {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        @include above-mobile {
+            background-color: $whitish;
+            padding: $grid;
+            @include box-shadow--basic;
+            justify-content: center;
+        }
+        & h2 {
+            line-height: 1;
+            font-size: 36px;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding-bottom: 45px;
+            padding-top: 45px;
+        }
+
+        & dl {
+            line-height: 1.8;
+            padding-top: 20px;
+            & dt {
+                display: block;
+                clear: both;
+                width: 150px;
+                float: left;
+            }
+            & dd {
+                display: block;
+                margin: 0;
+                float: left;
+                & svg {
+                    color: $text-lighter-color;
+                }
+                & a span {
+                    padding-left: 6px;
+                }
+            }
+        }
+    }
+    &__content {
+        &-mobile {
+            display: flex;
+            justify-content: center;
+            padding-top: $grid;
+            line-height: 1.4;
+            font-stretch: condensed;
+
+            height: calc(100vh - $header-mobile-height);
+            font-weight: 200;
+            letter-spacing: 0.6px;
+
+            margin-top: $header-mobile-height;
+            background-color: #555;
+            color: white;
+            & .wrapper {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                & h2 {
+                    line-height: 1;
+                    font-size: 36px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    padding-bottom: 45px;
+                    padding-top: 45px;
+                }
+
+                & dl {
+                    line-height: 1.8;
+                    padding-top: 20px;
+                    & dt {
+                        display: block;
+                        clear: both;
+                        width: 150px;
+                        float: left;
+                    }
+                    & dd {
+                        display: block;
+                        margin: 0;
+                        float: left;
+                        & svg {
+                            color: $text-lighter-color;
+                        }
+                        & a span {
+                            padding-left: 6px;
+                        }
+                    }
+                }
+            }
+        }
+        &-above-mobile {
+            @extend .content-above-mobile;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & p {
+                @include media-sm {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    & .mobile-header {
+        display: block;
+        background: url(../public/backgrounds/contact3.jpg) top right no-repeat;
+        background-size: cover;
+        @include block-top-fixed;
+        @include size(100vw, 250px);
+        color: white;
+        & .name {
+            position: relative;
+            top: $mobile-top-distance;
+            padding-left: $mobile-padding;
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+                font-size: 16px;
+                letter-spacing: 1.8px;
+                margin-top: $mobile-top-distance;
+            }
+        }
+        & .description {
+            position: relative;
+            top: $mobile-top-distance + 16px;
+            padding-left: calc($mobile-top-distance / 2);
+            font-size: 12px;
+            font-weight: 100;
+            text-transform: uppercase;
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+            }
+        }
+
+        & .image {
+            @extend .author-base-image;
+            position: fixed;
+            top: $mobile-top-distance;
+            left: calc(50vw - 130px / 2);
+        }
+    }
+}

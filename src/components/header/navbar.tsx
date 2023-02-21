@@ -1,7 +1,7 @@
 import Link from "./link";
 import { MouseEventHandler, useId } from "react";
 
-const links = ["aboutme", "skills", "projects"];
+const links = ["aboutme", "skills", "projects", "contact"];
 
 interface Props {
     isVisible: boolean;

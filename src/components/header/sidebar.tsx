@@ -3,7 +3,7 @@ import { memo } from "react";
 
 const Sidebar = () => {
     return (
-        <article className="aboutme__sidebar">
+        <article className="sidebar">
             <article className="author">
                 <Image className="image" src="/images/author.jpg" alt="author foto" width={500} height={500} />
                 <h1 className="name">Piotr Maksymiuk</h1>

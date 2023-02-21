@@ -7,7 +7,7 @@ interface Props {
 
 export default function Skills(props: Props) {
     const { data, title } = props;
-    console.log(data, "skills");
+
     return (
         <>
             <h1>{title}</h1>

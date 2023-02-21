@@ -6,7 +6,7 @@ interface Props {
 }
 const MenuToggler = (props: Props) => {
     const { clickHandler } = props;
-    console.log(props);
+
     return (
         <BasicButton className="btn btn-normal btn-hamburger" onClick={clickHandler}>
             <Image src={`/icons/hamburger.svg`} alt={`menu toggler`} width={30} height={30} />
