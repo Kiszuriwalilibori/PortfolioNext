@@ -1,7 +1,7 @@
 import Content from "../src/components/contact/content";
+import MobileHeader from "../src/components/headerMobile";
 import { useBreakpoints } from "../contexts/ViewPortProvider";
 import { Contacts } from "../types";
-import MobileHeader from "../src/components/headerMobile";
 
 const small = new Set<string>(["mobile", "phablet"]);
 
@@ -19,7 +19,7 @@ export default function Contact(props: Props) {
         <section className="contact">
             {/* {small.has(desktopSize) && <MobileHeader route={"contact"} />} */}
 
-            <article className={small.has(desktopSize) ? "contact__content-mobile" : "contact__content-above-mobile"}>
+            <article className="contact__content">
                 <Content data={data} title={title} />
             </article>
         </section>

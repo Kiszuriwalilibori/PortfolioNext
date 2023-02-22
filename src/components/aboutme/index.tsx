@@ -15,10 +15,13 @@ const Content = () => {
             </p>
             <p>
                 Aktualnie utrzymuję się z zakładania blogów i dorywczych zleceń różnego rodzaju. Interesują mnie raczej
-                mechanizmy działania stron niż ich wygląd. Wolę ciemne i nasycone kolory (biorę na klatę oskarżenia o
-                jarmarczność) niż klasyczny biurowy layout, ale nie mam problemu z dostosowaniem się do wymagań
-                zleceniodawcy.
+                mechanizmy działania stron niż ich wygląd.
             </p>
+            <p>
+                Wolę ciemne i nasycone kolory (biorę na klatę oskarżenia o jarmarczność) niż klasyczny biurowy layout,
+                ale nie mam problemu z dostosowaniem się do wymagań zleceniodawcy.
+            </p>
+            <hr></hr>
             <p>
                 W wolnych chwilach, jeśli pogoda dopisuje jeżdżę na rowerze po okolicznych lasach. Kiedy mam więcej
                 czasu, po Puszczy Białowieskiej. Kiedy indziej słucham muzyki na kolumnach, które sam zbudowałem

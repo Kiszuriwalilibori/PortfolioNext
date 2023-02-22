@@ -340,7 +340,7 @@ body {
   overflow-y: auto;
 }
 
-.content-above-mobile, .contact__content-above-mobile, .aboutme__content-above-mobile {
+.content-above-mobile, .aboutme__content-above-mobile {
   position: absolute;
   left: 25%;
   right: 0;
@@ -391,17 +391,17 @@ body {
     opacity: 1;
   }
 }
-.white-paragraph, .aboutme__content-above-mobile, .aboutme__content-mobile {
+.white-paragraph, .aboutme__content-above-mobile {
   color: #fff;
   font-family: "Raleway";
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   font-size: 17px;
 }
-.white-paragraph p, .aboutme__content-above-mobile p, .aboutme__content-mobile p {
+.white-paragraph p, .aboutme__content-above-mobile p {
   padding: 7.5px 0;
 }
 @media (max-width: 576px) {
-  .white-paragraph, .aboutme__content-above-mobile, .aboutme__content-mobile {
+  .white-paragraph, .aboutme__content-above-mobile {
     line-height: 1.2;
   }
 }
@@ -434,6 +434,10 @@ body {
   font-weight: 700;
   text-transform: capitalize;
   padding-left: 15px;
+}
+.btn-normal img {
+  width: 24px;
+  height: 24px;
 }
 .btn-hamburger {
   position: fixed;
@@ -507,7 +511,9 @@ body {
   background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
 }
 .aboutme__content-mobile {
-  line-height: 1.4;
+  font-weight: 200;
+  letter-spacing: 0.6px;
+  line-height: 1.8;
   font-stretch: condensed;
   display: block;
   min-height: 100vh;
@@ -517,7 +523,12 @@ body {
   padding-right: 24px;
   padding-bottom: 30px;
   margin-top: 250px;
-  background-color: #4d4e41;
+  background-color: #24332a;
+  color: white;
+  padding: 45px 40px 45px 40px;
+}
+.aboutme__content-mobile p {
+  margin: 20px 0;
 }
 .aboutme__content-above-mobile {
   padding-left: 24px;
@@ -602,20 +613,51 @@ body {
 .contact {
   background: url(../public/backgrounds/contact.jpg) top right no-repeat;
 }
-.contact .wrapper {
+.contact__content {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .contact__content {
+    padding-top: 30px;
+    height: calc(100vh - 250px);
+    font-weight: 200;
+    letter-spacing: 0.6px;
+    margin-top: 250px;
+    background-color: #555;
+    background-color: #24332a;
+    color: white;
+  }
+}
+@media (min-width: 768px) {
+  .contact__content {
+    position: absolute;
+    left: 25%;
+    right: 0;
+    width: 75%;
+    min-height: 100vh;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (min-width: 576px) and (max-width: 767px) {
+  .contact__content p {
+    font-size: 16px;
+  }
+}
+.contact__content .wrapper {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .contact .wrapper {
+  .contact__content .wrapper {
     background-color: rgba(255, 255, 255, 0.65);
     padding: 30px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
     justify-content: center;
   }
 }
-.contact .wrapper h2 {
+.contact__content .wrapper h2 {
   line-height: 1;
   font-size: 36px;
   font-weight: 400;
@@ -623,50 +665,26 @@ body {
   padding-bottom: 45px;
   padding-top: 45px;
 }
-.contact .wrapper dl {
+.contact__content .wrapper dl {
   line-height: 1.8;
   padding-top: 20px;
 }
-.contact .wrapper dl dt {
+.contact__content .wrapper dl dt {
   display: block;
   clear: both;
   width: 150px;
   float: left;
 }
-.contact .wrapper dl dd {
+.contact__content .wrapper dl dd {
   display: block;
   margin: 0;
   float: left;
 }
-.contact .wrapper dl dd svg {
+.contact__content .wrapper dl dd svg {
   color: #d3101c;
 }
-.contact .wrapper dl dd a span {
+.contact__content .wrapper dl dd a span {
   padding-left: 6px;
-}
-.contact__content-mobile {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  line-height: 1.4;
-  font-stretch: condensed;
-  height: calc(100vh - 250px);
-  font-weight: 200;
-  letter-spacing: 0.6px;
-  margin-top: 250px;
-  background-color: #555;
-  color: white;
-}
-.contact__content-above-mobile {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (min-width: 576px) and (max-width: 767px) {
-  .contact__content-above-mobile p {
-    font-size: 16px;
-  }
 }
 .contact .mobile-header {
   display: block;
@@ -783,7 +801,7 @@ body {
   top: 24px;
   padding-left: 12px;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
 }
 @media (max-width: 576px) {

@@ -14,73 +14,71 @@
 .contact {
     @extend .section;
     background: url(../public/backgrounds/contact.jpg) top right no-repeat;
-    & .wrapper {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        @include above-mobile {
-            background-color: $whitish;
-            padding: $grid;
-            @include box-shadow--basic;
-            justify-content: center;
-        }
-        & h2 {
-            line-height: 1;
-            font-size: 36px;
-            font-weight: 400;
-            text-transform: uppercase;
-            padding-bottom: 45px;
-            padding-top: 45px;
-        }
 
-        & dl {
-            line-height: 1.8;
-            padding-top: 20px;
-            & dt {
-                display: block;
-                clear: both;
-                width: 150px;
-                float: left;
-            }
-            & dd {
-                display: block;
-                margin: 0;
-                float: left;
-                & svg {
-                    color: $text-lighter-color;
-                }
-                & a span {
-                    padding-left: 6px;
-                }
-            }
-        }
-    }
     &__content {
-        &-mobile {
-            display: flex;
-            justify-content: center;
+        display: flex;
+        justify-content: center;
+        @include mobile {
             padding-top: $grid;
-            line-height: 1.4;
-            font-stretch: condensed;
-
             height: calc(100vh - $header-mobile-height);
             font-weight: 200;
             letter-spacing: 0.6px;
-
             margin-top: $header-mobile-height;
-            background-color: #555;
+            background-color: $greyish;
+            background-color: #24332a;
             color: white;
         }
-        &-above-mobile {
-            @extend .content-above-mobile;
+        @include above-mobile {
+            position: absolute;
+            left: 25%;
+            right: 0;
+            width: 75%;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
             align-items: center;
-
             & p {
                 @include media-sm {
                     font-size: 16px;
+                }
+            }
+        }
+        & .wrapper {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            @include above-mobile {
+                background-color: $whitish;
+                padding: $grid;
+                @include box-shadow--basic;
+                justify-content: center;
+            }
+            & h2 {
+                line-height: 1;
+                font-size: 36px;
+                font-weight: 400;
+                text-transform: uppercase;
+                padding-bottom: 45px;
+                padding-top: 45px;
+            }
+
+            & dl {
+                line-height: 1.8;
+                padding-top: 20px;
+                & dt {
+                    display: block;
+                    clear: both;
+                    width: 150px;
+                    float: left;
+                }
+                & dd {
+                    display: block;
+                    margin: 0;
+                    float: left;
+                    & svg {
+                        color: $text-lighter-color;
+                    }
+                    & a span {
+                        padding-left: 6px;
+                    }
                 }
             }
         }

@@ -115,17 +115,6 @@
     }
 }
 
-// @mixin media-vsm {
-//     @media (min-width: 480px) {
-//         @content;
-//     }
-// }
-
-// @mixin media-vsm-portrait {
-//     @media (min-height: 530.2px) and(orientation: portrait) {
-//         @content;
-//     }
-// }
 
 @mixin media-sm {
     @media (min-width: 1024px) {

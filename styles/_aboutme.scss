@@ -17,8 +17,10 @@
 
     &__content {
         &-mobile {
-            @extend .white-paragraph;
-            line-height: 1.4;
+            //@extend .white-paragraph;
+            font-weight: 200;
+            letter-spacing: 0.6px;
+            line-height: 1.8;
             font-stretch: condensed;
             display: block;
             min-height: 100vh;
@@ -28,7 +30,16 @@
             padding-right: $mobile-top-distance;
             padding-bottom: $grid;
             margin-top: 250px;
-            background-color: $mobile-aboutme-background-color;
+            background-color: $mobile-background-color;
+            color: white;
+            padding: 45px 40px 45px 40px;
+
+            & p {
+                margin: 20px 0;
+            }
+            // p:last-of-type {
+            //     border-top: 1px dotted yellow;
+            // }
         }
         &-above-mobile {
             @extend .content-above-mobile;

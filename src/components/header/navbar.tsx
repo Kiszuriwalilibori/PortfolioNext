@@ -1,5 +1,6 @@
 import Link from "./link";
 import { MouseEventHandler, useId } from "react";
+import MenuToggler from "./menuToggler";
 
 const links = ["aboutme", "skills", "projects", "contact"];
 
