@@ -1,16 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MouseEventHandler } from "react";
+
 import BasicButton from "../common/BasicButton";
 
+import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
 interface Props {
     item: string;
-    clickHandler: MouseEventHandler<HTMLButtonElement>;
 }
 const MyLink = (props: Props) => {
-    const { item, clickHandler } = props;
+    const { item } = props;
+    const { toggleMenuVisibility } = useMenuVisibilityContext();
+
     return (
-        <li className="navbar__item" onClick={clickHandler as unknown as MouseEventHandler<HTMLLIElement>}>
+        <li className="navbar__item" onClick={toggleMenuVisibility}>
             <Link href={`/${item}`}>
                 <BasicButton className="btn btn-normal">
                     <Image src={`/icons/${item}.svg`} alt={`${item} link`} width={40} height={40} />

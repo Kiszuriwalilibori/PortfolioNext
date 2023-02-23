@@ -1,25 +1,24 @@
+import { useId } from "react";
+
 import Link from "./link";
-import { MouseEventHandler, useId } from "react";
-import MenuToggler from "./menuToggler";
+
+import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
 
 const links = ["aboutme", "skills", "projects", "contact"];
 
-interface Props {
-    isVisible: boolean;
-    clickHandler: MouseEventHandler<HTMLButtonElement>;
-}
-export default function Navbar(props: Props) {
-    const { isVisible, clickHandler } = props;
+export default function Navbar() {
+    const { isMenuVisible } = useMenuVisibilityContext();
     const ID = useId();
+
     return (
         <nav
-            className={isVisible ? "navbar navbar--active fade-in" : "navbar"}
+            className={isMenuVisible ? "navbar navbar--active fade-in" : "navbar"}
             itemScope
             itemType="http://schema.org/LocalBusiness"
         >
             <ul className="navbar__list">
                 {links.map(link => (
-                    <Link key={`${ID}-${link}`} item={link} clickHandler={clickHandler} />
+                    <Link key={`${ID}-${link}`} item={link} />
                 ))}
             </ul>
         </nav>
