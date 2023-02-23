@@ -753,7 +753,7 @@ body {
 }
 
 .sidebar {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -768,6 +768,11 @@ body {
   color: #fff;
   text-align: left;
   background-color: rgba(145, 13, 13, 0.8);
+}
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
 }
 .sidebar .author {
   display: block;

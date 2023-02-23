@@ -1,5 +1,8 @@
 .sidebar {
-    display: flex;
+    display: none;
+    @include above-mobile {
+        display: flex;
+    }
     flex-direction: column;
     justify-content: center;
     align-items: center;
