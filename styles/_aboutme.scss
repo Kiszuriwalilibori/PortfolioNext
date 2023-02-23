@@ -16,38 +16,36 @@
     background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
 
     &__content {
-        &-mobile {
-            //@extend .white-paragraph;
+        @extend .content;
+
+        @include mobile {
             font-weight: 200;
             letter-spacing: 0.6px;
             line-height: 1.8;
             font-stretch: condensed;
-            display: block;
-            min-height: 100vh;
             font-weight: 200;
             letter-spacing: 0.6px;
-            padding-left: calc($mobile-top-distance / 2);
-            padding-right: $mobile-top-distance;
-            padding-bottom: $grid;
-            margin-top: 250px;
-            background-color: $mobile-background-color;
             color: white;
-            padding: 45px 40px 45px 40px;
 
             & p {
                 margin: 20px 0;
             }
-            // p:last-of-type {
-            //     border-top: 1px dotted yellow;
-            // }
         }
-        &-above-mobile {
-            @extend .content-above-mobile;
-            @extend .white-paragraph;
-            // position: absolute;
-            // left: 25%;
-            // right: 0;
-            // width: 75%;
+        @include above-mobile {
+            color: #fff;
+            font-family: "Raleway";
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            font-size: 17px;
+            & .aboutmeBreak {
+                display: none;
+            }
+            & p {
+                padding: 0.25 * $grid 0;
+            }
+            @include media-xsm {
+                line-height: 1.2;
+            }
+
             padding-left: $mobile-top-distance;
             padding-right: $mobile-top-distance;
             padding-top: 3 * $grid;

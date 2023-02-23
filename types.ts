@@ -8,7 +8,13 @@ export interface Contact {
     link: string;
     alias: string;
 }
-
+export interface EducationItem {
+    school: string;
+    period: string;
+    subject: string;
+}
 export type Contacts = Contact[];
 
 export type Skills = Skill[];
+
+export type Education = EducationItem[];

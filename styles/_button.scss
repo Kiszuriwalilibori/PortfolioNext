@@ -1,6 +1,7 @@
 .btn {
     cursor: pointer;
     border: none;
+    @include box-shadow--basic;
     &:disabled {
         cursor: default;
     }
@@ -10,10 +11,9 @@
         align-items: center;
         box-sizing: initial;
         right: 0px;
-        width: 140px;
-        height: 40px;
+        @include size(140px, 40px);
         padding: 5px;
-        background: none repeat scroll 0% 0% $text-lighter-color;
+        background: none repeat scroll 0% 0% $vivid-red-color;
         border-radius: 5px;
 
         & span {
@@ -31,7 +31,7 @@
         @include block-fixed(top, right);
         @include size(40px);
         justify-content: center;
-        margin: $mobile-top-distance 0px;
+        margin: 6px 0;
         border-radius: 5px 0 0 5px;
     }
 }

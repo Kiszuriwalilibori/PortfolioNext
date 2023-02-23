@@ -9,7 +9,7 @@ interface Props {
 }
 const Content = (props: Props) => {
     const { data, title } = props;
-    console.log(props, "props of content");
+
     const ID = useId();
     return (
         <article className="wrapper">

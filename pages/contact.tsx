@@ -14,7 +14,7 @@ export default function Contact(props: Props) {
     const { title, data } = props;
     const { desktopSize } = useBreakpoints();
     if (!desktopSize) return null;
-    console.log(props);
+
     return (
         <section className="contact">
             {/* {small.has(desktopSize) && <MobileHeader route={"contact"} />} */}

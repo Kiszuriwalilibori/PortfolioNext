@@ -11,16 +11,18 @@
     opacity: 1;
 }
 
-.contact {
+.skills {
     @extend .section;
-    background: url(../public/backgrounds/contact.jpg) top right no-repeat;
+    background: url(../public/backgrounds/skills.jpg) top right no-repeat;
+    background-size: cover;
 
     &__content {
         @extend .content;
         @include mobile {
             font-weight: 200;
             letter-spacing: 0.6px;
-            color: white;
+            background-color: white;
+            color: $text-dark-color;
         }
         @include above-mobile {
             align-items: center;
@@ -34,6 +36,16 @@
             display: flex;
             align-items: flex-start;
             flex-direction: column;
+            & .education {
+                width: 100%;
+            }
+            & .educationItem {
+                list-style-type: none;
+                width: 100%;
+                background-color: $light-olive-transparent;
+                margin: 10px 0;
+                padding: 6px;
+            }
             @include above-mobile {
                 background-color: $whitish;
                 padding: $grid;
@@ -48,26 +60,28 @@
                 padding-bottom: 45px;
                 padding-top: 45px;
             }
+            & h3 {
+                line-height: 1;
+                font-size: 24px;
+                font-weight: 300;
+                padding-bottom: $grid;
+                padding-top: $grid;
+                color: $subdued-red-color;
+            }
 
-            & dl {
-                line-height: 1.8;
-                padding-top: 20px;
-                & dt {
-                    display: block;
-                    clear: both;
-                    width: 150px;
-                    float: left;
-                }
-                & dd {
-                    display: block;
-                    margin: 0;
-                    float: left;
-                    & svg {
-                        color: $vivid-red-color;
-                    }
-                    & a span {
-                        padding-left: 6px;
-                    }
+            & h4 {
+                line-height: 1;
+                font-size: 18px;
+                font-weight: 200;
+                padding-bottom: calc($grid / 2);
+                padding-top: calc($grid / 2);
+                color: $subdued-red-color;
+            }
+
+            ul {
+                list-style-type: disc;
+                > li {
+                    margin-left: 16px;
                 }
             }
         }

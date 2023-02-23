@@ -10,7 +10,7 @@ export default function AboutMe() {
     return (
         <section className="aboutme">
             {/* {small.has(desktopSize) && <MobileHeader route={"aboutme"} />} */}
-            <article className={small.has(desktopSize) ? "aboutme__content-mobile" : "aboutme__content-above-mobile"}>
+            <article className="aboutme__content">
                 <PageContent />
             </article>
         </section>

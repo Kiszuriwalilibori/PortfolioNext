@@ -22,7 +22,7 @@
         padding: 5px;
         margin: 3px 0px;
         position: relative;
-        background: none repeat scroll 0% 0% $text-lighter-color;
+        background: none repeat scroll 0% 0% $vivid-red-color;
         right: 0px;
 
         box-sizing: initial;
@@ -43,7 +43,7 @@
         margin: 0 $grid / 2;
         position: relative;
         display: inline-block;
-        background: none repeat scroll 0% 0% $text-lighter-color;
+        background: none repeat scroll 0% 0% $vivid-red-color;
 
         box-sizing: initial;
         transition: all 0.3s ease-in-out;
@@ -96,7 +96,7 @@
         margin: 0 $grid / 2;
         position: relative;
         display: inline-block;
-        background: none repeat scroll 0% 0% $text-lighter-color;
+        background: none repeat scroll 0% 0% $vivid-red-color;
         box-sizing: initial;
         @include box-shadow--basic;
         @include media-xsm {
