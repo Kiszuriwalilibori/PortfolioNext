@@ -13,6 +13,13 @@ export interface EducationItem {
     period: string;
     subject: string;
 }
+export interface Cert {
+    name: string;
+    operator: string;
+    link: string;
+    professional: boolean;
+}
+
 export type Contacts = Contact[];
 
 export type Skills = Skill[];

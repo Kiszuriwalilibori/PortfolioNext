@@ -906,6 +906,7 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-top: 45px;
 }
 .skills__content .wrapper .education {
   width: 100%;
@@ -916,6 +917,19 @@ body {
   background-color: rgba(67, 84, 22, 0.4);
   margin: 10px 0;
   padding: 6px;
+}
+.skills__content .wrapper .certItem {
+  list-style-type: none;
+  width: 100%;
+  background-color: rgba(67, 84, 22, 0.4);
+  margin: 10px 0;
+  padding: 6px;
+}
+.skills__content .wrapper .certItem--text-non-professional {
+  color: rgb(149, 199, 48);
+}
+.skills__content .wrapper .certItem--non-professional {
+  background-color: rgba(149, 199, 48, 0.4);
 }
 @media (min-width: 768px) {
   .skills__content .wrapper {

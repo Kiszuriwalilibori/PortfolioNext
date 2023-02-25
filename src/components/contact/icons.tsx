@@ -12,27 +12,3 @@ const Icons: { [key: string]: any } = {
 };
 
 export default Icons;
-// interface Props{
-//   ID: string;
-// }
-// const Icon =(props:Props)=>
-// {
-// const{ID} = props;
-
-// switch (ID) {
-//     case "email":
-//         return <FontAwesomeIcon icon={faEnvelope} />;
-//         break;
-//     case "facebook":
-//         day = "Monday";
-//         break;
-//     case "linkedin":
-//         day = "Tuesday";
-//         break;
-//     case "github":
-//         day = "Wednesday";
-//         break;
-
-// }
-
-// }

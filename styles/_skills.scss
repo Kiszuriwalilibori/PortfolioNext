@@ -36,6 +36,7 @@
             display: flex;
             align-items: flex-start;
             flex-direction: column;
+            margin-top: 45px;
             & .education {
                 width: 100%;
             }
@@ -46,6 +47,20 @@
                 margin: 10px 0;
                 padding: 6px;
             }
+            & .certItem {
+                list-style-type: none;
+                width: 100%;
+                background-color: $light-olive-transparent;
+                margin: 10px 0;
+                padding: 6px;
+                &--text-non-professional {
+                    color: $yellowgreen;
+                }
+                &--non-professional {
+                    background-color: $yellowgreen-transparent;
+                }
+            }
+
             @include above-mobile {
                 background-color: $whitish;
                 padding: $grid;

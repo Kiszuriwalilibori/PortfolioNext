@@ -24,5 +24,74 @@
         },
         { "school": "Cosinus", "period": "2019-2020", "subject": "IT Technician" },
         { "school": "CISCO", "period": "2019-2020", "subject": "IT Fundamentals" }
+    ],
+    "certs": [
+        {
+            "name": "Process approach to quality management",
+            "operator": "ZETOM",
+            "link": "https://www.zetom.eu/",
+            "professional": true
+        },
+        {
+            "name": "HSE Inspector",
+            "operator": "SEKA",
+            "professional": true,
+            "link": "https://www.seka.pl/"
+        },
+        {
+            "name": "MS Windows 95 and its applications",
+            "operator": "Edusoft",
+            "professional": true,
+            "link": "http://www.edusoft.com.pl/"
+        },
+        {
+            "name": "Sales techniques with elements of negotiations",
+            "operator": "MACH Consulting",
+            "professional": true,
+            "link": "https://machconsulting.pl/"
+        },
+        {
+            "name": "Technical translator (english to polish, chemistry)",
+            "operator": "Polish Federation of Engineering Associations",
+            "professional": true,
+            "link": "https://not.org.pl/"
+        },
+        {
+            "name": " ISO 9000 Internal Auditor",
+            "operator": "BSI Training Services",
+            "professional": true,
+            "link": "https://www.bsigroup.com/pl-PL/"
+        },
+
+        {
+            "name": "Time Management",
+            "operator": "DOOR",
+            "professional": true,
+            "link": "https://door.com.pl/"
+        },
+        {
+            "name": "ISO 9000 Internal Auditor",
+            "operator": "Polish Center for Research and Certification",
+            "professional": true,
+            "link": "https://www.bsigroup.com/pl-PL/"
+        },
+        {
+            "name": "Driving Licence B category",
+            "operator": "City Hall of Warsaw",
+            "professional": false,
+            "link": "https://um.warszawa.pl/"
+        },
+        {
+            "name": "Hiking Organiser",
+            "operator": "Polish Tourism and Sightseeing Society",
+            "professional": false,
+            "link": "https://pttk.pl/"
+        },
+        {
+            "name": "Hiking Leader for North Mazowia",
+            "operator": "Polish Tourism and Sightseeing Society",
+            "professional": false,
+            "link": "https://pttk.pl/"
+        }
     ]
 }

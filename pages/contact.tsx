@@ -1,4 +1,4 @@
-import Content from "../src/components/contact/content";
+import Content from "../src/components/contact";
 import MobileHeader from "../src/components/headerMobile";
 import { useBreakpoints } from "../contexts/ViewPortProvider";
 import { Contacts } from "../types";
