@@ -25,6 +25,7 @@
         { "school": "Cosinus", "period": "2019-2020", "subject": "IT Technician" },
         { "school": "CISCO", "period": "2019-2020", "subject": "IT Fundamentals" }
     ],
+
     "certs": [
         {
             "name": "Process approach to quality management",

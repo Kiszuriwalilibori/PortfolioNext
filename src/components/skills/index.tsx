@@ -1,8 +1,14 @@
 import { memo, useId } from "react";
 import { Skill, Education, Cert } from "../../../types";
-import SkillsList from "./skillsList";
+import SkillsGroup from "./skillsGroup";
 import EducationItem from "./educationItem";
 import CertItem from "./cert";
+
+const headlines = {
+    good: "I feel reasonably comfortable with:",
+    fair: "Continuously improving:",
+    basic: "Basic level",
+};
 
 interface Props {
     skills: Skill[];
@@ -21,30 +27,16 @@ function Skills(props: Props) {
     const good = filterSkillsByLevel(skills, "4");
     const fair = filterSkillsByLevel(skills, "3");
     const basic = filterSkillsByLevel(skills, "1");
+
     const ID = useId();
 
     return (
         <article className="wrapper">
             <h2>{"Skills & education"}</h2>
             <h3>Skills:</h3>
-            {good && (
-                <>
-                    <h4>I feel reasonably comfortable with: </h4>
-                    <SkillsList items={good} />
-                </>
-            )}
-            {fair && (
-                <>
-                    <h4>Continuously improving:</h4>
-                    <SkillsList items={fair} />
-                </>
-            )}
-            {basic && (
-                <>
-                    <h4>Basic level:</h4>
-                    <SkillsList items={basic} />
-                </>
-            )}
+            {good && <SkillsGroup items={good} headline={headlines.good} />}
+            {fair && <SkillsGroup items={fair} headline={headlines.fair} />}
+            {basic && <SkillsGroup items={basic} headline={headlines.basic} />}
 
             <h3>Education:</h3>
             <ul className="education">

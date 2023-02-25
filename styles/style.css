@@ -908,6 +908,14 @@ body {
   flex-direction: column;
   margin-top: 45px;
 }
+.skills__content .wrapper .skillGroup {
+  width: 100%;
+  padding-bottom: 15px;
+  border-top: 1px solid #ddd;
+}
+.skills__content .wrapper .skillGroup:last-of-type {
+  border-bottom: 1px solid #ddd;
+}
 .skills__content .wrapper .education {
   width: 100%;
 }
@@ -937,6 +945,7 @@ body {
     padding: 30px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
     justify-content: center;
+    width: 573px;
   }
 }
 .skills__content .wrapper h2 {
@@ -962,6 +971,7 @@ body {
   padding-bottom: 15px;
   padding-top: 15px;
   color: rgba(145, 13, 13, 0.8);
+  position: relative;
 }
 .skills__content .wrapper ul {
   list-style-type: disc;
