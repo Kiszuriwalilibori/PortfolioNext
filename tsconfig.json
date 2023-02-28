@@ -23,7 +23,8 @@
         "pages/events/event1.js",
         "pages/events/[cat]/[id].jsx",
         "src/components/skills",
-        "src/components/header/index.js"
+        "src/components/header/index.js",
+        "src/components/jobs/index.tsx"
     ],
     "exclude": ["node_modules"]
 }

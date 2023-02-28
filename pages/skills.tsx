@@ -21,8 +21,6 @@ export default function Skills(props: Props) {
 
 export async function getStaticProps() {
     const { skills, education, certs } = await import("../data/skills.json");
-
-    console.log(education, "education from getstat");
     return {
         props: {
             data: skills,

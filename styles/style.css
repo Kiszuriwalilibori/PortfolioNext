@@ -335,7 +335,7 @@ body {
   width: 75%;
 }
 
-.section, .skills, .contact, .aboutme {
+.section, .jobs, .skills, .contact, .aboutme {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -406,12 +406,12 @@ body {
   }
 }
 
-.content, .skills__content, .contact__content, .aboutme__content {
+.content, .jobs__content, .skills__content, .contact__content, .aboutme__content {
   display: flex;
   justify-content: center;
 }
 @media (max-width: 767px) {
-  .content, .skills__content, .contact__content, .aboutme__content {
+  .content, .jobs__content, .skills__content, .contact__content, .aboutme__content {
     min-height: 100vh;
     margin-top: 300px;
     background-color: #24332a;
@@ -419,7 +419,7 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .content, .skills__content, .contact__content, .aboutme__content {
+  .content, .jobs__content, .skills__content, .contact__content, .aboutme__content {
     position: absolute;
     left: 25%;
     right: 0;
@@ -506,7 +506,7 @@ body {
   position: relative;
 }
 
-.author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -514,13 +514,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 150px;
     height: 150px;
   }
@@ -620,7 +620,7 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -628,13 +628,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 150px;
     height: 150px;
   }
@@ -821,6 +821,10 @@ body {
   background: url(../public/mobile-backgrounds/skills.jpg) top right no-repeat;
   background-size: cover;
 }
+.header-mobile--career {
+  background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+  background-size: cover;
+}
 .header-mobile .name {
   position: relative;
   top: 24px;
@@ -860,7 +864,7 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -868,13 +872,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
     width: 150px;
     height: 150px;
   }
@@ -1024,6 +1028,141 @@ body {
   }
 }
 .skills .mobile-header .image {
+  position: fixed;
+  top: 24px;
+  left: calc(50vw - 65px);
+}
+
+.author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  opacity: 1;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (min-width: 991px) {
+  .author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.jobs {
+  background: url(../public/backgrounds/career.jpg) top right no-repeat;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .jobs__content {
+    font-weight: 200;
+    letter-spacing: 0.6px;
+    background-color: #303337;
+    color: #001820;
+  }
+}
+@media (min-width: 768px) {
+  .jobs__content {
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (min-width: 576px) and (max-width: 767px) {
+  .jobs__content p {
+    font-size: 16px;
+  }
+}
+.jobs__content .wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 45px;
+  background-color: #303337;
+}
+@media (min-width: 768px) {
+  .jobs__content .wrapper {
+    background-color: #303337;
+    padding: 30px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    justify-content: center;
+    width: 573px;
+  }
+}
+.jobs__content .wrapper h2 {
+  line-height: 1;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 15px 0;
+}
+.jobs__content .wrapper h3 {
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 10px 0;
+}
+.jobs__content .wrapper h4 {
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 200;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  position: relative;
+}
+.jobs__content .wrapper ul {
+  list-style-type: disc;
+}
+.jobs__content .wrapper ul > li {
+  margin-left: 16px;
+}
+.jobs .mobile-header {
+  display: block;
+  background: url(../public/backgrounds/contact3.jpg) top right no-repeat;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 250px;
+  color: white;
+}
+.jobs .mobile-header .name {
+  position: relative;
+  top: 24px;
+  padding-left: 12px;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  .jobs .mobile-header .name {
+    padding-left: unset;
+    text-align: center;
+    top: 154px;
+    font-size: 16px;
+    letter-spacing: 1.8px;
+    margin-top: 24px;
+  }
+}
+.jobs .mobile-header .description {
+  position: relative;
+  top: 40px;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  .jobs .mobile-header .description {
+    padding-left: unset;
+    text-align: center;
+    top: 154px;
+  }
+}
+.jobs .mobile-header .image {
   position: fixed;
   top: 24px;
   left: calc(50vw - 65px);

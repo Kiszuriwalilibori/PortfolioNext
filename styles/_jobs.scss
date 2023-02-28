@@ -1,0 +1,126 @@
+.author-base-image {
+    @include box-shadow--basic;
+    @include size($author-image-mobile-size);
+    @include media-md {
+        @include size($author-image-medium-size);
+    }
+    @include media-above-md {
+        @include size($author-image-large-size);
+    }
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.jobs {
+    @extend .section;
+    background: url(../public/backgrounds/career.jpg) top right no-repeat;
+    background-size: cover;
+
+    &__content {
+        @extend .content;
+        @include mobile {
+            font-weight: 200;
+            letter-spacing: 0.6px;
+            background-color: $dark-background-color;
+            color: $text-dark-color;
+        }
+        @include above-mobile {
+            align-items: center;
+            & p {
+                @include media-sm {
+                    font-size: 16px;
+                }
+            }
+        }
+        & .wrapper {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 45px;
+            background-color: $dark-background-color;
+
+            @include above-mobile {
+                background-color: $dark-background-color;
+                padding: $grid;
+                @include box-shadow--basic;
+                justify-content: center;
+                width: 573px;
+            }
+            & h2 {
+                line-height: 1;
+                font-size: $grid;
+                font-weight: 400;
+                text-transform: uppercase;
+                padding: calc($grid / 2) 0;
+            }
+            & h3 {
+                line-height: 1;
+                font-size: 24px;
+                font-weight: 300;
+                padding: calc($grid / 3) 0;
+            }
+
+            & h4 {
+                line-height: 1;
+                font-size: 18px;
+                font-weight: 200;
+                padding-bottom: calc($grid / 2);
+                padding-top: calc($grid / 2);
+                position: relative;
+            }
+
+            ul {
+                list-style-type: disc;
+                > li {
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+
+    & .mobile-header {
+        display: block;
+        background: url(../public/backgrounds/contact3.jpg) top right no-repeat;
+        background-size: cover;
+        @include block-top-fixed;
+        @include size(100vw, 250px);
+        color: white;
+        & .name {
+            position: relative;
+            top: $mobile-top-distance;
+            padding-left: $mobile-padding;
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+                font-size: 16px;
+                letter-spacing: 1.8px;
+                margin-top: $mobile-top-distance;
+            }
+        }
+        & .description {
+            position: relative;
+            top: $mobile-top-distance + 16px;
+            padding-left: calc($mobile-top-distance / 2);
+            font-size: 12px;
+            font-weight: 100;
+            text-transform: uppercase;
+            @include media-xsm {
+                padding-left: unset;
+                text-align: center;
+                top: $author-image-mobile-size + $mobile-top-distance;
+            }
+        }
+
+        & .image {
+            @extend .author-base-image;
+            position: fixed;
+            top: $mobile-top-distance;
+            left: calc(50vw - 130px / 2);
+        }
+    }
+}

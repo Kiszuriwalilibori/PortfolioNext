@@ -4,7 +4,7 @@ import Link from "./link";
 
 import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
 
-const links = ["aboutme", "skills", "projects", "contact"];
+const links = ["aboutme", "skills", "projects", "career", "contact"];
 
 export default function Navbar() {
     const { isMenuVisible } = useMenuVisibilityContext();
