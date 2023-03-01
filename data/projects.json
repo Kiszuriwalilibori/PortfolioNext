@@ -6,7 +6,8 @@
             "case": "HP Case",
             "live": "https://kiszuriwalilibori.github.io/minifigs/",
             "github": "https://github.com/Kiszuriwalilibori/minifigs",
-            "skills": ["react", "redux"]
+            "features": ["react", "redux"],
+            "category": "B"
         },
         {
             "title": "Unsplash",
@@ -14,7 +15,8 @@
             "case": "Unsplash Case",
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
-            "skills": ["react", "redux"]
+            "features": ["react", "redux"],
+            "category": "A"
         },
         {
             "title": "Kryptowaluty",
@@ -22,7 +24,8 @@
             "case": "Crypto Case",
             "live": "https://kiszuriwalilibori.github.io/cryptocurrency/",
             "github": "https://github.com/Kiszuriwalilibori/cryptocurrency",
-            "skills": ["react", "react-query"]
+            "features": ["react", "react-query"],
+            "category": "A"
         }
     ]
 }

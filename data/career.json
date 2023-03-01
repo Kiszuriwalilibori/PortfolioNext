@@ -21,9 +21,9 @@
         {
             "period": "Aug 2021 - Sep 2021",
             "name": "They",
-            "link": "https://mobica.com/",
+            "link": "https://th-ey.com/",
             "position": "Front-end developer",
-            "subtitle": "Booking Beauty",
+            "subtitle": "Beautilio",
             "description": [
                 "An application for booking visits in beauty parlors (TypeScript, React, Redux).Worked on front-end. My task was to redesign admin panel."
             ],
@@ -32,7 +32,7 @@
         {
             "period": "Aug 2021 - Sep 2021",
             "name": "PKT",
-            "link": "https://mobica.com/",
+            "link": "https://www.pkt.pl/",
             "position": "Blog Developer",
             "description": [
                 "Worked on numerous sites developed with WordPress, Joomla, and other CMS. I have been adding blog functionality and initial content to existing web sites. While usually that was rather simple and somehow boring job, it became interesting in case of problems. Then I had to add my own mini-template, modify existing one or change behavior with extra Java Script or PHP, or deeply restyle existing content"

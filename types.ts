@@ -30,6 +30,17 @@ export interface Job {
     subtitle: string;
 }
 
+type ProjectCategory = "A" | "B" | "C";
+export interface Project {
+    title: string;
+    description: string;
+    category: string;
+    features: string[];
+    case: string;
+    live: string;
+    github: string;
+}
+
 export type Contacts = Contact[];
 
 export type Skills = Skill[];

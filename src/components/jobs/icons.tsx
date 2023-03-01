@@ -1,8 +1,43 @@
+import Image from "next/image";
+
 export const Mobica = () => {
     return <div></div>;
 };
 
 const Icons: { [key: string]: any } = {
+    PKT: () => {
+        return (
+            <Image
+                src="/../public/images/pkt.png"
+                width={30}
+                height={15}
+                alt="pkt logo"
+                className="selfCentered"
+            ></Image>
+        );
+    },
+    Moonheads: () => {
+        return (
+            <Image
+                src="/../public/images/moonheads.png"
+                width={25}
+                height={25}
+                alt="MoonHeads logo"
+                className="selfCentered"
+            ></Image>
+        );
+    },
+    They: () => {
+        return (
+            <Image
+                src="/../public/images/they.png"
+                width={25}
+                height={5}
+                alt="Th-ey logo"
+                className="selfCentered"
+            ></Image>
+        );
+    },
     Mobica: () => {
         return (
             <svg xmlns="http://www.w3.org/2000/svg" width="95" height="23" viewBox="0 0 95 23">
