@@ -1,21 +1,25 @@
-import React, { useId } from "react";
-import { Contact } from "../../../types";
+import React from "react";
+
 import Icons from "./icons";
+
+import { Contact } from "../../../types";
 
 interface Props {
     data: Contact;
 }
 
 const Contact = (props: Props) => {
-    const { data } = props;
+    const {
+        data: { text, link, ID, alias },
+    } = props;
 
     return (
         <React.Fragment>
-            <dt>{data.text}:</dt>
+            <dt>{text}:</dt>
             <dd>
-                <a href={data.link}>
-                    {Icons[data.ID]}
-                    <span>{data.alias}</span>
+                <a href={link}>
+                    {Icons[ID]}
+                    <span>{alias}</span>
                 </a>
             </dd>
         </React.Fragment>

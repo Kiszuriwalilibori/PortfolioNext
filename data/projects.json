@@ -3,7 +3,7 @@
         {
             "title": "Get HarryPotter for free",
             "description": "Strona do zamawiania figurynek",
-            "case": "HP Case",
+            "longDescription": "HP Case",
             "live": "https://kiszuriwalilibori.github.io/minifigs/",
             "github": "https://github.com/Kiszuriwalilibori/minifigs",
             "features": ["react", "redux"],
@@ -12,7 +12,7 @@
         {
             "title": "Unsplash",
             "description": "Moja wersja Unsplasha",
-            "case": "Unsplash Case",
+            "longDescription": "Unsplash Case",
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
             "features": ["react", "redux"],
@@ -21,7 +21,7 @@
         {
             "title": "Kryptowaluty",
             "description": "Tracker kryptowalut",
-            "case": "Crypto Case",
+            "longDescription": "Crypto Case",
             "live": "https://kiszuriwalilibori.github.io/cryptocurrency/",
             "github": "https://github.com/Kiszuriwalilibori/cryptocurrency",
             "features": ["react", "react-query"],

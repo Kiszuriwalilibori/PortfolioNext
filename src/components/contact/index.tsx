@@ -1,29 +1,33 @@
-import { memo } from "react";
-import { Contacts } from "../../../types";
+import { memo, useId } from "react";
+
 import Contact from "./contact";
 
-import { useId } from "react";
+import { Contacts } from "../../../types";
+
 interface Props {
     data: Contacts;
-    title: string;
 }
-const Content = (props: Props) => {
-    const { data, title } = props;
+const ContactPageContent = (props: Props) => {
+    const { data } = props;
 
     const ID = useId();
     return (
-        <article className="wrapper">
-            <h2>{title}</h2>
-            <p>
-                <i>I am available for hire and open to any ideas of cooperation</i>
-            </p>
-            <dl>
-                {data.map(item => {
-                    return <Contact key={`${ID}--${item.ID}`} data={item} />;
-                })}
-            </dl>
-        </article>
+        <section className="contact">
+            <div className="contact__content">
+                <div className="container">
+                    <h2>Contact me</h2>
+                    <p>
+                        <i>I am available for hire and open to any ideas of cooperation</i>
+                    </p>
+                    <dl>
+                        {data.map(item => {
+                            return <Contact key={`${ID}--${item.ID}`} data={item} />;
+                        })}
+                    </dl>
+                </div>
+            </div>
+        </section>
     );
 };
 
-export default memo(Content);
+export default memo(ContactPageContent);

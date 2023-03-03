@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import "rsuite/dist/rsuite.min.css";
+
 import { Checkbox, CheckboxGroup } from "rsuite";
 
 interface Props {
@@ -11,7 +11,7 @@ export default function Checkboxes(props: Props) {
     const { values, handleChange } = props;
     const [chkValue, setChkValue] = useState([] as string[]);
 
-    const checkboxAry = values.map(item => {
+    const checkboxesArray = values.map(item => {
         return (
             <Checkbox key={item} value={item}>
                 {item}
@@ -20,24 +20,21 @@ export default function Checkboxes(props: Props) {
     });
 
     return (
-        <center>
-            <div>
-                <h4>Select projects by features</h4>
-
-                <div style={{ marginTop: 20, width: 240 }}>
-                    <CheckboxGroup
-                        inline
-                        name="checkboxList"
-                        value={chkValue}
-                        onChange={value => {
-                            setChkValue(value as string[]);
-                            handleChange(value as string[]);
-                        }}
-                    >
-                        {checkboxAry}
-                    </CheckboxGroup>
-                </div>
+        <div>
+            <h4>Select projects by features</h4>
+            <div style={{ marginTop: 20, width: 240 }}>
+                <CheckboxGroup
+                    inline
+                    name="checkboxList"
+                    value={chkValue}
+                    onChange={value => {
+                        setChkValue(value as string[]);
+                        handleChange(value as string[]);
+                    }}
+                >
+                    {checkboxesArray}
+                </CheckboxGroup>
             </div>
-        </center>
+        </div>
     );
 }

@@ -1,37 +1,20 @@
-import Content from "../../src/components/projects";
-import { Project } from "../../types";
+import PageContent from "../../src/components/projects";
+import createFeaturesList from "./createFeaturesList";
 
-function createFeatures(data: Project[]) {
-    const temp: string[] = [];
-    data.forEach(item => item.features && temp.push(...item.features));
-    return Array.from(new Set(temp));
-}
+import { ProjectsPageProps } from "../../types";
 
-interface Props {
-    data: Project[];
-    allFeatures: string[];
-    title: string;
-}
-
-export default function Projects(props: Props) {
-    const { data, allFeatures, title } = props;
-
-    return (
-        <section className="projects">
-            <article className="projects__content">
-                <Content data={data} featuresList={allFeatures} />
-            </article>
-        </section>
-    );
+export default function Projects(props: ProjectsPageProps) {
+    const { data, featuresList } = props;
+    return <PageContent data={data} featuresList={featuresList} />;
 }
 
 export async function getStaticProps() {
     const { projects } = await import("../../data/projects.json");
-    const allFeatures = createFeatures(projects);
+    const featuresList = createFeaturesList(projects);
     return {
         props: {
             data: projects,
-            allFeatures: allFeatures,
+            featuresList: featuresList,
         },
     };
 }

@@ -1,20 +1,14 @@
-import Content from "../src/components/jobs";
-import { Job } from "../types";
+import PageContent from "../src/components/jobs";
+
+import { Jobs } from "../types";
 interface Props {
-    data: Job[];
-    title: string;
+    data: Jobs;
 }
 
 export default function Career(props: Props) {
-    const { data, title } = props;
+    const { data } = props;
 
-    return (
-        <section className="jobs">
-            <article className="jobs__content">
-                <Content jobs={data} />
-            </article>
-        </section>
-    );
+    return <PageContent jobs={data} />;
 }
 
 export async function getStaticProps() {

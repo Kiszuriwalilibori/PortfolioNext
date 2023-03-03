@@ -436,6 +436,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.page-header {
+  line-height: 1;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+  padding-top: 45px;
+}
+
 .btn {
   cursor: pointer;
   border: none;
@@ -465,6 +474,7 @@ body {
   font-weight: 700;
   text-transform: capitalize;
   padding-left: 15px;
+  text-decoration: none;
 }
 .btn-hamburger {
   position: fixed;
@@ -514,7 +524,7 @@ body {
   position: relative;
 }
 
-.author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -522,13 +532,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 150px;
     height: 150px;
   }
@@ -628,7 +638,7 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -636,13 +646,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .header-mobile .image, .sidebar .image, .contact .mobile-header .image, .aboutme .mobile-header .image {
     width: 150px;
     height: 150px;
   }
@@ -668,20 +678,20 @@ body {
     font-size: 16px;
   }
 }
-.contact__content .wrapper {
+.contact__content .container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .contact__content .wrapper {
+  .contact__content .container {
     background-color: rgba(255, 255, 255, 0.65);
     padding: 30px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
     justify-content: center;
   }
 }
-.contact__content .wrapper h2 {
+.contact__content .container h2 {
   line-height: 1;
   font-size: 36px;
   font-weight: 400;
@@ -689,25 +699,25 @@ body {
   padding-bottom: 45px;
   padding-top: 45px;
 }
-.contact__content .wrapper dl {
+.contact__content .container dl {
   line-height: 1.8;
   padding-top: 20px;
 }
-.contact__content .wrapper dl dt {
+.contact__content .container dl dt {
   display: block;
   clear: both;
   width: 150px;
   float: left;
 }
-.contact__content .wrapper dl dd {
+.contact__content .container dl dd {
   display: block;
   margin: 0;
   float: left;
 }
-.contact__content .wrapper dl dd svg {
+.contact__content .container dl dd svg {
   color: #d3101c;
 }
-.contact__content .wrapper dl dd a span {
+.contact__content .container dl dd a span {
   padding-left: 6px;
 }
 .contact .mobile-header {
@@ -833,6 +843,10 @@ body {
   background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
   background-size: cover;
 }
+.header-mobile--projects {
+  background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+  background-size: cover;
+}
 .header-mobile .name {
   position: relative;
   top: 24px;
@@ -872,7 +886,7 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+.author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -880,13 +894,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
+  .author-base-image, .jobs .mobile-header .image, .skills .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image {
     width: 150px;
     height: 150px;
   }
@@ -930,6 +944,10 @@ body {
 }
 .skills__content .wrapper .education {
   width: 100%;
+}
+.skills__content .wrapper .education a {
+  color: inherit;
+  text-decoration: none;
 }
 .skills__content .wrapper .educationItem {
   list-style-type: none;
@@ -1041,7 +1059,7 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+.author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
@@ -1049,13 +1067,13 @@ body {
   opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
     width: 140px;
     height: 140px;
   }
 }
 @media (min-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
+  .author-base-image, .jobs .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image {
     width: 150px;
     height: 150px;
   }
@@ -1176,29 +1194,21 @@ body {
   left: calc(50vw - 65px);
 }
 
-.author-base-image, .projects .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image, .jobs .mobile-header .image {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  opacity: 1;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image, .jobs .mobile-header .image {
-    width: 140px;
-    height: 140px;
-  }
-}
-@media (min-width: 991px) {
-  .author-base-image, .projects .mobile-header .image, .aboutme .mobile-header .image, .contact .mobile-header .image, .sidebar .image, .header-mobile .image, .skills .mobile-header .image, .jobs .mobile-header .image {
-    width: 150px;
-    height: 150px;
-  }
-}
-
 .projects {
   background: url(../public/backgrounds/skills.jpg) top right no-repeat;
   background-size: cover;
+}
+.projects .rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
+.projects .rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  background-color: #d3101c !important;
+  border-color: #d3101c !important;
+}
+.projects .rs-checkbox-wrapper::before {
+  background-color: transparent;
+  border: 1px solid #d3101c !important;
+}
+.projects label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  border-color: #d3101c;
 }
 @media (max-width: 767px) {
   .projects__content {
@@ -1206,6 +1216,7 @@ body {
     letter-spacing: 0.6px;
     background-color: white;
     color: #001820;
+    padding: 45px 20px;
   }
 }
 @media (min-width: 768px) {
@@ -1218,45 +1229,69 @@ body {
     font-size: 16px;
   }
 }
-.projects__content .wrapper {
+.projects__content .container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin-top: 45px;
 }
-.projects__content .wrapper .skillGroup {
-  width: 100%;
-  padding-bottom: 15px;
+.projects__content .container .category-container {
   border-top: 1px solid #ddd;
+  padding: 15px 0;
 }
-.projects__content .wrapper .skillGroup:last-of-type {
-  border-bottom: 1px solid #ddd;
+.projects__content .container .project {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid rgba(145, 13, 13, 0.8);
 }
-.projects__content .wrapper .education {
-  width: 100%;
+.projects__content .container .project__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 1em;
 }
-.projects__content .wrapper .educationItem {
+@media (max-width: 767px) {
+  .projects__content .container .project__title {
+    font-size: 20px;
+    margin-bottom: 0.8em;
+  }
+}
+.projects__content .container .project__subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: none;
+  margin-bottom: 0.66em;
+}
+@media (max-width: 767px) {
+  .projects__content .container .project__subtitle {
+    font-size: 16px;
+    margin-bottom: 0.5em;
+  }
+}
+.projects__content .container .project__features-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+}
+.projects__content .container .project__features-list {
   list-style-type: none;
-  width: 100%;
-  background-color: rgba(67, 84, 22, 0.4);
-  margin: 10px 0;
-  padding: 6px;
 }
-.projects__content .wrapper .certItem {
-  list-style-type: none;
-  width: 100%;
-  background-color: rgba(67, 84, 22, 0.4);
-  margin: 10px 0;
-  padding: 6px;
+.projects__content .container .project__features-list .features-list__item {
+  background-color: rgba(145, 13, 13, 0.7);
+  margin: 0 6px;
+  display: inline-block;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid black;
 }
-.projects__content .wrapper .certItem--text-non-professional {
-  color: rgb(149, 199, 48);
-}
-.projects__content .wrapper .certItem--non-professional {
-  background-color: rgba(149, 199, 48, 0.4);
+.projects__content .container .project__features-list .features-list__item:first-child {
+  margin: 0 0;
 }
 @media (min-width: 768px) {
-  .projects__content .wrapper {
+  .projects__content .container {
     background-color: rgba(255, 255, 255, 0.65);
     padding: 30px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
@@ -1264,15 +1299,7 @@ body {
     width: 573px;
   }
 }
-.projects__content .wrapper h2 {
-  line-height: 1;
-  font-size: 36px;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-bottom: 45px;
-  padding-top: 45px;
-}
-.projects__content .wrapper h3 {
+.projects__content .container h3 {
   line-height: 1;
   font-size: 24px;
   font-weight: 300;
@@ -1280,7 +1307,7 @@ body {
   padding-top: 30px;
   color: rgba(145, 13, 13, 0.8);
 }
-.projects__content .wrapper h4 {
+.projects__content .container h4 {
   line-height: 1;
   font-size: 18px;
   font-weight: 200;
@@ -1289,58 +1316,201 @@ body {
   color: rgba(145, 13, 13, 0.8);
   position: relative;
 }
-.projects__content .wrapper ul {
-  list-style-type: disc;
+
+.rs-checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
 }
-.projects__content .wrapper ul > li {
-  margin-left: 16px;
+
+.rs-checkbox-disabled label {
+  cursor: not-allowed;
 }
-.projects .mobile-header {
-  display: block;
-  background: url(../public/backgrounds/contact3.jpg) top right no-repeat;
-  background-size: cover;
-  position: fixed;
+
+.rs-checkbox label {
+  line-height: 1.14285714;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.rs-checkbox-inner::before {
+  border-color: rgba(145, 13, 13, 0.8);
+}
+
+.rs-checkbox.rs-checkbox-disabled label {
+  cursor: not-allowed;
+}
+
+.rs-checkbox-disabled > .rs-checkbox-checker > label {
+  color: #c5c6c7;
+}
+
+.rs-checkbox-inline {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.rs-plaintext .rs-checkbox-inline:first-child {
+  margin-left: 0;
+}
+
+.rs-checkbox [type=checkbox]:focus-visible ~ .rs-checkbox-inner::before {
+  box-shadow: 0 0 0 3px rgba(52, 152, 255, 0.25);
+}
+
+.rs-checkbox-checker {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 36px;
+  min-height: 36px;
+  line-height: 1;
+  position: relative;
+}
+
+/* rtl:begin:ignore */
+.rs-checkbox-wrapper::before,
+.rs-checkbox-wrapper::after,
+.rs-checkbox-wrapper .rs-checkbox-inner::before,
+.rs-checkbox-wrapper .rs-checkbox-inner::after {
+  content: "";
+  position: absolute;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 250px;
-  color: white;
+  display: block;
 }
-.projects .mobile-header .name {
-  position: relative;
-  top: 24px;
-  padding-left: 12px;
-  font-size: 22px;
-  font-weight: 500;
-  text-transform: uppercase;
+
+.rs-checkbox-wrapper .rs-checkbox-inner::after {
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+  transition: opacity 0.2s ease-in, transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46);
 }
-@media (max-width: 576px) {
-  .projects .mobile-header .name {
-    padding-left: unset;
-    text-align: center;
-    top: 154px;
-    font-size: 16px;
-    letter-spacing: 1.8px;
-    margin-top: 24px;
-  }
+
+.rs-theme-high-contrast .rs-checkbox-wrapper .rs-checkbox-inner::after {
+  transition: none;
 }
-.projects .mobile-header .description {
-  position: relative;
-  top: 40px;
-  padding-left: 12px;
-  font-size: 12px;
-  font-weight: 100;
-  text-transform: uppercase;
+
+.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::after,
+.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::after {
+  border: solid #fff;
+  width: 6px;
+  height: 9px;
+  margin-top: 2px;
+  margin-left: 5px;
+  opacity: 1;
 }
-@media (max-width: 576px) {
-  .projects .mobile-header .description {
-    padding-left: unset;
-    text-align: center;
-    top: 154px;
-  }
+
+.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::after {
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(1);
 }
-.projects .mobile-header .image {
-  position: fixed;
-  top: 24px;
-  left: calc(50vw - 65px);
+
+.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::after {
+  border-width: 0 0 2px;
+  transform: rotate(0deg) scale(1);
+  width: 10px;
+  margin-top: 0;
+  margin-left: 3px;
+}
+
+/* rtl:end:ignore */
+/* stylelint-disable-next-line */
+.rs-checkbox-wrapper {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  left: 10px;
+  top: 10px;
+}
+
+.rs-checkbox-wrapper [type=checkbox] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.rs-checkbox-wrapper::before,
+.rs-checkbox-wrapper .rs-checkbox-inner::before,
+.rs-checkbox-wrapper .rs-checkbox-inner::after {
+  width: 16px;
+  height: 16px;
+}
+
+.rs-checkbox-wrapper::before {
+  border: 1px solid rgba(145, 13, 13, 0.8);
+  background-color: transparent;
+  border-radius: 3px;
+  transform: scale(1);
+  opacity: 0.7;
+  visibility: hidden;
+  transition: transform 0.2s linear, opacity 0.2s linear;
+}
+
+.rs-theme-high-contrast .rs-checkbox-wrapper::before {
+  transition: none;
+}
+
+.rs-checkbox-checked .rs-checkbox-wrapper::before {
+  transform: scale(1.5);
+  opacity: 0;
+  visibility: visible;
+}
+
+.rs-checkbox-wrapper::after {
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+}
+
+.rs-checkbox-wrapper .rs-checkbox-inner::before {
+  border: 1px solid #d9d9d9;
+  background-color: transparent;
+  border-radius: 3px;
+  transition: background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear;
+}
+
+.rs-theme-high-contrast .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  transition: none;
+}
+
+label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  border-color: rgba(145, 13, 13, 0.8);
+}
+
+.rs-checkbox-disabled:not(.rs-checkbox-checked):not(.rs-checkbox-indeterminate) .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  border-color: #f7f7fa;
+  background-color: #f7f7fa;
+}
+
+.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
+.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  border-color: rgba(145, 13, 13, 0.8);
+  background-color: rgba(145, 13, 13, 0.8);
+}
+
+.rs-checkbox-disabled.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
+.rs-checkbox-disabled.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  opacity: 0.3;
+}
+
+.rs-theme-high-contrast .rs-checkbox-disabled.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
+.rs-theme-high-contrast .rs-checkbox-disabled.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
+  opacity: 0.5;
+}
+
+.rs-checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.rs-checkbox-group-inline {
+  flex-direction: row;
+  margin-left: -10px;
 }/*# sourceMappingURL=style.css.map */

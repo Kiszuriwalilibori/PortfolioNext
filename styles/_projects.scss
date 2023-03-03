@@ -1,17 +1,19 @@
-.author-base-image {
-    @include box-shadow--basic;
-    @include size($author-image-mobile-size);
-    @include media-md {
-        @include size($author-image-medium-size);
-    }
-    @include media-above-md {
-        @include size($author-image-large-size);
-    }
-    border-radius: 50%;
-    opacity: 1;
-}
-
 .projects {
+    & .rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
+    .rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
+        background-color: $vivid-red-color !important;
+
+        border-color: $vivid-red-color !important;
+    }
+    & .rs-checkbox-wrapper::before {
+        background-color: transparent;
+        border: 1px solid $vivid-red-color !important;
+    }
+
+    & label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
+        border-color: $vivid-red-color;
+    }
+
     @extend .section;
     background: url(../public/backgrounds/skills.jpg) top right no-repeat;
     background-size: cover;
@@ -23,6 +25,7 @@
             letter-spacing: 0.6px;
             background-color: white;
             color: $text-dark-color;
+            padding: 45px 20px;
         }
         @include above-mobile {
             align-items: center;
@@ -32,40 +35,60 @@
                 }
             }
         }
-        & .wrapper {
+        & .container {
             display: flex;
             align-items: flex-start;
             flex-direction: column;
             margin-top: 45px;
-            & .skillGroup {
-                width: 100%;
-                padding-bottom: 15px;
-                border-top: 1px solid #ddd;
-                &:last-of-type {
-                    border-bottom: 1px solid #ddd;
+            & .category-container {
+                border-top: $greyish-border;
+                padding: calc($grid / 2) 0;
+            }
+            .project {
+                padding: calc($grid / 3);
+                margin: calc(2 * $grid / 3) 0;
+                border: 1px solid $subdued-red-color;
+                &__title {
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 1;
+                    margin-bottom: 1em;
+                    @include mobile {
+                        font-size: 20px;
+                        margin-bottom: 0.8em;
+                    }
                 }
-            }
-            & .education {
-                width: 100%;
-            }
-            & .educationItem {
-                list-style-type: none;
-                width: 100%;
-                background-color: $light-olive-transparent;
-                margin: 10px 0;
-                padding: 6px;
-            }
-            & .certItem {
-                list-style-type: none;
-                width: 100%;
-                background-color: $light-olive-transparent;
-                margin: 10px 0;
-                padding: 6px;
-                &--text-non-professional {
-                    color: $yellowgreen;
+                &__subtitle {
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    text-transform: none;
+                    margin-bottom: 0.66em;
+                    @include mobile {
+                        font-size: 16px;
+                        margin-bottom: 0.5em;
+                    }
                 }
-                &--non-professional {
-                    background-color: $yellowgreen-transparent;
+                &__features-header {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    padding-bottom: 0.5em;
+                }
+                &__features-list {
+                    list-style-type: none;
+                    & .features-list__item {
+                        background-color: $subdued-red-color--lighter;
+                        margin: 0 6px;
+                        display: inline-block;
+                        color: #fff;
+                        padding: 4px 10px;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        border: 1px solid black;
+                        &:first-child {
+                            margin: 0 0;
+                        }
+                    }
                 }
             }
 
@@ -76,14 +99,14 @@
                 justify-content: center;
                 width: 573px;
             }
-            & h2 {
-                line-height: 1;
-                font-size: 36px;
-                font-weight: 400;
-                text-transform: uppercase;
-                padding-bottom: 45px;
-                padding-top: 45px;
-            }
+            // & h2 {
+            //     line-height: 1;
+            //     font-size: 36px;
+            //     font-weight: 400;
+            //     text-transform: uppercase;
+            //     padding-bottom: 45px;
+            //     padding-top: 45px;
+            // }
             & h3 {
                 line-height: 1;
                 font-size: 24px;
@@ -102,59 +125,6 @@
                 color: $subdued-red-color;
                 position: relative;
             }
-
-            ul {
-                list-style-type: disc;
-                > li {
-                    margin-left: 16px;
-                }
-            }
-        }
-    }
-
-    & .mobile-header {
-        display: block;
-        background: url(../public/backgrounds/contact3.jpg) top right no-repeat;
-        background-size: cover;
-        @include block-top-fixed;
-        @include size(100vw, 250px);
-        color: white;
-        & .name {
-            position: relative;
-            top: $mobile-top-distance;
-            padding-left: $mobile-padding;
-            font-size: 22px;
-            font-weight: 500;
-            text-transform: uppercase;
-
-            @include media-xsm {
-                padding-left: unset;
-                text-align: center;
-                top: $author-image-mobile-size + $mobile-top-distance;
-                font-size: 16px;
-                letter-spacing: 1.8px;
-                margin-top: $mobile-top-distance;
-            }
-        }
-        & .description {
-            position: relative;
-            top: $mobile-top-distance + 16px;
-            padding-left: calc($mobile-top-distance / 2);
-            font-size: 12px;
-            font-weight: 100;
-            text-transform: uppercase;
-            @include media-xsm {
-                padding-left: unset;
-                text-align: center;
-                top: $author-image-mobile-size + $mobile-top-distance;
-            }
-        }
-
-        & .image {
-            @extend .author-base-image;
-            position: fixed;
-            top: $mobile-top-distance;
-            left: calc(50vw - 130px / 2);
         }
     }
 }

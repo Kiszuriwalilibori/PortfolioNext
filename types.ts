@@ -30,13 +30,15 @@ export interface Job {
     subtitle: string;
 }
 
+export type Jobs = Job[];
+
 type ProjectCategory = "A" | "B" | "C";
 export interface Project {
     title: string;
     description: string;
     category: string;
     features: string[];
-    case: string;
+    longDescription: string;
     live: string;
     github: string;
 }
@@ -46,3 +48,14 @@ export type Contacts = Contact[];
 export type Skills = Skill[];
 
 export type Education = EducationItem[];
+
+export interface SkillsPageProps {
+    skills: Skill[];
+    education: Education;
+    certs: Cert[];
+}
+
+export interface ProjectsPageProps {
+    data: Project[];
+    featuresList: string[];
+}

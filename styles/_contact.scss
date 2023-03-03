@@ -30,7 +30,8 @@
                 }
             }
         }
-        & .wrapper {
+        & .container {
+            // @include regular-link;
             display: flex;
             align-items: flex-start;
             flex-direction: column;
