@@ -36,6 +36,6 @@ export async function getStaticProps(context: any) {
     const id = context?.params.cat;
     //console.log(id);
     const data = allEvents.filter(ev => ev.city === id);
-    console.log(data);
+    // console.log(data);
     return { props: { data, pageName: id } };
 }

@@ -1269,20 +1269,41 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   }
 }
 
-.project-screen {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-}
-
 .single-project .top-section {
   position: relative;
   z-index: 1;
   min-height: 640px;
+}
+.single-project .top-section .project-container {
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4vw 0;
+}
+.single-project .top-section .project-container .header {
+  position: relative;
+  z-index: 1;
+  margin: 200px auto 600px;
+  text-align: center;
+  color: white;
+}
+@media (max-width: 767px) {
+  .single-project .top-section .project-container .header {
+    margin: 150px auto 250px;
+  }
+}
+.single-project .top-section .project-container .header__title {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.single-project .top-section .project-container .header__subtitle {
+  font-size: 3.5rem;
+  line-height: 1.285;
+  font-weight: 100;
 }
 .single-project .top-section--firebase {
   background-color: #2d8754;
@@ -1297,6 +1318,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--firebase .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--unsplash {
   background-color: #353434;
 }
@@ -1309,6 +1335,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   right: 0;
   height: 100%;
   background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--unsplash .project-screen {
+    background-size: contain !important;
+  }
 }
 .single-project .top-section--athletes {
   background-color: #1076ab;
@@ -1323,6 +1354,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--athletes .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--chat {
   background-color: #24332a;
 }
@@ -1336,8 +1372,13 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--chat .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--cryptocurrency-tracker {
-  background-color: #847cbd;
+  background-color: #fb6542;
 }
 .single-project .top-section--cryptocurrency-tracker .project-screen {
   position: absolute;
@@ -1349,8 +1390,13 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--cryptocurrency-tracker .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--minifigs {
-  background-color: #24332a;
+  background-color: #1f2136;
 }
 .single-project .top-section--minifigs .project-screen {
   position: absolute;
@@ -1362,8 +1408,13 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--minifigs .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--space-portfolio {
-  background-color: #52175a;
+  background-color: #063851;
 }
 .single-project .top-section--space-portfolio .project-screen {
   position: absolute;
@@ -1375,8 +1426,13 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--space-portfolio .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--floydian-portfolio {
-  background-color: #f7c23f;
+  background-color: #1d424b;
 }
 .single-project .top-section--floydian-portfolio .project-screen {
   position: absolute;
@@ -1387,6 +1443,29 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   right: 0;
   height: 100%;
   background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--floydian-portfolio .project-screen {
+    background-size: contain !important;
+  }
+}
+.single-project .top-section--dancer-portfolio {
+  background-color: #e86971;
+}
+.single-project .top-section--dancer-portfolio .project-screen {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--dancer-portfolio .project-screen {
+    background-size: contain !important;
+  }
 }
 .single-project .top-section--physioterapy {
   background-color: #02113c;
@@ -1401,6 +1480,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--physioterapy .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--weather-forecast {
   background-color: #61b8ff;
 }
@@ -1413,6 +1497,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   right: 0;
   height: 100%;
   background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--weather-forecast .project-screen {
+    background-size: contain !important;
+  }
 }
 .single-project .top-section--google-books-finder {
   background-color: #5bbeca;
@@ -1427,6 +1516,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--google-books-finder .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--decision-tree {
   background-color: #092204;
 }
@@ -1440,6 +1534,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   height: 100%;
   background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
 }
+@media (max-width: 767px) {
+  .single-project .top-section--decision-tree .project-screen {
+    background-size: contain !important;
+  }
+}
 .single-project .top-section--youtube-player {
   background-color: #092204;
 }
@@ -1452,4 +1551,9 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   right: 0;
   height: 100%;
   background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--youtube-player .project-screen {
+    background-size: contain !important;
+  }
 }

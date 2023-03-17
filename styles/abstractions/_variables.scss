@@ -17,14 +17,14 @@ $non-professional-color--transparent: $yellowgreen-color--transparent;
 $unsplash-background-color: #353434;
 $firebase-background-color: #2d8754;
 $athletes-background-color: #1076ab;
-$floydian-portfolio-background-color: #f7c23f;
-$space-portfolio-background-color: #52175a;
+$floydian-portfolio-background-color: #1d424b;
+$space-portfolio-background-color: #063851;
 $dancer-portfolio-background-color: #e86971;
-$cryptocurrency-tracker-background-color: #847cbd;
+$cryptocurrency-tracker-background-color: #fb6542;
 $weather-forecast-background-color: #61b8ff;
 $google-books-finder-background-color: #5bbeca;
 $decision-tree-background-color: #092204;
-$minifigs-background-color:$mobile-background-color;
+$minifigs-background-color: #1f2136;
 $chat-background-color: #24332a;
 $youtube-background-color: #313304;
 $physioterapy-background-color: #02113c;
@@ -32,7 +32,7 @@ $greyish-border: 1px solid $greyish-color;
 $reddish-border: 1px solid $red-color--subdued;
 $black-border: 1px solid black;
 
-$font-raleway: "Raleway", sans-serif; 
+$font-raleway: "Raleway", sans-serif;
 $font-open-sans: "Open Sans", sans-serif;
 $font-light: $font-raleway; //
 $font-bold: $font-raleway; //
@@ -53,17 +53,3 @@ $header-mobile-height: 300px;
 
 $mobile-padding: 12px;
 $page-container-mobile-width: 573px;
-
-
-
-
-
-
-
-
-
-
-// function ProjectPage (data: Project) {return( <SingleProjectPageContent data={data} />)};
-
-// ProjectPage.getLayout =function(page:JSX.Element){return(<ProjectLayout>{page}</ProjectLayout>)}
-// export default ProjectPage;

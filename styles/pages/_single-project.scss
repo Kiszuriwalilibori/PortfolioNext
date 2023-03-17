@@ -1,18 +1,37 @@
-.project-screen {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-}
-
 .single-project {
     & .top-section {
         position: relative;
         z-index: 1;
         min-height: 640px;
+        & .project-container {
+            box-sizing: content-box;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4vw 0;
+            & .header {
+                position: relative;
+                z-index: 1;
+                margin: 200px auto 600px;
+                text-align: center;
+                color: white;
+                @include mobile {
+                    margin: 150px auto 250px;
+                }
+                &__title {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }
+                &__subtitle {
+                    font-size: 3.5rem;
+                    line-height: 1.285;
+                    font-weight: 100;
+                }
+            }
+        }
         &--firebase {
             background-color: $firebase-background-color;
             & .project-screen {
@@ -69,6 +88,13 @@
                 background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
             }
         }
+        &--dancer-portfolio {
+            background-color: $dancer-portfolio-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
+            }
+        }
         &--physioterapy {
             background-color: $physioterapy-background-color;
             & .project-screen {
@@ -104,5 +130,7 @@
                 background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
             }
         }
+    }
+    & .bottom-section {
     }
 }

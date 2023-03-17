@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "Minifigs",
-            "description": "Free minifigs order page",
+            "description": "Get your own Harry Potter for free 😉",
             "longDescription": [
                 "The idea behind this task was to develop a page for requesting free bonus Harry Potter minifig from online store of https://rebrickable.com/. Why just Harry Potter? It remains secret of hiring company.",
                 " The challenging part was fetching data. Rebrickable just applied V2 version of their software and one could not get it with a single request. One has to fetch data pages one by one and extract HP related records. What's more, admin imposed restrictions in requests rate, what alltogether makes the app need 1 minute to get all data. Taking into accout the above as well as fact that every set contained also vital elements of its successor URL I decided to write custom thunk function based on Axios.",
@@ -30,7 +30,7 @@
         },
         {
             "title": "Unsplash",
-            "description": "Simplified Unsplash app on my own",
+            "description": "Browses and presents Unsplash resources",
             "longDescription": [
                 "The idea behind the app (recruitment task) was to develop app that to some extent imitates original Unsplash by appearance and functions.",
                 "Not all logics available in original is applied. Trending search terms are not clickable and hardcoded(yet)",
@@ -44,11 +44,11 @@
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
             "features": ["react", "redux", "unsplash", "redux-persist", "typescript", "react-hook-form"],
             "category": "A",
-            "slides": ["/images/project_images/unsplash.jpg"]
+            "slides": ["/images/project_images/unsplash4.jpg"]
         },
         {
             "title": "Cryptocurrency Tracker",
-            "description": "Simple Cryptocurrency tracker updating in 3 seconds intervals",
+            "description": "Cryptocurrency tracker which updates with programmed intervals",
             "longDescription": [
                 "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR",
                 "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a yeara.Changes are not only visible in the table, but also signaled by pop-up with adequate message",
@@ -78,7 +78,7 @@
         },
         {
             "title": "Chat",
-            "description": "Fake pseudo chat with fake persons",
+            "description": "Fake chat with fake persons",
             "longDescription": [
                 "The app is connected to random-user generating API with custom hook. Initially, it generates set of ten fake users. Then, customer can start 'chat' with chosen ones. As it is fake chat and not the real one, the only answer is 'You said...' and that answer is received with natural-like irregular delay.",
                 "The app also presents active interlocutor details.",
@@ -94,7 +94,7 @@
         },
         {
             "title": "Floydian Portfolio",
-            "description": "My old, unused and not maintained portfolio, may contain dead links",
+            "description": "Dark Side of the Moon or my very old portfolio (with some dead links)",
             "longDescription": [
                 "This is old portfolio of mine, developed before fell in love in React.",
                 "Pug permits reusing code and keep ot reasonably simple"
@@ -139,7 +139,7 @@
         },
         {
             "title": "Athletes",
-            "description": "Interesting facts about athletes hidden potential",
+            "description": "Surprising facts about hidden potential of few athletes ",
             "longDescription": [
                 "One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions",
                 "This is perhaps my first React app. A long time unattended and unmaintained",
@@ -157,7 +157,7 @@
         },
         {
             "title": "Weather Forecast",
-            "description": "Simple Weather App",
+            "description": "Just the tiny forecasting app with extra powers",
             "longDescription": [
                 "This app displays basic weather data in location identified by city name, geocoordinates or by actual client's device position",
                 "There is option of storing locations in local storage",
@@ -189,7 +189,7 @@
         },
         {
             "title": "Google Books Finder",
-            "description": "For finding books in Google Books resources",
+            "description": "Finds books in Google Books resources and performs multiple actions on results.",
             "longDescription": [
                 "The application for browsing resorces of Google Books. One can choose books by author, name, and label.",
                 "One can sort and filter results by author, language, title, subtitle, labels and year of issue",
@@ -211,15 +211,11 @@
                 "method-chaining"
             ],
             "category": "A",
-            "slides": [
-                "/images/project_images/gbfinder.jpg",
-                "/images/project_images/gbfinder2.jpg",
-                "/images/project_images/gbfinder3.jpg"
-            ]
+            "slides": ["/images/project_images/gbfinder2.jpg", "/images/project_images/gbfinder3.jpg"]
         },
         {
             "title": "Firebase",
-            "description": "Stores and retrives foo data in Firebase database system",
+            "description": "Stores and retrieves foo data in Firebase d-base instance",
             "longDescription": [
                 "My Firebase application, gathering simple data",
                 "It request authentication for adding records with Google account"
@@ -232,13 +228,27 @@
         },
         {
             "title": "Decision Tree",
-            "description": "Decision tree interface",
+            "description": "Decision tree application interface",
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
             "github": "https://github.com/Kiszuriwalilibori/tree",
             "features": ["react"],
             "category": "A",
             "slides": ["/images/project_images/tree.jpg"]
+        },
+        {
+            "title": "Dancer portfolio",
+            "description": "Cheerful portfolio, inspired lightly by Bollywood",
+            "longDescription": [
+                "One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions",
+                "This is perhaps my first React app. A long time unattended and unmaintained",
+                "It works, so you can watch the app, but better left the code unseen."
+            ],
+            "live": "https://kiszuriwalilibori-about-me.netlify.app",
+            "github": "https://github.com/Kiszuriwalilibori/portfolio",
+            "features": ["react", "react-bootstrap"],
+            "category": "C",
+            "slides": ["/images/project_images/dancer-portfolio.jpg", "/images/project_images/dancer-portfolio2.jpg"]
         }
     ]
 }

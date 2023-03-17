@@ -124,6 +124,9 @@
     left: 0;
     right: 0;
     height: 100%;
+    @include mobile {
+        background-size: contain !important;
+    }
 }
 
 // @mixin flex-centered {

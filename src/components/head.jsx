@@ -13,7 +13,7 @@ function MyHead() {
     const router = useRouter();
     const route = router.asPath.slice(1);
     const pageName = route ? route : "aboutme";
-
+    console.log("router from head", router);
     const title = `${capitalize(pageName)} - Piotr Maksymiuk - Front-End Developer - Portfolio`;
     return (
         <Head>
@@ -27,6 +27,7 @@ function MyHead() {
             <meta property="og:locale" content="en_US" />
             {pageName && <meta property="og:title" content={capitalize(pageName)} />}
             <link rel="icon" href="/portfolio.svg" />
+            {/* w powyższej linii jest miejsce na customowe ikony dla podstron */}
         </Head>
     );
 }

@@ -1,10 +1,10 @@
+import Head from "../head";
+
 export default function ProjectLayout({ children }) {
     return (
         <>
-            <header>Project Layout Test</header>
+        <Head />
             <main>{children}</main>
-            {/* <aside>Sidebar</aside>
-            <footer>&copy; Website</footer> */}
         </>
     );
 }
