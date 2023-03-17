@@ -6,17 +6,27 @@ import MainLayout from "../src/components/layout/main-layout";
 import { ViewportProvider } from "../contexts/ViewPortProvider";
 import { MenuVisibilityContextProvider } from "../contexts/MenuVisibilityProvider";
 import type { AppProps } from "next/app";
+import MyApp from './myapp';
+
+
+
+
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <ViewportProvider>
                 <MenuVisibilityContextProvider>
-                    <MainLayout>
+                    {MyApp({Component, pageProps})}
+                    {/* <MainLayout>
                         <Component {...pageProps} />
-                    </MainLayout>
+                    </MainLayout> */}
                 </MenuVisibilityContextProvider>
             </ViewportProvider>
         </>
     );
 }
+
+const AppType = typeof App;

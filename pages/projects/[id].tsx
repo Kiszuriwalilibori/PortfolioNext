@@ -1,8 +1,17 @@
 import SingleProjectPageContent from "../../src/components/projects/single-project";
 import { Project } from "../../types";
-const ProjectPage = (data: Project) => <SingleProjectPageContent data={data} />;
+import ProjectLayout from '../../src/components/project-layout';
 
+//function ProjectPage (data: Project) {return <SingleProjectPageContent data={data} />};
+function ProjectPage(data: Project) {
+    return <SingleProjectPageContent data={data} />;
+}
+
+ProjectPage.getLayout = function (page: JSX.Element) {
+    return <ProjectLayout>{page}</ProjectLayout>;
+};
 export default ProjectPage;
+
 
 export async function getStaticPaths() {
     const { projects } = await import("../../data/projects.json");
