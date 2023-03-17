@@ -25,6 +25,6 @@
         "src/components/skills",
         "src/components/header/index.js",
         "src/components/jobs/index.tsx"
-    ],
+, "pages/myapp.jsx"    ],
     "exclude": ["node_modules"]
 }
