@@ -1,0 +1,7 @@
+.aboutme {
+    @extend .section;
+    background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
+    &__content {
+        @extend .page__content, .page__content--aboutme;
+    }
+}

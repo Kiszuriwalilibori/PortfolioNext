@@ -12,7 +12,7 @@ const Icons: { [key: string]: any } = {
                 width={30}
                 height={15}
                 alt="pkt logo"
-                className="selfCentered"
+                className="self-centered"
             ></Image>
         );
     },
@@ -23,7 +23,7 @@ const Icons: { [key: string]: any } = {
                 width={25}
                 height={25}
                 alt="MoonHeads logo"
-                className="selfCentered"
+                className="self-centered"
             ></Image>
         );
     },
@@ -34,7 +34,7 @@ const Icons: { [key: string]: any } = {
                 width={25}
                 height={5}
                 alt="Th-ey logo"
-                className="selfCentered"
+                className="self-centered"
             ></Image>
         );
     },

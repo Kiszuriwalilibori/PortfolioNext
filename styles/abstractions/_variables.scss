@@ -1,0 +1,55 @@
+$text-color--dark: #001820;
+$text-color--light: #ffffff;
+$red-color--vivid: #d3101c;
+$red-color--subdued: rgba(145, 13, 13, 0.8);
+$red-color--lighter--subdued: rgba(145, 13, 13, 0.7);
+$red-color--xlight--subdued: rgba(145, 13, 13, 0.3);
+$mobile-background-color: #24332a;
+$dark-background-color: #303337;
+$whitish-color: rgba(255, 255, 255, 0.65);
+$olive-color--transparent: rgba(67, 84, 22, 0.4);
+$yellowgreen-color: rgb(149, 199, 48);
+$yellowgreen-color--transparent: rgba(149, 199, 48, 0.4);
+$greyish-color: #ddd;
+$non-professional-color: $yellowgreen-color;
+$non-professional-color--transparent: $yellowgreen-color--transparent;
+
+$unsplash-background-color: #353434;
+$firebase-background-color: #2d8754;
+$athletes-background-color: #1076ab;
+$floydian-portfolio-background-color: #f7c23f;
+$space-portfolio-background-color: #52175a;
+$dancer-portfolio-background-color: #e86971;
+$cryptocurrency-tracker-background-color: #847cbd;
+$weather-forecast-background-color: #61b8ff;
+$google-books-finder-background-color: #5bbeca;
+$decision-tree-background-color: #092204;
+$minifigs-background-color:$mobile-background-color;
+$chat-background-color: #24332a;
+$youtube-background-color: #313304;
+$physioterapy-background-color: #02113c;
+$greyish-border: 1px solid $greyish-color;
+$reddish-border: 1px solid $red-color--subdued;
+$black-border: 1px solid black;
+
+$font-raleway: "Raleway", sans-serif; 
+$font-open-sans: "Open Sans", sans-serif;
+$font-light: $font-raleway; //
+$font-bold: $font-raleway; //
+$font-regular: $font-open-sans; //
+
+$font-weight-x-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$grid: 30px !default;
+$mobile-top-distance: 24px;
+
+$author-image-mobile-size: 130px;
+$author-image-medium-size: 140px;
+$author-image-large-size: 150px;
+$header-mobile-height: 300px;
+
+$mobile-padding: 12px;
+$page-container-mobile-width: 573px;

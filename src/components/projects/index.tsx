@@ -1,41 +1,46 @@
 import isEmpty from "lodash/isEmpty";
 
-import { memo, useCallback, useId, useMemo, useState } from "react";
+import { memo, useId, useMemo } from "react";
 
 import SingleProject from "./project";
-import getVisibleProjects from "./getVisibleProjects";
+
 import Checkboxes from "./checkboxes";
+
+import useGetProjects from "../../hooks/useGetProjects";
 
 import { ProjectsPageProps } from "../../../types";
 
 const Projects = (props: ProjectsPageProps) => {
     const { data, featuresList } = props;
-    const [activeFeatures, setActiveFeatures] = useState(featuresList);
+    const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
 
-    const handleChange = useCallback(
-        (ary: string[]) => {
-            if (ary.length) {
-                setActiveFeatures(ary);
-            } else {
-                setActiveFeatures(featuresList);
-            }
-        },
-        [featuresList]
+    const projectsCategoryA = useMemo(() => visibleProjects.filter(item => item.category === "A").sort(function(a,b){return a.title.toLowerCase().localeCompare(b.title.toLowerCase())}), [visibleProjects]);
+    const projectsCategoryB = useMemo(
+        () =>
+            visibleProjects
+                .filter(item => item.category === "B")
+                .sort(function (a, b) {
+                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+                }),
+        [visibleProjects]
     );
-
-    const visibleProjects = getVisibleProjects(data, activeFeatures, featuresList);
-
-    const projectsCategoryA = useMemo(() => visibleProjects.filter(item => item.category === "A"), [visibleProjects]);
-    const projectsCategoryB = useMemo(() => visibleProjects.filter(item => item.category === "B"), [visibleProjects]);
-    const projectsCategoryC = useMemo(() => visibleProjects.filter(item => item.category === "C"), [visibleProjects]);
+    const projectsCategoryC = useMemo(
+        () =>
+            visibleProjects
+                .filter(item => item.category === "C")
+                .sort(function (a, b) {
+                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+                }),
+        [visibleProjects]
+    );
 
     const ID = useId();
     return (
         <section className="projects">
             <div className="projects__content">
                 <div className="container">
-                    <h2 className="page-header">Projects</h2>
-                    <Checkboxes values={featuresList} handleChange={handleChange} />
+                    <h2 className="page__title">Projects</h2>
+                    <Checkboxes values={featuresList} handleChange={changeHandler} />
                     {!isEmpty(projectsCategoryA) && (
                         <article className="category-container">
                             <h4>Primary, refined works with long commit history and usually lot of features</h4>

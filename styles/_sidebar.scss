@@ -16,12 +16,12 @@
     font-size: 14px;
     color: #fff;
     text-align: left;
-    background-color: $subdued-red-color;
+    background-color: $red-color--subdued;
 
     & .author {
         display: block;
         text-align: center;
-        color: white;
+        color: $text-color--light;
         padding: calc($grid * 2 / 3);
         padding-top: $grid;
     }
@@ -38,5 +38,13 @@
     & .image {
         @extend .author-base-image;
         margin-bottom: 0.5 * $grid;
+    }
+    &__contacts {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        & svg {
+            @extend .fa-icon, .fa-icon--large, .fa-icon--light, .fa-icon--loose-group;
+        }
     }
 }

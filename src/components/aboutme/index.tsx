@@ -1,36 +1,31 @@
 import { memo } from "react";
 
-const AboutmePageContent = () => {
+function AboutmePageContent() {
     return (
-        <div className="wrapper">
-            <p>Jestem web developerem z zamiłowania, acz nie z wykształcenia.</p>
-            <p>
-                Front-endu uczę się we własnym zakresie, z materiałów dostępnych w sieci, acz całkiem niedawno zdobyłem
-                tytuł Technika Informatyka i ukończyłem kurs CISCO.
-            </p>
-            <p>
-                Fascynacja programowaniem narodziła się z czystej ciekawości otaczającego nas internetowego świata oraz
-                chęci zdobycia choćby cząstki wiedzy na temat jego funkcjonowania.Chciałem też coś zmienić w życiu, a
-                zawsze byłem dobry z przedmiotów ścisłych.
-            </p>
+        <section className="aboutme">
+            <article className="aboutme__content">
+                <div className="wrapper">
+                    <p> I am web developer by passion and not by education.</p>
+                    <p>
+                        I learn front-end on my own from web resources, however quite recently got a degree of IT
+                        Technician and completed one of CISCO courses.
+                    </p>
+                    <p>
+                        Currently make my living by carrying out small orders.I am available for hire and open to any
+                        ideas of cooperation.
+                    </p>
 
-            <p>
-                Aktualnie utrzymuję się z zakładania blogów i dorywczych zleceń różnego rodzaju. Interesują mnie raczej
-                mechanizmy działania stron niż ich wygląd.
-            </p>
-            <p>
-                Wolę ciemne i nasycone kolory (biorę na klatę oskarżenia o jarmarczność) niż klasyczny biurowy layout,
-                ale nie mam problemu z dostosowaniem się do wymagań zleceniodawcy.
-            </p>
-            <hr className="aboutmeBreak"></hr>
-            <p>
-                W wolnych chwilach, jeśli pogoda dopisuje jeżdżę na rowerze po okolicznych lasach. Kiedy mam więcej
-                czasu, po Puszczy Białowieskiej. Kiedy indziej słucham muzyki na kolumnach, które sam zbudowałem
-                (przetworniki Usher). Robię całkiem dobre nalewki, którymi delektuję się wraz z rodziną i przyjaciółmi.
-                Nieźle gotuję. Mam pojęcie o historii.
-            </p>
-        </div>
+                    <hr className="aboutmeBreak"></hr>
+                    <p>
+                        In my spare time,if the weather is OK I take my bike and and ride in the surrounding woods.
+                        Having more time visit Białowieża Forest. Cooling off at home usually listen to the music with
+                        loudspeakers I have constructed by myself. Besides, I often make quite palatable home liquors
+                        and enjoy them later with family or friends.
+                    </p>
+                </div>
+            </article>
+        </section>
     );
-};
+}
 
 export default memo(AboutmePageContent);

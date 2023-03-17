@@ -1,5 +1,4 @@
 import PageContent from "../src/components/jobs";
-
 import { Jobs } from "../types";
 interface Props {
     data: Jobs;

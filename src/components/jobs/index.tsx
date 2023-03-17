@@ -16,7 +16,8 @@ const Content = (props: Props) => {
     return (
         <section className="jobs">
             <article className="jobs__content">
-                <div className="wrapper">
+                <div className="container">
+                    <h2 className="page__title page__title--white">Jobs</h2>
                     <VerticalTimeline layout={"1-column-left"}>
                         {jobs.map((job: Job) => {
                             return (
@@ -29,7 +30,7 @@ const Content = (props: Props) => {
                                     iconStyle={job.contentStyle}
                                     icon={job.name && Icons[job.name] ? Icons[job.name]() : undefined}
                                 >
-                                    <h2>{job.name}</h2>
+                                    <h2 className="page__title page__title--narrow">{job.name}</h2>
                                     <h3 className="vertical-timeline-element-title">{job.position}</h3>
                                     {job.subtitle && (
                                         <h4 className="vertical-timeline-element-subtitle">{job.subtitle}</h4>

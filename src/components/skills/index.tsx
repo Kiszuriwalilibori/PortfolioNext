@@ -25,8 +25,8 @@ function Skills(props: SkillsPageProps) {
     return (
         <section className="skills">
             <div className="skills__content">
-                <div className="wrapper">
-                    <h2 className="page-header">{"Skills & education"}</h2>
+                <div className="container">
+                    <h2 className="page__title">{"Skills & education"}</h2>
                     <h3>Skills:</h3>
                     {good && <SkillsGroup items={good} headline={headlines.good} />}
                     {fair && <SkillsGroup items={fair} headline={headlines.fair} />}

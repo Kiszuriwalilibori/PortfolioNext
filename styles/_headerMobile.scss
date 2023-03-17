@@ -1,8 +1,16 @@
 .header-mobile {
     display: block;
-    @include block-top-fixed;
+    @include block-fixed(top, left);
     @include size(100vw, $header-mobile-height);
-    color: white;
+    color: $text-color--light;
+    &__contacts {
+        @include center(horizontal);
+        display: flex;
+        bottom: 10px;
+        & svg {
+            @extend .fa-icon, .fa-icon--red, .fa-icon--big, .fa-icon--loose-group;
+        }
+    }
 
     &--contact {
         background: url(../public/mobile-backgrounds/contact.jpg) top right no-repeat;
@@ -30,7 +38,7 @@
         top: $mobile-top-distance;
         padding-left: $mobile-padding;
         font-size: 22px;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         text-transform: uppercase;
 
         @include media-xsm {
@@ -47,7 +55,7 @@
         top: $mobile-top-distance + 16px;
         padding-left: calc($mobile-top-distance / 2);
         font-size: 12px;
-        font-weight: 100;
+        font-weight: $font-weight-x-light;
         text-transform: uppercase;
         @include media-xsm {
             padding-left: unset;

@@ -14,7 +14,7 @@
         right: 0px;
         @include size(140px, 40px);
         padding: 5px;
-        background: none repeat scroll 0% 0% $vivid-red-color;
+        background: none repeat scroll 0% 0% $red-color--vivid;
         border-radius: 5px;
 
         & span {
@@ -23,7 +23,7 @@
             font-size: 16px;
             color: #fff;
             font-family: sans-serif;
-            font-weight: 700;
+            font-weight: $font-weight-bold;
             text-transform: capitalize;
             padding-left: 15px;
             text-decoration: none;

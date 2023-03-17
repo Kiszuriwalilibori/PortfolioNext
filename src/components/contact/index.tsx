@@ -15,7 +15,7 @@ const ContactPageContent = (props: Props) => {
         <section className="contact">
             <div className="contact__content">
                 <div className="container">
-                    <h2>Contact me</h2>
+                    <h2 className="page__title">Contact me</h2>
                     <p>
                         <i>I am available for hire and open to any ideas of cooperation</i>
                     </p>

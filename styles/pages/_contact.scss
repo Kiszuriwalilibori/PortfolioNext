@@ -1,0 +1,40 @@
+.contact {
+    @extend .section;
+    @include with-bckgrnd-image("../public/backgrounds/contact.jpg");
+
+    &__content {
+        @extend .page__content, .page__content--contact;
+
+        & .container {
+            @extend .page__container;
+
+            & dl {
+                line-height: 1.8;
+                padding-top: 20px;
+                & dt {
+                    display: block;
+                    clear: both;
+                    width: 150px;
+                    float: left;
+                }
+                & dd {
+                    display: block;
+                    margin: 0;
+                    float: left;
+                    & svg {
+                        @extend .fa-icon, .fa-icon--red;
+                    }
+                    & a span {
+                        padding-left: 6px;
+                        &:hover {
+                            text-decoration: underline;
+                            @include above-mobile {
+                                color: $red-color--subdued;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
