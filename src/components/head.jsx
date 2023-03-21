@@ -13,7 +13,6 @@ function MyHead() {
     const router = useRouter();
     const route = router.asPath.slice(1);
     const pageName = route ? route : "aboutme";
-    console.log("router from head", router);
     const title = `${capitalize(pageName)} - Piotr Maksymiuk - Front-End Developer - Portfolio`;
     return (
         <Head>
