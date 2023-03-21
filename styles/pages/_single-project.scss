@@ -15,6 +15,7 @@
                 margin: 200px auto 600px;
                 text-align: center;
                 color: white;
+                padding: 0 10px;
                 @include mobile {
                     margin: 150px auto 250px;
                 }
@@ -29,6 +30,9 @@
                     font-size: 3.5rem;
                     line-height: 1.285;
                     font-weight: 100;
+                    @include mobile {
+                        font-size: 2.5rem;
+                    }
                 }
             }
         }
@@ -124,7 +128,7 @@
             }
         }
         &--youtube-player {
-            background-color: $decision-tree-background-color;
+            background-color: $youtube-background-color;
             & .project-screen {
                 @include project-screen;
                 background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
@@ -132,5 +136,51 @@
         }
     }
     & .bottom-section {
+        display: flex;
+        flex-direction: row;
+        margin: 30px 0;
+        @include mobile {
+            flex-direction: column;
+        }
+        & h2 {
+            padding-bottom: 10px;
+        }
+
+        &__column {
+            flex-grow: 1;
+            flex-basis: 0;
+            padding: 10px;
+            &.story {
+                border-left: 1px solid $red-color--xlight--subdued;
+                border-right: 1px solid $red-color--xlight--subdued;
+                @include mobile {
+                    border-top: 1px solid $red-color--xlight--subdued;
+                    border-bottom: 1px solid $red-color--xlight--subdued;
+                    border-left: unset;
+                    border-right: unset;
+                }
+            }
+            &.links {
+                & .link {
+                    display: block;
+                    &:hover {
+                        text-decoration: underline;
+                        color: $red-color--vivid;
+                    }
+                }
+                & svg {
+                    display: inline-block;
+                    height: 1em;
+                    overflow: visible;
+                    vertical-align: -0.125em;
+                    color: $red-color--vivid;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        @include mobile {
+            // align-items:center;
+        }
     }
 }

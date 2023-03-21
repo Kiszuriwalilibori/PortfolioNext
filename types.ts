@@ -41,6 +41,7 @@ export interface Project {
     longDescription: string;
     live: string;
     github: string;
+    story?: string;
 }
 
 export type Contacts = Contact[];

@@ -1287,6 +1287,7 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   margin: 200px auto 600px;
   text-align: center;
   color: white;
+  padding: 0 10px;
 }
 @media (max-width: 767px) {
   .single-project .top-section .project-container .header {
@@ -1304,6 +1305,11 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   font-size: 3.5rem;
   line-height: 1.285;
   font-weight: 100;
+}
+@media (max-width: 767px) {
+  .single-project .top-section .project-container .header__subtitle {
+    font-size: 2.5rem;
+  }
 }
 .single-project .top-section--firebase {
   background-color: #2d8754;
@@ -1540,7 +1546,7 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   }
 }
 .single-project .top-section--youtube-player {
-  background-color: #092204;
+  background-color: #3cc8be;
 }
 .single-project .top-section--youtube-player .project-screen {
   position: absolute;
@@ -1556,4 +1562,49 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   .single-project .top-section--youtube-player .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .bottom-section {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+}
+@media (max-width: 767px) {
+  .single-project .bottom-section {
+    flex-direction: column;
+  }
+}
+.single-project .bottom-section h2 {
+  padding-bottom: 10px;
+}
+.single-project .bottom-section__column {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+}
+.single-project .bottom-section__column.story {
+  border-left: 1px solid rgba(145, 13, 13, 0.3);
+  border-right: 1px solid rgba(145, 13, 13, 0.3);
+}
+@media (max-width: 767px) {
+  .single-project .bottom-section__column.story {
+    border-top: 1px solid rgba(145, 13, 13, 0.3);
+    border-bottom: 1px solid rgba(145, 13, 13, 0.3);
+    border-left: unset;
+    border-right: unset;
+  }
+}
+.single-project .bottom-section__column.links .link {
+  display: block;
+}
+.single-project .bottom-section__column.links .link:hover {
+  text-decoration: underline;
+  color: #d3101c;
+}
+.single-project .bottom-section__column.links svg {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  color: #d3101c;
+  margin-right: 10px;
 }

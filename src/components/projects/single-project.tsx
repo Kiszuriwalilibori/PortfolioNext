@@ -1,12 +1,14 @@
 import React from "react";
 import { Project } from "../../../types";
+import Contact from "../contact";
+import Icons from "../contact/icons";
 
 // interface Props {
 //     data: Project;
 // }
 
 const SingleProjectPage = (props: any) => {
-    const { title, description } = props.data.data;
+    const { title, description, story, live, github } = props.data.data;
 
     return (
         <div className="single-project">
@@ -20,7 +22,26 @@ const SingleProjectPage = (props: any) => {
                 </div>
             </section>
             <section className="bottom-section">
-                <div>Test</div>
+                <div className="bottom-section__column links">
+                    <h2>Links</h2>
+                    <a href={live} className="link" rel="noopener">
+                        {Icons.live}
+                        <span>See project live</span>
+                    </a>
+
+                    <a href={github} className="link" rel="noopener">
+                        {Icons.github}
+                        <span>Go to GitHub repository</span>
+                    </a>
+                </div>
+                <div className="bottom-section__column story">
+                    <h2>Story</h2>
+                    {story}
+                </div>
+                <div className="bottom-section__column tech">
+                    {" "}
+                    <h2>Tech</h2>
+                </div>
             </section>
         </div>
     );
