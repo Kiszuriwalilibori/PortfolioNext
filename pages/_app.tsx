@@ -1,5 +1,3 @@
-import "../styles/globals.css";
-// import "../styles/general.sass";
 import "../styles/style.css";
 
 import { ViewportProvider } from "../contexts/ViewPortProvider";
