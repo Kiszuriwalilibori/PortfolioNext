@@ -9,7 +9,7 @@ interface Props {
     };
 }
 
-function SingleProjectPage(props: Props) {
+function SingleProjectPage(props: any) {
     const { title, description, story, live, github } = props.data.data;
 
     return (
