@@ -20,8 +20,9 @@ const Project = (props: Props) => {
 
     return (
         <article className="project">
-            {/* <div className="project__more">Details</div> */}
-            <Link href={`/projects/${title}`} className="project__more" >Details</Link>
+            <Link href={`/projects/${title}`} className="project__more">
+                Details
+            </Link>
             <div>
                 <h5 className="project__title">{title}</h5>
                 <h6 className="project__subtitle">{description}</h6>

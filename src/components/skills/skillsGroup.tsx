@@ -6,7 +6,7 @@ interface Props {
     headline: string;
 }
 
-const SkillsGroup = (props: Props) => {
+function SkillsGroup(props: Props) {
     const { items, headline } = props;
     const ID = useId();
     return (
@@ -19,6 +19,6 @@ const SkillsGroup = (props: Props) => {
             </ul>
         </div>
     );
-};
+}
 
 export default SkillsGroup;

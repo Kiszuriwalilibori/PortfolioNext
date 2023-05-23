@@ -4,7 +4,7 @@ export const Mobica = () => {
     return <div></div>;
 };
 
-const Icons: { [key: string]: any } = {
+const Icons: { [key: string]: () => JSX.Element } = {
     PKT: () => {
         return (
             <Image

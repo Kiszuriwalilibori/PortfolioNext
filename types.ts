@@ -38,10 +38,11 @@ export interface Project {
     description: string;
     category: string;
     features: string[];
-    longDescription: string;
+    longDescription: string[];
     live: string;
     github: string;
     story?: string;
+    slides?: string[];
 }
 
 export type Contacts = Contact[];
@@ -60,3 +61,5 @@ export interface ProjectsPageProps {
     data: Project[];
     featuresList: string[];
 }
+
+export type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";

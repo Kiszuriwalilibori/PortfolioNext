@@ -10,7 +10,12 @@ const roboto = Roboto({
     subsets: ["latin"],
 });
 
-const MainLayout = ({ children }) => {
+//TODO obaczaić o co chodzi z tym domyslnym fontem, bo wygląda jakby nie działało
+type Props = {
+    children?: React.ReactNode;
+};
+
+const MainLayout = ({ children }: Props) => {
     return (
         <>
             <style jsx global>{`

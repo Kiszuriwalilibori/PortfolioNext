@@ -4,7 +4,7 @@ interface Props {
     cert: Cert;
 }
 
-const CertItem = (props: Props) => {
+function CertItem(props: Props) {
     const {
         cert: { link, operator, name, professional },
     } = props;
@@ -14,6 +14,6 @@ const CertItem = (props: Props) => {
             <a href={link}>{operator}</a>
         </li>
     );
-};
+}
 
 export default CertItem;

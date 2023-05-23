@@ -8,7 +8,7 @@ interface Props {
     data: Contact;
 }
 
-const Contact = (props: Props) => {
+function Contact(props: Props) {
     const {
         data: { text, link, ID, alias },
     } = props;
@@ -24,6 +24,6 @@ const Contact = (props: Props) => {
             </dd>
         </React.Fragment>
     );
-};
+}
 
 export default Contact;

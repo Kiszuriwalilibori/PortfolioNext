@@ -8,12 +8,12 @@ interface Props {
     data: Contact;
 }
 
-const Contact = (props: Props) => {
+function Contact(props: Props) {
     const {
-        data: { text, link, ID, alias },
+        data: { link, ID },
     } = props;
 
     return <a href={link}>{Icons[ID]}</a>;
-};
+}
 
 export default Contact;

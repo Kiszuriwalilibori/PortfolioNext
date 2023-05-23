@@ -4,7 +4,7 @@ interface Props {
     item: EducationItem;
 }
 
-const EducationItem = (props: Props) => {
+function EducationItem(props: Props) {
     const { item } = props;
     return (
         <li className="educationItem">
@@ -16,6 +16,6 @@ const EducationItem = (props: Props) => {
             <p>{item.subject}</p>
         </li>
     );
-};
+}
 
 export default EducationItem;

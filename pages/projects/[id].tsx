@@ -1,8 +1,9 @@
 import SingleProjectPageContent from "../../src/components/projects/single-project";
 import { Project } from "../../types";
-import ProjectLayout from '../../src/components/project-layout';
+import ProjectLayout from "../../src/components/project-layout";
 
-//function ProjectPage (data: Project) {return <SingleProjectPageContent data={data} />};
+// TODO nie wiem czemu te przepisanie służy
+
 function ProjectPage(data: Project) {
     return <SingleProjectPageContent data={data} />;
 }
@@ -11,7 +12,6 @@ ProjectPage.getLayout = function (page: JSX.Element) {
     return <ProjectLayout>{page}</ProjectLayout>;
 };
 export default ProjectPage;
-
 
 export async function getStaticPaths() {
     const { projects } = await import("../../data/projects.json");

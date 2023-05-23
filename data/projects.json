@@ -3,8 +3,8 @@
         {
             "title": "Minifigs",
             "description": "Get your own Harry Potter for free 😉",
+            "story": "Have you ever dreamt that with just few clicks you will become happy owner of Harry Potter figurine? Sure you have not. And now I made it happened. Of course not me alone, the site owners have biggest and primary contribution, there is no doubt about it. My role was to deliver a page for requesting free bonus Harry Potter minifig from online store of https://rebrickable.com/.  Why just Harry Potter? It remains sweet secret of the hiring company. Currently, the app follows strictly task requirement of choosing HP, in coming weeks I would like to add the selection feature for those who do not like Young Wizard from Hogwarts.",
             "longDescription": [
-                "The idea behind this task was to develop a page for requesting free bonus Harry Potter minifig from online store of https://rebrickable.com/. Why just Harry Potter? It remains secret of hiring company.",
                 " The challenging part was fetching data. Rebrickable just applied V2 version of their software and one could not get it with a single request. One has to fetch data pages one by one and extract HP related records. What's more, admin imposed restrictions in requests rate, what alltogether makes the app need 1 minute to get all data. Taking into accout the above as well as fact that every set contained also vital elements of its successor URL I decided to write custom thunk function based on Axios.",
                 " To keep the client waiting that long I have decided to add the functionality of showing both set number and latest figurine.",
                 " Initially, three figurines are drawn from fetched set, and it's customer task to choose one. Doing that he is transferred to third page with detailed description of figurine's parts and requested to enter dispatch data. The entered data is subject to strict validation with react-hook-form. After auspicious validation, the request with both customer and figurines packed with FormData is send to fake API, if proccessed OK adequate mesage is made visible.",
@@ -31,14 +31,13 @@
         {
             "title": "Unsplash",
             "description": "Browses and presents Unsplash resources",
+            "story": "I believed that one Unsplash site is enough, but apparently some guys do not share my view and requested prepare new thought similar version before consider joining their honorable company. So, I had no way out. Some logics is disregarded (contacted Unsplash staff in order to understand business logics behind some features, but answered me kindly to mind my own business). So you got imitation and not a copy. For example, trending search terms are hardcoded and not dynamically generated in any sense. The background image is just an random nature image",
             "longDescription": [
                 "The idea behind the app (recruitment task) was to develop app that to some extent imitates original Unsplash by appearance and functions.",
-                "Not all logics available in original is applied. Trending search terms are not clickable and hardcoded(yet)",
-                "The background image is just an unsplash random nature image",
                 "The first page form has also slightly different logic then original, but the way it woks has been requested by hiring company.",
                 "On the page with search results the content is paginated. There is cursor position sensor that checks if there is still avialbel content and -if so - fetches that, otherwise informs that all data is collected. First set of images waits for all of them to be loaded before display to avoid blinking, the other sets are lazy loaded",
                 "Clicking the image initiates the modal with enlarged picture and more detailed data.",
-                " The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment."
+                "The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment."
             ],
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
@@ -49,6 +48,7 @@
         {
             "title": "Cryptocurrency Tracker",
             "description": "Cryptocurrency tracker which updates with programmed intervals",
+            "story": "",
             "longDescription": [
                 "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR",
                 "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a yeara.Changes are not only visible in the table, but also signaled by pop-up with adequate message",
@@ -143,9 +143,9 @@
         },
         {
             "title": "Athletes",
-            "description": "Surprising facts about hidden potential of few athletes ",
+            "description": "Surprising facts about hidden potential of few athletes",
+            "story": "Whether you are an athlete or not, I guess you heard a lot about sport stars. One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions.",
             "longDescription": [
-                "One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions",
                 "This is perhaps my first React app. A long time unattended and unmaintained",
                 "It works, so you can watch the app, but better left the code unseen."
             ],
@@ -162,6 +162,7 @@
         {
             "title": "Weather Forecast",
             "description": "Just the tiny forecasting app loaded with extra powers",
+            "story": "If you travel a lot, that app is just for you. One can see not only weather in any point on Earth (identified by city name or geocoordinates) but also compare it with weather in his current or whatever location in order for example - to pack up appropriate clothes. One can also have handy storage with data of important locations",
             "longDescription": [
                 "This app displays basic weather data in location identified by city name, geocoordinates or by actual client's device position",
                 "There is option of storing locations in local storage",
@@ -193,6 +194,7 @@
         },
         {
             "title": "Google Books Finder",
+            "story": "One day, in the middle of doing one of the online Java Scripts courses, I have decided to follow the recommendation of the author and develop something that will fetch anything from any public API. You see, these were very first days of my IT career and the task appeared to me bot challenging and not overengineered. I have revised list of open API's and decided to start from Google Books API. That is how one of my most fascinating adventures begun. The app was really small and simple initially to be quite complicated finally, I have tested a lot of programming techniques there, and that is why it is not as coherent as many of my later works. New features has been appearing one after another. Finally, there you have app that finds books as per given criteria, filters the results, sorts them, removes book from view as well as results, creates a local temporary storage,and much more. So - if you like books, have a fun ;) ",
             "description": "Finds books in Google Books resources and performs multiple actions on results.",
             "longDescription": [
                 "The application for browsing resorces of Google Books. One can choose books by author, name, and label.",
@@ -219,7 +221,7 @@
         },
         {
             "title": "Firebase",
-            "story": "Some apps are doing great jobs, some satisfy somebody's needs, some support company, industry,country, etc. Not this one. That is pure training of Firebase. See, I am Front-end developer, but think that at least some knowledge of back-end might be useful. So I have developed firebase-connected app that sores data of foo users, and if you have Google accound, you can log in and add new ones. Simple operations (like sorting) are also enabled. The number of stored users is restricted, however.",
+            "story": "Some apps are doing great jobs, some satisfy somebody's needs,  some are proof of somebody's vanity, some support company, industry,country, etc. Not this one. That is a pure training or playground of Firebase. See, I am Front-end developer, but think that at least some knowledge of back-end might be useful. So I have developed firebase-connected app that sores data of foo users, and if you have Google accound, you can log in and add new ones. Simple operations (like sorting) are also enabled. The number of stored users is restricted, however.",
             "description": "Stores and retrieves foo data in Firebase d-base instance",
             "longDescription": [
                 "My Firebase application, gathering simple data",

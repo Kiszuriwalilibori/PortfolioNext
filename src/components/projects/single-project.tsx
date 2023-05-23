@@ -3,11 +3,13 @@ import { Project } from "../../../types";
 import Contact from "../contact";
 import Icons from "../contact/icons";
 
-// interface Props {
-//     data: Project;
-// }
+interface Props {
+    data: {
+        data: Project;
+    };
+}
 
-const SingleProjectPage = (props: any) => {
+function SingleProjectPage(props: Props) {
     const { title, description, story, live, github } = props.data.data;
 
     return (
@@ -45,6 +47,6 @@ const SingleProjectPage = (props: any) => {
             </section>
         </div>
     );
-};
+}
 
 export default SingleProjectPage;

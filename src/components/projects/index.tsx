@@ -10,11 +10,19 @@ import useGetProjects from "../../hooks/useGetProjects";
 
 import { ProjectsPageProps } from "../../../types";
 
-const Projects = (props: ProjectsPageProps) => {
+function Projects(props: ProjectsPageProps) {
     const { data, featuresList } = props;
     const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
 
-    const projectsCategoryA = useMemo(() => visibleProjects.filter(item => item.category === "A").sort(function(a,b){return a.title.toLowerCase().localeCompare(b.title.toLowerCase())}), [visibleProjects]);
+    const projectsCategoryA = useMemo(
+        () =>
+            visibleProjects
+                .filter(item => item.category === "A")
+                .sort(function (a, b) {
+                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+                }),
+        [visibleProjects]
+    );
     const projectsCategoryB = useMemo(
         () =>
             visibleProjects
@@ -71,6 +79,6 @@ const Projects = (props: ProjectsPageProps) => {
             </div>
         </section>
     );
-};
+}
 
 export default memo(Projects);

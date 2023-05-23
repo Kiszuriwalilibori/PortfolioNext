@@ -9,7 +9,7 @@ import { Job, Jobs } from "../../../types";
 interface Props {
     jobs: Jobs;
 }
-const Content = (props: Props) => {
+function Content(props: Props) {
     const { jobs } = props;
     const ID = useId();
 
@@ -46,6 +46,6 @@ const Content = (props: Props) => {
             </article>
         </section>
     );
-};
+}
 
 export default memo(Content);

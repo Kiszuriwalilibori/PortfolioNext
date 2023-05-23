@@ -7,7 +7,7 @@ import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvid
 interface Props {
     item: string;
 }
-const MyLink = (props: Props) => {
+function MyLink(props: Props) {
     const { item } = props;
     const { toggleMenuVisibility } = useMenuVisibilityContext();
     const link = item === "aboutme" ? "/" : `/${item}`;
@@ -21,6 +21,6 @@ const MyLink = (props: Props) => {
             </Link>
         </li>
     );
-};
+}
 
 export default MyLink;

@@ -1,7 +1,9 @@
 import { useState, useEffect, createContext, useContext, FC, ReactNode } from "react";
 import throttle from "lodash/throttle";
+import { DesktopSizes } from "../types";
 
-type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";
+// TODO proawdopodobnie do usunięcia
+// type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";
 
 interface viewportContextInterface {
     desktopSize?: DesktopSizes;

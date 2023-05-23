@@ -8,7 +8,6 @@ import { DesktopSizes } from "../../../types";
 
 import { useBreakpoints } from "../../../contexts/ViewPortProvider";
 
-//const small = new Set()<string>["mobile", "phablet"];
 const small = new Set(["mobile", "phablet"]);
 
 export const Header = () => {

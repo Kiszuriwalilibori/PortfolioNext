@@ -3,3 +3,4 @@ export const Footer = () => {
 };
 
 export default Footer;
+//TODO add any content here

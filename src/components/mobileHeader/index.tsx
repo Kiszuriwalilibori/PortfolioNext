@@ -8,7 +8,7 @@ interface Props {
     route: string;
 }
 
-const HeaderMobile = (props: Props) => {
+function HeaderMobile(props: Props) {
     const { route } = props;
     const postfix = route ? route : "aboutme";
     const className = `header-mobile header-mobile--${postfix}`;
@@ -25,6 +25,6 @@ const HeaderMobile = (props: Props) => {
             </ul>
         </article>
     );
-};
+}
 
 export default memo(HeaderMobile);

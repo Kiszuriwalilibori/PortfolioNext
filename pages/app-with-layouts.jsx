@@ -1,6 +1,8 @@
+import { AppProps } from "next/app";
+
 import MainLayout from "../src/components/layout/main-layout";
 
-function AppWithLayouts ({ Component, pageProps }) {
+function AppWithLayouts({ Component, pageProps }) {
     const renderWithLayout =
         Component.getLayout ||
         function (page) {
@@ -9,4 +11,3 @@ function AppWithLayouts ({ Component, pageProps }) {
     return renderWithLayout(<Component {...pageProps} />);
 }
 export default AppWithLayouts;
-
