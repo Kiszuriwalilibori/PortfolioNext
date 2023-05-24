@@ -12,7 +12,7 @@ interface Props {
 
 function SingleProjectPage(props: any) {
     const { title, description, story, live, github, longDescription, features } = props.data.data;
-    console.log(props.data.data.features);
+
     const ID = useId();
     return (
         <div className="single-project">
