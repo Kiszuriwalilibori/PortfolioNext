@@ -6,15 +6,7 @@ export const Mobica = () => {
 
 const Icons: { [key: string]: () => JSX.Element } = {
     PKT: () => {
-        return (
-            <Image
-                src="/../public/images/pkt.png"
-                width={30}
-                height={15}
-                alt="pkt logo"
-                className="self-centered"
-            ></Image>
-        );
+        return <Image src="/images/pkt.png" width={30} height={15} alt="pkt logo" className="self-centered"></Image>;
     },
     Moonheads: () => {
         return (
@@ -28,15 +20,7 @@ const Icons: { [key: string]: () => JSX.Element } = {
         );
     },
     They: () => {
-        return (
-            <Image
-                src="/../public/images/they.png"
-                width={25}
-                height={5}
-                alt="Th-ey logo"
-                className="self-centered"
-            ></Image>
-        );
+        return <Image src="/images/they.png" width={25} height={5} alt="Th-ey logo" className="self-centered"></Image>;
     },
     Mobica: () => {
         return (
