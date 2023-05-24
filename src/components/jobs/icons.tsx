@@ -19,7 +19,7 @@ const Icons: { [key: string]: () => JSX.Element } = {
     Moonheads: () => {
         return (
             <Image
-                src="/../public/images/moonheads.png"
+                src="/images/moonheads.png"
                 width={25}
                 height={25}
                 alt="MoonHeads logo"
