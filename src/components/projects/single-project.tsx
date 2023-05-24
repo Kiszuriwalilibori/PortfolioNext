@@ -2,6 +2,7 @@ import React from "react";
 import { Project } from "../../../types";
 import Contact from "../contact";
 import Icons from "../contact/icons";
+import { useId } from "react";
 
 interface Props {
     data: {
@@ -10,8 +11,9 @@ interface Props {
 }
 
 function SingleProjectPage(props: any) {
-    const { title, description, story, live, github } = props.data.data;
-
+    const { title, description, story, live, github, longDescription, features } = props.data.data;
+    console.log(props.data.data.features);
+    const ID = useId();
     return (
         <div className="single-project">
             <section className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}>
@@ -41,8 +43,16 @@ function SingleProjectPage(props: any) {
                     {story}
                 </div>
                 <div className="bottom-section__column tech">
-                    {" "}
                     <h2>Tech</h2>
+                    {longDescription &&
+                        longDescription.map((item: string) => {
+                            return <p key={`${ID}-${item}`}>{item}</p>;
+                        })}
+                    <h2>Features</h2>
+                    {features &&
+                        features.map((item: string) => {
+                            return <span className="project-feature" key={`${ID}-${item}`}>{`${item}  `}</span>;
+                        })}
                 </div>
             </section>
         </div>

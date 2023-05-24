@@ -2,7 +2,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import capitalize from "lodash/capitalize";
 
-const descriptions = {
+const descriptions: {
+    [key: string]: string;
+} = {
     aboutme: "Basic informations about Piotr Maksymiuk",
     skills: "Acquired skills, gained certificates, graduated schools, completed trainings and other educational events",
     career: "The history of employment",

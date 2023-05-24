@@ -52,7 +52,7 @@
                     padding-bottom: 90px;
                 }
                 &__more {
-                    background-color: $red-color--vivid;
+                    background-color: $red-color--subdued;
                     width: 120px;
                     height: 60px;
                     position: absolute;
@@ -63,6 +63,10 @@
                     align-items: center;
                     justify-content: center;
                     color: $text-color--light;
+                    transition: background-color 0.3s;
+                    &:hover {
+                        background-color: $red-color--vivid;
+                    }
                 }
                 &__slides {
                     display: flex;
@@ -130,4 +134,14 @@
             }
         }
     }
+}
+
+.project-feature {
+    @extend .subtitle-6;
+    background-color: $red-color--lighter--subdued;
+    margin: 3px 6px;
+    display: inline-block;
+    color: #fff;
+    padding: 4px 10px;
+    border: $black-border;
 }

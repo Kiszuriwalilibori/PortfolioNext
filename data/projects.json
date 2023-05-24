@@ -48,17 +48,17 @@
         {
             "title": "Cryptocurrency Tracker",
             "description": "Cryptocurrency tracker which updates with programmed intervals",
-            "story": "",
+            "story": "Most people generally like making investments, selling, buying and all that staff. If you are one of these people, that app is just for you. Crypto Currency Tracker shows the most accurate live prices from trusted top crypto exchanges globally. This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR. Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year. Changes are not only visible in the table, but also signaled by pop-up with adequate message",
             "longDescription": [
-                "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR",
-                "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a yeara.Changes are not only visible in the table, but also signaled by pop-up with adequate message",
-                "While basically adequte npm libraries subscribing todata sourceare already available, this app uses direct and immediate api calls",
-                "List of available cryptos is fetched and kept by React Query. By keeping I mean it is cached and made continouosly available without redux or component store.",
-                "Similarly, React-Query refetching capability is applied to get current crypto price  with 3s interval",
-                "Historical prices are fetched initially once but with every 3s interval the app checks whether current date has cahnged or not, and with every new day historical data is refreshed ",
-                "Fetching error or unexpected result(sometimes data is empty) are handled within fetching script or hook with notistack messages. Such the script encapsulates error messaging, no application-wide error control is needed then.",
+                "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR.",
+                "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year.Changes are not only visible in the table, but also signaled by pop-up with adequate message.",
+                "While basically adequte npm libraries subscribing to the data source directly are already available, this app uses direct and immediate api calls.",
+                "List of available cryptos is fetched and kept by React Query.",
+                "Similarly, React-Query refetching capability is applied to get current crypto price  with 3s interval.",
+                "Historical prices are fetched initially once, but with every 3s interval the app checks whether current date has changed or not, and with every new day historical data is refreshed.",
+                "Fetching error or unexpected result (sometimes data is empty) are handled within fetching script or hook with notistack messages. Such the script encapsulates error messaging, no application-wide error control is needed then.",
                 "Data - if not kept by React-Query is kept in local storage to make it continously available in case of page refreshing",
-                "For the future: the app might be more customizable - for example,interval"
+                "Plans for the future: the app might be more customizable - for example, interval"
             ],
             "live": "https://kiszuriwalilibori.github.io/cryptocurrency/",
             "github": "https://github.com/Kiszuriwalilibori/cryptocurrency",
@@ -78,14 +78,14 @@
         },
         {
             "title": "Chat",
-            "story": "Do you think you desperately need to talk to anyone, no matter whom? If so that app is just for you (or rather, it will be soon). It is connected to random-user generating API. You'll get ten people for your select - there will be fair amount of details presesented (you can take all of them if you wish, though), and then you can start 'conversation'. Yes, 'conversation', the app is still on the level of recruiting company requirements what precisely means the only thing you can hear from your new friends is `You said...(and here goes your statement)`. In the coming future the app will be connected to AI chat terminal, however. Besides, now it shows only language code, it will be replaced by full language name ",
+            "story": "Do you think you desperately need to talk to anyone, no matter whom? If so that app is just for you (or rather, it will be soon). It is connected to random-user generating API. You'll get ten people for your select - there will be fair amount of details presesented (you can take all of them if you wish, though), and then you can start 'conversation'. Yes, 'conversation', the app is still on the level of recruiting company requirements what precisely means the only thing you can hear from your new friends is `You said...(and here goes your statement)`. In the coming future the app will be connected to AI chat terminal, however.",
             "description": "Fake chat with even more fake persons",
             "longDescription": [
                 "The app is connected to random-user generating API with custom hook. Initially, it generates set of ten fake users. Then, customer can start 'chat' with chosen ones. As it is fake chat and not the real one, the only answer is 'You said...' and that answer is received with natural-like irregular delay.",
                 "The app also presents active interlocutor details.",
                 "Active interlocutors are distinguishable from non-active by visual identifiers. In dialog box there is also their image. One can switch between them and keep up to ten chats simultanously",
                 "The time gap from the last activity is visible",
-                "For the future: the app might be connected to any AI interface. Also, languages are available as language code, full name would be better"
+                "For the future: the app might be connected to any AI interface."
             ],
             "live": "https://kiszuriwalilibori.github.io/FakeChat/",
             "github": "https://github.com/Kiszuriwalilibori/FakeChat",
@@ -162,7 +162,7 @@
         {
             "title": "Weather Forecast",
             "description": "Just the tiny forecasting app loaded with extra powers",
-            "story": "If you travel a lot, that app is just for you. One can see not only weather in any point on Earth (identified by city name or geocoordinates) but also compare it with weather in his current or whatever location in order for example - to pack up appropriate clothes. One can also have handy storage with data of important locations",
+            "story": "If you travel a lot, that app is just for you. One can see not only weather in any point on the Earth (identified by city name or geo-coordinates) but also compare it with weather in his current or whatever location, in order for example - to pack up appropriate clothes. One can also keep handy storage with data of important locations",
             "longDescription": [
                 "This app displays basic weather data in location identified by city name, geocoordinates or by actual client's device position",
                 "There is option of storing locations in local storage",
@@ -179,12 +179,13 @@
         },
         {
             "title": "YouTube Player",
-            "description": "Simplified You Tube player",
+            "description": "Simplified You Tube player. ",
+            "story": "Company i wanted to join was a media house, and so was the recruitment task. One of the objectives was to obtain appearance reasonably close to original",
             "longDescription": [
                 "This is simple You Tube player allowing choice of movie subject",
-                "Among others, the objective was to obtain appearance as close as possible to original. With respect to top bar, that was surprisingly cumbersome and requested application of sophisticated resize-control system.",
-                "Sidebar/topbar contains miniatures the number of which is also responsive",
-                "The app needs login (look in README for password) and implements permitted routes"
+                "With respect to top bar, reaching the objective was surprisingly cumbersome and requested application of sophisticated resize-control system.Even so, it shows its best in Chrome only.",
+                "Sidebar/topbar contains miniatures the number of which is also responsive.",
+                "The app needs login (look in README for password) and implements permitted routes pattern."
             ],
             "live": "https://kiszuriwalilibori.github.io/youtube/",
             "github": "https://github.com/Kiszuriwalilibori/youtube",
@@ -194,14 +195,14 @@
         },
         {
             "title": "Google Books Finder",
-            "story": "One day, in the middle of doing one of the online Java Scripts courses, I have decided to follow the recommendation of the author and develop something that will fetch anything from any public API. You see, these were very first days of my IT career and the task appeared to me bot challenging and not overengineered. I have revised list of open API's and decided to start from Google Books API. That is how one of my most fascinating adventures begun. The app was really small and simple initially to be quite complicated finally, I have tested a lot of programming techniques there, and that is why it is not as coherent as many of my later works. New features has been appearing one after another. Finally, there you have app that finds books as per given criteria, filters the results, sorts them, removes book from view as well as results, creates a local temporary storage,and much more. So - if you like books, have a fun ;) ",
+            "story": "One day, in the middle of scrambling through an online Java Scripts course, I have decided to follow the recommendation of the author and develop app that will fetch anything from any public API. You see, these were very first days of my IT career and the task appeared to me both challenging and not overengineered. I have revised list of open API's and decided to start with Google Books. That is how one of my most fascinating adventures begun. The app was really small and simple initially to be quite complicated finally, I have tested a lot of programming techniques there, and that is why it is not as coherent as might be. New features has been appearing one after another. Finally, there you have app that finds books as per given criteria, filters the results, sorts them, removes book from view as well as results, creates a local temporary storage,and much more. So - if you like books, have a fun ;) ",
             "description": "Finds books in Google Books resources and performs multiple actions on results.",
             "longDescription": [
                 "The application for browsing resorces of Google Books. One can choose books by author, name, and label.",
                 "One can sort and filter results by author, language, title, subtitle, labels and year of issue",
                 "It permits creation of local Favorites, gives access to shop, displays details.",
                 "It is paginated, and nicely styled with material-ui",
-                "As  admin limits the number of book records in single fetch, I have applied recursive continuous fetching thunk"
+                "As admin limits the number of book records in single fetch, and the number of available records is unknown, I have applied recursive continuous fetching thunk, but it takes more time then usual single step fetch. "
             ],
             "live": "https://kiszuriwalilibori.github.io/books/",
             "github": "https://github.com/Kiszuriwalilibori/books",
@@ -221,11 +222,13 @@
         },
         {
             "title": "Firebase",
-            "story": "Some apps are doing great jobs, some satisfy somebody's needs,  some are proof of somebody's vanity, some support company, industry,country, etc. Not this one. That is a pure training or playground of Firebase. See, I am Front-end developer, but think that at least some knowledge of back-end might be useful. So I have developed firebase-connected app that sores data of foo users, and if you have Google accound, you can log in and add new ones. Simple operations (like sorting) are also enabled. The number of stored users is restricted, however.",
+            "story": "Some apps are doing great jobs, some satisfy somebody's needs,  some are proof of somebody's vanity, some support company, industry,country, etc. Not this one. That is a pure training or playground of Firebase. See, I am Front-end developer, but think that at least some knowledge of back-end might be useful. ",
             "description": "Stores and retrieves foo data in Firebase d-base instance",
             "longDescription": [
-                "My Firebase application, gathering simple data",
-                "It request authentication for adding records with Google account"
+                "My Firebase-connected application, gathering simple data of foo users. Data is subject to validation.",
+                "It request authentication with Google account for adding users records.The number of stored users is limited, however.",
+                "One can remove only users created by himself.",
+                "Simple operations (like sorting) are also enabled."
             ],
             "live": "https://kiszuriwalilibori.github.io/firebase/",
             "github": "https://github.com/Kiszuriwalilibori/firebase",
@@ -240,7 +243,7 @@
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
             "github": "https://github.com/Kiszuriwalilibori/tree",
-            "features": ["react"],
+            "features": ["react", "material-ui", "formik", "redux", "typescript"],
             "category": "A",
             "slides": ["/images/project_images/tree.jpg"]
         },
@@ -249,13 +252,11 @@
             "description": "Cheerful portfolio, inspired slightly by Bollywood",
             "story": "Let us leave behind the two moody portfolios and just dance. The portfolio you are about to visit is cheery, colorfull and just brillant. Boys, elephants, girls, everybody is dancing to the beat. Only Pope is missing (yeah, it is a very common gif and I had him here, I can say, but after some emails with rather serious treats decided to let go. Not this time, not the place yet.) By the way, I am not the fan of Bollywood indeed, but appreciate the enormous load of joy present in every their production. Join us and enjoy this work",
             "longDescription": [
-                "One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions",
-                "This is perhaps my first React app. A long time unattended and unmaintained",
-                "It works, so you can watch the app, but better left the code unseen."
+                "The last portfolio version before the one you look at has been developed. Interesting as playground for Web Components only."
             ],
             "live": "https://kiszuriwalilibori-about-me.netlify.app",
             "github": "https://github.com/Kiszuriwalilibori/portfolio",
-            "features": ["react", "react-bootstrap"],
+            "features": ["HTML-only", "CSS3", "JS", "Web Components", "PUG", "PWA", "Web Workers"],
             "category": "C",
             "slides": ["/images/project_images/dancer-portfolio.jpg", "/images/project_images/dancer-portfolio2.jpg"]
         }
