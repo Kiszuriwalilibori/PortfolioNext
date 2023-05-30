@@ -171,8 +171,8 @@
                 "Data is usually fetched with hooks based on Axios, but with additional functionalities of validation and error handling (notistack)",
                 "There is Unsplash-based partially random, season-sensitive background"
             ],
-            "live": "https://kiszuriwalilibori.github.io/pogodynka/",
-            "github": "https://github.com/Kiszuriwalilibori/pogodynka",
+            "live": "https://kiszuriwalilibori.github.io/weather/",
+            "github": "https://github.com/Kiszuriwalilibori/weather",
             "features": ["react", "redux", "material-ui", "formik", "notistack", "yup", "redux-thunk", "axios"],
             "category": "A",
             "slides": ["/images/project_images/weather.jpg", "/images/project_images/weather2.jpg"]
