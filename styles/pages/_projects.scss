@@ -46,28 +46,28 @@
                 flex-direction: row;
                 justify-content: space-between;
                 position: relative;
-                min-height: 250px;
+                min-height: 270px;
                 @include mobile {
                     flex-direction: column;
                     padding-bottom: 90px;
                 }
-                &__more {
-                    background-color: $red-color--subdued;
-                    width: 120px;
-                    height: 60px;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: $text-color--light;
-                    transition: background-color 0.3s;
-                    &:hover {
-                        background-color: $red-color--vivid;
-                    }
-                }
+                // &__more {
+                //     width: 120px;
+                //     height: 60px;
+                //     position: absolute;
+                //     bottom: 0;
+                //     left: 0;
+                //     cursor: pointer;
+                //     display: flex;
+                //     align-items: center;
+                //     justify-content: center;
+                //     color: $text-color--light;
+                //     transition: background-color 0.3s;
+                //     border-radius: 0;
+                //     border: 1px solid black;
+                //     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+                //         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+                // }
                 &__slides {
                     display: flex;
                     flex-direction: column;
@@ -99,18 +99,18 @@
                     @extend .subtitle-6;
                     padding-bottom: 0.5em;
                 }
-                &__features-list {
-                    list-style-type: none;
-                    & .features-list__item {
-                        @extend .subtitle-6;
-                        background-color: $red-color--lighter--subdued;
-                        margin: 3px 6px;
-                        display: inline-block;
-                        color: #fff;
-                        padding: 4px 10px;
-                        border: $black-border;
-                    }
-                }
+                // &__features-list {
+                //     list-style-type: none;
+                //     & .features-list__item {
+                //         @extend .subtitle-6;
+                //         background-color: $red-color--lighter--subdued;
+                //         margin: 3px 6px;
+                //         display: inline-block;
+                //         color: #fff;
+                //         padding: 4px 10px;
+                //         border: $black-border;
+                //     }
+                // }
             }
 
             @include above-mobile {

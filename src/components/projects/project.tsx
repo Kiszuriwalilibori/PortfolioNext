@@ -4,6 +4,9 @@ import Link from "next/link";
 
 import { useId } from "react";
 import { Project } from "../../../types";
+import { Button, Chip } from "@mui/material";
+import { ChipsContainer } from "../../../styles/styled";
+import MoreButton from "./morebutton";
 
 interface Props {
     projectData: Project;
@@ -20,20 +23,17 @@ const Project = (props: Props) => {
 
     return (
         <article className="project">
-            <Link href={`/projects/${title}`} className="project__more">
-                Details
-            </Link>
+            <MoreButton title={title} />
             <div>
                 <h5 className="project__title">{title}</h5>
                 <h6 className="project__subtitle">{description}</h6>
                 <h6 className="project__features-header">Features: </h6>
-                <ul className="project__features-list features-list">
+
+                <ChipsContainer>
                     {sortedFeatures.map(feature => (
-                        <li className="features-list__item" key={`${ID}--${feature}`}>
-                            {feature}
-                        </li>
+                        <Chip label={feature} key={`${ID}--${feature}`} component="li" />
                     ))}
-                </ul>
+                </ChipsContainer>
             </div>
             {slides && !isEmpty(slides) && (
                 <div className="project__slides">

@@ -593,7 +593,7 @@ a {
   line-height: 1.5;
   margin-bottom: 0.66em;
 }
-.page__content .subtitle-6, .contact__content .subtitle-6, .page__content .project-feature, .contact__content .project-feature, .projects__content .subtitle-6, .projects__content .project-feature, .projects__content .container .project__features-list .features-list__item, .projects__content .container .project__features-header, .jobs__content .subtitle-6, .jobs__content .project-feature, .skills__content .subtitle-6, .skills__content .project-feature, .aboutme__content .subtitle-6, .aboutme__content .project-feature {
+.page__content .subtitle-6, .contact__content .subtitle-6, .page__content .project-feature, .contact__content .project-feature, .projects__content .subtitle-6, .projects__content .project-feature, .projects__content .container .project__features-header, .jobs__content .subtitle-6, .jobs__content .project-feature, .skills__content .subtitle-6, .skills__content .project-feature, .aboutme__content .subtitle-6, .aboutme__content .project-feature {
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -1171,30 +1171,13 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  min-height: 250px;
+  min-height: 270px;
 }
 @media (max-width: 767px) {
   .projects__content .container .project {
     flex-direction: column;
     padding-bottom: 90px;
   }
-}
-.projects__content .container .project__more {
-  background-color: rgba(145, 13, 13, 0.8);
-  width: 120px;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  transition: background-color 0.3s;
-}
-.projects__content .container .project__more:hover {
-  background-color: #d3101c;
 }
 .projects__content .container .project__slides {
   display: flex;
@@ -1227,17 +1210,6 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
 }
 .projects__content .container .project__features-header {
   padding-bottom: 0.5em;
-}
-.projects__content .container .project__features-list {
-  list-style-type: none;
-}
-.projects__content .container .project__features-list .features-list__item {
-  background-color: rgba(145, 13, 13, 0.7);
-  margin: 3px 6px;
-  display: inline-block;
-  color: #fff;
-  padding: 4px 10px;
-  border: 1px solid black;
 }
 @media (min-width: 768px) {
   .projects__content .container {

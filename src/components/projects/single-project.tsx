@@ -3,7 +3,8 @@ import { Project } from "../../../types";
 import Contact from "../contact";
 import Icons from "../contact/icons";
 import { useId } from "react";
-
+import Chip from "@mui/material/Chip";
+import { ChipsContainer } from "../../../styles/styled";
 interface Props {
     data: {
         data: Project;
@@ -49,10 +50,12 @@ function SingleProjectPage(props: any) {
                             return <p key={`${ID}-${item}`}>{item}</p>;
                         })}
                     <h2>Features</h2>
-                    {features &&
-                        features.map((item: string) => {
-                            return <span className="project-feature" key={`${ID}-${item}`}>{`${item}  `}</span>;
-                        })}
+                    <ChipsContainer>
+                        {features &&
+                            features.map((item: string) => {
+                                return <Chip key={`${ID}-${item}`} label={`${item}`} variant="outlined" />;
+                            })}
+                    </ChipsContainer>
                 </div>
             </section>
         </div>
