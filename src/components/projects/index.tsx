@@ -10,6 +10,8 @@ import useGetProjects from "../../hooks/useGetProjects";
 
 import { ProjectsPageProps } from "../../../types";
 
+import { ProjectCategoryStack } from "../../../styles/styled";
+
 function Projects(props: ProjectsPageProps) {
     const { data, featuresList } = props;
     const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
@@ -50,30 +52,30 @@ function Projects(props: ProjectsPageProps) {
                     <h2 className="page__title">Projects</h2>
                     <Checkboxes values={featuresList} handleChange={changeHandler} />
                     {!isEmpty(projectsCategoryA) && (
-                        <article className="category-container">
+                        <ProjectCategoryStack spacing={2}>
                             <h4>Primary, refined works with long commit history and usually lot of features</h4>
                             {projectsCategoryA.map(item => (
                                 <SingleProject key={`${ID}--${item.title}`} projectData={item} />
                             ))}
-                        </article>
+                        </ProjectCategoryStack>
                     )}
                     {!isEmpty(projectsCategoryB) && (
-                        <article className="category-container">
+                        <ProjectCategoryStack spacing={2}>
                             <h4>
                                 Secondary projects - basically correct but very simple, usually just recruitment tasks
                             </h4>
                             {projectsCategoryB.map(item => (
                                 <SingleProject key={`${ID}--${item.title}`} projectData={item} />
                             ))}
-                        </article>
+                        </ProjectCategoryStack>
                     )}
                     {!isEmpty(projectsCategoryC) && (
-                        <article className="category-container">
+                        <ProjectCategoryStack spacing={2}>
                             <h4>Better leave unseen... at least code. Old, not maintained and not modernised works</h4>
                             {projectsCategoryC.map(item => (
                                 <SingleProject key={`${ID}--${item.title}`} projectData={item} />
                             ))}
-                        </article>
+                        </ProjectCategoryStack>
                     )}
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useId, useState } from "react";
 
 import { Checkbox, CheckboxGroup } from "rsuite";
@@ -13,17 +14,18 @@ export default function Checkboxes(props: Props) {
 
     const checkboxesArray = values.map(item => {
         return (
-            <Checkbox key={item} value={item}>
+            <Checkbox key={item} value={item} className="checkbox">
                 {item}
             </Checkbox>
         );
     });
 
     return (
-        <div>
+        <Box sx={{ marginBottom: "8px" }}>
             <h4>Select projects by features</h4>
             <div style={{ marginTop: 20, width: 240 }}>
                 <CheckboxGroup
+                    className="checkbox-group"
                     inline
                     name="checkboxList"
                     value={chkValue}
@@ -35,6 +37,6 @@ export default function Checkboxes(props: Props) {
                     {checkboxesArray}
                 </CheckboxGroup>
             </div>
-        </div>
+        </Box>
     );
 }

@@ -929,6 +929,23 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   margin-left: -10px;
 }
 
+.checkbox {
+  color: white;
+  border: 1px solid #a03636;
+  padding-right: 10px;
+  background-color: #a06b36;
+  opacity: 0.8;
+  font-size: 14px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.checkbox-group {
+  margin-left: -4px !important;
+}
+.checkbox-group > * {
+  margin: 4px 4px !important;
+}
+
 .sidebar {
   display: none;
   flex-direction: column;
@@ -1158,14 +1175,8 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
 .projects__content .container > div:first-of-type > div:first-of-type {
   width: 100% !important;
 }
-.projects__content .container .category-container {
-  border-top: 1px solid #ddd;
-  padding: 15px 0;
-  width: 100%;
-}
 .projects__content .container .project {
   padding: 10px;
-  margin: 20px 0;
   border: 1px solid rgba(145, 13, 13, 0.3);
   display: flex;
   flex-direction: row;
@@ -1227,6 +1238,7 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
 }
 .projects__content .container h4 {
   color: rgba(145, 13, 13, 0.8);
+  padding-top: 0;
 }
 
 .project-feature {
