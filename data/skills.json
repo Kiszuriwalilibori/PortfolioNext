@@ -14,7 +14,8 @@
         { "skill": "Web Workers", "level": "1" },
         { "skill": "PHP", "level": "1" },
         { "skill": "Next.js", "level": "1" },
-        { "skill": "Bootstrap", "level": "1" }
+        { "skill": "Bootstrap", "level": "1" },
+        { "skill": "Zustand", "level": "3" }
     ],
     "education": [
         {

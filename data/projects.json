@@ -253,7 +253,7 @@
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
             "github": "https://github.com/Kiszuriwalilibori/tree",
-            "features": ["react", "material-ui", "formik", "redux", "typescript"],
+            "features": ["react", "material-ui", "formik", "zustand", "typescript"],
             "category": "A",
             "slides": ["/images/project_images/tree.jpg"]
         },
