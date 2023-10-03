@@ -8,17 +8,13 @@
 
 .navbar {
     position: fixed;
-    display: none;
+    display: block;
     top: 150px;
     top: 56px;
     right: -100px;
     text-align: left;
     z-index: 9999;
     padding-top: 6px;
-
-    &--active {
-        display: block;
-    }
 
     &__list {
         list-style-type: none;

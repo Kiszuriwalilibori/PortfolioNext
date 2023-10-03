@@ -1,11 +1,11 @@
-import PageContent from "../../src/components/projects";
 import createFeaturesList from "./createFeaturesList";
 
+import { ProjectsPageContent } from "../../src/components/PageContents";
 import { ProjectsPageProps } from "../../types";
 
 export default function Projects(props: ProjectsPageProps) {
     const { data, featuresList } = props;
-    return <PageContent data={data} featuresList={featuresList} />;
+    return <ProjectsPageContent data={data} featuresList={featuresList} />;
 }
 
 export async function getStaticProps() {

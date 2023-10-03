@@ -1,12 +1,30 @@
 .contact {
     @extend .section;
-    @include with-bckgrnd-image("../public/backgrounds/contact.jpg");
-
+    @include above-mobile {
+        @include with-bckgrnd-image("../public/backgrounds/contact.jpg");
+        @include with-bckgrnd-image("../public/backgrounds/contact.webp");
+    }
+    @include large {
+        background: url(../public/backgrounds/contact.jpg) no-repeat;
+        background: url(../public/backgrounds/contact.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
     &__content {
         @extend .page__content, .page__content--contact;
 
         & .container {
             @extend .page__container;
+            color: $text-color--dark;
+            @include mobile {
+                color: $text-color--light;
+            }
+            & h1 {
+                @include mobile {
+                    color: $text-color--light !important;
+                }
+            }
 
             & dl {
                 line-height: 1.8;
@@ -38,3 +56,5 @@
         }
     }
 }
+
+//  .page__content--jobs, .jobs__content {

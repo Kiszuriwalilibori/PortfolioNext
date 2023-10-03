@@ -14,7 +14,8 @@
         { "skill": "Web Workers", "level": "1" },
         { "skill": "PHP", "level": "1" },
         { "skill": "Next.js", "level": "1" },
-        { "skill": "Bootstrap", "level": "1" }
+        { "skill": "Bootstrap", "level": "1" },
+        { "skill": "Zustand", "level": "3" }
     ],
     "education": [
         {
@@ -26,7 +27,7 @@
         { "school": "CISCO", "period": "2019-2020", "subject": "IT Fundamentals" }
     ],
 
-    "certs": [
+    "certificates": [
         {
             "name": "Process approach to quality management",
             "operator": "ZETOM",
@@ -89,7 +90,7 @@
             "link": "https://pttk.pl/"
         },
         {
-            "name": "Hiking Leader for North Mazowia",
+            "name": "Hiking Leader for North Mazovia",
             "operator": "Polish Tourism and Sightseeing Society",
             "professional": false,
             "link": "https://pttk.pl/"

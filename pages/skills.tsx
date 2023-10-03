@@ -1,20 +1,20 @@
-import PageContent from "../src/components/skills";
+import { SkillsPageContent } from "../src/components/PageContents";
 
 import { SkillsPageProps } from "../types";
 
 export default function Skills(props: SkillsPageProps) {
-    const { skills, education, certs } = props;
+    const { skills, education, certificates } = props;
 
-    return <PageContent skills={skills} education={education} certs={certs} />;
+    return <SkillsPageContent skills={skills} education={education} certificates={certificates} />;
 }
 
 export async function getStaticProps() {
-    const { skills, education, certs } = await import("../data/skills.json");
+    const { skills, education, certificates } = await import("../data/skills.json");
     return {
         props: {
             skills: skills,
             education: education,
-            certs: certs,
+            certificates: certificates,
         },
     };
 }

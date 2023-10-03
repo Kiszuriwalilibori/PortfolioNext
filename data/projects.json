@@ -1,10 +1,25 @@
 {
     "projects": [
         {
-            "title": "Minifigs",
-            "description": "Free minifigs order page",
+            "title": "PortfolioNext",
+            "description": "The most and only current portfolio",
+            "story": "Every human work can have footprints of its creator. In this case it is true as well .Have you seen other portfolios of mine? Dance, Music, and so on. Now yo got something really different. Why? Many headhunters commented that teh previous ones were over-individuated. So, here you have the thing calm, official, almost toneless, which should satisfy everyone. Let us call it bridge portfolio - it is a bridge betwen me and headhunters.",
             "longDescription": [
-                "The idea behind this task was to develop a page for requesting free bonus Harry Potter minifig from online store of https://rebrickable.com/. Why just Harry Potter? It remains secret of hiring company.",
+                " That is my first job with Next.js and Vercel hosting platform.",
+                " It is's made with 13.x version, but I decided to leave experimental features aside."
+            ],
+            "live": "https://portfolio-next-ten-sigma.vercel.app/",
+            "github": "https://github.com/Kiszuriwalilibori/PortfolioNext",
+            "features": ["react", "material-ui", "next", "SSR", "typescript"],
+            "category": "A",
+            "slides": ["/images/project_images/next1.jpg", "/images/project_images/next2.jpg"]
+        },
+
+        {
+            "title": "Minifigs",
+            "description": "Get your own Harry Potter for free 😉",
+            "story": "Have you ever dreamt that with just few clicks you will become happy owner of Harry Potter figurine? Sure you have not. And now I made it happened. Of course not me alone, the site owners have biggest and primary contribution, there is no doubt about it. My role was to deliver a page for requesting free bonus Harry Potter minifig from online store of https://rebrickable.com/.  Why just Harry Potter? It remains sweet secret of the hiring company. Currently, the app follows strictly task requirement of choosing HP, in coming weeks I would like to add the selection feature for those who do not like Young Wizard from Hogwarts.",
+            "longDescription": [
                 " The challenging part was fetching data. Rebrickable just applied V2 version of their software and one could not get it with a single request. One has to fetch data pages one by one and extract HP related records. What's more, admin imposed restrictions in requests rate, what alltogether makes the app need 1 minute to get all data. Taking into accout the above as well as fact that every set contained also vital elements of its successor URL I decided to write custom thunk function based on Axios.",
                 " To keep the client waiting that long I have decided to add the functionality of showing both set number and latest figurine.",
                 " Initially, three figurines are drawn from fetched set, and it's customer task to choose one. Doing that he is transferred to third page with detailed description of figurine's parts and requested to enter dispatch data. The entered data is subject to strict validation with react-hook-form. After auspicious validation, the request with both customer and figurines packed with FormData is send to fake API, if proccessed OK adequate mesage is made visible.",
@@ -30,35 +45,35 @@
         },
         {
             "title": "Unsplash",
-            "description": "Simplified Unsplash app on my own",
+            "description": "Browses and presents Unsplash resources",
+            "story": "I believed that one Unsplash site is enough, but apparently some guys do not share my view and requested prepare new thought similar version before consider joining their honorable company. So, I had no way out. Some logics is disregarded (contacted Unsplash staff in order to understand business logics behind some features, but answered me kindly to mind my own business). So you got imitation and not a copy. For example, trending search terms are hardcoded and not dynamically generated in any sense. The background image is just an random nature image",
             "longDescription": [
                 "The idea behind the app (recruitment task) was to develop app that to some extent imitates original Unsplash by appearance and functions.",
-                "Not all logics available in original is applied. Trending search terms are not clickable and hardcoded(yet)",
-                "The background image is just an unsplash random nature image",
                 "The first page form has also slightly different logic then original, but the way it woks has been requested by hiring company.",
                 "On the page with search results the content is paginated. There is cursor position sensor that checks if there is still avialbel content and -if so - fetches that, otherwise informs that all data is collected. First set of images waits for all of them to be loaded before display to avoid blinking, the other sets are lazy loaded",
                 "Clicking the image initiates the modal with enlarged picture and more detailed data.",
-                " The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment."
+                "The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment."
             ],
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
             "features": ["react", "redux", "unsplash", "redux-persist", "typescript", "react-hook-form"],
             "category": "A",
-            "slides": ["/images/project_images/unsplash.jpg"]
+            "slides": ["/images/project_images/unsplash4.jpg"]
         },
         {
             "title": "Cryptocurrency Tracker",
-            "description": "Simple Cryptocurrency tracker updating in 3 seconds intervals",
+            "description": "Cryptocurrency tracker which updates with programmed intervals",
+            "story": "Most people generally like making investments, selling, buying and all that staff. If you are one of these people, that app is just for you. Crypto Currency Tracker shows the most accurate live prices from trusted top crypto exchanges globally. This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR. Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year. Changes are not only visible in the table, but also signaled by pop-up with adequate message",
             "longDescription": [
-                "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR",
-                "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a yeara.Changes are not only visible in the table, but also signaled by pop-up with adequate message",
-                "While basically adequte npm libraries subscribing todata sourceare already available, this app uses direct and immediate api calls",
-                "List of available cryptos is fetched and kept by React Query. By keeping I mean it is cached and made continouosly available without redux or component store.",
-                "Similarly, React-Query refetching capability is applied to get current crypto price  with 3s interval",
-                "Historical prices are fetched initially once but with every 3s interval the app checks whether current date has cahnged or not, and with every new day historical data is refreshed ",
-                "Fetching error or unexpected result(sometimes data is empty) are handled within fetching script or hook with notistack messages. Such the script encapsulates error messaging, no application-wide error control is needed then.",
+                "This app connets with crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR.",
+                "Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year.Changes are not only visible in the table, but also signaled by pop-up with adequate message.",
+                "While basically adequte npm libraries subscribing to the data source directly are already available, this app uses direct and immediate api calls.",
+                "List of available cryptos is fetched and kept by React Query.",
+                "Similarly, React-Query refetching capability is applied to get current crypto price  with 3s interval.",
+                "Historical prices are fetched initially once, but with every 3s interval the app checks whether current date has changed or not, and with every new day historical data is refreshed.",
+                "Fetching error or unexpected result (sometimes data is empty) are handled within fetching script or hook with notistack messages. Such the script encapsulates error messaging, no application-wide error control is needed then.",
                 "Data - if not kept by React-Query is kept in local storage to make it continously available in case of page refreshing",
-                "For the future: the app might be more customizable - for example,interval"
+                "Plans for the future: the app might be more customizable - for example, interval"
             ],
             "live": "https://kiszuriwalilibori.github.io/cryptocurrency/",
             "github": "https://github.com/Kiszuriwalilibori/cryptocurrency",
@@ -78,36 +93,39 @@
         },
         {
             "title": "Chat",
-            "description": "Fake pseudo chat with fake persons",
+            "story": "Do you think you desperately need to talk to anyone, no matter whom? If so that app is just for you (or rather, it will be soon). It is connected to random-user generating API. You'll get ten people for your select - there will be fair amount of details presesented (you can take all of them if you wish, though), and then you can start 'conversation'. Yes, 'conversation', the app is still on the level of recruiting company requirements what precisely means the only thing you can hear from your new friends is `You said...(and here goes your statement)`. In the coming future the app will be connected to AI chat terminal, however.",
+            "description": "Fake chat with even more fake persons",
             "longDescription": [
-                "The app is connected to random-user generating API with custom hook. Initially, it generates set of ten fake users. Then, customer can start 'chat' with chosen ones. As it is fake chat and not the real one, the only answer is 'You said...' and that answer is received with natural-like irregular delay.",
+                "The app is connected to random-user generating API with custom hook, as well as to speech-recognition facility. Initially, it generates set of ten fake users. Then, customer can start 'chat' with chosen ones. As it is fake chat and not the real one, the only answer is 'You said...' and that answer is received with natural-like irregular delay.",
                 "The app also presents active interlocutor details.",
-                "Active interlocutors are distinguishable from non-active by visual identifiers. In dialog box there is also their image. One can switch between them and keep up to ten chats simultanously",
-                "The time gap from the last activity is visible",
-                "For the future: the app might be connected to any AI interface. Also, languages are available as language code, full name would be better"
+                "Active interlocutors are distinguishable from non-active by visual identifiers. In dialog box there is also their image. One can switch between them and keep up to ten chats simultanously.",
+                "The time gap from the last activity is shown.",
+                "Beside standard text, one can use emoticons while messaging. Moreover, it is now capable to transcript human voice to text",
+                "For the future: the app might be connected to any AI interface. that wa bright idea and even some steps has been undertaken. Unfortunately,my GPTChat key has been blocked for unclear reasons what practically puts the idea on hold until find another AI platform with public API."
             ],
             "live": "https://kiszuriwalilibori.github.io/FakeChat/",
             "github": "https://github.com/Kiszuriwalilibori/FakeChat",
-            "features": ["react", "material-ui", "typescript", "redux-thunk", "redux"],
+            "features": ["react", "material-ui", "typescript", "redux-thunk", "redux", "AI", "speech-recognition"],
             "category": "B",
             "slides": ["/images/project_images/chat.jpg"]
         },
         {
             "title": "Floydian Portfolio",
-            "description": "My old, unused and not maintained portfolio, may contain dead links",
+            "description": "The Dark Side of the Moon or my very old portfolio (with some dead links)",
             "longDescription": [
                 "This is old portfolio of mine, developed before fell in love in React.",
                 "Pug permits reusing code and keep ot reasonably simple"
             ],
+            "story": "Have you ever heard or read that work reflects (or should reflect) its creator? More then often, yeah. Me too. This portfolio (being also my first portfolio and one of firsts web pages) is influenced by Pink Floyd. The welcome image alludes to the cover of famous 'The Dark Side of the Moon' album. So does title font (precisely, it is similar to the one from 'The Wall'). Yes, your guess is right - it's my favorite band ever. Also, image puts folks in the mood of mystery and you almost hear `Set the Controls for the Heart of the Sun.` ",
             "live": "https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_1/",
             "github": "https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_1",
-            "features": ["onlyHTML", "Pug", "Gulp"],
+            "features": ["HTML-only", "Pug", "Gulp"],
             "category": "C",
             "slides": ["/images/project_images/arch1.jpg", "/images/project_images/arch12.jpg"]
         },
         {
             "title": "Space Portfolio",
-            "description": "My old, unused and not maintained portfolio, may contain dead links",
+            "description": "Ticket to the moon or my old, unused and not maintained portfolio (may contain dead links)",
             "longDescription": [
                 "This is old portfolio of mine, developed before fell in love in React.",
                 "Applied Granim library for smooth animations",
@@ -115,12 +133,14 @@
             ],
             "live": "https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_2",
             "github": "https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_1",
-            "features": ["onlyHTML", "Granim", "jQuery", "Gulp", "Pug"],
+            "features": ["HTML-only", "Granim", "jQuery", "Gulp", "Pug"],
             "category": "C",
-            "slides": ["/images/project_images/arch2.jpg", "/images/project_images/arch22.jpg"]
+            "slides": ["/images/project_images/arch2.jpg", "/images/project_images/arch22.jpg"],
+            "story": "Have you ever benn to the Moon? If not, maybe your time is coming. Another portfolio of mine keeps mystery mood. Also it gives an insight into my sense of esthetics. Yes, I like dimmed, dark colors. Neon lights are also more then welcome. So, welcome to the machine, it is time to get a trip "
         },
         {
             "title": "Physioterapy",
+            "story": "Once I had an assignment from physioterapeutical company. Finally, what they got is very much different and developed with other stack, but first version is still OK. One can find many useful informations about company profile ( however, in the version you see it is a foo text, one level above Lorem Ipsum) and send message. As all works in that section this piece of code is neither maintained nor updated.",
             "description": "My old, unused and not maintained web site of physioterapeutist's office",
             "longDescription": [
                 "Web site of physioterapy unit",
@@ -129,7 +149,7 @@
             ],
             "live": "https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_2",
             "github": "https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_1",
-            "features": ["onlyHTML", "GSAP", "jQuery", "Gulp", "Pug", "sprites"],
+            "features": ["HTML-only", "GSAP", "jQuery", "Gulp", "Pug", "sprites"],
             "category": "C",
             "slides": [
                 "/images/project_images/fizjo.jpg",
@@ -139,9 +159,9 @@
         },
         {
             "title": "Athletes",
-            "description": "Interesting facts about athletes hidden potential",
+            "description": "Surprising facts about hidden potential of few athletes",
+            "story": "Whether you are an athlete or not, I guess you heard a lot about sport stars. One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions.",
             "longDescription": [
-                "One usually knows what given sport champion IS good in, but usually not what he/she COULD BE good in. Given app rates certain factors as per physical capabilities and gives - often surprising - suggestions",
                 "This is perhaps my first React app. A long time unattended and unmaintained",
                 "It works, so you can watch the app, but better left the code unseen."
             ],
@@ -149,37 +169,48 @@
             "github": "https://github.com/Kiszuriwalilibori/Athletes",
             "features": ["react", "react-bootstrap"],
             "category": "C",
-            "slides": [
-                "/images/project_images/athletes.jpg",
-                "/images/project_images/athletes2.jpg",
-                "/images/project_images/athletes3.jpg"
-            ]
+            "slides": ["/images/project_images/athletes.jpg", "/images/project_images/athletes2.jpg"]
         },
         {
             "title": "Weather Forecast",
-            "description": "Simple Weather App",
+            "description": "Just the tiny forecasting app loaded with extra powers",
+            "story": "If you travel a lot, that app is just for you. One can see not only weather in any point on the Earth (identified by city name or geo-coordinates) but also compare it with weather in his current or whatever location, in order for example - to pack up appropriate clothes. One can also keep handy storage with data of important locations",
             "longDescription": [
                 "This app displays basic weather data in location identified by city name, geocoordinates or by actual client's device position",
                 "There is option of storing locations in local storage",
                 "One can see current weather, the forecast, or compare wearther conditions between locations.",
                 "To keep data in case of page refresh its context is stored in local storage with useLocalStorage from usehooks-ts package",
                 "Data is usually fetched with hooks based on Axios, but with additional functionalities of validation and error handling (notistack)",
-                "There is Unsplash-based partially random, season-sensitive background"
+                "There is Unsplash-based partially random, season-sensitive background.",
+                "In version 0.2.0  it is fully bilingual"
             ],
             "live": "https://kiszuriwalilibori.github.io/pogodynka/",
             "github": "https://github.com/Kiszuriwalilibori/pogodynka",
-            "features": ["react", "redux", "material-ui", "formik", "notistack", "yup", "redux-thunk", "axios"],
+            "features": [
+                "react",
+                "redux",
+                "MUI X Data Grid",
+                "material-ui",
+                "formik",
+                "notistack",
+                "yup",
+                "redux-thunk",
+                "axios",
+                "i18n",
+                "bilingual"
+            ],
             "category": "A",
             "slides": ["/images/project_images/weather.jpg", "/images/project_images/weather2.jpg"]
         },
         {
             "title": "YouTube Player",
-            "description": "Simplified You Tube player",
+            "description": "Simplified You Tube player. ",
+            "story": "Company i wanted to join was a media house, and so was the recruitment task. One of the objectives was to obtain appearance reasonably close to original",
             "longDescription": [
                 "This is simple You Tube player allowing choice of movie subject",
-                "Among others, the objective was to obtain appearance as close as possible to original. With respect to top bar, that was surprisingly cumbersome and requested application of sophisticated resize-control system.",
-                "Sidebar/topbar contains miniatures the number of which is also responsive",
-                "The app needs login (look in README for password) and implements permitted routes"
+                "With respect to top bar, reaching the objective was surprisingly cumbersome and requested application of sophisticated resize-control system.Even so, it shows its best in Chrome only.",
+                "Sidebar/topbar contains miniatures the number of which is also responsive.",
+                "The app needs login (look in README for password) and implements permitted routes pattern."
             ],
             "live": "https://kiszuriwalilibori.github.io/youtube/",
             "github": "https://github.com/Kiszuriwalilibori/youtube",
@@ -189,13 +220,14 @@
         },
         {
             "title": "Google Books Finder",
-            "description": "For finding books in Google Books resources",
+            "story": "One day, in the middle of scrambling through an online Java Scripts course, I have decided to follow the recommendation of the author and develop app that will fetch anything from any public API. You see, these were very first days of my IT career and the task appeared to me both challenging and not overengineered. I have revised list of open API's and decided to start with Google Books. That is how one of my most fascinating adventures begun. The app was really small and simple initially to be quite complicated finally, I have tested a lot of programming techniques there, and that is why it is not as coherent as might be. New features has been appearing one after another. Finally, there you have app that finds books as per given criteria, filters the results, sorts them, removes book from view as well as results, creates a local temporary storage,and much more. So - if you like books, have a fun ;) ",
+            "description": "Finds books in Google Books resources and performs multiple actions on the findings.",
             "longDescription": [
                 "The application for browsing resorces of Google Books. One can choose books by author, name, and label.",
                 "One can sort and filter results by author, language, title, subtitle, labels and year of issue",
                 "It permits creation of local Favorites, gives access to shop, displays details.",
                 "It is paginated, and nicely styled with material-ui",
-                "As  admin limits the number of book records in single fetch, I have applied recursive continuous fetching thunk"
+                "As admin limits the number of book records in single fetch, and the number of available records is unknown, I have applied recursive continuous fetching thunk, but it takes more time then usual single step fetch. "
             ],
             "live": "https://kiszuriwalilibori.github.io/books/",
             "github": "https://github.com/Kiszuriwalilibori/books",
@@ -211,18 +243,17 @@
                 "method-chaining"
             ],
             "category": "A",
-            "slides": [
-                "/images/project_images/gbfinder.jpg",
-                "/images/project_images/gbfinder2.jpg",
-                "/images/project_images/gbfinder3.jpg"
-            ]
+            "slides": ["/images/project_images/gbfinder2.jpg", "/images/project_images/gbfinder3.jpg"]
         },
         {
             "title": "Firebase",
-            "description": "Stores and retrives foo data in Firebase database system",
+            "story": "Some apps are doing great jobs, some satisfy somebody's needs,  some are proof of somebody's vanity, some support company, industry,country, etc. Not this one. That is a pure training or playground of Firebase. See, I am Front-end developer, but think that at least some knowledge of back-end might be useful. ",
+            "description": "Stores and retrieves foo data in Firebase d-base instance",
             "longDescription": [
-                "My Firebase application, gathering simple data",
-                "It request authentication for adding records with Google account"
+                "My Firebase-connected application, gathering simple data of foo users. Data is subject to validation.",
+                "It request authentication with Google account for adding users records.The number of stored users is limited, however.",
+                "One can remove only users created by himself.",
+                "Simple operations (like sorting) are also enabled."
             ],
             "live": "https://kiszuriwalilibori.github.io/firebase/",
             "github": "https://github.com/Kiszuriwalilibori/firebase",
@@ -230,15 +261,30 @@
             "category": "A",
             "slides": ["/images/project_images/firebase.jpg"]
         },
+
         {
             "title": "Decision Tree",
-            "description": "Decision tree interface",
+            "story": "Sometimes can not figure out what was on recruiter's mind when she/he made up certain task. This is nothing more then simple decision tree or equivalent diagram example. Limited to two levels, by the way. Nothing spectacular, I had to add some stylings as the initial, required version was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protection mechanisms against duplicating entries applied. ",
+            "description": "Decision tree application interface",
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
             "github": "https://github.com/Kiszuriwalilibori/tree",
-            "features": ["react"],
+            "features": ["react", "material-ui", "formik", "zustand", "typescript"],
             "category": "A",
             "slides": ["/images/project_images/tree.jpg"]
+        },
+        {
+            "title": "Dancer portfolio",
+            "description": "Cheerful portfolio, inspired slightly by Bollywood",
+            "story": "Let us leave behind the two moody portfolios and just dance. The portfolio you are about to visit is cheery, colorfull and just brillant. Boys, elephants, girls, everybody is dancing to the beat. Only Pope is missing (yeah, it is a very common gif and I had him here, I can say, but after some emails with rather serious treats decided to let go. Not this time, not the place yet.) By the way, I am not the fan of Bollywood indeed, but appreciate the enormous load of joy present in every their production. Join us and enjoy this work",
+            "longDescription": [
+                "The last portfolio version before the one you look at has been developed. Interesting as playground for Web Components only."
+            ],
+            "live": "https://kiszuriwalilibori-about-me.netlify.app",
+            "github": "https://github.com/Kiszuriwalilibori/portfolio",
+            "features": ["HTML-only", "CSS3", "JS", "Web Components", "PUG", "PWA", "Web Workers"],
+            "category": "C",
+            "slides": ["/images/project_images/dancer-portfolio.jpg", "/images/project_images/dancer-portfolio2.jpg"]
         }
     ]
 }

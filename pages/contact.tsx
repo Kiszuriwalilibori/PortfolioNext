@@ -1,4 +1,4 @@
-import PageContent from "../src/components/contact";
+import { ContactPageContent } from "../src/components/PageContents";
 
 import { Contacts } from "../types";
 
@@ -8,7 +8,7 @@ interface Props {
 
 export default function Contact(props: Props) {
     const { contacts } = props;
-    return <PageContent data={contacts} />;
+    return <ContactPageContent contactData={contacts} />;
 }
 
 export async function getStaticProps() {

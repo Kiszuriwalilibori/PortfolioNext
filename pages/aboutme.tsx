@@ -1,5 +1,5 @@
-import PageContent from "../src/components/aboutme";
+import { AboutmePageContent } from "../src/components/PageContents";
 
 export default function AboutMe() {
-    return <PageContent />;
+    return <AboutmePageContent />;
 }

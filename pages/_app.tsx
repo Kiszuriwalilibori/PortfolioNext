@@ -1,31 +1,32 @@
-import "../styles/globals.css";
-import "../styles/general.sass";
+import { ThemeProvider } from "@mui/material/styles";
+import { SnackbarProvider } from "notistack";
+import type { AppProps } from "next/app";
+
+import theme from "../src/themes/theme";
 import "../styles/style.css";
 
-import MainLayout from "../src/components/layout/main-layout";
 import { ViewportProvider } from "../contexts/ViewPortProvider";
 import { MenuVisibilityContextProvider } from "../contexts/MenuVisibilityProvider";
-import type { AppProps } from "next/app";
-import MyApp from './myapp';
 
-
-
-
-
-
+import AppWithLayouts from "./appWithLayouts";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <>
-            <ViewportProvider>
+        <ViewportProvider>
+            <ThemeProvider theme={theme}>
                 <MenuVisibilityContextProvider>
-                    {MyApp({Component, pageProps})}
-                    {/* <MainLayout>
-                        <Component {...pageProps} />
-                    </MainLayout> */}
+                    <SnackbarProvider
+                        maxSnack={3}
+                        anchorOrigin={{
+                            vertical: "top",
+                            horizontal: "center",
+                        }}
+                    >
+                        {AppWithLayouts({ Component, pageProps })}
+                    </SnackbarProvider>
                 </MenuVisibilityContextProvider>
-            </ViewportProvider>
-        </>
+            </ThemeProvider>
+        </ViewportProvider>
     );
 }
 

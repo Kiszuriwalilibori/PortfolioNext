@@ -185,7 +185,9 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
     .rs-checkbox-inner::before {
     opacity: 0.5;
 }
-.test{color:white;}
+.test {
+    color: white;
+}
 .rs-checkbox-group {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -201,4 +203,21 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
     -ms-flex-direction: row;
     flex-direction: row;
     margin-left: -10px;
+}
+
+.checkbox {
+    color: white;
+    border: 1px solid #a03636;
+    padding-right: 10px;
+    background-color: #a06b36;
+    opacity: 0.8;
+    font-size: 14px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.checkbox-group {
+    margin-left: -4px !important;
+    & > * {
+        margin: 4px 4px !important;
+    }
 }

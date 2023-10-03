@@ -23,8 +23,12 @@
         "pages/events/event1.js",
         "pages/events/[cat]/[id].jsx",
         "src/components/skills",
-        "src/components/header/index.js",
-        "src/components/jobs/index.tsx"
-, "pages/myapp.jsx"    ],
+        "src/components/sidebar/index.js",
+        "src/components/PageContents/jobsPageContent/index.tsx",
+        "pages/myapp.jsx",
+        "pages/appWithLayouts.jsx",
+        "src/components/PageContents/skillsPageContent/components",
+        "src/components/PageContents/skillsPageContent/utils"
+    ],
     "exclude": ["node_modules"]
 }

@@ -230,12 +230,7 @@
             padding-top: calc($grid / 2);
             position: relative;
         }
-        .subtitle-5 {
-            font-size: 18px;
-            font-weight: $font-weight-light;
-            line-height: 1.5;
-            margin-bottom: 0.66em;
-        }
+
         .subtitle-6 {
             font-size: 12px;
             text-transform: uppercase;
@@ -256,6 +251,7 @@
         &--narrow {
             padding-bottom: 15px;
             padding-top: 15px;
+            color: black;
         }
     }
     &__container {
@@ -287,4 +283,21 @@
             }
         }
     }
+}
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+.scrollOffset {
+    margin-left: calc(100vw - 100%);
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

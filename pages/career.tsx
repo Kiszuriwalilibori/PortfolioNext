@@ -1,13 +1,13 @@
-import PageContent from "../src/components/jobs";
+import { CareerPageContent } from "../src/components/PageContents";
 import { Jobs } from "../types";
 interface Props {
-    data: Jobs;
+    jobs: Jobs;
 }
 
 export default function Career(props: Props) {
-    const { data } = props;
+    const { jobs } = props;
 
-    return <PageContent jobs={data} />;
+    return <CareerPageContent jobs={jobs} />;
 }
 
 export async function getStaticProps() {
@@ -15,7 +15,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            data: career,
+            jobs: career,
         },
     };
 }

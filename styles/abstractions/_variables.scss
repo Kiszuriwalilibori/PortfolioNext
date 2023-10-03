@@ -8,31 +8,34 @@ $mobile-background-color: #24332a;
 $dark-background-color: #303337;
 $whitish-color: rgba(255, 255, 255, 0.65);
 $olive-color--transparent: rgba(67, 84, 22, 0.4);
-$yellowgreen-color: rgb(149, 199, 48);
+
+$olive-color--transparent: #d7dfc5;
+$yellowgreen-color: #85b728;
 $yellowgreen-color--transparent: rgba(149, 199, 48, 0.4);
 $greyish-color: #ddd;
 $non-professional-color: $yellowgreen-color;
 $non-professional-color--transparent: $yellowgreen-color--transparent;
 
-$unsplash-background-color: #353434;
-$firebase-background-color: #2d8754;
+$unsplash-background-color: #546e7a;
+$firebase-background-color: #2b8251;
 $athletes-background-color: #1076ab;
-$floydian-portfolio-background-color: #f7c23f;
-$space-portfolio-background-color: #52175a;
-$dancer-portfolio-background-color: #e86971;
-$cryptocurrency-tracker-background-color: #847cbd;
-$weather-forecast-background-color: #61b8ff;
-$google-books-finder-background-color: #5bbeca;
-$decision-tree-background-color: #092204;
-$minifigs-background-color:$mobile-background-color;
-$chat-background-color: #24332a;
-$youtube-background-color: #313304;
-$physioterapy-background-color: #02113c;
+$portfolionext-background-color: #3f51b5;
+$floydian-portfolio-background-color: #1d424b;
+$space-portfolio-background-color: #063851;
+$dancer-portfolio-background-color: #d81b60;
+$cryptocurrency-tracker-background-color: #ab221d;
+$weather-forecast-background-color: #0077d1;
+$google-books-finder-background-color: #117f8d;
+$decision-tree-background-color: #3f51b5;
+$minifigs-background-color: #1f2136;
+$chat-background-color: #00796b;
+$youtube-background-color: #27817b;
+$physioterapy-background-color: #6071c3;
 $greyish-border: 1px solid $greyish-color;
 $reddish-border: 1px solid $red-color--subdued;
 $black-border: 1px solid black;
 
-$font-raleway: "Raleway", sans-serif; 
+$font-raleway: "Raleway", sans-serif;
 $font-open-sans: "Open Sans", sans-serif;
 $font-light: $font-raleway; //
 $font-bold: $font-raleway; //
@@ -53,17 +56,4 @@ $header-mobile-height: 300px;
 
 $mobile-padding: 12px;
 $page-container-mobile-width: 573px;
-
-
-
-
-
-
-
-
-
-
-// function ProjectPage (data: Project) {return( <SingleProjectPageContent data={data} />)};
-
-// ProjectPage.getLayout =function(page:JSX.Element){return(<ProjectLayout>{page}</ProjectLayout>)}
-// export default ProjectPage;
+$max-width: 1500px;

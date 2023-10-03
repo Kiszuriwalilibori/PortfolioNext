@@ -1,14 +1,15 @@
 import * as React from "react";
 
-interface MenuVisibilityContextProps {
+interface Props {
     isMenuVisible: boolean;
     toggleMenuVisibility: () => void;
+    hideMenu: () => void;
 }
 const initialState = {
     isMenuVisible: false,
 };
 
-const MenuVisibilityContext = React.createContext<MenuVisibilityContextProps>({} as MenuVisibilityContextProps);
+const MenuVisibilityContext = React.createContext<Props>({} as Props);
 
 class MenuVisibilityContextProvider extends React.Component<React.PropsWithChildren> {
     state = {
@@ -21,6 +22,7 @@ class MenuVisibilityContextProvider extends React.Component<React.PropsWithChild
                 value={{
                     isMenuVisible: this.state.areVisible,
                     toggleMenuVisibility: () => this.setState({ areVisible: !this.state.areVisible }),
+                    hideMenu: () => this.setState({ areVisible: false }),
                 }}
             >
                 {this.props.children}

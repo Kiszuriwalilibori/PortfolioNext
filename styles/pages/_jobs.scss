@@ -1,7 +1,16 @@
 .jobs {
     @extend .section;
-    @include with-bckgrnd-image("../public/backgrounds/career.jpg");
-
+    @include above-mobile {
+        @include with-bckgrnd-image("../public/backgrounds/career.jpg");
+        @include with-bckgrnd-image("../public/backgrounds/career.webp");
+    }
+    @include large {
+        background: url(../public/backgrounds/career.jpg) no-repeat;
+        background: url(../public/backgrounds/career.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
     &__content {
         @extend .page__content, .page__content--jobs;
 

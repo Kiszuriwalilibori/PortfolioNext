@@ -23,6 +23,12 @@
             "text": "Github",
             "link": "https://github.com/Kiszuriwalilibori",
             "alias": "Kiszuriwalilibori"
+        },
+        {
+            "ID": "cv",
+            "text": "Curriculum Vitae",
+            "link": "/documents/cv.pdf",
+            "alias": "My cv"
         }
     ]
 }

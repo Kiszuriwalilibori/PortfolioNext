@@ -8,12 +8,12 @@ export interface Contact {
     link: string;
     alias: string;
 }
-export interface EducationItem {
+export interface EducationData {
     school: string;
     period: string;
     subject: string;
 }
-export interface Cert {
+export interface Certificate {
     name: string;
     operator: string;
     link: string;
@@ -27,35 +27,39 @@ export interface Job {
     position: string;
     description: string[];
     contentStyle: { background: string; color: string };
+    style: {};
     subtitle: string;
 }
 
 export type Jobs = Job[];
 
-type ProjectCategory = "A" | "B" | "C";
 export interface Project {
     title: string;
     description: string;
     category: string;
     features: string[];
-    longDescription: string;
+    longDescription: string[];
     live: string;
     github: string;
+    story?: string;
+    slides?: string[];
 }
 
 export type Contacts = Contact[];
 
 export type Skills = Skill[];
 
-export type Education = EducationItem[];
+export type Education = EducationData[];
 
 export interface SkillsPageProps {
     skills: Skill[];
     education: Education;
-    certs: Cert[];
+    certificates: Certificate[];
 }
 
 export interface ProjectsPageProps {
     data: Project[];
     featuresList: string[];
 }
+
+export type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";

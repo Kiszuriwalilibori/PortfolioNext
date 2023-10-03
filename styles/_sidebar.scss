@@ -3,6 +3,10 @@
     @include above-mobile {
         display: flex;
     }
+    @include large {
+        max-width: calc($max-width / 4);
+        margin-left: calc((100vw - $max-width) / 2);
+    }
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -25,11 +29,7 @@
         padding: calc($grid * 2 / 3);
         padding-top: $grid;
     }
-    & .name {
-        font-size: 22px;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
+
     & .description {
         font-size: 12px;
         font-weight: 100;

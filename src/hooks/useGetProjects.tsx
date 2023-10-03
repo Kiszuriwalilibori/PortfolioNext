@@ -1,7 +1,7 @@
 import isEqual from "lodash/isEqual";
 import isEmpty from "lodash/isEmpty";
-import { useState, useCallback } from "react";
 
+import { useState, useCallback } from "react";
 import { Project } from "../../types";
 
 function getVisibleProjects(data: Project[], filters: string[], props: string[]) {
@@ -17,16 +17,13 @@ function getVisibleProjects(data: Project[], filters: string[], props: string[])
 const useGetProjects = (featuresList: string[], data: Project[]) => {
     const [activeFeatures, setActiveFeatures] = useState([] as string[]);
 
-    const changeHandler = useCallback(
-        (ary: string[]) => {
-            if (ary.length) {
-                setActiveFeatures(ary);
-            } else {
-                setActiveFeatures([]);
-            }
-        },
-        [featuresList]
-    );
+    const changeHandler = useCallback((ary: string[]) => {
+        if (ary.length) {
+            setActiveFeatures(ary);
+        } else {
+            setActiveFeatures([]);
+        }
+    }, []);
 
     const visibleProjects = getVisibleProjects(data, activeFeatures, featuresList);
 
