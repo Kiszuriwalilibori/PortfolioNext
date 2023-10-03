@@ -48,7 +48,7 @@ function MyHead() {
             <title>{title}</title>
             {descriptions[pageName] && <meta name="description" content={descriptions[pageName]} />}
             <meta name="author" content="Piotr Maksymiuk" />
-            <meta name="version" content="0.1.0" />
+            <meta name="version" content="0.2.0" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="theme-color" content="#000000" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
