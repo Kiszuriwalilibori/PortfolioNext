@@ -12,9 +12,7 @@ function EducationItem(props: Props) {
 
     return (
         <li className="educationItem paper2">
-            <div className="period">
-                <em>{period}</em>
-            </div>
+            <div className="period">{period && <em>{period}</em>}</div>
 
             <h3>{school}</h3>
             <p>{subject}</p>

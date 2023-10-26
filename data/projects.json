@@ -52,7 +52,8 @@
                 "The first page form has also slightly different logic then original, but the way it woks has been requested by hiring company.",
                 "On the page with search results the content is paginated. There is cursor position sensor that checks if there is still avialbel content and -if so - fetches that, otherwise informs that all data is collected. First set of images waits for all of them to be loaded before display to avoid blinking, the other sets are lazy loaded",
                 "Clicking the image initiates the modal with enlarged picture and more detailed data.",
-                "The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment."
+                "The app needs API key, its presence is checked on early stage to avoid further errors. That might seem redundant, but is useful if someones copies repo and starts app in his own environment.",
+                "BTW: it resembles not the latest Unsplash, but the one from a few years ago."
             ],
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
