@@ -22,7 +22,9 @@ class MenuVisibilityContextProvider extends React.Component<React.PropsWithChild
                 value={{
                     isMenuVisible: this.state.areVisible,
                     toggleMenuVisibility: () => this.setState({ areVisible: !this.state.areVisible }),
-                    hideMenu: () => this.setState({ areVisible: false }),
+                    hideMenu: () => {
+                        this.setState({ areVisible: false });
+                    },
                 }}
             >
                 {this.props.children}

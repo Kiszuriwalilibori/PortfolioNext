@@ -1,13 +1,17 @@
+import { Certificate } from "../../../../../types";
 interface Props {
-    certificate: { name: string; operator: string; link: string; professional: boolean };
+    certificate: Certificate;
 }
+const createLiClassName = (isProfessional: Certificate["isProfessional"]) => {
+    return isProfessional ? "certItem" : " certItem certItem--non-professional";
+};
 
 function Certificate(props: Props) {
     const {
-        certificate: { link, operator, name, professional },
+        certificate: { link, operator, name, isProfessional },
     } = props;
     return (
-        <li className={professional ? "certItem" : " certItem certItem--non-professional"}>
+        <li className={createLiClassName(isProfessional)}>
             <h3>{name}</h3>
             <a href={link}>{operator}</a>
         </li>

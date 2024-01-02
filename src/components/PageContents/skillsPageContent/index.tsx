@@ -29,11 +29,11 @@ function SkillsPageContent(props: SkillsPageProps) {
                     <PageTitle title="Skills & Education" />
                     <h2>Skills:</h2>
                     <Divider sx={{ width: 1 }} />
-                    {good && <SkillsByCategory skillsSelectedByCategory={good} heading={headings.good} />}
+                    {good.length && <SkillsByCategory skillsSelectedByCategory={good} heading={headings.good} />}
                     <Divider sx={{ width: 1 }} />
-                    {fair && <SkillsByCategory skillsSelectedByCategory={fair} heading={headings.fair} />}
+                    {fair.length && <SkillsByCategory skillsSelectedByCategory={fair} heading={headings.fair} />}
                     <Divider sx={{ width: 1 }} />
-                    {basic && <SkillsByCategory skillsSelectedByCategory={basic} heading={headings.basic} />}
+                    {basic.length && <SkillsByCategory skillsSelectedByCategory={basic} heading={headings.basic} />}
                     <Divider sx={{ width: 1 }} />
                     <h2>Education:</h2>
                     <ul className="education">

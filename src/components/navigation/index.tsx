@@ -6,7 +6,7 @@ import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvid
 import Fade from "@mui/material/Fade";
 import NavigationToggler from "./navigationToggler";
 
-const links = ["aboutme", "skills", "projects", "career", "contact"];
+const LINKS = ["aboutme", "skills", "projects", "career", "contact"];
 
 export default function Navigation() {
     const { isMenuVisible } = useMenuVisibilityContext();
@@ -23,7 +23,7 @@ export default function Navigation() {
                     itemType="http://schema.org/LocalBusiness"
                 >
                     <ul className="navbar__list">
-                        {links.map(link => (
+                        {LINKS.map(link => (
                             <Link key={`${ID}-${link}`} page={link} />
                         ))}
                     </ul>

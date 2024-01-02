@@ -17,7 +17,7 @@ export interface Certificate {
     name: string;
     operator: string;
     link: string;
-    professional: boolean;
+    isProfessional: boolean;
 }
 
 export interface Job {
