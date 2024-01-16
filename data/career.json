@@ -1,23 +1,13 @@
 {
     "career": [
         {
-            "period": "June 2023 - now",
+            "period": "April 2023 - now",
             "name": "Various",
             "position": "Front-end developer",
             "description": ["Irregular small front-end orders for various contractors"],
             "contentStyle": { "background": "#E3C27E", "color": "#000", "box-shadow": "none" }
         },
-        {
-            "period": "Apr 2023 - Jun 2023",
-            "name": "They",
-            "link": "https://th-ey.com/",
-            "position": "Front-end developer",
-            "subtitle": "Lean Building",
-            "description": [
-                "An application for booking visits in beauty parlors (TypeScript, React, Redux).Worked on front-end. My task was to redesign admin panel."
-            ],
-            "contentStyle": { "background": "#E86971", "color": "#000", "box-shadow": "none" }
-        },
+
         {
             "period": "Oct 2022 - Apr 2023",
             "name": "Various",

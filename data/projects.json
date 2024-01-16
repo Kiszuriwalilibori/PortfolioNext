@@ -102,6 +102,7 @@
                 "Active interlocutors are distinguishable from non-active by visual identifiers. In dialog box there is also their image. One can switch between them and keep up to ten chats simultanously.",
                 "The time gap from the last activity is shown.",
                 "Beside standard text, one can use emoticons while messaging. Moreover, it is now capable to transcript human voice to text",
+                "Version 1.1.1: Now with voice input feature",
                 "For the future: the app might be connected to any AI interface. that wa bright idea and even some steps has been undertaken. Unfortunately,my GPTChat key has been blocked for unclear reasons what practically puts the idea on hold until find another AI platform with public API."
             ],
             "live": "https://kiszuriwalilibori.github.io/FakeChat/",
@@ -211,11 +212,20 @@
                 "This is simple You Tube player allowing choice of movie subject",
                 "With respect to top bar, reaching the objective was surprisingly cumbersome and requested application of sophisticated resize-control system.Even so, it shows its best in Chrome only.",
                 "Sidebar/topbar contains miniatures the number of which is also responsive.",
-                "The app needs login (look in README for password) and implements permitted routes pattern."
+                "The app needs login (look in README for password) and implements permitted routes pattern.",
+                "Version 1.0.4: Now with voice input of video subject"
             ],
             "live": "https://kiszuriwalilibori.github.io/youtube/",
             "github": "https://github.com/Kiszuriwalilibori/youtube",
-            "features": ["react", "react-router", "react-hook-form", "redux", "redux-thunk", "axios"],
+            "features": [
+                "react",
+                "react-router",
+                "react-hook-form",
+                "redux",
+                "redux-thunk",
+                "axios",
+                "speech-recognition"
+            ],
             "category": "B",
             "slides": ["/images/project_images/youtube.jpg", "/images/project_images/youtube2.jpg"]
         },
