@@ -3,7 +3,7 @@ import capitalize from "lodash/capitalize";
 import { useRouter } from "next/router";
 import { createPageName, createTitle, descriptions } from "./utils";
 
-const VERSION = "0.2.18";
+const VERSION = "0.2.1";
 
 function MyHead() {
     const router = useRouter();

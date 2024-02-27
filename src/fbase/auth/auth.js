@@ -1,5 +1,5 @@
 import firebase_app from "../config";
-
+import { googleLogout } from "@react-oauth/google";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { getComments } from "fbase/firestore/getComments";
 
@@ -26,6 +26,7 @@ export const requestLogin = (handleSuccess, handleError) => {
         })
         .catch(error => {
             handleError(error.code + " " + error.message);
+            console.log(error);
 
             // // Handle Errors here.
             // const errorCode = error.code;
@@ -41,7 +42,10 @@ export const requestLogin = (handleSuccess, handleError) => {
 export const requestLogout = () => {
     const auth = getAuth();
     signOut(auth)
-        .then(() => {})
+        .then(() => {
+            // auth.GoogleSignInApi.signOut();
+            // googleLogout();
+        })
         .catch(error => {
             console.log(JSON.stringify(error));
         });

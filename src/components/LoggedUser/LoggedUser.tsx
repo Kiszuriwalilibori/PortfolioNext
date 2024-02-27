@@ -16,7 +16,7 @@ export default function LoggedUser() {
     return (
         <Paper elevation={2} component="aside" aria-label="user card">
             <UserCard>
-                <CardActionArea>
+                <CardActionArea component="div">
                     <Media image={user.picture as string | undefined} />
                     <CardContent>
                         <Name>{user.name || user.email}</Name>

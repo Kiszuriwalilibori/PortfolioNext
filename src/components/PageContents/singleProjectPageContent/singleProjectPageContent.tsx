@@ -103,11 +103,11 @@ function SingleProjectPageContent(props: Props) {
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={github} live={live} />
-                    {/* <ButtonsStack direction="column" spacing={2} id="Buttons stack">
+                    <ButtonsStack direction="column" spacing={2} id="Buttons stack">
                         <Button variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
                             Leave a comment
                         </Button>
-                    </ButtonsStack> */}
+                    </ButtonsStack>
                     {/* <h2>Comments</h2>
                     <CommentsStack spacing={1}>
                         {comments.map(comment => {
