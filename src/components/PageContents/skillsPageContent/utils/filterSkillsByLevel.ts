@@ -1,4 +1,4 @@
-import { Skill } from "../../../../../types";
+import { Skill } from "types";
 
 export default function filterSkillsByLevel(ary: Skill[], level: string) {
     const result = ary.filter(skill => {

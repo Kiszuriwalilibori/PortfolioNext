@@ -4,8 +4,9 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 
 import Icons from "./icons";
-import { Job, Jobs } from "../../../../types";
 import PageTitle from "../../pageTitle";
+
+import { Job, Jobs } from "types";
 import { Company, Duties, Position, Project } from "./styled";
 
 interface Props {

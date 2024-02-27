@@ -2,42 +2,31 @@ import isEmpty from "lodash/isEmpty";
 
 import { useId, useMemo } from "react";
 
-import SingleProject from "./components/project";
-import { useGetProjects } from "../../../hooks";
-import { Checkboxes } from "./components";
-import { ProjectsPageProps } from "../../../../types";
+import SingleProject from "./parts/project";
+import { useGetProjects } from "hooks";
+import { Checkboxes } from "./parts";
+import { ProjectNav, ProjectsPageProps } from "types";
 import { ProjectCategoryStack } from "./styled";
-import { PageTitle } from "../../../components";
+import { PageTitle } from "components";
+import { sortProjects } from "./utils";
 
 function ProjectsPageContent(props: ProjectsPageProps) {
     const { data, featuresList } = props;
-    const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
+    const { visibleProjects, changeHandler, titles } = useGetProjects(featuresList, data);
 
     const projectsCategoryA = useMemo(
-        () =>
-            visibleProjects
-                .filter(item => item.category === "A" || item.category === "B")
-                .sort(function (a, b) {
-                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
-                }),
+        () => visibleProjects.filter(item => item.category === "A" || item.category === "B").sort(sortProjects),
         [visibleProjects]
     );
     const projectsCategoryB = useMemo(
         () =>
             visibleProjects
                 .filter(item => item.category === "X") // todo temporary fix
-                .sort(function (a, b) {
-                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
-                }),
+                .sort(sortProjects),
         [visibleProjects]
     );
     const projectsCategoryC = useMemo(
-        () =>
-            visibleProjects
-                .filter(item => item.category === "C")
-                .sort(function (a, b) {
-                    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
-                }),
+        () => visibleProjects.filter(item => item.category === "C").sort(sortProjects),
         [visibleProjects]
     );
 

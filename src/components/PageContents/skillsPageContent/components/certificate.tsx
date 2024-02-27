@@ -1,4 +1,4 @@
-import { Certificate } from "../../../../../types";
+import { Certificate } from "types";
 interface Props {
     certificate: Certificate;
 }

@@ -1,6 +1,8 @@
-import { useState, useEffect, createContext, useContext, FC, ReactNode } from "react";
 import throttle from "lodash/throttle";
-import { DesktopSizes } from "../types";
+
+import { useState, useEffect, createContext, useContext, FC, ReactNode } from "react";
+
+import { DesktopSizes } from "types";
 
 interface viewportContextInterface {
     desktopSize: DesktopSizes;

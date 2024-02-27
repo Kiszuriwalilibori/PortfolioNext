@@ -2,7 +2,7 @@ import React from "react";
 
 import Footer from "../footer";
 import Sidebar from "../sidebar";
-import Head from "../head";
+import Head from "../head/head";
 import Navigation from "../navigation";
 
 import { Roboto } from "@next/font/google";

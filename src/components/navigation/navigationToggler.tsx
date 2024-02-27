@@ -2,7 +2,7 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Image from "next/image";
 import { MyButton } from "../common";
 
-import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
+import { useMenuVisibilityContext } from "contexts";
 
 const NavigationToggler = () => {
     const { toggleMenuVisibility, hideMenu } = useMenuVisibilityContext();

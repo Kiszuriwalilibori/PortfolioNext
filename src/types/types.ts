@@ -1,3 +1,5 @@
+import { ModalProps } from "../components/modal/Modal";
+
 export interface Skill {
     skill: string;
     level: string;
@@ -63,3 +65,28 @@ export interface ProjectsPageProps {
 }
 
 export type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";
+
+export type { ModalProps };
+
+export interface CommentType {
+    author: string;
+    authorImage: string;
+    active?: boolean;
+    content: string;
+    created: number;
+    ID: string;
+    project: string;
+    parent?: string;
+}
+
+export interface User {
+    id: string;
+    email: string;
+    name: string;
+    picture: string;
+}
+
+export interface ProjectNav {
+    projectNext: string | undefined;
+    projectPrevious: string | undefined;
+}

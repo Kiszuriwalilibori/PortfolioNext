@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import LargeSidebar from "./largeSidebar";
 import MobileSidebar from "./mobileSidebar";
 
-import { useBreakpoints } from "../../../contexts/ViewPortProvider";
+import { useBreakpoints } from "contexts";
 
 const small = new Set(["mobile", "phablet"]);
 

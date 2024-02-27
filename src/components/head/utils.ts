@@ -1,8 +1,6 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
 import capitalize from "lodash/capitalize";
 
-const descriptions: {
+export const descriptions: {
     [key: string]: string;
 } = {
     aboutme: "Basic informations about author, the details are covered on other pages ",
@@ -37,34 +35,13 @@ const descriptions: {
     "projects/Space Portfolio":
         "Author portfolio dedicated to space, inspired by Stanisław Lem and and Apollo 14 mission",
 };
-function MyHead() {
-    const router = useRouter();
-    const route = router.asPath.slice(1);
-    const pageName = route ? route.replaceAll("%20", " ") : "aboutme";
-    const title = `Piotr Maksymiuk/Front-End Developer/Portfolio/${capitalize(pageName.replaceAll("%20", " "))} `;
 
-    return (
-        <Head>
-            <title>{title}</title>
-            {descriptions[pageName] && <meta name="description" content={descriptions[pageName]} />}
-            <meta name="author" content="Piotr Maksymiuk" />
-            <meta name="version" content="0.2.0" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="theme-color" content="#000000" />
-            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta property="og:type" content="website" />
-            <meta property="og:site_name" content="Piotr Maksymiuk - Front-End Developer - Portfolio" />
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:url" content={"https://portfolio-next-ten-sigma.vercel.app/" + route} />
-            <meta property="og:image" content="https://portfolio-next-ten-sigma.vercel.app/next.jpg" />
-            {/* todo w powyższej linii jest miejsce na customowe obrazy dla podstron */}
-            {descriptions[pageName] && <meta property="og:description" content={descriptions[pageName]} />}
-            {pageName && <meta property="og:title" content={capitalize(pageName)} />}
-            <link rel="icon" href="/portfolio.svg" />
-
-            {/* todo w powyższej linii jest miejsce na customowe ikony dla podstron */}
-            <link rel="apple-touch-icon" href="/android192.png" />
-        </Head>
-    );
+export function createTitle(text: string) {
+    const title = `Piotr Maksymiuk/Front-End Developer/Portfolio/${capitalize(text.replaceAll("%20", " "))} `;
+    return title;
 }
-export default MyHead;
+
+export function createPageName(route: string) {
+    const pageName = route ? route.replaceAll("%20", " ") : "aboutme";
+    return pageName;
+}

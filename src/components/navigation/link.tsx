@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
+import { useMenuVisibilityContext } from "contexts";
 interface Props {
     page: string;
 }

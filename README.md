@@ -37,3 +37,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 todo: projects: zrobić hooka z logiki
 hamburger w projektach musi być kolorystycznie dopasowany do projektu, bez tego wygląda zbyt kontrastowo
+
+odpala się przez npm run dev

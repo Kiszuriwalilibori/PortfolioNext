@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import theme from "../../themes/theme";
+import theme from "themes";
 
 interface Props {
     title: string;

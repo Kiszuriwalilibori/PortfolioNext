@@ -15,7 +15,7 @@ export default function ButtonMore(props: Props) {
             variant="contained"
             color="primary"
             LinkComponent={Link}
-            href={`/projects/${title}`}
+            href={`/projects/${title}`} ///
             endIcon={Icons["send"]}
             aria-label={`Link to ${title} project`}
             sx={{ marginTop: "auto" }}

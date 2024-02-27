@@ -1,6 +1,6 @@
 import { ContactPageContent } from "../src/components/PageContents";
 
-import { Contacts } from "../types";
+import { Contacts } from "../src/types";
 
 interface Props {
     contacts: Contacts;

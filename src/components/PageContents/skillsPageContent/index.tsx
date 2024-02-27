@@ -3,9 +3,11 @@ import Divider from "@mui/material/Divider";
 import { useId } from "react";
 
 import filterSkillsByLevel from "./utils/filterSkillsByLevel";
-import { SkillsByCategory, EducationItem, Certificate } from "./components";
-import { SkillsPageProps } from "../../../../types";
 import PageTitle from "../../pageTitle";
+
+import { SkillsByCategory, EducationItem, Certificate } from "./components";
+import { SkillsPageProps } from "types";
+/// divider do stylowania poza
 
 const headings = {
     good: "I feel reasonably comfortable with:",

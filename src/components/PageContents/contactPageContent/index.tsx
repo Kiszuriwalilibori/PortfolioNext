@@ -1,9 +1,9 @@
 import { useId } from "react";
 
 import Contact from "./contact";
-
-import { Contacts } from "../../../../types";
 import PageTitle from "../../pageTitle";
+
+import { Contacts } from "types";
 
 interface Props {
     contactData: Contacts;

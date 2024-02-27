@@ -1,5 +1,5 @@
 import { CareerPageContent } from "../src/components/PageContents";
-import { Jobs } from "../types";
+import { Jobs } from "../src/types";
 interface Props {
     jobs: Jobs;
 }

@@ -1,6 +1,7 @@
-import { useId } from "react";
-import { Skills } from "../../../../../types";
 import Box from "@mui/material/Box";
+
+import { useId } from "react";
+import { Skills } from "types";
 
 interface Props {
     skillsSelectedByCategory: Skills;

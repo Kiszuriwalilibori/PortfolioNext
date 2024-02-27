@@ -1,7 +1,8 @@
-import { Contact } from "../../../../types";
+import { useId } from "react";
+
+import { Contact } from "types";
 import { CONTACTS } from "../../../../data/contacts";
 import { Icons, IconLabels } from "../../common/icons";
-import { useId } from "react";
 
 export const Contacts = () => {
     const ID = useId();

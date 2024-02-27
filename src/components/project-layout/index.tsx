@@ -1,4 +1,4 @@
-import Head from "../head";
+import Head from "../head/head";
 import Navigation from "../navigation";
 
 type Props = {

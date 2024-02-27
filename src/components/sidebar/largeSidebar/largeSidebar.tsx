@@ -5,7 +5,7 @@ import Contacts from "./contacts";
 
 const LargeSidebar = () => {
     return (
-        <aside className="sidebar">
+        <aside className="sidebar" id="Large Sidebar">
             <article className="author" aria-label="informations about site author">
                 <Image
                     className="image"

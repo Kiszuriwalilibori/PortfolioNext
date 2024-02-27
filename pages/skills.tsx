@@ -1,6 +1,6 @@
 import { SkillsPageContent } from "../src/components/PageContents";
 
-import { SkillsPageProps } from "../types";
+import { SkillsPageProps } from "../src/types";
 
 export default function Skills(props: SkillsPageProps) {
     const { skills, education, certificates } = props;

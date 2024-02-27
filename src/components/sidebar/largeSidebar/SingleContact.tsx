@@ -2,7 +2,7 @@ import React from "react";
 
 import { Icons, IconLabels } from "../../common/icons";
 
-import { Contact as SingleContact } from "../../../../types";
+import { Contact as SingleContact } from "types";
 
 interface Props {
     contactData: SingleContact;

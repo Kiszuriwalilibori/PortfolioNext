@@ -12,7 +12,7 @@ function MobileSidebar(props: Props) {
     const className = `header-mobile header-mobile--${postfix}`;
 
     return (
-        <article className={className} aria-label={`header mobile ${postfix}`}>
+        <article className={className} aria-label={`header mobile ${postfix}`} id="Mobile Sidebar">
             <Image width={100} height={100} className="image" src="/images/author.jpg" alt="author foto" />
             <Typography variant="sidebarName">Piotr Maksymiuk</Typography>
             <h2 className="description">Front-End Developer</h2>

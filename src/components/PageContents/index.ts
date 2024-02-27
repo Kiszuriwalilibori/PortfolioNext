@@ -3,5 +3,13 @@ import ContactPageContent from "./contactPageContent";
 import CareerPageContent from "./jobsPageContent";
 import ProjectsPageContent from "./projectsPageContent";
 import SkillsPageContent from "./skillsPageContent";
+import PrivacyPageContent from "./privacyPageContent";
 
-export { AboutmePageContent, ContactPageContent, CareerPageContent, ProjectsPageContent, SkillsPageContent };
+export {
+    AboutmePageContent,
+    ContactPageContent,
+    CareerPageContent,
+    PrivacyPageContent,
+    ProjectsPageContent,
+    SkillsPageContent,
+};

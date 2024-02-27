@@ -1,10 +1,11 @@
+import Fade from "@mui/material/Fade";
 import { useId } from "react";
 
 import Link from "./link";
-
-import { useMenuVisibilityContext } from "../../../contexts/MenuVisibilityProvider";
-import Fade from "@mui/material/Fade";
 import NavigationToggler from "./navigationToggler";
+
+import { useMenuVisibilityContext } from "contexts";
+import { LoggedUser } from "..";
 
 const LINKS = ["aboutme", "skills", "projects", "career", "contact"];
 
@@ -14,6 +15,7 @@ export default function Navigation() {
 
     return (
         <nav aria-label="navigation container">
+            <LoggedUser />
             <NavigationToggler />
             <Fade in={isMenuVisible}>
                 <nav

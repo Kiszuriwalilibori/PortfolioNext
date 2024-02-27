@@ -2,7 +2,7 @@ import isEqual from "lodash/isEqual";
 import isEmpty from "lodash/isEmpty";
 
 import { useState, useCallback } from "react";
-import { Project } from "../../types";
+import { Project } from "types";
 
 function getVisibleProjects(data: Project[], filters: string[], props: string[]) {
     if (isEmpty(filters)) return data;
@@ -27,7 +27,11 @@ const useGetProjects = (featuresList: string[], data: Project[]) => {
 
     const visibleProjects = getVisibleProjects(data, activeFeatures, featuresList);
 
-    return { visibleProjects, changeHandler };
+    const titles = visibleProjects.map(project => {
+        return project.title;
+    });
+
+    return { visibleProjects, changeHandler, titles };
 };
 
 export default useGetProjects;

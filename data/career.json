@@ -1,11 +1,20 @@
 {
     "career": [
         {
-            "period": "April 2023 - now",
+            "period": "June 2023 - now",
             "name": "Various",
             "position": "Front-end developer",
             "description": ["Irregular small front-end orders for various contractors"],
             "contentStyle": { "background": "#E3C27E", "color": "#000", "box-shadow": "none" }
+        },
+        {
+            "period": "Apr 2023 - Jun 2023",
+            "name": "They",
+            "link": "https://th-ey.com/",
+            "position": "Front-end developer",
+            "subtitle": "Lean Building",
+            "description": ["An application for construction works management  (TypeScript, React, Zustand)."],
+            "contentStyle": { "background": "#E86971", "color": "#000", "box-shadow": "none" }
         },
 
         {
