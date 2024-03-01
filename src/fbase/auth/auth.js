@@ -1,7 +1,6 @@
 import firebase_app from "../config";
 import { googleLogout } from "@react-oauth/google";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { getComments } from "fbase/firestore/getComments";
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();

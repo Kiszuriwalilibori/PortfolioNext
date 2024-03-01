@@ -20,7 +20,8 @@
             "hooks/*": ["hooks/*"],
             "contexts/*": ["contexts/*"],
             "themes/*": ["themes/*"],
-            "fbase/*": ["fbase/*"]
+            "fbase/*": ["fbase/*"],
+            "config/*": ["config/*"]
         }
     },
     "include": [
@@ -37,7 +38,8 @@
         "pages/appWithLayouts.jsx",
         "src/components/PageContents/skillsPageContent/components",
         "src/components/PageContents/skillsPageContent/utils",
-        "src/contexts/AuthContext.tsx"
+        "src/contexts/AuthContext.tsx",
+        "src/hooks/useAddComments.js"
     ],
     "exclude": ["node_modules"]
 }

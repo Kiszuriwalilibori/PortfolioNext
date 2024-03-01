@@ -8,7 +8,7 @@ import addComments from "fbase/firestore/addComments";
 
 import { ModalProps, CommentType } from "types";
 import { ButtonsStack, CommentTextField } from "../styled";
-import { useComment } from "hooks";
+import { useComment, useMessage } from "hooks";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
@@ -17,10 +17,20 @@ interface Props extends Omit<ModalProps, "title"> {
 }
 
 const INITIAL_COMMENT = "" as string;
-export const CommentModal = (props: Props) => {
+export const AddComment = (props: Props) => {
     const { isOpen, onClose, author, authorImage, project } = props;
 
     const { comment, createComment, clearComment } = useComment();
+
+    const showMessage = useMessage();
+
+    const handleError = useCallback((message: string) => {
+        showMessage.error("Error: " + message);
+    }, []);
+
+    const handleSuccess = useCallback((message: string) => {
+        showMessage.success("Your comment has been successfully added");
+    }, []);
 
     const acceptComment = useCallback(async () => {
         const commentToBeStored: CommentType = {
@@ -32,22 +42,12 @@ export const CommentModal = (props: Props) => {
             ID: uuid(),
             project,
         };
-        addComments(commentToBeStored);
-        try {
-            const response = await fetch("/api/comments", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(commentToBeStored),
-            });
-            if (response.ok) {
-                console.log("New comment succesfully added");
-            }
-            if (!response.ok) throw new Error(`Error: ${response.status}`);
-            const data = await response.json();
-        } catch (e) {
-            console.log("POST error: ", e);
-        }
-
+        addComments(
+            `${commentToBeStored.author} ${commentToBeStored.created}`,
+            commentToBeStored,
+            handleSuccess,
+            handleError
+        );
         clearComment();
         onClose();
     }, [comment]);
@@ -95,4 +95,4 @@ export const CommentModal = (props: Props) => {
     );
 };
 
-export default CommentModal;
+export default AddComment;

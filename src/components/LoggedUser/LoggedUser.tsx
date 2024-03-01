@@ -1,8 +1,6 @@
-import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 import { LogOut, Media, Name, UserCard } from "./LoggedUser.style";
 import { useAuthContext } from "contexts";
@@ -16,16 +14,15 @@ export default function LoggedUser() {
     return (
         <Paper elevation={2} component="aside" aria-label="user card">
             <UserCard>
-                <CardActionArea component="div">
+                <Box>
                     <Media image={user.picture as string | undefined} />
                     <CardContent>
                         <Name>{user.name || user.email}</Name>
-
-                        <LogOut variant="outlined" onClick={() => requestLogout()}>
+                        <LogOut variant="contained" onClick={() => requestLogout()}>
                             LogOut
                         </LogOut>
                     </CardContent>
-                </CardActionArea>
+                </Box>
             </UserCard>
         </Paper>
     );

@@ -23,3 +23,5 @@ export function Features(props: Props) {
         </>
     );
 }
+
+export default Features;

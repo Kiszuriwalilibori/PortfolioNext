@@ -29,6 +29,12 @@
             "text": "Curriculum Vitae",
             "link": "/documents/cv.pdf",
             "alias": "My cv"
+        },
+        {
+            "ID": "motivation",
+            "text": "Motivation letter",
+            "link": "/documents/motivation.pdf",
+            "alias": "Motivation letter"
         }
     ]
 }

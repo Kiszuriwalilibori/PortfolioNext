@@ -1,47 +1,28 @@
 import React, { useCallback, useEffect, useId } from "react";
-import Chip from "@mui/material/Chip";
-import Button from "@mui/material/Button";
-import Fade from "@mui/material/Fade";
+
 import uuid from "react-uuid";
 
-import {
-    ButtonsStack,
-    CommentsStack,
-    SingleProjectInformations,
-    SingleProjectInformationsColumn,
-    StackDivider,
-} from "./styled";
-
-import { ChipsContainer } from "../projectsPageContent/styled";
-import { CommentType, Project, ProjectNav } from "types";
+import { CommentsButton, SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
+import { Project } from "types";
 import { useBoolean, useMessage } from "hooks";
-import CommentComponent from "./Comment";
-
-import getComments from "fbase/firestore/getComments";
-
-import { requestLogin } from "fbase/index";
+import { requestLogin } from "fbase";
 import { useAuthContext } from "contexts";
-import { CommentModal, Links, LoggedUser } from "./parts";
 import { createProjectNav } from "./utils";
-import { Features } from "./parts/Features";
-import { ToNext } from "./parts/ToNext";
-import ToPrevious from "./parts/ToPrevious";
+import { AddComment, Comments, Description, Features, Header, Links, ToNext, ToPrevious } from "./parts";
 
 interface Props {
     data: Project;
-    comments: CommentType[];
     titles: string[];
 }
 
 function SingleProjectPageContent(props: Props) {
-    const [isModalOpen, openModal, closeModal] = useBoolean(false);
+    const { data, titles } = props;
     const showMessage = useMessage();
-    const { data, comments, titles } = props;
-
+    const [isModalOpen, openModal, closeModal] = useBoolean(false);
+    const ID = useId();
     const { projectNext, projectPrevious } = createProjectNav(data.title, titles);
 
     const { title, description, story, live, github, longDescription, features } = data;
-    const ID = useId();
 
     const { user, isLogged } = useAuthContext();
 
@@ -50,15 +31,6 @@ function SingleProjectPageContent(props: Props) {
     const handleError = useCallback((message: string) => {
         showMessage.error("Login attempt failure: " + message);
     }, []);
-
-    // const xxx = getComments("comments");
-
-    // useEffect(() => {
-    //     if (aaa && (aaa as any).displayName) {
-    //         const xxx = getComments("comments");
-    //         console.log("xxx", xxx);
-    //     }
-    // }, [aaa]);
 
     const handleLeaveACommentClick = useCallback(() => {
         if (isLogged) {
@@ -81,17 +53,9 @@ function SingleProjectPageContent(props: Props) {
         <>
             {projectNext && <ToNext target={projectNext} />}
             {projectPrevious && <ToPrevious target={projectPrevious} />}
-            <header className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}>
-                <div className="project-screen"></div>
-                <div className="project-container">
-                    <div className="header">
-                        <h1 className="header__title">{title}</h1>
-                        <h2 className="header__subtitle">{description}</h2>
-                    </div>
-                </div>
-            </header>
+            <Header title={title} description={description} />
             {isLogged && user && isModalOpen && (
-                <CommentModal
+                <AddComment
                     isOpen={isLogged}
                     onClose={closeModal}
                     author={user.name}
@@ -103,28 +67,20 @@ function SingleProjectPageContent(props: Props) {
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={github} live={live} />
-                    <ButtonsStack direction="column" spacing={2} id="Buttons stack">
-                        <Button variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
-                            Leave a comment
-                        </Button>
-                    </ButtonsStack>
-                    {/* <h2>Comments</h2>
-                    <CommentsStack spacing={1}>
-                        {comments.map(comment => {
-                            return <CommentComponent comment={comment} key={uuid()} />;
-                        })}
-                    </CommentsStack> */}
+                    <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
+                        Leave a comment
+                    </CommentsButton>
+                    <Comments project={title} />
                 </SingleProjectInformationsColumn>
+
                 <SingleProjectInformationsColumn>
                     <h2>Story</h2>
                     {story}
                 </SingleProjectInformationsColumn>
+
                 <SingleProjectInformationsColumn>
                     <h2>Tech</h2>
-                    {longDescription &&
-                        longDescription.map((item: string) => {
-                            return <p key={`${ID}-${item}`}>{item}</p>;
-                        })}
+                    <Description longDescription={longDescription} />
                     <Features features={features} />
                 </SingleProjectInformationsColumn>
             </SingleProjectInformations>

@@ -1,4 +1,4 @@
-import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import { faBackward, faHandFist } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faForward } from "@fortawesome/free-solid-svg-icons";
@@ -21,6 +21,7 @@ export const Icons: { [key: string]: JSX.Element } = {
     close: <FontAwesomeIcon icon={faXmark} aria-label="close" />,
     forward: <FontAwesomeIcon icon={faForward} aria-label="next" />,
     backward: <FontAwesomeIcon icon={faBackward} aria-label="previous" />,
+    motivation: <FontAwesomeIcon icon={faHandFist} />,
 };
 
 export const IconLabels: { [key: string]: string } = {
@@ -32,6 +33,7 @@ export const IconLabels: { [key: string]: string } = {
     send: "See details",
     cv: "Download CV",
     close: "Close",
+    motivation: "Motivation",
 };
 
 export default Icons;

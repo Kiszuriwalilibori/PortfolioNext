@@ -1,7 +1,11 @@
-import CommentModal from "./CommentModal";
+import AddComment from "./AddComment";
+import Comment from "./Comment";
+import Comments from "./Comments";
+import Description from "./Description";
+import Features from "./Features";
+import Header from "./Header";
 import Links from "./Links";
-import LoggedUser from "../../../LoggedUser";
 import ToNext from "./ToNext";
 import ToPrevious from "./ToPrevious";
 
-export { CommentModal, Links, LoggedUser, ToNext, ToPrevious };
+export { AddComment, Comments, Description, Features, Header, Links, Comment, ToNext, ToPrevious };

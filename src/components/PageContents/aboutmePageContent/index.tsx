@@ -17,9 +17,9 @@ function AboutmePageContent() {
 
                     <hr className="aboutmeBreak"></hr>
                     <p>
-                        In my spare time, if the weather permits I take my bike and and ride through the surrounding
-                        forests. Having more time visit Białowieża Forest. Cooling off at home usually listen to the
-                        music through loudspeakers I have constructed by myself.
+                        In my spare time, if the weather permits, I take my bike and and ride through the surrounding
+                        forests. Having more time do visit Białowieża Forest. Cooling off at home usually means
+                        listening to the music through loudspeakers I have constructed it myself.
                     </p>
                 </div>
             </div>

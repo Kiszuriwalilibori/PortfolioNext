@@ -26,8 +26,9 @@ export const Media = styled(CardMedia)(({ theme }) => ({
 export const LogOut = styled(Button)(({ theme }) => ({
     margin: "0 auto",
     display: "block",
-    color: "#00524C",
+    color: theme.palette.common.white,
     borderColor: "#00524C",
+    backgroundColor: "#00524C",
     marginTop: theme.spacing(2),
 }));
 
