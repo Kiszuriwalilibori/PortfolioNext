@@ -15,13 +15,7 @@ export const UserCard = styled(Card)(({ theme }) => ({
     zIndex: "3000",
 }));
 
-export const Media = styled(CardMedia)(({ theme }) => ({
-    height: 40,
-    width: 40,
-    margin: "12px auto 0 auto",
-    backgroundSize: "contain",
-    color: theme.palette.primary.main,
-}));
+export const gravatarStyle = { borderRadius: "50%", margin: "0 auto", display: "block", marginTop: "8px" };
 
 export const LogOut = styled(Button)(({ theme }) => ({
     margin: "0 auto",

@@ -77,6 +77,7 @@ export interface CommentType {
     ID: string;
     project: string;
     parent?: string;
+    authorEmail?: string;
 }
 
 export interface User {

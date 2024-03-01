@@ -19,6 +19,7 @@ function SingleProjectPageContent(props: Props) {
     const { data, titles } = props;
     const showMessage = useMessage();
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
+
     const ID = useId();
     const { projectNext, projectPrevious } = createProjectNav(data.title, titles);
 
@@ -26,7 +27,9 @@ function SingleProjectPageContent(props: Props) {
 
     const { user, isLogged } = useAuthContext();
 
-    const handleSuccess = () => {};
+    const handleSuccess = () => {
+        openModal();
+    };
 
     const handleError = useCallback((message: string) => {
         showMessage.error("Login attempt failure: " + message);
@@ -40,15 +43,6 @@ function SingleProjectPageContent(props: Props) {
         }
     }, [isLogged, handleError]);
 
-    useEffect(() => {
-        isLogged && user && process.env.NEXT_PUBLIC_ADMIN_DATA === user.name && openModal();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isLogged, user]);
-
-    useEffect(() => {
-        closeModal();
-    }, []);
-
     return (
         <>
             {projectNext && <ToNext target={projectNext} />}
@@ -60,6 +54,7 @@ function SingleProjectPageContent(props: Props) {
                     onClose={closeModal}
                     author={user.name}
                     authorImage={user.picture}
+                    authorEmail={user.email}
                     project={title}
                 />
             )}

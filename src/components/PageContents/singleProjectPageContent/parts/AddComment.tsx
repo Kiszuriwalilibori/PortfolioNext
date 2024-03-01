@@ -14,11 +14,12 @@ interface Props extends Omit<ModalProps, "title"> {
     author: string;
     authorImage: string;
     project: string;
+    authorEmail: string;
 }
 
 const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
-    const { isOpen, onClose, author, authorImage, project } = props;
+    const { isOpen, onClose, author, authorImage, authorEmail, project } = props;
 
     const { comment, createComment, clearComment } = useComment();
 
@@ -39,6 +40,7 @@ export const AddComment = (props: Props) => {
             active: true,
             content: comment,
             created: Date.now(),
+            authorEmail,
             ID: uuid(),
             project,
         };
