@@ -1,9 +1,9 @@
 import uuid from "react-uuid";
 
-import Comment from "./Comment";
+import Comment from "../Comment";
 
 import { useSubscribeComments } from "hooks";
-import { CommentsStack } from "../styled";
+import { CommentsStack } from "./Comments.style";
 
 interface Props {
     project: string;

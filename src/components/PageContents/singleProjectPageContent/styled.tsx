@@ -6,7 +6,7 @@ import theme from "themes";
 
 const PROJECT_BUTTON_SIZE = "40px";
 
-import { AccordionSummary, Box, Button, Stack, TextField, styled } from "@mui/material";
+import { AccordionSummary, Box, Button, Stack, styled } from "@mui/material";
 
 export const SingleProjectInformations = styled(Stack)(({ theme }) => ({
     maxWidth: "1500px",
@@ -30,12 +30,6 @@ export const SingleProjectInformationsColumn = styled(Box)(({ theme }) => ({
     },
 }));
 
-export const ButtonsStack = styled(Stack)(({ theme }) => ({
-    margin: "0 auto",
-    width: "180px",
-    marginTop: theme.spacing(3),
-}));
-
 export const StackDivider = () => (
     <Divider
         orientation={useMediaQuery(theme.breakpoints.down("md")) ? "horizontal" : "vertical"}
@@ -43,14 +37,6 @@ export const StackDivider = () => (
         sx={{ backgroundColor: theme.palette.primary.light }}
     />
 );
-
-export const CommentTextField = styled(TextField)(({ theme }) => ({
-    marginTop: theme.spacing(3),
-}));
-
-export const CommentsStack = styled(Stack)(({ theme }) => ({
-    margin: theme.spacing(1),
-}));
 
 export const Summary = styled(AccordionSummary)(({ theme }) => ({}));
 

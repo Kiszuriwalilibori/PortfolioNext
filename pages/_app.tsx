@@ -12,7 +12,6 @@ import AppWithLayouts from "./appWithLayouts";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        // <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_WEB_CLIENT_ID as string}>
         <AuthContextProvider>
             <ViewportProvider>
                 <ThemeProvider theme={theme}>
@@ -30,7 +29,6 @@ export default function App({ Component, pageProps }: AppProps) {
                 </ThemeProvider>
             </ViewportProvider>
         </AuthContextProvider>
-        // </GoogleOAuthProvider>
     );
 }
 

@@ -11,7 +11,7 @@ export {
     useAuthContext,
     MenuVisibilityContextProvider,
     MenuVisibilityContext,
-    useMenuVisibilityContext,
     ViewportProvider,
     useBreakpoints,
+    useMenuVisibilityContext,
 };

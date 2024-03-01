@@ -82,9 +82,9 @@ export interface CommentType {
 
 export interface User {
     id: string;
-    email: string;
-    name: string;
-    picture: string;
+    email: string | null;
+    name: string | null;
+    picture: string | null;
 }
 
 export interface ProjectNav {

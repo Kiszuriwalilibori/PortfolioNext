@@ -3,11 +3,11 @@ import Button from "@mui/material/Button";
 
 import { useCallback } from "react";
 
-import Modal from "../../../modal";
+import Modal from "../../../../modal";
 import addComments from "fbase/firestore/addComments";
 
 import { ModalProps, CommentType } from "types";
-import { ButtonsStack, CommentTextField } from "../styled";
+import { ButtonsStack, CommentTextField } from "./AddComment.style";
 import { useComment, useMessage } from "hooks";
 
 interface Props extends Omit<ModalProps, "title"> {

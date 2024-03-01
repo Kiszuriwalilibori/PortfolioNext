@@ -17,7 +17,7 @@ const initialState = {
 
 const auth = getAuth(firebase_app);
 
-function createSimplifiedUser(user: /*FirebaseUser*/ any): User {
+function createSimplifiedUser(user: FirebaseUser): User {
     const simplifiedUser = {
         id: user.uid,
         email: user.email,
