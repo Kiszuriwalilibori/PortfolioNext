@@ -10,39 +10,38 @@ interface Props {
     isLogged: boolean;
 }
 
-const initialState = {
-    user: undefined,
-    isLogged: false,
-};
+const INITIAL_USER = undefined;
 
 const auth = getAuth(firebase_app);
 
-type usr = Pick<FirebaseUser, "uid" | "email" | "displayName" | "photoURL">;
+type usr = Pick<FirebaseUser, "uid" | "email" | "displayName">;
+type Mutable<Type> = {
+    -readonly [Key in keyof Type]: Type[Key];
+};
+type ob = Mutable<usr>;
 
-function createSimplifiedUser(user: any): User {
-    const simplifiedUser = {
-        uid: user.uid,
-        email: user.email,
-        displayName: user.displayName,
-    };
+type XUser = { [key in keyof ob]: string };
+function createSimplifiedUser(user: XUser) {
+    const simplifiedUser = (({ uid, email, displayName }) => ({ uid, email, displayName }))(user);
     return simplifiedUser;
 }
+
 /// definicje powyżej nie są takie jak u mnie - nullowalne są. Na później
 export const AuthContext = React.createContext({} as Props);
 
 export const useAuthContext = () => React.useContext(AuthContext);
 
 export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const [user, setUser] = React.useState<User | undefined>(undefined);
+    const [user, setUser] = React.useState<User | undefined>(INITIAL_USER);
     const [isLogged, setIsLoggedTrue, setIsLoggedFalse] = useBoolean(false);
 
     React.useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
             if (user) {
-                setUser(createSimplifiedUser(user));
+                setUser(createSimplifiedUser(user as XUser));
                 setIsLoggedTrue();
             } else {
-                setUser(null as any);
+                setUser(INITIAL_USER);
                 setIsLoggedFalse();
             }
         });

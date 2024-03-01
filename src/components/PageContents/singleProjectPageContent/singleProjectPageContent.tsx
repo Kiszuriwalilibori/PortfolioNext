@@ -53,7 +53,6 @@ function SingleProjectPageContent(props: Props) {
                     isOpen={isLogged}
                     onClose={closeModal}
                     author={user.displayName}
-                    // authorImage={user.picture}
                     authorEmail={user.email}
                     project={title}
                 />

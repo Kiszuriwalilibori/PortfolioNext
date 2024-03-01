@@ -5,21 +5,22 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
-export const requestLogin = (handleSuccess, handleError) => {
+export const requestLogin = (handleSuccess: () => void, handleError: (message: string) => void) => {
     signInWithPopup(auth, provider)
         .then(result => {
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            const user = { ...result.user };
+            // const credential = GoogleAuthProvider.credentialFromResult(result);
+            // const token = credential.accessToken;
+            // const user = { ...result.user };
 
-            const user_store = {
-                id: user.uid,
-                email: user.email,
-                name: user.displayName,
-                picture: user.photoURL,
-            };
+            // const user_store = {
+            //     id: user.uid,
+            //     email: user.email,
+            //     name: user.displayName,
+            // };
 
-            handleSuccess(user_store);
+            // handleSuccess(user_store);
+            handleSuccess();
+
             // IdP data available using getAdditionalUserInfo(result)
             // ...
         })
