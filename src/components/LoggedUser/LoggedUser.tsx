@@ -18,7 +18,7 @@ export default function LoggedUser() {
                 <Box>
                     {user.email && <Gravatar email={user.email} size={40} style={gravatarStyle} />}
                     <CardContent>
-                        <Name>{user.name || user.email}</Name>
+                        <Name>{user.displayName || user.email}</Name>
                         <LogOut variant="contained" onClick={() => requestLogout()}>
                             LogOut
                         </LogOut>
