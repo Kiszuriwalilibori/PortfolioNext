@@ -12,14 +12,14 @@ import { useComment, useMessage } from "hooks";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
-    authorImage: string;
+    // authorImage: string;
     project: string;
     authorEmail: string;
 }
 
 const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
-    const { isOpen, onClose, author, authorImage, authorEmail, project } = props;
+    const { isOpen, onClose, author, /*authorImage,*/ authorEmail, project } = props;
 
     const { comment, createComment, clearComment } = useComment();
 
@@ -36,7 +36,7 @@ export const AddComment = (props: Props) => {
     const acceptComment = useCallback(async () => {
         const commentToBeStored: CommentType = {
             author,
-            authorImage,
+            // authorImage,
             active: true,
             content: comment,
             created: Date.now(),

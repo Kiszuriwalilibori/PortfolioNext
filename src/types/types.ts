@@ -70,7 +70,6 @@ export type { ModalProps };
 
 export interface CommentType {
     author: string;
-    authorImage: string;
     active?: boolean;
     content: string;
     created: number;
@@ -81,10 +80,9 @@ export interface CommentType {
 }
 
 export interface User {
-    id: string;
-    email: string | null;
-    name: string | null;
-    picture: string | null;
+    uid: string;
+    email: string;
+    displayName: string;
 }
 
 export interface ProjectNav {

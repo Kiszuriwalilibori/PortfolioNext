@@ -17,12 +17,13 @@ const initialState = {
 
 const auth = getAuth(firebase_app);
 
-function createSimplifiedUser(user: FirebaseUser): User {
+type usr = Pick<FirebaseUser, "uid" | "email" | "displayName" | "photoURL">;
+
+function createSimplifiedUser(user: any): User {
     const simplifiedUser = {
-        id: user.uid,
+        uid: user.uid,
         email: user.email,
-        name: user.displayName,
-        picture: user.photoURL,
+        displayName: user.displayName,
     };
     return simplifiedUser;
 }

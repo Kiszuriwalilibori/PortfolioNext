@@ -52,8 +52,8 @@ function SingleProjectPageContent(props: Props) {
                 <AddComment
                     isOpen={isLogged}
                     onClose={closeModal}
-                    author={user.name}
-                    authorImage={user.picture}
+                    author={user.displayName}
+                    // authorImage={user.picture}
                     authorEmail={user.email}
                     project={title}
                 />
