@@ -18,7 +18,7 @@ export const Icons: { [key: string]: JSX.Element } = {
     live: <FontAwesomeIcon icon={faGlobe} aria-label="Click to see live version of the project" />,
     send: <FontAwesomeIcon icon={faPaperPlane} aria-label="Go to project details page" />,
     cv: <FontAwesomeIcon icon={faFileDownload} aria-label="Downolad CV" />,
-    close: <FontAwesomeIcon icon={faXmark} aria-label="close" />,
+    close: <FontAwesomeIcon icon={faXmark} aria-label="close" style={{ margin: "0 auto" }} />,
     forward: <FontAwesomeIcon icon={faForward} aria-label="next" />,
     backward: <FontAwesomeIcon icon={faBackward} aria-label="previous" />,
     motivation: <FontAwesomeIcon icon={faHandFist} />,

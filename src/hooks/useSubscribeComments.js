@@ -7,7 +7,11 @@ export const useSubscribeComments = project => {
         snapshotListenOptions: { includeMetadataChanges: true },
     });
 
-    const allComments = value ? value.docs.map(doc => doc.data()) : null;
+    const allComments = value
+        ? value.docs.map(doc => {
+              return { ...doc.data(), ID: doc.id };
+          })
+        : null;
 
     const comments = allComments
         ? allComments

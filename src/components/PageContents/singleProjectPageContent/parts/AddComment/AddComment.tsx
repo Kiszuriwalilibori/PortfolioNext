@@ -1,4 +1,3 @@
-import uuid from "react-uuid";
 import Button from "@mui/material/Button";
 
 import { useCallback } from "react";
@@ -19,7 +18,7 @@ interface Props extends Omit<ModalProps, "title"> {
 
 const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
-    const { isOpen, onClose, author, /*authorImage,*/ authorEmail, project } = props;
+    const { isOpen, onClose, author, authorEmail, project } = props;
 
     const { comment, createComment, clearComment } = useComment();
 
@@ -36,16 +35,15 @@ export const AddComment = (props: Props) => {
     const acceptComment = useCallback(async () => {
         const commentToBeStored: CommentType = {
             author,
-            // authorImage,
             active: true,
             content: comment,
             created: Date.now(),
             authorEmail,
-            ID: uuid(),
+            ID: "",
             project,
         };
         addComments(
-            `${commentToBeStored.author} ${commentToBeStored.created}`,
+            `${commentToBeStored.author} ${commentToBeStored.project} ${commentToBeStored.created}`,
             commentToBeStored,
             handleSuccess,
             handleError
