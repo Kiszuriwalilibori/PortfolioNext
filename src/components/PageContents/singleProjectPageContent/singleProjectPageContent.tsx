@@ -43,6 +43,12 @@ function SingleProjectPageContent(props: Props) {
         }
     }, [isLogged, handleError]);
 
+    const temporary = useCallback(() => {
+        showMessage.warning(
+            "The service is currently out of order and there are works continuously going  on making it back active"
+        );
+    }, []);
+
     return (
         <>
             {projectNext && <ToNext target={projectNext} />}

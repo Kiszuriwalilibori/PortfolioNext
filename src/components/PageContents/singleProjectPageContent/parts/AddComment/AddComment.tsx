@@ -1,17 +1,19 @@
 import Button from "@mui/material/Button";
 
 import { useCallback } from "react";
+import { useSpeechRecognition } from "react-speech-kit";
 
 import Modal from "../../../../modal";
 import addComments from "fbase/firestore/addComments";
 
 import { ModalProps, CommentType } from "types";
-import { ButtonsStack, CommentTextField } from "./AddComment.style";
-import { useComment, useMessage } from "hooks";
+import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./AddComment.style";
+import { useComment, useMessage, useMicrophone } from "hooks";
+import { Icons } from "components/common";
+import { processComment } from "./utils";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
-    // authorImage: string;
     project: string;
     authorEmail: string;
 }
@@ -19,20 +21,21 @@ interface Props extends Omit<ModalProps, "title"> {
 const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project } = props;
-
     const { comment, createComment, clearComment } = useComment();
-
+    const { handleClickMicrophone, isMicrophoneDisabled, listening } = useMicrophone(createComment);
     const showMessage = useMessage();
 
     const handleError = useCallback((message: string) => {
         showMessage.error("Error: " + message);
     }, []);
 
-    const handleSuccess = useCallback((message: string) => {
-        showMessage.success("Your comment has been successfully added");
-    }, []);
+    const handleSuccess = useCallback((message: string) => {}, []);
 
-    const acceptComment = useCallback(async () => {
+    const handleInvalidComment = () => {
+        showMessage.warning("Your comment is invalid and will be not published  due to toxic or abusive content");
+    };
+
+    const sendComment = useCallback(async () => {
         const commentToBeStored: CommentType = {
             author,
             active: true,
@@ -51,6 +54,7 @@ export const AddComment = (props: Props) => {
         clearComment();
         onClose();
     }, [comment]);
+
     return (
         <Modal
             title="Comment"
@@ -75,7 +79,7 @@ export const AddComment = (props: Props) => {
                         disabled={comment === INITIAL_COMMENT}
                         color="success"
                         variant="contained"
-                        onClick={acceptComment}
+                        onClick={() => processComment(comment, sendComment, handleInvalidComment)}
                         id="Log in button"
                     >
                         Accept
@@ -89,6 +93,16 @@ export const AddComment = (props: Props) => {
                     >
                         Clear
                     </Button>
+                    <MicrophoneButton
+                        sx={{ ...listeningMicrophoneSx(listening) }}
+                        className="with-tooltip"
+                        data-tooltip={"Switch microphone"}
+                        aria-label="Search by voice"
+                        disabled={isMicrophoneDisabled}
+                        onClick={handleClickMicrophone}
+                    >
+                        {Icons.microphone}
+                    </MicrophoneButton>
                 </ButtonsStack>
             }
         ></Modal>

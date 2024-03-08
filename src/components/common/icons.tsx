@@ -1,14 +1,18 @@
-import { faBackward, faHandFist } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faForward } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+    faBackward,
+    faEnvelope,
+    faFileDownload,
+    faForward,
+    faGlobe,
+    faHandFist,
+    faMicrophone,
+    faPaperPlane,
+    faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const Icons: { [key: string]: JSX.Element } = {
     email: <FontAwesomeIcon icon={faEnvelope} aria-label="Send an email to author" />,
@@ -22,6 +26,7 @@ export const Icons: { [key: string]: JSX.Element } = {
     forward: <FontAwesomeIcon icon={faForward} aria-label="next" />,
     backward: <FontAwesomeIcon icon={faBackward} aria-label="previous" />,
     motivation: <FontAwesomeIcon icon={faHandFist} />,
+    microphone: <FontAwesomeIcon icon={faMicrophone} />,
 };
 
 export const IconLabels: { [key: string]: string } = {
@@ -34,6 +39,7 @@ export const IconLabels: { [key: string]: string } = {
     cv: "Download CV",
     close: "Close",
     motivation: "Motivation",
+    microphone: "Microphone",
 };
 
 export default Icons;

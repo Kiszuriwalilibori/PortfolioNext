@@ -6,11 +6,13 @@
             "story": "Every human work can bear the footprints of its creator. In this case, it is also true. Have you seen other portfolios of mine? Dance, music, and so on. Now you've got something really different. Why? Many headhunters felt that the previous ones were over-individuated. So, here you have something calm, official, and almost toneless, which should satisfy everyone. Let'ss call it a bridge portfolio - it is a bridge between headhunters and me.",
             "longDescription": [
                 " That is my first job with Next.js and the Vercel hosting platform.",
-                " It is coded with 13.x Next.js version, but I decided to leave experimental features aside for a moment."
+                " It is coded with 13.x Next.js version, but I decided to leave experimental features aside for a moment.",
+                " Now users are allowed to add and remove comments to projects, providing one have Google account.",
+                " Comments are validated agains abusive content with PERSPECTIVE"
             ],
             "live": "https://portfolio-next-ten-sigma.vercel.app/",
             "github": "https://github.com/Kiszuriwalilibori/PortfolioNext",
-            "features": ["react", "material-ui", "next", "SSR", "typescript"],
+            "features": ["react", "material-ui", "next", "SSR", "typescript", "firebase", "firestore", "GoogleOAuth"],
             "category": "A",
             "slides": ["/images/project_images/next1.jpg", "/images/project_images/next2.jpg"]
         },
@@ -259,7 +261,7 @@
         {
             "title": "Firebase",
             "story": "Certain applications perform admirably, some satisfy somebody's needs,  still others show evidence of somebody's vanity, still others  support company, industry sector, country, etc. Not this particular one. This is purely the training or playground area of Firebase. You see, I work as a front-end developer, but I believe having some understanding of the back-end could be helpful.",
-            "description": "Uses a Firebase instance to store and retrieve foo data.",
+            "description": "Uses a Firebase instance to store and retrieve foo data",
             "longDescription": [
                 "This is my Firebase-connected application that collects basic foo users data. Validation is required.",
                 "In order to add user records, it requests authentication using a Google account.There is, however, a cap on the amount of stored users.",

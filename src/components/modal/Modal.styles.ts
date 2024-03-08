@@ -6,6 +6,9 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
         padding: theme.spacing(4),
         maxWidth: "unset",
         minWidth: "600px",
+        "@media (max-width:600px)": {
+            minWidth: "90vw",
+        },
     },
 }));
 

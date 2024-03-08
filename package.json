@@ -34,6 +34,7 @@
         "react-dom": "18.2.0",
         "react-firebase-hooks": "^5.1.1",
         "react-gravatar": "^2.6.3",
+        "react-speech-kit": "^3.0.1",
         "react-uuid": "^2.0.0",
         "react-vertical-timeline-component": "^3.6.0",
         "rsuite": "^5.28.1",

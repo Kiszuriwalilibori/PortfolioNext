@@ -26,7 +26,6 @@ export const requestLogin = (handleSuccess: () => void, handleError: (message: s
         })
         .catch(error => {
             handleError(error.code + " " + error.message);
-            console.log(error);
 
             // // Handle Errors here.
             // const errorCode = error.code;
