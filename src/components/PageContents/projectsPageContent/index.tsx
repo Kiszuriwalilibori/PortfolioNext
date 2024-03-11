@@ -32,7 +32,7 @@ function ProjectsPageContent(props: ProjectsPageProps) {
 
     const ID = useId();
     return (
-        <section className="projects">
+        <section className="projects" id="Projects Page Content">
             <div className="projects__content">
                 <div className="container">
                     <PageTitle title="Projects" />

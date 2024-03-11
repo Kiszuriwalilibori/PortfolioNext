@@ -2,17 +2,17 @@ import Image from "next/image";
 import Typography from "@mui/material/Typography";
 
 import Contacts from "./contacts";
+import { createMobileSidebarData } from "./utils";
 interface Props {
     route: string;
 }
 
 function MobileSidebar(props: Props) {
     const { route } = props;
-    const postfix = route ? route : "aboutme";
-    const className = `header-mobile header-mobile--${postfix}`;
+    const data = createMobileSidebarData(route);
 
     return (
-        <article className={className} aria-label={`header mobile ${postfix}`} id="Mobile Sidebar">
+        <article className={data.className} aria-label={data.aria} id="Mobile Sidebar">
             <Image width={100} height={100} className="image" src="/images/author.jpg" alt="author foto" />
             <Typography variant="sidebarName">Piotr Maksymiuk</Typography>
             <h2 className="description">Front-End Developer</h2>

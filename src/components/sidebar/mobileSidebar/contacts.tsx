@@ -4,6 +4,7 @@ import { Contact } from "types";
 import { CONTACTS } from "../../../../data/contacts";
 
 import { Icons, IconLabels } from "../../common/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Contacts = () => {
     const ID = useId();

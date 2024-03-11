@@ -60,6 +60,9 @@
                 &__slides {
                     display: flex;
                     flex-direction: column;
+                    @include mobile {
+                        margin-top: 8px;
+                    }
                 }
                 & .image {
                     width: 300px;
@@ -67,6 +70,7 @@
                     padding: 3px;
                     @include mobile {
                         width: 100%;
+                        padding: unset;
                     }
                 }
             }
