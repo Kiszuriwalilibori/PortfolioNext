@@ -8,7 +8,7 @@ import addComments from "fbase/firestore/addComments";
 
 import { ModalProps, CommentType } from "types";
 import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./AddComment.style";
-import { useComment, useMessage, useMicrophone } from "hooks";
+import { useComment, useMessage, useVoice } from "hooks";
 import { Icons } from "components/common";
 import { processComment } from "./utils";
 
@@ -22,7 +22,7 @@ const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project } = props;
     const { comment, createComment, clearComment } = useComment();
-    const { handleClickMicrophone, isMicrophoneDisabled, listening } = useMicrophone(createComment);
+    const { handleClickMicrophone, isMicrophoneDisabled, listening } = useVoice(createComment);
     const showMessage = useMessage();
 
     const handleError = useCallback((message: string) => {

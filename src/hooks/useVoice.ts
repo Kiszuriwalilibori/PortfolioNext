@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 
-export const useMicrophone = (createComment: (text: string) => void) => {
+export const useVoice = (createComment: (text: string) => void) => {
     const { listen, listening, stop, supported } = useSpeechRecognition({
         onResult: (result: string) => {
             result && createComment(result);
@@ -17,4 +17,4 @@ export const useMicrophone = (createComment: (text: string) => void) => {
     return { handleClickMicrophone, isMicrophoneDisabled, listening };
 };
 
-export default useMicrophone;
+export default useVoice;

@@ -5,7 +5,7 @@ import useHandleConnectionStatus from "./useHandleConnectionStatus";
 import useInitialFocus from "./useInitialFocus";
 
 import useMessage from "./useMessage";
-import useMicrophone from "./useMicrophone";
+import useVoice from "./useVoice";
 import useSubscribeComments from "./useSubscribeComments";
 
 export {
@@ -15,6 +15,6 @@ export {
     useHandleConnectionStatus,
     useInitialFocus,
     useMessage,
-    useMicrophone,
+    useVoice,
     useSubscribeComments,
 };
