@@ -79,6 +79,9 @@ export const NextButton = styled(Button)(({ theme }) => ({
     "&:hover": {
         backgroundColor: theme.palette.error.light,
     },
+    "@media (min-width:1612px)": {
+        right: "calc(50vw - 750px - 56px)",
+    },
 }));
 
 export const PreviousButton = styled(Button)(({ theme }) => ({
@@ -94,6 +97,9 @@ export const PreviousButton = styled(Button)(({ theme }) => ({
     zIndex: 1000,
     "&:hover": {
         backgroundColor: theme.palette.error.light,
+    },
+    "@media (min-width:1612px)": {
+        left: "calc(50vw - 750px - 56px)",
     },
 }));
 

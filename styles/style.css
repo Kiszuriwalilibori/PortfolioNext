@@ -1341,6 +1341,12 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
   z-index: 1;
   min-height: 640px;
 }
+@media only screen and (min-width: 1500px) {
+  .single-project .top-section {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
 .single-project .top-section .project-container {
   box-sizing: content-box;
   max-width: 1200px;
