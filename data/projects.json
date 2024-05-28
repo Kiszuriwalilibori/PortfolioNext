@@ -277,7 +277,7 @@
 
         {
             "title": "Decision Tree",
-            "story": "Sometimes I can't figure out what was going through the recruiter's mind when she/he put up a certain task.  This is nothing more than a simple decision tree or equivalent diagram example. Limited to two levels only, by the way. Nothing spectacular, I had to add some styling as the initial version made purely up to requirements was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protective methods in place to prevent duplicate entries.",
+            "story": "Sometimes I can't figure out what was going through the recruiter's mind when she/he puts up a certain task.  This is nothing more than a simple decision tree or equivalent diagram example. Nothing spectacular, I had to add some styling as the initial version made purely up to requirements was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protective methods in place to prevent duplicate entries. Latest version is with Zustand, and has unlimited depth of levels. The code is almost entirely rewritten.",
             "description": "Decision tree application interface",
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
