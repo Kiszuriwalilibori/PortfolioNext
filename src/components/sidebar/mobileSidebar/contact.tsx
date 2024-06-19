@@ -2,10 +2,10 @@ import React from "react";
 
 import Icons, { IconLabels } from "../../common/icons";
 
-import { Contact } from "types";
+import { ContactType } from "types";
 
 interface Props {
-    data: Contact;
+    data: ContactType;
 }
 
 function Contact(props: Props) {
@@ -20,4 +20,4 @@ function Contact(props: Props) {
     );
 }
 
-export default Contact;
+export default ContactType;

@@ -4,7 +4,7 @@ export interface Skill {
     skill: string;
     level: string;
 }
-export interface Contact {
+export interface ContactType {
     ID: string;
     text: string;
     link: string;
@@ -47,7 +47,7 @@ export interface Project {
     slides?: string[];
 }
 
-export type Contacts = Contact[];
+export type Contacts = ContactType[];
 
 export type Skills = Skill[];
 

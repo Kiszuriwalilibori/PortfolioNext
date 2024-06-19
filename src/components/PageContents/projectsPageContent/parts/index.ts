@@ -1,4 +1,4 @@
-import Checkboxes from "./checkboxes";
+import Features from "./features";
 import SingleProjectPageContent from "../../singleProjectPageContent/singleProjectPageContent";
 
-export { SingleProjectPageContent, Checkboxes };
+export { SingleProjectPageContent, Features as Checkboxes };

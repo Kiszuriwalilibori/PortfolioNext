@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-import Contact from "./contact";
+import ContactType from "./contact";
 import PageTitle from "../../pageTitle";
 
 import { Contacts } from "types";
