@@ -16,7 +16,7 @@ export async function getStaticProps() {
     return {
         props: {
             data: projects,
-            featuresList: featuresList,
+            featuresList,
         },
     };
 }

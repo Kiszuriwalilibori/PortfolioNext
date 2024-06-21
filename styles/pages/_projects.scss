@@ -1,23 +1,4 @@
 .projects {
-    & .rs-checkbox-group {
-        width: 100%;
-        display: block;
-    }
-    & .rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
-    .rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
-        background-color: $red-color--vivid !important;
-
-        border-color: $red-color--vivid !important;
-    }
-    & .rs-checkbox-wrapper::before {
-        background-color: transparent;
-        border: 1px solid $red-color--vivid !important;
-    }
-
-    & label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
-        border-color: $red-color--vivid;
-    }
-
     @extend .section;
     @include with-bckgrnd-image("../public/backgrounds/skills.jpg");
     @include large {

@@ -677,7 +677,6 @@ a {
   display: flex;
   align-items: center;
   box-sizing: initial;
-  right: 0px;
   width: 140px;
   height: 40px;
   padding: 5px;
@@ -686,7 +685,6 @@ a {
 }
 .btn-normal span {
   display: inline;
-  vertical-align: middle;
   font-size: 16px;
   color: #fff;
   font-family: sans-serif;
@@ -743,225 +741,6 @@ a {
 .header {
   z-index: 100;
   position: relative;
-}
-
-.rs-checkbox {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.rs-checkbox-disabled label {
-  cursor: not-allowed;
-}
-
-.rs-checkbox label {
-  line-height: 1.14285714;
-  margin-bottom: 0;
-  font-weight: normal;
-  cursor: pointer;
-}
-
-.rs-checkbox-inner::before {
-  border-color: rgba(145, 13, 13, 0.8);
-}
-
-.rs-checkbox.rs-checkbox-disabled label {
-  cursor: not-allowed;
-}
-
-.rs-checkbox-disabled > .rs-checkbox-checker > label {
-  color: #c5c6c7;
-}
-
-.rs-checkbox-inline {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 0;
-  vertical-align: middle;
-  font-weight: normal;
-  margin-top: 0;
-  margin-left: 10px;
-}
-
-.rs-plaintext .rs-checkbox-inline:first-child {
-  margin-left: 0;
-}
-
-.rs-checkbox [type=checkbox]:focus-visible ~ .rs-checkbox-inner::before {
-  box-shadow: 0 0 0 3px rgba(52, 152, 255, 0.25);
-}
-
-.rs-checkbox-checker {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 36px;
-  min-height: 36px;
-  line-height: 1;
-  position: relative;
-}
-
-/* rtl:begin:ignore */
-.rs-checkbox-wrapper::before,
-.rs-checkbox-wrapper::after,
-.rs-checkbox-wrapper .rs-checkbox-inner::before,
-.rs-checkbox-wrapper .rs-checkbox-inner::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: block;
-}
-
-.rs-checkbox-wrapper .rs-checkbox-inner::after {
-  opacity: 0;
-  transform: rotate(45deg) scale(0);
-  transition: opacity 0.2s ease-in, transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46);
-}
-
-.rs-theme-high-contrast .rs-checkbox-wrapper .rs-checkbox-inner::after {
-  transition: none;
-}
-
-.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::after,
-.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::after {
-  border: solid #fff;
-  width: 6px;
-  height: 9px;
-  margin-top: 2px;
-  margin-left: 5px;
-  opacity: 1;
-}
-
-.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::after {
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg) scale(1);
-}
-
-.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::after {
-  border-width: 0 0 2px;
-  transform: rotate(0deg) scale(1);
-  width: 10px;
-  margin-top: 0;
-  margin-left: 3px;
-}
-
-/* rtl:end:ignore */
-/* stylelint-disable-next-line */
-.rs-checkbox-wrapper {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  left: 10px;
-  top: 10px;
-}
-
-.rs-checkbox-wrapper [type=checkbox] {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
-.rs-checkbox-wrapper::before,
-.rs-checkbox-wrapper .rs-checkbox-inner::before,
-.rs-checkbox-wrapper .rs-checkbox-inner::after {
-  width: 16px;
-  height: 16px;
-}
-
-.rs-checkbox-wrapper::before {
-  border: 1px solid rgba(145, 13, 13, 0.8);
-  background-color: transparent;
-  border-radius: 3px;
-  transform: scale(1);
-  opacity: 0.7;
-  visibility: hidden;
-  transition: transform 0.2s linear, opacity 0.2s linear;
-}
-
-.rs-theme-high-contrast .rs-checkbox-wrapper::before {
-  transition: none;
-}
-
-.rs-checkbox-checked .rs-checkbox-wrapper::before {
-  transform: scale(1.5);
-  opacity: 0;
-  visibility: visible;
-}
-
-.rs-checkbox-wrapper::after {
-  top: -10px;
-  right: -10px;
-  bottom: -10px;
-  left: -10px;
-}
-
-.rs-checkbox-wrapper .rs-checkbox-inner::before {
-  border: 1px solid #d9d9d9;
-  background-color: transparent;
-  border-radius: 3px;
-  transition: background 0.2s linear, border 0.2s linear, box-shadow 0.2s linear;
-}
-
-.rs-theme-high-contrast .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  transition: none;
-}
-
-label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  border-color: rgba(145, 13, 13, 0.8);
-}
-
-.rs-checkbox-disabled:not(.rs-checkbox-checked):not(.rs-checkbox-indeterminate) .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  border-color: #f7f7fa;
-  background-color: #f7f7fa;
-}
-
-.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
-.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  border-color: rgba(145, 13, 13, 0.8);
-  background-color: rgba(145, 13, 13, 0.8);
-}
-
-.rs-checkbox-disabled.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
-.rs-checkbox-disabled.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  opacity: 0.3;
-}
-
-.rs-theme-high-contrast .rs-checkbox-disabled.rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
-.rs-theme-high-contrast .rs-checkbox-disabled.rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  opacity: 0.5;
-}
-
-.test {
-  color: white;
-}
-
-.rs-checkbox-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.rs-checkbox-group-inline {
-  flex-direction: row;
-  margin-left: -10px;
-}
-
-.checkbox {
-  color: white;
-  border: 1px solid #a03636;
-  padding-right: 10px;
-  background-color: #a06b36;
-  opacity: 0.8;
-  font-size: 14px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-.checkbox-group {
-  margin-left: -4px !important;
-}
-.checkbox-group > * {
-  margin: 4px 4px !important;
 }
 
 .sidebar {
@@ -1196,22 +975,6 @@ label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
 .projects {
   background: url("../public/backgrounds/skills.jpg") top right no-repeat;
   background-size: cover;
-}
-.projects .rs-checkbox-group {
-  width: 100%;
-  display: block;
-}
-.projects .rs-checkbox-checked .rs-checkbox-wrapper .rs-checkbox-inner::before,
-.projects .rs-checkbox-indeterminate .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  background-color: #d3101c !important;
-  border-color: #d3101c !important;
-}
-.projects .rs-checkbox-wrapper::before {
-  background-color: transparent;
-  border: 1px solid #d3101c !important;
-}
-.projects label:hover .rs-checkbox-wrapper .rs-checkbox-inner::before {
-  border-color: #d3101c;
 }
 @media (min-width: 1500px) {
   .projects {

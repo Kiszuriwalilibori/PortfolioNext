@@ -7,7 +7,6 @@ import PageTitle from "../../pageTitle";
 
 import { SkillsByCategory, EducationItem, Certificate } from "./components";
 import { SkillsPageProps } from "types";
-/// divider do stylowania poza
 
 const headings = {
     good: "I feel reasonably comfortable with:",

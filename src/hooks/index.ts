@@ -1,4 +1,4 @@
-import useArrayState from "./useArrayState";
+import useSwitchableArrayState from "./useArrayState";
 import useBoolean from "./useBoolean";
 import useComment from "./useComment";
 import useGetProjects from "./useGetProjects";
@@ -9,7 +9,7 @@ import useVoice from "./useVoice";
 import useSubscribeComments from "./useSubscribeComments";
 
 export {
-    useArrayState,
+    useSwitchableArrayState as useArrayState,
     useBoolean,
     useComment,
     useGetProjects,

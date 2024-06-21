@@ -1,9 +1,9 @@
 import SingleProjectPageContent from "../../src/components/PageContents/singleProjectPageContent/singleProjectPageContent";
-import { CommentType, Project } from "../../src/types";
+import { CommentType, ProjectType } from "../../src/types";
 import ProjectLayout from "../../src/components/project-layout";
 import { GetServerSidePropsContext, GetStaticPropsContext } from "next";
 
-function ProjectPage(props: { data: Project; titles: string[] }) {
+function ProjectPage(props: { data: ProjectType; titles: string[] }) {
     const { data, titles } = props;
     return <SingleProjectPageContent data={data} titles={titles} />;
 }

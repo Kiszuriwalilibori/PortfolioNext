@@ -2,10 +2,10 @@ import React from "react";
 
 import { Icons } from "../../common";
 
-import { ContactType } from "types";
+import { Contact } from "types";
 
 interface Props {
-    contactData: ContactType;
+    contactData: Contact;
 }
 
 function Contact(props: Props) {

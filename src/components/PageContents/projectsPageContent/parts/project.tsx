@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useId } from "react";
-import { Project, ProjectNav } from "types";
+import { ProjectType, ProjectNav } from "types";
 import { Button, Chip, Paper, Typography } from "@mui/material";
 import { ChipsContainer } from "../styled";
 import ButtonMore from "./buttonMore";
 
 interface Props {
-    projectData: Project;
+    projectData: ProjectType;
 }
 
 const Project = (props: Props) => {

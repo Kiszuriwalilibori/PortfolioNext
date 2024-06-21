@@ -1,21 +1,21 @@
 import { useCallback, useState } from "react";
 
-export const useArrayState = () => {
-    const [checkedFeatures, setCheckedFeatures] = useState([] as string[]);
+export const useSwitchableArrayState = <T>() => {
+    const [items, setItems] = useState([] as T[]);
 
-    const handleCheck = useCallback(
-        (feature: string) => {
-            const copy = [...checkedFeatures];
-            if (copy.includes(feature)) {
-                copy.splice(copy.indexOf(feature), 1);
+    const handleSwitch = useCallback(
+        (item: T) => {
+            const temp = [...items];
+            if (temp.includes(item)) {
+                temp.splice(temp.indexOf(item), 1);
             } else {
-                copy.push(feature);
+                temp.push(item);
             }
-            setCheckedFeatures(copy);
+            setItems(temp);
         },
-        [checkedFeatures]
+        [items]
     );
-    return { handleCheck, checkedFeatures };
+    return { handleSwitch, items };
 };
 
-export default useArrayState;
+export default useSwitchableArrayState;

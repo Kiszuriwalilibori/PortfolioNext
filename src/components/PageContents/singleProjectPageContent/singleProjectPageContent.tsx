@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useId } from "react";
 import uuid from "react-uuid";
 
 import { CommentsButton, SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
-import { Project } from "types";
+import { ProjectType } from "types";
 import { useBoolean, useMessage } from "hooks";
 import { requestLogin } from "fbase";
 import { useAuthContext } from "contexts";
@@ -11,7 +11,7 @@ import { createProjectNav } from "./utils";
 import { AddComment, Comments, Description, Features, Header, Links, ToNext, ToPrevious } from "./parts";
 
 interface Props {
-    data: Project;
+    data: ProjectType;
     titles: string[];
 }
 

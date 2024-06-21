@@ -1,7 +1,7 @@
-import { Project } from "types";
+import { ProjectType } from "types";
 
-export default function createFeaturesList(data: Project[]) {
-    const temp: Project["features"] = [];
+export default function createFeaturesList(data: ProjectType[]) {
+    const temp: ProjectType["features"] = [];
 
     if (data && data.length) {
         data.forEach(item => item.features && temp.push(...item.features));

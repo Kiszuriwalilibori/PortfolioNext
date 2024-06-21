@@ -29,7 +29,7 @@ const MainLayout = ({ children }: Props) => {
             <Head />
             <Sidebar />
             <Navigation />
-            <main /*className="roboto.className"*/>{children}</main>
+            <main>{children}</main>
             <Footer />
         </>
     );

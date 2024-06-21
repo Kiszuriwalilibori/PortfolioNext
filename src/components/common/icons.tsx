@@ -44,26 +44,3 @@ export const IconLabels: { [key: string]: string } = {
 };
 
 export default Icons;
-
-// interface Props {
-//     name: string;
-//     icon: IconDefinition;
-//     variant: "contact" | "sidebar" | "mobile";
-// }
-
-// export const AwesomeIcon = (props: Props) => {
-//     const { name, icon, variant } = props;
-//     let className = "";
-
-//     if (variant === "mobile") {
-//         className = "fa-icon fa-icon--red fa-icon--big fa-icon--loose-group";
-//     }
-//     if (variant === "sidebar") {
-//         className = "fa-icon fa-icon--large fa-icon--light fa-icon--loose-group";
-//     }
-//     if (variant === "contact") {
-//         className = "fa-icon fa-icon--red";
-//     }
-
-//     return <FontAwesomeIcon icon={icon} aria-label={IconLabels[name]} className={className} />;
-// };

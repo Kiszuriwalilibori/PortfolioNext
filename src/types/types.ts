@@ -4,7 +4,7 @@ export interface Skill {
     skill: string;
     level: string;
 }
-export interface ContactType {
+export interface Contact {
     ID: string;
     text: string;
     link: string;
@@ -34,12 +34,13 @@ export interface Job {
 }
 
 export type Jobs = Job[];
+export type Feature = string;
 
-export interface Project {
+export interface ProjectType {
     title: string;
     description: string;
     category: string;
-    features: string[];
+    features: Feature[];
     longDescription: string[];
     live: string;
     github: string;
@@ -47,7 +48,7 @@ export interface Project {
     slides?: string[];
 }
 
-export type Contacts = ContactType[];
+export type Contacts = Contact[];
 
 export type Skills = Skill[];
 
@@ -60,7 +61,7 @@ export interface SkillsPageProps {
 }
 
 export interface ProjectsPageProps {
-    data: Project[];
+    data: ProjectType[];
     featuresList: string[];
 }
 

@@ -1,5 +1,5 @@
-import { Project } from "types";
+import { ProjectType } from "types";
 
-export function sortProjects(a: Project, b: Project) {
+export function sortProjects(a: ProjectType, b: ProjectType) {
     return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
 }
