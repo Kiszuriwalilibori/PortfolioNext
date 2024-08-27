@@ -1,25 +1,27 @@
-import { getFirestore, collection } from "firebase/firestore";
+import { getFirestore, collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase_app from "fbase/config";
 
+function withFieldEqualTo(fieldName, value) {
+    return item => {
+        return item[fieldName] === value;
+    };
+}
+
 export const useSubscribeComments = project => {
-    const [value, loading, error] = useCollection(collection(getFirestore(firebase_app), "comments"), {
+    const ref = query(collection(getFirestore(firebase_app), "comments"), where("project", "==", project));
+
+    const [value, loading, error] = useCollection(ref, {
         snapshotListenOptions: { includeMetadataChanges: true },
     });
 
-    const allComments = value
+    const unsortedComments = value
         ? value.docs.map(doc => {
               return { ...doc.data(), ID: doc.id };
           })
         : null;
 
-    const comments = allComments
-        ? allComments
-              .filter(comment => {
-                  return comment.project === project;
-              })
-              .sort((a, b) => b.created - a.created)
-        : undefined;
+    const comments = unsortedComments ? unsortedComments.sort(byField("created")) : undefined;
 
     return { comments, loading, error };
 };

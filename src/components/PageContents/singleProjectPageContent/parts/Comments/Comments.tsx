@@ -12,8 +12,8 @@ interface Props {
 export function Comments(props: Props) {
     const { project } = props;
     const { comments, loading, error } = useSubscribeComments(project);
-
-    if (!comments) return null;
+    
+    if (!comments || !comments.length) return null;
 
     return (
         <>
