@@ -2,10 +2,8 @@ import { getFirestore, collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase_app from "fbase/config";
 
-function withFieldEqualTo(fieldName, value) {
-    return item => {
-        return item[fieldName] === value;
-    };
+function byField(fieldName) {
+    return (a, b) => (a[fieldName] > b[fieldName] ? 1 : -1);
 }
 
 export const useSubscribeComments = project => {
