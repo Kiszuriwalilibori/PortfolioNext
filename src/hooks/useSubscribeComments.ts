@@ -2,11 +2,11 @@ import { getFirestore, collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase_app from "fbase/config";
 
-function byField(fieldName) {
-    return (a, b) => (a[fieldName] > b[fieldName] ? 1 : -1);
+function byField(fieldName: string) {
+    return (a: any, b: any) => (a[fieldName] > b[fieldName] ? 1 : -1);
 }
 
-export const useSubscribeComments = project => {
+export const useSubscribeComments = (project: string) => {
     const ref = query(collection(getFirestore(firebase_app), "comments"), where("project", "==", project));
 
     const [value, loading, error] = useCollection(ref, {
