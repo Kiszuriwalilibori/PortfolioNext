@@ -1,3 +1,4 @@
+import { getFirestore, collection, query, where } from "firebase/firestore";
 import { getApps, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
@@ -13,3 +14,4 @@ const firebaseConfig = {
 
 let firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 export default firebase_app;
+export const dbase = getFirestore(firebase_app);
