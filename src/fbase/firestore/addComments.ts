@@ -7,14 +7,10 @@ import { CommentType } from "types";
 
 const db = getFirestore(firebase_app);
 
-export default async function addComments(
-    id: string,
-    data: CommentType,
-    handleSuccess: Function,
-    handleError: Function
-) {
+export default async function addComments(data: CommentType, handleSuccess: Function, handleError: Function) {
     try {
-        await setDoc(doc(db, COLLECTION_COMMENTS_NAME, id), data, {
+        const ID = `${data.author} ${data.project} ${data.created}`;
+        await setDoc(doc(db, COLLECTION_COMMENTS_NAME, ID), data, {
             merge: true,
         }).then(handleSuccess());
     } catch (e) {

@@ -47,12 +47,7 @@ export const AddComment = (props: Props) => {
             project,
             projectID: ID,
         };
-        addComments(
-            `${commentToBeStored.author} ${commentToBeStored.project} ${commentToBeStored.created}`, // todo to przemianować na ID. Właściwie pytanie czy ma się to tworzyć tu czy raczej w funkcji addComments?
-            commentToBeStored,
-            handleSuccess,
-            handleError
-        );
+        addComments(commentToBeStored, handleSuccess, handleError);
         clearComment();
         onClose();
     }, [comment]);
