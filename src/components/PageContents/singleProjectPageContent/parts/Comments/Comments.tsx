@@ -2,17 +2,22 @@ import uuid from "react-uuid";
 
 import Comment from "../Comment";
 
-import { useSubscribeComments } from "hooks";
+import { useMessage, useSubscribeComments } from "hooks";
 import { CommentsStack } from "./Comments.style";
 
 interface Props {
-    project: string;
+    ID: string;
 }
 
 export function Comments(props: Props) {
-    const { project } = props;
-    const { comments, loading, error } = useSubscribeComments(project);
-    
+    const { ID } = props;
+    const { comments, error } = useSubscribeComments(ID);
+    const showMessage = useMessage();
+
+    if (error) {
+        showMessage.error(error.message || JSON.stringify(error));
+    }
+
     if (!comments || !comments.length) return null;
 
     return (

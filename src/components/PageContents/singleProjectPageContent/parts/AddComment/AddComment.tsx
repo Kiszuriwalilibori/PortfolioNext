@@ -16,11 +16,12 @@ interface Props extends Omit<ModalProps, "title"> {
     author: string;
     project: string;
     authorEmail: string;
+    ID: string;
 }
 
 const INITIAL_COMMENT = "" as string;
 export const AddComment = (props: Props) => {
-    const { isOpen, onClose, author, authorEmail, project } = props;
+    const { isOpen, onClose, author, authorEmail, project, ID } = props;
     const { comment, createComment, clearComment } = useComment();
     const { handleClickMicrophone, isMicrophoneDisabled, listening } = useVoice(createComment);
     const showMessage = useMessage();
@@ -44,9 +45,10 @@ export const AddComment = (props: Props) => {
             authorEmail,
             ID: "",
             project,
+            projectID: ID,
         };
         addComments(
-            `${commentToBeStored.author} ${commentToBeStored.project} ${commentToBeStored.created}`,
+            `${commentToBeStored.author} ${commentToBeStored.project} ${commentToBeStored.created}`, // todo to przemianować na ID. Właściwie pytanie czy ma się to tworzyć tu czy raczej w funkcji addComments?
             commentToBeStored,
             handleSuccess,
             handleError

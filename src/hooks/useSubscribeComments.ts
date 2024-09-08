@@ -6,9 +6,8 @@ function byField(fieldName: string) {
     return (a: any, b: any) => (a[fieldName] > b[fieldName] ? 1 : -1);
 }
 
-export const useSubscribeComments = (project: string) => {
-    const ref = query(collection(getFirestore(firebase_app), "comments"), where("project", "==", project));
-
+export const useSubscribeComments = (ID: string) => {
+    const ref = query(collection(getFirestore(firebase_app), "comments"), where("projectID", "==", ID));
     const [value, loading, error] = useCollection(ref, {
         snapshotListenOptions: { includeMetadataChanges: true },
     });

@@ -20,10 +20,9 @@ function SingleProjectPageContent(props: Props) {
     const showMessage = useMessage();
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
 
-    const ID = useId();
     const { projectNext, projectPrevious } = createProjectNav(data.title, titles);
 
-    const { title, description, story, live, github, longDescription, features } = data;
+    const { ID, title, description, story, live, github, longDescription, features } = data;
 
     const { user, isLogged } = useAuthContext();
 
@@ -61,6 +60,7 @@ function SingleProjectPageContent(props: Props) {
                     author={user.displayName}
                     authorEmail={user.email}
                     project={title}
+                    ID={ID}
                 />
             )}
 
@@ -70,7 +70,7 @@ function SingleProjectPageContent(props: Props) {
                     <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
                         Leave a comment
                     </CommentsButton>
-                    <Comments project={title} />
+                    <Comments ID={ID} />
                 </SingleProjectInformationsColumn>
 
                 <SingleProjectInformationsColumn>

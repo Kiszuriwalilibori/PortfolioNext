@@ -37,6 +37,7 @@ export type Jobs = Job[];
 export type Feature = string;
 
 export interface ProjectType {
+    ID: string;
     title: string;
     description: string;
     category: string;
@@ -78,6 +79,7 @@ export interface CommentType {
     project: string;
     parent?: string;
     authorEmail?: string;
+    projectID: string;
 }
 
 export interface User {
