@@ -82,6 +82,8 @@ export interface CommentType {
     projectID: string;
 }
 
+export type CommentField = CommentType[keyof CommentType];
+
 export interface User {
     uid: string;
     email: string;

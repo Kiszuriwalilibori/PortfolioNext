@@ -2,9 +2,10 @@ import { collection, query, where } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 import { dbase } from "fbase/config";
+import { CommentField, CommentType } from "types";
 
-function byField(fieldName: string) {
-    return (a: any, b: any) => (a[fieldName] > b[fieldName] ? 1 : -1);
+function byCommentField(fieldName: string) {
+    return (a:any, b:any) => (a[fieldName] > b[fieldName] ? 1 : -1);
 }
 
 export const useSubscribeComments = (ID: string) => {
@@ -19,7 +20,7 @@ export const useSubscribeComments = (ID: string) => {
           })
         : null;
 
-    const comments = unsortedComments ? unsortedComments.sort(byField("created")) : undefined;
+    const comments = unsortedComments ? unsortedComments.sort(byCommentField("created")) : undefined;
 
     return { comments, loading, error };
 };

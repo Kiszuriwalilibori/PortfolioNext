@@ -270,28 +270,11 @@
             "category": "A",
             "slides": ["/images/project_images/gbfinder2.jpg", "/images/project_images/gbfinder3.jpg"]
         },
-        {
-            "ID": "13",
-            "title": "Firebase",
-            "story": "Certain applications perform admirably, some satisfy somebody's needs,  still others show evidence of somebody's vanity, still others  support company, industry sector, country, etc. Not this particular one. This is purely the training or playground area of Firebase. You see, I work as a front-end developer, but I believe having some understanding of the back-end could be helpful.",
-            "description": "Uses a Firebase instance to store and retrieve foo data",
-            "longDescription": [
-                "This is my Firebase-connected application that collects basic foo users data. Validation is required.",
-                "In order to add user records, it requests authentication using a Google account.There is, however, a cap on the amount of stored users.",
-                "Only the users that the user created by himself can be removed.",
-                "Simple operations (such as sorting) are also supported."
-            ],
-            "live": "https://kiszuriwalilibori.github.io/firebase/",
-            "github": "https://github.com/Kiszuriwalilibori/firebase",
-            "features": ["react", "notistack", "material-ui", "formik", "firebase", "styled-components", "typescript"],
-            "category": "A",
-            "slides": ["/images/project_images/firebase.jpg"]
-        },
 
         {
             "ID": "14",
             "title": "Decision Tree",
-            "story": "Sometimes I can't figure out what was going through the recruiter's mind when she/he puts up a certain task.  This is nothing more than a simple decision tree or equivalent diagram example. Nothing spectacular, I had to add some styling as the initial version made purely up to requirements was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protective methods in place to prevent duplicate entries. Latest version is with Zustand, and has unlimited depth of levels. The code is almost entirely rewritten.",
+            "story": "This is nothing more than a simple decision tree or equivalent diagram example. Nothing spectacular, I had to add some styling as the initial version made purely up to requirements was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protective methods in place to prevent duplicate entries. Latest version is with Zustand, and has unlimited depth of levels. The code is almost entirely rewritten.",
             "description": "Decision tree application interface",
             "longDescription": ["An example of decision-tree building scheme"],
             "live": "https://kiszuriwalilibori.github.io/tree/",
