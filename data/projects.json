@@ -42,7 +42,8 @@
                 "axios",
                 "redux-thunk",
                 "react-hook-form",
-                "typescript"
+                "typescript",
+                "web workers"
             ],
             "category": "B",
             "slides": ["/images/project_images/harry.jpg", "/images/project_images/harry2.jpg"]
@@ -265,7 +266,7 @@
                 "formik",
                 "saga",
                 "jest",
-                "method-chaining"
+                "web workers"
             ],
             "category": "A",
             "slides": ["/images/project_images/gbfinder2.jpg", "/images/project_images/gbfinder3.jpg"]
