@@ -63,7 +63,7 @@
             ],
             "live": "https://kiszuriwalilibori.github.io/unsplash/",
             "github": "https://github.com/Kiszuriwalilibori/unsplash",
-            "features": ["react", "redux", "unsplash", "redux-persist", "typescript", "react-hook-form"],
+            "features": ["react", "redux", "unsplash", "redux-persist", "typescript", "react-hook-form", "web-sockets"],
             "category": "A",
             "slides": ["/images/project_images/unsplash4.jpg"]
         },
@@ -74,7 +74,7 @@
             "story": "Most people enjoy making investments, selling, buying and all that staff. If you are one of these people, that app is just for you. Crypto Currency Tracker displays the most accurate live prices from the world's most trusted cryptocurrency exchanges. This app connects to the crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR. Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year. Changes are not only visible in the table, but also signalled by pop-up with adequate message",
             "longDescription": [
                 "This app connects with crypto-compare API. It first obtains a list of accessible cryptocurrencies and allows you to match it with PLN, USD, or EUR.",
-                "Then one can observe changes at 3-second intervals. The current price is shown, as well as absolute values and percentile changes for one day, one month, five months, twelve months, thirty months, and one year.Changes are not only displayed in the table, but also indicated by a pop-up with adequate message.",
+                "Then one can observe real time changes due to Web Sockets conection. The current price is shown, as well as absolute values and percentile changes for one day, one month, five months, twelve months, thirty months, and one year.Changes are not only displayed in the table, but also indicated by a pop-up with adequate message.",
                 "While basic npm packages that subscribe to the data source directly are already available, this app makes direct and immediate API calls.",
                 "The List of available cryptos is fetched and stored via React Query.",
                 "Similarly, React-Query refetching capability serves to obtain current crypto price with a 3-second interval.",
