@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+// import CardMedia from "@mui/material/CardMedia";
 import { styled } from "@mui/system";
 
 export const UserCard = styled(Card)(({ theme }) => ({
@@ -26,7 +26,7 @@ export const LogOut = styled(Button)(({ theme }) => ({
     marginTop: theme.spacing(2),
 }));
 
-export const Name = styled("h2")(({ theme }) => ({
+export const Name = styled("h2")((/*{ theme }*/) => ({
     fontSize: "1rem",
     fontWeight: "lighter",
 }));
