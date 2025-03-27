@@ -36,4 +36,12 @@ export const metadata: {
             description: "The list and brief descriptions of projects I have completed and working on currently.",
         },
     },
+    contact: {
+        title: "Contact",
+        description: "My contact details. Currently, I am available for hire and open to any ideas of cooperation.",
+        openGraph: {
+            title: "Contact",
+            description: "My contact details. Currently, I am available for hire and open to any ideas of cooperation.",
+        },
+    },
 };
