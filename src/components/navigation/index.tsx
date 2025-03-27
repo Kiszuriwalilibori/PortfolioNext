@@ -10,8 +10,7 @@ import { useMenuVisibilityContext } from "@/contexts";
 
 export default function Navigation() {
     const { isMenuVisible } = useMenuVisibilityContext();
-    console.log("isMenuVisible", isMenuVisible);
-
+    console.log("newer context");
     const ID = useId();
 
     return (
