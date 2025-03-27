@@ -8,6 +8,6 @@
 // import Sidebar from "./sidebar";
 // import Modal from "./modal/Modal";
 import MyButton from "./common/MyButton";
-import LoggedUser from "./LoggedUser";
+// import LoggedUser from "./LoggedUser";
 
-export { /*HiddenH1,*/ LoggedUser, MyButton /*MainLayout, Modal, PageTitle, ProjectLayout, Sidebar, SingleProjectPageContent as SingleProject*/ };
+export { /*HiddenH1,*/ MyButton /*MainLayout, Modal, PageTitle, ProjectLayout, Sidebar, SingleProjectPageContent as SingleProject*/ };

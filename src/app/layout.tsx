@@ -6,6 +6,8 @@ import "./globals.css";
 import "../../styles/style.css";
 import Navigation from "@/components/navigation";
 import { MenuVisibilityContextProvider } from "@/contexts";
+// import { LoggedUser } from "@/components";
+// import { LoggedUser } from "@/components";
 
 export async function generateMetadata() {
     const headerList = headers();
@@ -26,6 +28,7 @@ export default function RootLayout({
                 <MenuVisibilityContextProvider>
                     <Navigation />
                 </MenuVisibilityContextProvider>
+                {/* <LoggedUser /> */}
                 {children}
             </body>
         </html>

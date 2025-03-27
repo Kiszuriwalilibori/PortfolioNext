@@ -10,13 +10,11 @@ import { useMenuVisibilityContext } from "@/contexts";
 
 export default function Navigation() {
     const { isMenuVisible } = useMenuVisibilityContext();
-    console.log("newer context");
+
     const ID = useId();
 
     return (
         </*nav aria-label="navigation container"*/>
-            {/* <LoggedUser /> */}
-
             <NavigationToggler />
             <Fade in={isMenuVisible}>
                 <nav aria-label="site navigation" className={"navbar navbar--active"} itemScope itemType="http://schema.org/LocalBusiness">
