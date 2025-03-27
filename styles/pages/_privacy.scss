@@ -1,0 +1,25 @@
+.privacy {
+    flex-direction: column;
+    padding-left: 40px;
+    color: black;
+
+    & h3 {
+        padding: 20px 0 20px 0;
+        text-align: left;
+    }
+
+    & h2 {
+        padding: 20px 0 20px 0;
+        text-align: left;
+    }
+    & span {
+        align-self: flex-start;
+    }
+    & ul,
+    ol {
+        padding-left: 36px;
+    }
+    & b {
+        font-weight: 600;
+    }
+}

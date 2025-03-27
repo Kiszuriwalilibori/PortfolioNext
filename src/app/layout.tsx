@@ -1,18 +1,11 @@
 import { headers } from "next/headers";
 import { metadata } from "../../public/metadata";
 import { Pages } from "@/types";
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+import "../../styles/style.css";
+import Navigation from "@/components/navigation";
+import { MenuVisibilityContextProvider } from "@/contexts";
 
 export async function generateMetadata() {
     const headerList = headers();
@@ -29,7 +22,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+            <body>
+                <MenuVisibilityContextProvider>
+                    <Navigation />
+                </MenuVisibilityContextProvider>
+                {children}
+            </body>
         </html>
     );
 }

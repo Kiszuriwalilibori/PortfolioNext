@@ -1,0 +1,81 @@
+.projects {
+    @extend .section;
+    @include with-bckgrnd-image("../public/backgrounds/skills.jpg");
+    @include large {
+        background: url(../public/backgrounds/skills.jpg) no-repeat;
+        background: url(../public/backgrounds/skills.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    &__content {
+        @extend .page__content, .page__content--projects;
+
+        & .container {
+            @extend .page__container, .page__container--full-width;
+
+            & > div:first-of-type {
+                & > div:first-of-type {
+                    width: 100% !important;
+                }
+            }
+
+            .project {
+                padding: calc($grid / 3);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
+                min-height: 270px;
+                &__data {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+                @include mobile {
+                    flex-direction: column;
+                    padding-bottom: 90px;
+                }
+
+                &__slides {
+                    display: flex;
+                    flex-direction: column;
+                    @include mobile {
+                        margin-top: 8px;
+                    }
+                }
+                & .image {
+                    width: 300px;
+                    height: auto;
+                    padding: 3px;
+                    @include mobile {
+                        width: 100%;
+                        padding: unset;
+                    }
+                }
+            }
+
+            @include above-mobile {
+                @include box-shadow--basic;
+                background-color: $whitish-color;
+                padding: $grid;
+                justify-content: center;
+                width: $page-container-mobile-width;
+            }
+
+            // & h3 {
+            //     @extend .subtitle-3;
+            //     padding-bottom: $grid;
+            //     padding-top: $grid;
+            //     color: $red-color--subdued;
+            // }
+
+            & h2 {
+                @extend .subtitle-4;
+                color: $red-color--subdued;
+                padding-top: 0;
+            }
+        }
+    }
+}

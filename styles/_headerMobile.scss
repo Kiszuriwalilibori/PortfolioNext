@@ -1,0 +1,63 @@
+.header-mobile {
+    display: block;
+    z-index: 100;
+    position: relative;
+    @include block-fixed(top, left);
+    @include size(100vw, $header-mobile-height);
+    color: $text-color--light;
+    &__contacts {
+        @include center(horizontal);
+        display: flex;
+        bottom: 10px;
+        & svg {
+            @extend .fa-icon, .fa-icon--red, .fa-icon--big, .fa-icon--loose-group;
+        }
+    }
+
+    &--contact {
+        background: url(../public/mobile-backgrounds/contact.jpg) top right no-repeat;
+        background: url(../public/mobile-backgrounds/contact.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--aboutme {
+        background: url(../public/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+        background: url(../public/mobile-backgrounds/aboutme.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--skills {
+        background: url(../public/mobile-backgrounds/skills.jpg) top right no-repeat;
+        background: url(../public/mobile-backgrounds/skills.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--career {
+        background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+        background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--projects {
+        background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+        background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+        background-size: cover;
+    }
+
+    & .description {
+        position: relative;
+        top: $mobile-top-distance + 16px;
+        padding-left: calc($mobile-top-distance / 2);
+        font-size: 12px;
+        font-weight: $font-weight-x-light;
+        text-transform: uppercase;
+        @include media-xsm {
+            padding-left: unset;
+            text-align: center;
+            top: $author-image-mobile-size + $mobile-top-distance;
+        }
+    }
+
+    & .image {
+        @extend .author-base-image;
+        position: fixed;
+        top: $mobile-top-distance;
+        left: calc(50vw - 130px / 2);
+    }
+}

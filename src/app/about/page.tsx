@@ -10,5 +10,5 @@ export async function generateMetadata() {
 }
 
 export default async function About() {
-    return <h1>About me</h1>;
+    return <h1 className="self-centered">About me</h1>;
 }

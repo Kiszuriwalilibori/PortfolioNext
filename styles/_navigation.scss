@@ -1,0 +1,36 @@
+.left-moves {
+    position: relative;
+    transition: right 0.5s ease-out 0s;
+    &:hover {
+        right: 90px;
+    }
+}
+
+.navbar {
+    position: fixed;
+    display: block;
+    top: 150px;
+    top: 56px;
+    right: -100px;
+    text-align: left;
+    z-index: 9999;
+    padding-top: 6px;
+
+    &__list {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 6px 0px;
+    }
+
+    &__item {
+        @extend .left-moves;
+        right: 0px;
+    }
+}
+
+.header {
+    z-index: 100;
+    position: relative;
+}

@@ -1,0 +1,1529 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+body {
+    margin: 0;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+h1 {
+    margin: 0 0;
+}
+
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+a {
+    background-color: transparent;
+}
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted; /* 2 */
+}
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/**
+   * Add the correct font size in all browsers.
+   */
+small {
+    font-size: 80%;
+}
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+img {
+    border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+}
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+progress {
+    vertical-align: baseline;
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+textarea {
+    overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+details {
+    display: block;
+}
+
+/*
+   * Add the correct display in all browsers.
+   */
+summary {
+    display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+template {
+    display: none;
+}
+
+/**
+   * Add the correct display in IE 10.
+   */
+[hidden] {
+    display: none;
+}
+
+/* tenze mixin dubluje klasę self-centred a właściwie ona jego*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4321;
+    text-align: left;
+    padding-top: 0;
+    color: #001820;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+@media (min-width: 1500px) {
+    body {
+        background-color: #2f0002;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.full-screen {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+*:focus {
+    outline: 2px ridge #036397;
+    outline-offset: 1px;
+}
+
+.paper2 {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.section,
+.contact,
+.projects,
+.jobs,
+.skills,
+.aboutme {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+.fade-out {
+    animation: fadeOut ease 1s;
+    -webkit-animation: fadeOut ease 1s;
+    -moz-animation: fadeOut ease 1s;
+    -o-animation: fadeOut ease 1s;
+    -ms-animation: fadeOut ease 1s;
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.growImage {
+    animation: growImage ease-in-out 1s;
+}
+
+@keyframes growImage {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 767px) {
+    .content {
+        min-height: 100vh;
+        margin-top: 300px;
+        background-color: #24332a;
+        padding: 45px 40px;
+    }
+}
+@media (min-width: 768px) {
+    .content {
+        position: absolute;
+        left: 25%;
+        right: 0;
+        width: 75%;
+        min-height: 100vh;
+        align-items: center;
+    }
+}
+@media (min-width: 768px) and (min-width: 576px) and (max-width: 767px) {
+    .content p {
+        font-size: 16px;
+    }
+}
+
+.self-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.author-base-image,
+.header-mobile .image,
+.sidebar .image {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    opacity: 1;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .author-base-image,
+    .header-mobile .image,
+    .sidebar .image {
+        width: 140px;
+        height: 140px;
+    }
+}
+@media (min-width: 991px) {
+    .author-base-image,
+    .header-mobile .image,
+    .sidebar .image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.fa-icon,
+.contact__content .container dl dd svg,
+.header-mobile__contacts svg,
+.sidebar__contacts svg {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+    color: #001820;
+}
+.fa-icon--light,
+.sidebar__contacts svg {
+    color: #ffffff;
+}
+.fa-icon--red,
+.contact__content .container dl dd svg,
+.header-mobile__contacts svg {
+    color: #d3101c;
+}
+.fa-icon--loose-group,
+.header-mobile__contacts svg,
+.sidebar__contacts svg {
+    margin: 0 1em;
+}
+.fa-icon--big,
+.header-mobile__contacts svg {
+    height: 2em;
+}
+.fa-icon--large,
+.sidebar__contacts svg {
+    height: 1.5em;
+}
+
+.page__content,
+.contact__content,
+.projects__content,
+.jobs__content,
+.skills__content,
+.aboutme__content {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 767px) {
+    .page__content,
+    .contact__content,
+    .projects__content,
+    .jobs__content,
+    .skills__content,
+    .aboutme__content {
+        min-height: 100vh;
+        margin-top: 300px;
+        background-color: white;
+        color: #001820;
+        font-weight: 200;
+        letter-spacing: 0.6px;
+        padding: 45px 40px;
+    }
+}
+@media (min-width: 768px) {
+    .page__content,
+    .contact__content,
+    .projects__content,
+    .jobs__content,
+    .skills__content,
+    .aboutme__content {
+        position: absolute;
+        left: 25%;
+        right: 0;
+        width: 75%;
+        min-height: 100vh;
+        align-items: center;
+        font-weight: 200;
+        letter-spacing: 0.6px;
+    }
+}
+@media (min-width: 768px) and (min-width: 576px) and (max-width: 767px) {
+    .page__content p,
+    .contact__content p,
+    .projects__content p,
+    .jobs__content p,
+    .skills__content p,
+    .aboutme__content p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    .page__content--jobs,
+    .jobs__content {
+        background-color: #303337;
+        color: #001820;
+    }
+}
+@media (max-width: 767px) {
+    .page__content--contact,
+    .contact__content {
+        background-color: #24332a;
+        color: #ffffff;
+    }
+}
+@media (max-width: 767px) {
+    .page__content--projects,
+    .projects__content {
+        padding: 45px 20px;
+    }
+}
+.page__content--aboutme,
+.aboutme__content {
+    background-color: #24332a;
+    color: #ffffff;
+}
+@media (max-width: 767px) {
+    .page__content--aboutme p,
+    .aboutme__content p {
+        margin: 20px 0;
+        line-height: 1.4321;
+        font-size: 17px;
+        font-weight: 200;
+        letter-spacing: 0.6px;
+    }
+}
+@media (min-width: 768px) {
+    .page__content--aboutme,
+    .aboutme__content {
+        background-color: transparent;
+        padding-left: 24px;
+        padding-right: 36px;
+        padding-top: 48px;
+        margin: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 576px) {
+    .page__content--aboutme,
+    .aboutme__content {
+        line-height: 1.2;
+    }
+}
+@media (min-width: 768px) and (min-width: 576px) and (max-width: 767px) {
+    .page__content--aboutme,
+    .aboutme__content {
+        font-size: 16px;
+    }
+}
+@media (min-width: 768px) {
+    .page__content--aboutme p,
+    .aboutme__content p {
+        font-size: 24px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        letter-spacing: normal;
+        padding: 7.5px 0;
+        line-height: 1;
+    }
+    .page__content--aboutme .aboutmeBreak,
+    .aboutme__content .aboutmeBreak {
+        display: none;
+    }
+}
+.page__content .subtitle-3,
+.contact__content .subtitle-3,
+.projects__content .subtitle-3,
+.jobs__content .subtitle-3,
+.jobs__content .container h3,
+.skills__content .subtitle-3,
+.skills__content .container h2,
+.aboutme__content .subtitle-3 {
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 300;
+}
+.page__content .subtitle-4,
+.contact__content .subtitle-4,
+.projects__content .subtitle-4,
+.projects__content .container h2,
+.jobs__content .subtitle-4,
+.jobs__content .container h4,
+.skills__content .subtitle-4,
+.skills__content .container h3,
+.aboutme__content .subtitle-4 {
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 200;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+.page__content .subtitle-6,
+.contact__content .subtitle-6,
+.projects__content .subtitle-6,
+.jobs__content .subtitle-6,
+.skills__content .subtitle-6,
+.aboutme__content .subtitle-6 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.page__title {
+    line-height: 1;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 45px;
+    padding-top: 45px;
+    color: inherit;
+}
+.page__title--white {
+    color: #ffffff;
+}
+.page__title--narrow {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color: black;
+}
+.page__container,
+.contact__content .container,
+.projects__content .container,
+.jobs__content .container,
+.skills__content .container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 45px;
+}
+@media (min-width: 768px) {
+    .page__container,
+    .contact__content .container,
+    .projects__content .container,
+    .jobs__content .container,
+    .skills__content .container {
+        background-color: rgba(255, 255, 255, 0.65);
+        padding: 30px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+        justify-content: center;
+    }
+}
+.page__container--dark,
+.jobs__content .container {
+    background-color: #303337;
+}
+@media (min-width: 768px) {
+    .page__container--dark,
+    .jobs__content .container {
+        background-color: #303337;
+    }
+}
+@media (min-width: 768px) {
+    .page__container--fixed-width,
+    .jobs__content .container,
+    .skills__content .container {
+        width: 573px;
+    }
+}
+@media (min-width: 768px) {
+    .page__container--full-width,
+    .projects__content .container {
+        width: 100% !important;
+        margin-top: 0;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+.scrollOffset {
+    margin-left: calc(100vw - 100%);
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+.btn:disabled {
+    cursor: default;
+}
+.btn-normal {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    box-sizing: initial;
+    width: 140px;
+    height: 40px;
+    padding: 5px;
+    background: none repeat scroll 0% 0% #d3101c;
+    border-radius: 5px;
+}
+.btn-normal span {
+    display: inline;
+    font-size: 16px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-left: 15px;
+    text-decoration: none;
+}
+.btn-hamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    margin: 6px 0;
+    border-radius: 5px 0 0 5px;
+    z-index: 1000;
+}
+.btn-hamburger:focus {
+    outline: 2px ridge #036397;
+    outline-offset: 1px;
+}
+
+.left-moves,
+.navbar__item {
+    position: relative;
+    transition: right 0.5s ease-out 0s;
+}
+.left-moves:hover,
+.navbar__item:hover {
+    right: 90px;
+}
+
+.navbar {
+    position: fixed;
+    display: block;
+    top: 150px;
+    top: 56px;
+    right: -100px;
+    text-align: left;
+    z-index: 9999;
+    padding-top: 6px;
+}
+.navbar__list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 6px 0px;
+}
+.navbar__item {
+    right: 0px;
+}
+
+.header {
+    z-index: 100;
+    position: relative;
+}
+
+.sidebar {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 2;
+    width: 25%;
+    min-width: 190px;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    background-color: rgba(145, 13, 13, 0.8);
+}
+@media (min-width: 768px) {
+    .sidebar {
+        display: flex;
+    }
+}
+@media (min-width: 1500px) {
+    .sidebar {
+        max-width: 375px;
+        margin-left: calc((100vw - 1500px) / 2);
+    }
+}
+.sidebar .author {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    padding-top: 30px;
+}
+.sidebar .description {
+    font-size: 12px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.sidebar .image {
+    margin-bottom: 15px;
+}
+.sidebar__contacts {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.header {
+    z-index: 100;
+    position: relative;
+}
+
+.header-mobile {
+    display: block;
+    z-index: 100;
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 300px;
+    color: #ffffff;
+}
+.header-mobile__contacts {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    display: flex;
+    bottom: 10px;
+}
+.header-mobile--contact {
+    background: url(../public/mobile-backgrounds/contact.jpg) top right no-repeat;
+    background: url(../public/mobile-backgrounds/contact.webp) top right no-repeat;
+    background-size: cover;
+}
+.header-mobile--aboutme {
+    background: url(../public/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+    background: url(../public/mobile-backgrounds/aboutme.webp) top right no-repeat;
+    background-size: cover;
+}
+.header-mobile--skills {
+    background: url(../public/mobile-backgrounds/skills.jpg) top right no-repeat;
+    background: url(../public/mobile-backgrounds/skills.webp) top right no-repeat;
+    background-size: cover;
+}
+.header-mobile--career {
+    background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+    background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+    background-size: cover;
+}
+.header-mobile--projects {
+    background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
+    background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+    background-size: cover;
+}
+.header-mobile .description {
+    position: relative;
+    top: 40px;
+    padding-left: 12px;
+    font-size: 12px;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+@media (max-width: 576px) {
+    .header-mobile .description {
+        padding-left: unset;
+        text-align: center;
+        top: 154px;
+    }
+}
+.header-mobile .image {
+    position: fixed;
+    top: 24px;
+    left: calc(50vw - 65px);
+}
+
+@media (min-width: 768px) {
+    .aboutme {
+        background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
+        background: url(../public/backgrounds/aboutme.webp) top right no-repeat;
+        background-size: cover;
+    }
+}
+@media (min-width: 1500px) {
+    .aboutme {
+        background: url(../public/backgrounds/aboutme.jpg) no-repeat;
+        background: url(../public/backgrounds/aboutme.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 768px) {
+    .skills {
+        background: url("../public/backgrounds/skills.jpg") top right no-repeat;
+        background-size: cover;
+        background: url("../public/backgrounds/skills.webp") top right no-repeat;
+        background-size: cover;
+    }
+}
+@media (min-width: 1500px) {
+    .skills {
+        background: url(../public/backgrounds/skills.jpg) no-repeat;
+        background: url(../public/backgrounds/skills.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+.skills__content .container .education {
+    width: 100%;
+}
+.skills__content .container .education a {
+    color: inherit;
+    text-decoration: none;
+}
+.skills__content .container .education a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(145, 13, 13, 0.8);
+    text-underline-offset: 4px;
+}
+.skills__content .container .educationItem {
+    list-style-type: none;
+    width: 100%;
+    background-color: #d7dfc5;
+    margin: 10px 0;
+    padding: 6px;
+    color: black;
+}
+.skills__content .container .certItem {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    list-style-type: none;
+    width: 100%;
+    background-color: #d7dfc5;
+    margin: 10px 0;
+    padding: 6px;
+}
+.skills__content .container .certItem--text-non-professional {
+    color: #85b728;
+}
+.skills__content .container .certItem--non-professional {
+    background-color: rgba(149, 199, 48, 0.4);
+}
+.skills__content .container h2 {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: rgba(145, 13, 13, 0.8);
+}
+.skills__content .container h3 {
+    color: rgba(145, 13, 13, 0.8);
+}
+.skills__content .container ul {
+    color: #001820;
+    list-style-type: disc;
+}
+.skills__content .container ul > li {
+    margin-left: 16px;
+}
+
+@media (min-width: 768px) {
+    .jobs {
+        background: url("../public/backgrounds/career.jpg") top right no-repeat;
+        background-size: cover;
+        background: url("../public/backgrounds/career.webp") top right no-repeat;
+        background-size: cover;
+    }
+}
+@media (min-width: 1500px) {
+    .jobs {
+        background: url(../public/backgrounds/career.jpg) no-repeat;
+        background: url(../public/backgrounds/career.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+.jobs__content .container h3 {
+    padding: 10px 0;
+}
+.jobs__content .container ul {
+    list-style-type: disc;
+}
+.jobs__content .container ul > li {
+    margin-left: 16px;
+}
+
+.projects {
+    background: url("../public/backgrounds/skills.jpg") top right no-repeat;
+    background-size: cover;
+}
+@media (min-width: 1500px) {
+    .projects {
+        background: url(../public/backgrounds/skills.jpg) no-repeat;
+        background: url(../public/backgrounds/skills.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+.projects__content .container > div:first-of-type > div:first-of-type {
+    width: 100% !important;
+}
+.projects__content .container .project {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    min-height: 270px;
+}
+.projects__content .container .project__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+@media (max-width: 767px) {
+    .projects__content .container .project {
+        flex-direction: column;
+        padding-bottom: 90px;
+    }
+}
+.projects__content .container .project__slides {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 767px) {
+    .projects__content .container .project__slides {
+        margin-top: 8px;
+    }
+}
+.projects__content .container .project .image {
+    width: 300px;
+    height: auto;
+    padding: 3px;
+}
+@media (max-width: 767px) {
+    .projects__content .container .project .image {
+        width: 100%;
+        padding: unset;
+    }
+}
+@media (min-width: 768px) {
+    .projects__content .container {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+        background-color: rgba(255, 255, 255, 0.65);
+        padding: 30px;
+        justify-content: center;
+        width: 573px;
+    }
+}
+.projects__content .container h2 {
+    color: rgba(145, 13, 13, 0.8);
+    padding-top: 0;
+}
+
+@media (min-width: 768px) {
+    .contact {
+        background: url("../public/backgrounds/contact.jpg") top right no-repeat;
+        background-size: cover;
+        background: url("../public/backgrounds/contact.webp") top right no-repeat;
+        background-size: cover;
+    }
+}
+@media (min-width: 1500px) {
+    .contact {
+        background: url(../public/backgrounds/contact.jpg) no-repeat;
+        background: url(../public/backgrounds/contact.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+.contact__content .container {
+    color: #001820;
+}
+@media (max-width: 767px) {
+    .contact__content .container {
+        color: #ffffff;
+    }
+}
+@media (max-width: 767px) {
+    .contact__content .container h1 {
+        color: #ffffff !important;
+    }
+}
+.contact__content .container dl {
+    line-height: 1.8;
+    padding-top: 20px;
+}
+.contact__content .container dl dt {
+    display: block;
+    clear: both;
+    width: 150px;
+    float: left;
+}
+.contact__content .container dl dd {
+    display: block;
+    margin: 0;
+    float: left;
+}
+.contact__content .container dl dd a span {
+    padding-left: 6px;
+}
+.contact__content .container dl dd a span:hover {
+    text-decoration: underline;
+}
+@media (min-width: 768px) {
+    .contact__content .container dl dd a span:hover {
+        color: rgba(145, 13, 13, 0.8);
+    }
+}
+
+.single-project .top-section {
+    position: relative;
+    z-index: 1;
+    min-height: 640px;
+}
+@media only screen and (min-width: 1500px) {
+    .single-project .top-section {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+.single-project .top-section .project-container {
+    box-sizing: content-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4vw 0;
+}
+.single-project .top-section .project-container .header {
+    position: relative;
+    z-index: 1;
+    margin: 200px auto 600px;
+    text-align: center;
+    color: white;
+    padding: 0 10px;
+}
+@media (max-width: 767px) {
+    .single-project .top-section .project-container .header {
+        margin: 50px auto 250px;
+    }
+}
+.single-project .top-section .project-container .header__title {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.single-project .top-section .project-container .header__subtitle {
+    font-size: 3.5rem;
+    line-height: 1.285;
+    font-weight: 100;
+}
+@media (max-width: 767px) {
+    .single-project .top-section .project-container .header__subtitle {
+        font-size: 2.5rem;
+    }
+}
+.single-project .top-section--firebase {
+    background-color: #2b8251;
+}
+.single-project .top-section--firebase .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--firebase .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--portfolionext {
+    background-color: #3f51b5;
+}
+.single-project .top-section--portfolionext .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--portfolionext .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--unsplash {
+    background-color: #546e7a;
+}
+.single-project .top-section--unsplash .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--unsplash .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--athletes {
+    background-color: #1076ab;
+}
+.single-project .top-section--athletes .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--athletes .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--chat {
+    background-color: #00796b;
+}
+.single-project .top-section--chat .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--chat .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--cryptocurrency-tracker {
+    background-color: #ab221d;
+}
+.single-project .top-section--cryptocurrency-tracker .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--cryptocurrency-tracker .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--minifigs {
+    background-color: #1f2136;
+}
+.single-project .top-section--minifigs .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--minifigs .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--space-portfolio {
+    background-color: #063851;
+}
+.single-project .top-section--space-portfolio .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--space-portfolio .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--floydian-portfolio {
+    background-color: #1d424b;
+}
+.single-project .top-section--floydian-portfolio .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--floydian-portfolio .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--dancer-portfolio {
+    background-color: #d81b60;
+}
+.single-project .top-section--dancer-portfolio .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--dancer-portfolio .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--physioterapy {
+    background-color: #6071c3;
+}
+.single-project .top-section--physioterapy .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--physioterapy .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--weather-forecast {
+    background-color: #0077d1;
+}
+.single-project .top-section--weather-forecast .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--weather-forecast .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--google-books-finder {
+    background-color: #117f8d;
+}
+.single-project .top-section--google-books-finder .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--google-books-finder .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--decision-tree {
+    background-color: #3f51b5;
+}
+.single-project .top-section--decision-tree .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--decision-tree .project-screen {
+        background-size: contain !important;
+    }
+}
+.single-project .top-section--youtube-player {
+    background-color: #27817b;
+}
+.single-project .top-section--youtube-player .project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
+}
+@media (max-width: 767px) {
+    .single-project .top-section--youtube-player .project-screen {
+        background-size: contain !important;
+    }
+}
+
+.privacy {
+    flex-direction: column;
+    padding-left: 40px;
+    color: black;
+}
+.privacy h3 {
+    padding: 20px 0 20px 0;
+    text-align: left;
+}
+.privacy h2 {
+    padding: 20px 0 20px 0;
+    text-align: left;
+}
+.privacy span {
+    align-self: flex-start;
+}
+.privacy ul,
+.privacy ol {
+    padding-left: 36px;
+}
+.privacy b {
+    font-weight: 600;
+}

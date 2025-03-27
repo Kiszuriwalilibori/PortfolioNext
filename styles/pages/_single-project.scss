@@ -1,0 +1,149 @@
+.single-project {
+    & .top-section {
+        position: relative;
+        z-index: 1;
+        min-height: 640px;
+        @media only screen and (min-width: 1500px) {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+        & .project-container {
+            box-sizing: content-box;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4vw 0;
+            & .header {
+                position: relative;
+                z-index: 1;
+                margin: 200px auto 600px;
+                text-align: center;
+                color: white;
+                padding: 0 10px;
+                @include mobile {
+                    margin: 50px auto 250px;
+                }
+                &__title {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }
+                &__subtitle {
+                    font-size: 3.5rem;
+                    line-height: 1.285;
+                    font-weight: 100;
+                    @include mobile {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+        &--firebase {
+            background-color: $firebase-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
+            }
+        }
+        &--portfolionext {
+            background-color: $portfolionext-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
+            }
+        }
+        &--unsplash {
+            background-color: $unsplash-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
+            }
+        }
+        &--athletes {
+            background-color: $athletes-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
+            }
+        }
+        &--chat {
+            background-color: $chat-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
+            }
+        }
+        &--cryptocurrency-tracker {
+            background-color: $cryptocurrency-tracker-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
+            }
+        }
+        &--minifigs {
+            background-color: $minifigs-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
+            }
+        }
+        &--space-portfolio {
+            background-color: $space-portfolio-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
+            }
+        }
+        &--floydian-portfolio {
+            background-color: $floydian-portfolio-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
+            }
+        }
+        &--dancer-portfolio {
+            background-color: $dancer-portfolio-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
+            }
+        }
+        &--physioterapy {
+            background-color: $physioterapy-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
+            }
+        }
+        &--weather-forecast {
+            background-color: $weather-forecast-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
+            }
+        }
+        &--google-books-finder {
+            background-color: $google-books-finder-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
+            }
+        }
+        &--decision-tree {
+            background-color: $decision-tree-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
+            }
+        }
+        &--youtube-player {
+            background-color: $youtube-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
+            }
+        }
+    }
+}

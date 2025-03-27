@@ -93,4 +93,6 @@ export interface ProjectNav {
     projectPrevious: string | undefined;
 }
 
-export type Pages = "about" | "skills" | "career" | "projects";
+export const PAGES = ["about", "skills", "projects", "career", "contact"] as const;
+export type Pages = (typeof PAGES)[number];
+// export type Pages = "about" | "skills" | "career" | "projects";

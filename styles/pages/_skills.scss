@@ -1,0 +1,84 @@
+.skills {
+    @extend .section;
+    @include above-mobile {
+        @include with-bckgrnd-image("../public/backgrounds/skills.jpg");
+        @include with-bckgrnd-image("../public/backgrounds/skills.webp");
+    }
+    @include large {
+        background: url(../public/backgrounds/skills.jpg) no-repeat;
+        background: url(../public/backgrounds/skills.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    &__content {
+        @extend .page__content;
+
+        & .container {
+            @extend .page__container, .page__container--fixed-width;
+
+            & .education {
+                width: 100%;
+                & a {
+                    color: inherit;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                        text-decoration-color: $red-color--subdued;
+                        text-underline-offset: 4px;
+                    }
+                }
+            }
+            & .educationItem {
+                list-style-type: none;
+                width: 100%;
+                background-color: $olive-color--transparent;
+                margin: 10px 0;
+                padding: 6px;
+                color: black;
+            }
+            & .certItem {
+                @include paper2;
+                list-style-type: none;
+                width: 100%;
+                background-color: $olive-color--transparent;
+                margin: 10px 0;
+                padding: 6px;
+                &--text-non-professional {
+                    color: $yellowgreen-color;
+                }
+                &--non-professional {
+                    background-color: $yellowgreen-color--transparent;
+                }
+            }
+
+            // & h2 {
+            //     line-height: 1;
+            //     font-size: 36px;
+            //     font-weight: 400;
+            //     text-transform: uppercase;
+            //     padding-bottom: 45px;
+            //     padding-top: 45px;
+            // }
+            & h2 {
+                @extend .subtitle-3;
+                padding-bottom: $grid;
+                padding-top: $grid;
+                color: $red-color--subdued;
+            }
+
+            & h3 {
+                @extend .subtitle-4;
+                color: $red-color--subdued;
+            }
+
+            ul {
+                color: $text-color--dark;
+                list-style-type: disc;
+                > li {
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}

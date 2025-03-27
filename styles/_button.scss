@@ -1,0 +1,42 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    @include box-shadow--basic;
+
+    &:disabled {
+        cursor: default;
+    }
+    &-normal {
+        @include box-shadow--basic;
+        display: flex;
+        align-items: center;
+        box-sizing: initial;
+        @include size(140px, 40px);
+        padding: 5px;
+        background: none repeat scroll 0% 0% $red-color--vivid;
+        border-radius: 5px;
+
+        & span {
+            display: inline;
+            font-size: 16px;
+            color: #fff;
+            font-family: sans-serif;
+            font-weight: $font-weight-bold;
+            text-transform: capitalize;
+            padding-left: 15px;
+            text-decoration: none;
+        }
+    }
+    &-hamburger {
+        @include block-fixed(top, right);
+        @include size(40px);
+        justify-content: center;
+        margin: 6px 0;
+        border-radius: 5px 0 0 5px;
+        z-index: 1000; //bez tego nie pokazuje się w pojedynczych projektach
+        &:focus {
+            outline: 2px ridge #036397;
+            outline-offset: 1px;
+        }
+    }
+}

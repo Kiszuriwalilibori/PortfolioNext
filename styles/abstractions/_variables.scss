@@ -1,0 +1,59 @@
+$text-color--dark: #001820;
+$text-color--light: #ffffff;
+$red-color--vivid: #d3101c;
+$red-color--subdued: rgba(145, 13, 13, 0.8);
+$red-color--lighter--subdued: rgba(145, 13, 13, 0.7);
+$red-color--xlight--subdued: rgba(145, 13, 13, 0.3);
+$mobile-background-color: #24332a;
+$dark-background-color: #303337;
+$whitish-color: rgba(255, 255, 255, 0.65);
+$olive-color--transparent: rgba(67, 84, 22, 0.4);
+
+$olive-color--transparent: #d7dfc5;
+$yellowgreen-color: #85b728;
+$yellowgreen-color--transparent: rgba(149, 199, 48, 0.4);
+$greyish-color: #ddd;
+$non-professional-color: $yellowgreen-color;
+$non-professional-color--transparent: $yellowgreen-color--transparent;
+
+$unsplash-background-color: #546e7a;
+$firebase-background-color: #2b8251;
+$athletes-background-color: #1076ab;
+$portfolionext-background-color: #3f51b5;
+$floydian-portfolio-background-color: #1d424b;
+$space-portfolio-background-color: #063851;
+$dancer-portfolio-background-color: #d81b60;
+$cryptocurrency-tracker-background-color: #ab221d;
+$weather-forecast-background-color: #0077d1;
+$google-books-finder-background-color: #117f8d;
+$decision-tree-background-color: #3f51b5;
+$minifigs-background-color: #1f2136;
+$chat-background-color: #00796b;
+$youtube-background-color: #27817b;
+$physioterapy-background-color: #6071c3;
+$greyish-border: 1px solid $greyish-color;
+$reddish-border: 1px solid $red-color--subdued;
+$black-border: 1px solid black;
+
+$font-raleway: "Raleway", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+$font-light: $font-raleway; //
+$font-bold: $font-raleway; //
+$font-regular: $font-open-sans; //
+
+$font-weight-x-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$grid: 30px !default;
+$mobile-top-distance: 24px;
+
+$author-image-mobile-size: 130px;
+$author-image-medium-size: 140px;
+$author-image-large-size: 150px;
+$header-mobile-height: 300px;
+
+$mobile-padding: 12px;
+$page-container-mobile-width: 573px;
+$max-width: 1500px;

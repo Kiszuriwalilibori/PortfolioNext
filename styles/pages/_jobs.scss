@@ -1,0 +1,37 @@
+.jobs {
+    @extend .section;
+    @include above-mobile {
+        @include with-bckgrnd-image("../public/backgrounds/career.jpg");
+        @include with-bckgrnd-image("../public/backgrounds/career.webp");
+    }
+    @include large {
+        background: url(../public/backgrounds/career.jpg) no-repeat;
+        background: url(../public/backgrounds/career.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    &__content {
+        @extend .page__content, .page__content--jobs;
+
+        & .container {
+            @extend .page__container, .page__container--dark, .page__container--fixed-width;
+
+            & h3 {
+                @extend .subtitle-3;
+                padding: calc($grid / 3) 0;
+            }
+
+            & h4 {
+                @extend .subtitle-4;
+            }
+
+            ul {
+                list-style-type: disc;
+                > li {
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}

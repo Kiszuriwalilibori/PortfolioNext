@@ -1,0 +1,137 @@
+@mixin block-fixed($horizontal, $vertical) {
+    position: fixed;
+    @if $horizontal == "bottom" {
+        bottom: 0;
+    }
+    @if $horizontal == "top" {
+        top: 0;
+    }
+    @if $vertical == "right" {
+        right: 0;
+    }
+    @if $vertical == "left" {
+        left: 0;
+    }
+}
+@mixin with-bckgrnd-image($image) {
+    background: url($image) top right no-repeat;
+    background-size: cover;
+}
+@mixin center($position: both) {
+    position: absolute;
+
+    @if $position== "vertical" {
+        @include translateY(-50%);
+        top: 50%;
+    } @else if $position== "horizontal" {
+        transform: translateX(-50%);
+        left: 50%;
+    } @else if $position== "both" {
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+} /* tenze mixin dubluje klasę self-centred a właściwie ona jego*/
+
+@mixin media-sm {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin clearfix() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+@mixin size($w, $h: $w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin above-mobile {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin media-xsm {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin media-sm {
+    @media (min-width: 576px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin media-above-md {
+    @media (min-width: 991px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1500px) {
+        @content;
+    }
+}
+
+// @mixin media-xl {
+//     @media (min-width: 1200px) and (max-width: 1439px) {
+//         @content;
+//     }
+// }
+
+// @mixin media-xxl {
+//     @media (min-width: 1440px) {
+//         @content;
+//     }
+// }
+
+// @mixin white-text-with-shadow {
+//     color: #fff;
+//     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+// }
+
+@mixin box-shadow--basic {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12),
+        0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+@mixin project-screen {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    @include mobile {
+        background-size: contain !important;
+    }
+}
+
+@mixin paper2 {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}

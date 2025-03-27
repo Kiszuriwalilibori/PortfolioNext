@@ -1,0 +1,32 @@
+{
+    "short_name": "Portfolio",
+    "name": "Portfolio of Piotr Maksymiuk aka Kiszuriwalilibori",
+    "description": "Contains informations about author, his hobbies, employment history, skills, projects and many others.",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "maskable_icon.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "youtube192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logo512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#F4BD42",
+    "background_color": "#2B2929"
+}
