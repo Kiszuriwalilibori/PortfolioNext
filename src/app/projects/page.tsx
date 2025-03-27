@@ -1,7 +1,7 @@
-export const metadata = {
-    title: "Skills",
-};
+// export const metadata = {
+//     title: "Skills",
+// };
 
-export default function About() {
+export default function Projects() {
     return <h1>Projects</h1>;
 }

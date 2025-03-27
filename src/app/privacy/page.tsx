@@ -1,7 +1,7 @@
-export const metadata = {
-    title: "Privacy",
-};
+// export const metadata = {
+//     title: "Privacy",
+// };
 
-export default function About() {
+export default function Privacy() {
     return <h1>privacy</h1>;
 }
