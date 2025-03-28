@@ -14,7 +14,7 @@ export default function Navigation() {
     const ID = useId();
 
     return (
-        </*nav aria-label="navigation container"*/>
+        <section aria-label="navigation container">
             <NavigationToggler />
             <Fade in={isMenuVisible}>
                 <nav aria-label="site navigation" className={"navbar navbar--active"} itemScope itemType="http://schema.org/LocalBusiness">
@@ -25,6 +25,6 @@ export default function Navigation() {
                     </ul>
                 </nav>
             </Fade>
-        </>
+        </section>
     );
 }
