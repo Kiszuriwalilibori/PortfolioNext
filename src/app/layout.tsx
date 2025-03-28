@@ -4,6 +4,7 @@ import { Pages } from "@/types";
 
 import "./globals.css";
 import "../../styles/style.css";
+
 import Navigation from "@/components/navigation";
 import { MenuVisibilityContextProvider } from "@/contexts";
 // import { LoggedUser } from "@/components";

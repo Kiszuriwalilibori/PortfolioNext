@@ -3,13 +3,15 @@
 import Fade from "@mui/material/Fade";
 import { useId } from "react";
 
-import Link from "./link";
+import NavLink from "./navLink";
 import { PAGES as LINKS } from "@/types";
 import NavigationToggler from "./navigationToggler";
 import { useMenuVisibilityContext } from "@/contexts";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
-    const { isMenuVisible } = useMenuVisibilityContext();
+    const { isMenuVisible, toggleMenuVisibility } = useMenuVisibilityContext();
+    const pathname = usePathname();
 
     const ID = useId();
 
@@ -20,7 +22,7 @@ export default function Navigation() {
                 <nav aria-label="site navigation" className={"navbar navbar--active"} itemScope itemType="http://schema.org/LocalBusiness">
                     <ul className="navbar__list">
                         {LINKS.map(link => (
-                            <Link key={`${ID}-${link}`} page={link} />
+                            <NavLink key={`${ID}-${link}`} page={link} clickHandler={toggleMenuVisibility} currentPathName={pathname} />
                         ))}
                     </ul>
                 </nav>
