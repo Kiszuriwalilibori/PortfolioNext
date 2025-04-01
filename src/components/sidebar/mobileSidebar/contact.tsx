@@ -2,15 +2,15 @@ import React from "react";
 
 import Icons, { IconLabels } from "../../common/icons";
 
-import { Contact } from "types";
+import { ContactType } from "@/types";
 
 interface Props {
-    data: Contact;
+    data: ContactType;
 }
 
-function Contact(props: Props) {
+export function Contact(props: Props) {
     const {
-        data: { text, link, ID, alias },
+        data: { /*text,*/ link, ID /*, alias*/ },
     } = props;
 
     return (
