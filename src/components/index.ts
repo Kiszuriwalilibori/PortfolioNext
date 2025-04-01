@@ -5,9 +5,12 @@
 // import MainLayout from "./layout/main-layout";
 // import PageTitle from "./pageTitle";
 // import SingleProjectPageContent from "./PageContents/singleProjectPageContent/singleProjectPageContent";
-// import Sidebar from "./sidebar";
+
 // import Modal from "./modal/Modal";
 import MyButton from "./common/MyButton";
+import Navigation from "./navigation";
+import { DesktopSidebarWrapper } from "./sidebar/desktopSidebarWrapper";
+import { MobileSidebarWrapper } from "./sidebar/mobileSidebarWrapper";
 // import LoggedUser from "./LoggedUser";
 
-export { /*HiddenH1,*/ MyButton /*MainLayout, Modal, PageTitle, ProjectLayout, Sidebar, SingleProjectPageContent as SingleProject*/ };
+export { /*HiddenH1,*/ DesktopSidebarWrapper, MobileSidebarWrapper, MyButton, Navigation /*MainLayout, Modal, PageTitle, ProjectLayout,  SingleProjectPageContent as SingleProject*/ };

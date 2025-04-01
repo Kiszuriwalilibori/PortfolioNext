@@ -66,8 +66,6 @@ export interface ProjectsPageProps {
     featuresList: string[];
 }
 
-export type DesktopSizes = "mobile" | "phablet" | "tablet" | "desktop" | "desktopHD";
-
 // export type { ModalProps };
 
 export interface CommentType {
@@ -93,6 +91,9 @@ export interface ProjectNav {
     projectPrevious: string | undefined;
 }
 
-export const PAGES = ["about", "skills", "projects", "career", "contact"] as const;
-export type Pages = (typeof PAGES)[number];
-// export type Pages = "about" | "skills" | "career" | "projects";
+export interface Contact {
+    ID: string;
+    text: string;
+    link: string;
+    alias: string;
+}

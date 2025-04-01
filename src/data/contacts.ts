@@ -1,0 +1,26 @@
+export const CONTACTS = [
+    {
+        ID: "email",
+        text: "E-mail",
+        link: "mailto:piotrmaksymiuk@yahoo.com",
+        alias: "piotrmaksymiuk@yahoo.com",
+    },
+    {
+        ID: "facebook",
+        text: "Facebook",
+        link: "https://www.facebook.com/piotr.maksymiuk.94/about",
+        alias: "piotr.maksymiuk.94",
+    },
+    {
+        ID: "linkedin",
+        text: "LinkedIn",
+        link: "https://www.linkedin.com/in/piotr-maksymiuk-27265124/",
+        alias: "piotr-maksymiuk",
+    },
+    {
+        ID: "github",
+        text: "Github",
+        link: "https://github.com/Kiszuriwalilibori",
+        alias: "Kiszuriwalilibori",
+    },
+];

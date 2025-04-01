@@ -1,0 +1,99 @@
+{
+    "skills": [
+        { "skill": "HTML", "level": "4" },
+        { "skill": "React.js", "level": "4" },
+        { "skill": "Redux", "level": "4" },
+        { "skill": "CSS/SASS", "level": "4" },
+        { "skill": "Typescript", "level": "3" },
+        { "skill": "Material UI", "level": "3" },
+        { "skill": "React-Router", "level": "3" },
+        { "skill": "jQuery", "level": "1" },
+        { "skill": "JavaScript", "level": "3" },
+        { "skill": "Pug", "level": "1" },
+        { "skill": "PWE", "level": "1" },
+        { "skill": "Web Workers", "level": "1" },
+        { "skill": "PHP", "level": "1" },
+        { "skill": "Next.js", "level": "1" },
+        { "skill": "Bootstrap", "level": "1" },
+        { "skill": "Zustand", "level": "3" }
+    ],
+    "education": [
+        {
+            "school": "Warsaw Technical University",
+            "period": "",
+            "subject": "Organic Chemistry and Organic Technology"
+        },
+        { "school": "Cosinus", "period": "2019-2020", "subject": "IT Technician" },
+        { "school": "CISCO", "period": "2019-2020", "subject": "IT Fundamentals" }
+    ],
+
+    "certificates": [
+        {
+            "name": "Process approach to quality management",
+            "operator": "ZETOM",
+            "link": "https://www.zetom.eu/",
+            "isProfessional": true
+        },
+        {
+            "name": "HSE Inspector",
+            "operator": "SEKA",
+            "isProfessional": true,
+            "link": "https://www.seka.pl/"
+        },
+        {
+            "name": "MS Windows 95 and its applications",
+            "operator": "Edusoft",
+            "isProfessional": true,
+            "link": "http://www.edusoft.com.pl/"
+        },
+        {
+            "name": "Sales techniques with elements of negotiations",
+            "operator": "MACH Consulting",
+            "isProfessional": true,
+            "link": "https://machconsulting.pl/"
+        },
+        {
+            "name": "Technical translator (english to polish, chemistry)",
+            "operator": "Polish Federation of Engineering Associations",
+            "isProfessional": true,
+            "link": "https://not.org.pl/"
+        },
+        {
+            "name": " ISO 9000 Internal Auditor",
+            "operator": "BSI Training Services",
+            "isProfessional": true,
+            "link": "https://www.bsigroup.com/pl-PL/"
+        },
+
+        {
+            "name": "Time Management",
+            "operator": "DOOR",
+            "isProfessional": true,
+            "link": "https://door.com.pl/"
+        },
+        {
+            "name": "ISO 9000 Internal Auditor",
+            "operator": "Polish Center for Research and Certification",
+            "isProfessional": true,
+            "link": "https://www.bsigroup.com/pl-PL/"
+        },
+        {
+            "name": "Driving Licence B category",
+            "operator": "City Hall of Warsaw",
+            "isProfessional": false,
+            "link": "https://um.warszawa.pl/"
+        },
+        {
+            "name": "Hiking Organiser",
+            "operator": "Polish Tourism and Sightseeing Society",
+            "isProfessional": false,
+            "link": "https://pttk.pl/"
+        },
+        {
+            "name": "Hiking Leader for North Mazovia",
+            "operator": "Polish Tourism and Sightseeing Society",
+            "isProfessional": false,
+            "link": "https://pttk.pl/"
+        }
+    ]
+}
