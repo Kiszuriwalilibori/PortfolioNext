@@ -1,5 +1,6 @@
-import { Pages } from "@/types";
 import type { Metadata } from "next";
+
+import { Pages } from "@/models/pages";
 
 export const metadata: {
     [key in Pages]: Metadata;
