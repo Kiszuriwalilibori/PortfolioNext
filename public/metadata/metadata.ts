@@ -46,3 +46,5 @@ export const metadata: {
         },
     },
 };
+
+export default metadata;

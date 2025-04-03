@@ -1,12 +1,12 @@
 .jobs {
     @extend .section;
     @include above-mobile {
-        @include with-bckgrnd-image("../public/backgrounds/career.jpg");
-        @include with-bckgrnd-image("../public/backgrounds/career.webp");
+        @include with-bckgrnd-image("/backgrounds/career.jpg");
+        @include with-bckgrnd-image("/backgrounds/career.webp");
     }
     @include large {
-        background: url(../public/backgrounds/career.jpg) no-repeat;
-        background: url(../public/backgrounds/career.webp) no-repeat center center;
+        background: url(/backgrounds/career.jpg) no-repeat;
+        background: url(/backgrounds/career.webp) no-repeat center center;
         background-size: cover;
         max-width: 1500px;
         margin: 0 auto;

@@ -1,12 +1,12 @@
 .contact {
     @extend .section;
     @include above-mobile {
-        @include with-bckgrnd-image("../public/backgrounds/contact.jpg");
-        @include with-bckgrnd-image("../public/backgrounds/contact.webp");
+        @include with-bckgrnd-image("/backgrounds/contact.jpg");
+        @include with-bckgrnd-image("/backgrounds/contact.webp");
     }
     @include large {
-        background: url(../public/backgrounds/contact.jpg) no-repeat;
-        background: url(../public/backgrounds/contact.webp) no-repeat center center;
+        background: url(/backgrounds/contact.jpg) no-repeat;
+        background: url(/backgrounds/contact.webp) no-repeat center center;
         background-size: cover;
         max-width: 1500px;
         margin: 0 auto;

@@ -1,17 +1,15 @@
-import { headers } from "next/headers";
-import { metadata } from "../../public/metadata";
-
 import "./globals.css";
-import "../../styles/style.css";
+import "@/styles/style.css";
 
 import { Navigation, DesktopSidebarWrapper } from "@/components";
 import { MenuVisibilityContextProvider, ViewportProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
 import DesktopSidebar from "@/components/sidebar/desktopSidebar";
-// import { MobileSidebarWrapper } from "@/components/sidebar/mobileSidebarWrapper";
-// import { MobileSidebar } from "@/components/sidebar/mobileSidebar";
+import { MobileSidebar } from "@/components/sidebar/mobileSidebar";
 
-// import { LoggedUser } from "@/components";
+import { headers } from "next/headers";
+import { metadata } from "../../public/metadata/metadata";
+
 // import { LoggedUser } from "@/components";
 
 export async function generateMetadata() {
@@ -33,15 +31,9 @@ export default function RootLayout({
                     <Navigation />
                 </MenuVisibilityContextProvider>
                 <ViewportProvider>
-                    <DesktopSidebarWrapper>
-                        <DesktopSidebar />
-                    </DesktopSidebarWrapper>
-                    {/* <MobileSidebarWrapper>
-                        <MobileSidebar />
-                    </MobileSidebarWrapper> */}
+                    <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />{" "}
                 </ViewportProvider>
                 {/* <LoggedUser /> */}
-
                 {children}
             </body>
         </html>

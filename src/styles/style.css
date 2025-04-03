@@ -820,28 +820,28 @@ a {
   bottom: 10px;
 }
 .header-mobile--contact {
-  background: url(../public/mobile-backgrounds/contact.jpg) top right no-repeat;
-  background: url(../public/mobile-backgrounds/contact.webp) top right no-repeat;
+  background: url(/mobile-backgrounds/contact.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/contact.webp) top right no-repeat;
   background-size: cover;
 }
-.header-mobile--aboutme {
-  background: url(../public/mobile-backgrounds/aboutme.jpg) top right no-repeat;
-  background: url(../public/mobile-backgrounds/aboutme.webp) top right no-repeat;
+.header-mobile--about {
+  background: url(/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/aboutme.webp) top right no-repeat;
   background-size: cover;
 }
 .header-mobile--skills {
-  background: url(../public/mobile-backgrounds/skills.jpg) top right no-repeat;
-  background: url(../public/mobile-backgrounds/skills.webp) top right no-repeat;
+  background: url(/mobile-backgrounds/skills.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/skills.webp) top right no-repeat;
   background-size: cover;
 }
 .header-mobile--career {
-  background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
-  background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
   background-size: cover;
 }
 .header-mobile--projects {
-  background: url(../public/mobile-backgrounds/career.jpg) top right no-repeat;
-  background: url(../public/mobile-backgrounds/career.webp) top right no-repeat;
+  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
   background-size: cover;
 }
 .header-mobile .description {
@@ -867,15 +867,15 @@ a {
 
 @media (min-width: 768px) {
   .aboutme {
-    background: url(../public/backgrounds/aboutme.jpg) top right no-repeat;
-    background: url(../public/backgrounds/aboutme.webp) top right no-repeat;
+    background: url(/backgrounds/aboutme.jpg) top right no-repeat;
+    background: url(/backgrounds/aboutme.webp) top right no-repeat;
     background-size: cover;
   }
 }
 @media (min-width: 1500px) {
   .aboutme {
-    background: url(../public/backgrounds/aboutme.jpg) no-repeat;
-    background: url(../public/backgrounds/aboutme.webp) no-repeat center center;
+    background: url(/backgrounds/aboutme.jpg) no-repeat;
+    background: url(/backgrounds/aboutme.webp) no-repeat center center;
     background-size: cover;
     max-width: 1500px;
     margin: 0 auto;
@@ -883,16 +883,16 @@ a {
 }
 @media (min-width: 768px) {
   .skills {
-    background: url("../public/backgrounds/skills.jpg") top right no-repeat;
+    background: url("/backgrounds/skills.jpg") top right no-repeat;
     background-size: cover;
-    background: url("../public/backgrounds/skills.webp") top right no-repeat;
+    background: url("/backgrounds/skills.webp") top right no-repeat;
     background-size: cover;
   }
 }
 @media (min-width: 1500px) {
   .skills {
-    background: url(../public/backgrounds/skills.jpg) no-repeat;
-    background: url(../public/backgrounds/skills.webp) no-repeat center center;
+    background: url(/backgrounds/skills.jpg) no-repeat;
+    background: url(/backgrounds/skills.webp) no-repeat center center;
     background-size: cover;
     max-width: 1500px;
     margin: 0 auto;
@@ -952,16 +952,16 @@ a {
 
 @media (min-width: 768px) {
   .jobs {
-    background: url("../public/backgrounds/career.jpg") top right no-repeat;
+    background: url("/backgrounds/career.jpg") top right no-repeat;
     background-size: cover;
-    background: url("../public/backgrounds/career.webp") top right no-repeat;
+    background: url("/backgrounds/career.webp") top right no-repeat;
     background-size: cover;
   }
 }
 @media (min-width: 1500px) {
   .jobs {
-    background: url(../public/backgrounds/career.jpg) no-repeat;
-    background: url(../public/backgrounds/career.webp) no-repeat center center;
+    background: url(/backgrounds/career.jpg) no-repeat;
+    background: url(/backgrounds/career.webp) no-repeat center center;
     background-size: cover;
     max-width: 1500px;
     margin: 0 auto;
@@ -978,13 +978,13 @@ a {
 }
 
 .projects {
-  background: url("../public/backgrounds/skills.jpg") top right no-repeat;
+  background: url("/backgrounds/skills.jpg") top right no-repeat;
   background-size: cover;
 }
 @media (min-width: 1500px) {
   .projects {
-    background: url(../public/backgrounds/skills.jpg) no-repeat;
-    background: url(../public/backgrounds/skills.webp) no-repeat center center;
+    background: url(/backgrounds/skills.jpg) no-repeat;
+    background: url(/backgrounds/skills.webp) no-repeat center center;
     background-size: cover;
     max-width: 1500px;
     margin: 0 auto;
@@ -1049,16 +1049,16 @@ a {
 
 @media (min-width: 768px) {
   .contact {
-    background: url("../public/backgrounds/contact.jpg") top right no-repeat;
+    background: url("/backgrounds/contact.jpg") top right no-repeat;
     background-size: cover;
-    background: url("../public/backgrounds/contact.webp") top right no-repeat;
+    background: url("/backgrounds/contact.webp") top right no-repeat;
     background-size: cover;
   }
 }
 @media (min-width: 1500px) {
   .contact {
-    background: url(../public/backgrounds/contact.jpg) no-repeat;
-    background: url(../public/backgrounds/contact.webp) no-repeat center center;
+    background: url(/backgrounds/contact.jpg) no-repeat;
+    background: url(/backgrounds/contact.webp) no-repeat center center;
     background-size: cover;
     max-width: 1500px;
     margin: 0 auto;

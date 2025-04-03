@@ -1,0 +1,18 @@
+.aboutme {
+    @extend .section;
+    @include above-mobile {
+        background: url(/backgrounds/aboutme.jpg) top right no-repeat;
+        background: url(/backgrounds/aboutme.webp) top right no-repeat;
+        background-size: cover;
+    }
+    @include large {
+        background: url(/backgrounds/aboutme.jpg) no-repeat;
+        background: url(/backgrounds/aboutme.webp) no-repeat center center;
+        background-size: cover;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    &__content {
+        @extend .page__content, .page__content--aboutme;
+    }
+}

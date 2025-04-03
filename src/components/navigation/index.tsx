@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import NavLink from "./navLink";
 import NavigationToggler from "./navigationToggler";
 
-import { PAGES, pageToKey } from "@/models/pages";
+import { PAGES, PageUtils } from "@/models/pages";
 import { useMenuVisibilityContext } from "@/contexts";
 
 export default function Navigation() {
@@ -23,7 +23,7 @@ export default function Navigation() {
                 <nav aria-label="site navigation" className={"navbar navbar--active"} itemScope itemType="http://schema.org/LocalBusiness">
                     <ul className="navbar__list">
                         {PAGES.map(page => (
-                            <NavLink key={pageToKey(ID, page)} page={page} clickHandler={toggleMenuVisibility} currentPathName={pathname} />
+                            <NavLink key={PageUtils.pageToKey(ID, page)} page={page} clickHandler={toggleMenuVisibility} currentPathName={pathname} />
                         ))}
                     </ul>
                 </nav>

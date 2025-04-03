@@ -1,12 +1,12 @@
 .skills {
     @extend .section;
     @include above-mobile {
-        @include with-bckgrnd-image("../public/backgrounds/skills.jpg");
-        @include with-bckgrnd-image("../public/backgrounds/skills.webp");
+        @include with-bckgrnd-image("/backgrounds/skills.jpg");
+        @include with-bckgrnd-image("/backgrounds/skills.webp");
     }
     @include large {
-        background: url(../public/backgrounds/skills.jpg) no-repeat;
-        background: url(../public/backgrounds/skills.webp) no-repeat center center;
+        background: url(/backgrounds/skills.jpg) no-repeat;
+        background: url(/backgrounds/skills.webp) no-repeat center center;
         background-size: cover;
         max-width: 1500px;
         margin: 0 auto;

@@ -9,8 +9,8 @@
 // import Modal from "./modal/Modal";
 import MyButton from "./common/MyButton";
 import Navigation from "./navigation";
-import { DesktopSidebarWrapper } from "./sidebar/desktopSidebarWrapper";
-import { MobileSidebarWrapper } from "./sidebar/mobileSidebarWrapper";
+import { SidebarWrapper } from "./sidebar/sidebarWrapper";
+
 // import LoggedUser from "./LoggedUser";
 
-export { /*HiddenH1,*/ DesktopSidebarWrapper, MobileSidebarWrapper, MyButton, Navigation /*MainLayout, Modal, PageTitle, ProjectLayout,  SingleProjectPageContent as SingleProject*/ };
+export { /*HiddenH1,*/ SidebarWrapper as DesktopSidebarWrapper, MyButton, Navigation /*MainLayout, Modal, PageTitle, ProjectLayout,  SingleProjectPageContent as SingleProject*/ };
