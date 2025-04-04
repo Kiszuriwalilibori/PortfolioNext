@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -16,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^6.4.8",
-    "@next/font": "^14.2.15",
+    "@mui/material-nextjs": "^7.0.0",
     "fortawesome": "^0.0.1-security",
     "lodash": "^4.17.21",
     "next": "15.2.3",

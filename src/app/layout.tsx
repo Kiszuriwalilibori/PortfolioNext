@@ -9,6 +9,13 @@ import { MobileSidebar } from "@/components/sidebar/mobileSidebar";
 
 import { headers } from "next/headers";
 import { metadata } from "../../public/metadata/metadata";
+import { Roboto } from "next/font/google";
+
+import theme from "@/themes";
+import { ThemeProvider } from "@mui/material";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+
+const roboto = Roboto({ subsets: ["latin"], weight: ["200", "300", "400", "500", "600", "700", "800", "900"] });
 
 // import { LoggedUser } from "@/components";
 
@@ -26,16 +33,20 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
-                <MenuVisibilityContextProvider>
-                    <Navigation />
-                </MenuVisibilityContextProvider>
-                <ViewportProvider>
-                    <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />{" "}
-                </ViewportProvider>
-                {/* <LoggedUser /> */}
-                {children}
-            </body>
+            <AppRouterCacheProvider>
+                <ThemeProvider theme={theme}>
+                    <body className={roboto.className}>
+                        <MenuVisibilityContextProvider>
+                            <Navigation />
+                        </MenuVisibilityContextProvider>
+                        <ViewportProvider>
+                            <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />{" "}
+                        </ViewportProvider>
+                        {/* <LoggedUser /> */}
+                        {children}
+                    </body>
+                </ThemeProvider>
+            </AppRouterCacheProvider>
         </html>
     );
 }

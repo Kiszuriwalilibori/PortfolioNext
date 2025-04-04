@@ -1,3 +1,5 @@
+"use client";
+
 import { /*Typography,*/ createTheme } from "@mui/material";
 
 import { /*COLOR_RED_SUBDUED_DARKER,*/ COLOR_RED_SUBDUED_LIGHTER, COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
