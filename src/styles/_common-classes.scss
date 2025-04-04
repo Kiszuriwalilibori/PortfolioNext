@@ -179,12 +179,13 @@
         &--aboutme {
             background-color: $mobile-background-color;
             color: $text-color--light;
+            font-weight: $font-weight-normal;
             @include mobile {
                 & p {
                     margin: 20px 0;
                     line-height: 1.4321;
                     font-size: 17px;
-                    // font-family: "Raleway";
+
                     font-weight: 200;
                     letter-spacing: 0.6px;
                 }

@@ -537,6 +537,7 @@ a {
 .page__content--aboutme, .aboutme__content {
   background-color: #24332a;
   color: #ffffff;
+  font-weight: 400;
 }
 @media (max-width: 767px) {
   .page__content--aboutme p, .aboutme__content p {
@@ -785,7 +786,8 @@ a {
 }
 .sidebar .description {
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 400;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 .sidebar .image {

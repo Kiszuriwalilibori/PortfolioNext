@@ -1,6 +1,6 @@
 "use client";
 
-import { /*Typography,*/ createTheme } from "@mui/material";
+import { Typography, createTheme } from "@mui/material";
 
 import { /*COLOR_RED_SUBDUED_DARKER,*/ COLOR_RED_SUBDUED_LIGHTER, COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
 import { common } from "@mui/material/colors";
@@ -115,9 +115,9 @@ theme = createTheme(theme, {
             display: "block",
             color: common.white,
             fontSize: "22px",
-            fontWeight: theme.typography.fontWeightMedium,
+            fontWeight: theme.typography.fontWeightRegular,
             textTransform: "uppercase",
-            letterSpacing: "0.6px",
+            letterSpacing: "1px",
             lineHeight: "32px",
             "@media (max-width:767px)": {
                 fontWeight: theme.typography.fontWeightBold,

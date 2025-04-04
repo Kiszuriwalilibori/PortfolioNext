@@ -1,3 +1,17 @@
 export default function About() {
-    return <h1 className="self-centered">About me</h1>;
+    return (
+        <section className="aboutme">
+            <h1 className="sr-only">About me</h1>
+            <div className="aboutme__content">
+                <div className="wrapper">
+                    <p> I am front-end developer in love with React and its ecosystem.</p>
+                    <p>I used to learn front-end on my own from web resources, however quite recently earned a degree as an IT Technician and completed one of CISCO courses.</p>
+                    <p>Currently, do make my living by doing small freelance orders.I am available for hire and open to any ideas of cooperation.</p>
+
+                    <hr className="aboutmeBreak"></hr>
+                    <p>In my spare time, if the weather permits, I take my bike and and ride through the surrounding forests. Having more time do visit Białowieża Forest. Cooling off at home usually means listening to the music through loudspeakers I have constructed it myself.</p>
+                </div>
+            </div>
+        </section>
+    );
 }
