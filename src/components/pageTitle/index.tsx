@@ -1,12 +1,14 @@
-import theme from "@/themes";
-import Typography from "@mui/material/Typography";
+"use client";
 
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
 interface Props {
     title: string;
     isWhite?: boolean;
 }
 
 export const PageTitle = (props: Props) => {
+    const theme = useTheme();
     const { title, isWhite = false } = props;
     const style = isWhite ? { color: theme.palette.common.white } : {};
     return (

@@ -11,7 +11,7 @@ import { headers } from "next/headers";
 import { metadata } from "../../public/metadata/metadata";
 // import { Roboto } from "next/font/google";
 
-import theme from "@/themes";
+import theme from "@/themes/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 

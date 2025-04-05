@@ -1,32 +1,34 @@
 import { useId } from "react";
-// import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 
-import "react-vertical-timeline-component/style.min.css";
+import { Timeline, TimelineElement } from "@/components/verticalTimeline";
 
 import Icons from "./icons";
 
-// import { Company, Duties, Position, Project } from "./styled";
-// import PageTitle from "@/components/pageTitle";
-// // import { Job } from "@/types";
-// import career from "@/data/career";
+import PageTitle from "@/components/pageTitle";
+import { career } from "@/data/career";
+import { test } from "@/utils/test";
+import { CareerItem } from "@/types";
+
+import { Company, Duties, Position, Project } from "./styled";
 
 function Career() {
     const ID = useId();
+    test();
 
     return (
         <section className="jobs">
-            {/* <article className="jobs__content" aria-label=" details about author's jobs">
+            <article className="jobs__content" aria-label=" details about author's jobs">
                 <div className="container">
                     <PageTitle title="Jobs" isWhite />
-                    <VerticalTimeline layout={"1-column-left"}>
-                        {career.map((job: any) => {
+                    <Timeline>
+                        {career.map((job: CareerItem) => {
                             return (
-                                <VerticalTimelineElement
+                                <TimelineElement
                                     id={`${ID}-${job.period}`.replace(/\s/g, "")}
                                     key={`${ID}-${job.period}`}
                                     className="vertical-timeline-element--work"
                                     contentStyle={job.contentStyle}
-                                    contentArrowStyle={{ borderRight: `7px solid  ${job.contentStyle.background}` }}
+                                    contentArrowStyle={{ borderRight: `7px solid  ${job.contentStyle!.background}` }}
                                     date={job.period}
                                     iconStyle={job.contentStyle}
                                     icon={job.name && Icons[job.name] ? Icons[job.name]() : undefined}
@@ -39,14 +41,16 @@ function Career() {
                                     {job.description.map((item: any) => {
                                         return <Duties key={item}>{item}</Duties>;
                                     })}
-                                </VerticalTimelineElement>
+                                </TimelineElement>
                             );
                         })}
-                    </VerticalTimeline>
+                    </Timeline>
                 </div>
-            </article> */}
+            </article>
         </section>
     );
 }
 
 export default Career;
+
+// todo przepisać te jobsrelated na kalsę abstra

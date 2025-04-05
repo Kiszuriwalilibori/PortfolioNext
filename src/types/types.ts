@@ -1,5 +1,7 @@
 // import { ModalProps } from "../components/modal/Modal";
 
+import { VerticalTimelineElementProps } from "react-vertical-timeline-component";
+
 export interface Skill {
     skill: string;
     level: string;
@@ -22,18 +24,14 @@ export interface Certificate {
     isProfessional: boolean;
 }
 
-export interface Job {
+export interface CareerItem extends VerticalTimelineElementProps {
     period: string;
     name: string;
-    link: string;
+    link?: string;
     position: string;
+    subtitle?: string;
     description: string[];
-    contentStyle: { background: string; color: string };
-    style: string;
-    subtitle: string;
 }
-
-export type Jobs = Job[];
 export type Feature = string;
 
 export interface ProjectType {
