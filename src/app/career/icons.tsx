@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { JSX } from "react";
 
 export const Mobica = () => {
     return <div></div>;
@@ -9,15 +10,7 @@ const Icons: { [key: string]: () => JSX.Element } = {
         return <Image src="/images/pkt.png" width={30} height={15} alt="pkt logo" className="self-centered"></Image>;
     },
     Moonheads: () => {
-        return (
-            <Image
-                src="/images/moonheads.png"
-                width={25}
-                height={25}
-                alt="MoonHeads logo"
-                className="self-centered"
-            ></Image>
-        );
+        return <Image src="/images/moonheads.png" width={25} height={25} alt="MoonHeads logo" className="self-centered"></Image>;
     },
     They: () => {
         return <Image src="/images/they.png" width={25} height={5} alt="Th-ey logo" className="self-centered"></Image>;
