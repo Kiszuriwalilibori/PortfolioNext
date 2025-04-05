@@ -8,14 +8,7 @@ export default defineConfig([
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
-    {
-        plugins: { "validate-jsx-nesting": true },
-    },
-    {
-        rules: {
-            "validate-jsx-nesting/no-invalid-jsx-nesting": "error",
-        },
-    },
+
     tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
 ]);
