@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { styled } from "@mui/material";
 
 export const Company = styled("h2")(({ theme }) => ({
     color: "#232A34 !important",
@@ -19,10 +19,10 @@ export const Position = styled("h3")(({ theme }) => ({
     fontWeight: 300,
 }));
 
-export const Duties = styled("p")(({ theme }) => ({
+export const Duties = styled("p")(() => ({
     margin: "1em 0 0 !important",
     lineHeight: `1.6 !important`,
-    fontSize: "14px !important",
+    fontSize: `14px !important`,
     fontWeight: `500 !important`,
 }));
 
