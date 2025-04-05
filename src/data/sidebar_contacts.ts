@@ -1,4 +1,4 @@
-export const contacts = [
+export const CONTACTS = [
     {
         ID: "email",
         text: "E-mail",
@@ -23,18 +23,4 @@ export const contacts = [
         link: "https://github.com/Kiszuriwalilibori",
         alias: "Kiszuriwalilibori",
     },
-    {
-        ID: "cv",
-        text: "Curriculum Vitae",
-        link: "/documents/cv.pdf",
-        alias: "My cv",
-    },
-    {
-        ID: "motivation",
-        text: "Motivation letter",
-        link: "/documents/motivation.pdf",
-        alias: "Motivation letter",
-    },
 ];
-
-export default contacts;

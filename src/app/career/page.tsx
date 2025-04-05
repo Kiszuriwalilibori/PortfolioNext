@@ -1,3 +1,1 @@
-export default function Career() {
-    return <h1>career</h1>;
-}
+export default function Career() {}

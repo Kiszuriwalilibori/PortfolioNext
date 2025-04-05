@@ -24,6 +24,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-gravatar": "^2.6.3",
+    "react-vertical-timeline-component": "^3.6.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
@@ -34,6 +35,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-gravatar": "^2.6.14",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "eslint": "^9.23.0",
     "eslint-config-next": "15.2.3",
     "eslint-plugin-react": "^7.37.4",

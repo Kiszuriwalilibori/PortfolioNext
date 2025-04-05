@@ -22,18 +22,18 @@ export interface Certificate {
     isProfessional: boolean;
 }
 
-// export interface Job {
-//     period: string;
-//     name: string;
-//     link: string;
-//     position: string;
-//     description: string[];
-//     contentStyle: { background: string; color: string };
-//     style: any;
-//     subtitle: string;
-// }
+export interface Job {
+    period: string;
+    name: string;
+    link: string;
+    position: string;
+    description: string[];
+    contentStyle: { background: string; color: string };
+    style: any;
+    subtitle: string;
+}
 
-// export type Jobs = Job[];
+export type Jobs = Job[];
 export type Feature = string;
 
 export interface ProjectType {

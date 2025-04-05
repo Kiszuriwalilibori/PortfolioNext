@@ -166,6 +166,7 @@
             }
         }
         &--contact {
+            font-weight: $font-weight-normal;
             @include mobile {
                 background-color: $mobile-background-color;
                 color: $text-color--light;

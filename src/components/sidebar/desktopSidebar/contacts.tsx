@@ -1,7 +1,7 @@
 import { useId } from "react";
 
 import { ContactType } from "@/types";
-import { CONTACTS } from "@/data/contacts";
+import { CONTACTS } from "@/data/sidebar_contacts";
 import { Icons, IconLabels } from "../../common/icons";
 
 export const Contacts = () => {

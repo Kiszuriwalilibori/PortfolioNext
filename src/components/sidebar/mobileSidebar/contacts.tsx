@@ -2,7 +2,7 @@ import { useId } from "react";
 
 import { Icons, IconLabels } from "@/components/common/icons";
 
-import { CONTACTS } from "@/data/contacts";
+import { CONTACTS } from "@/data/sidebar_contacts";
 import { ContactType } from "@/types";
 
 export const Contacts = () => {

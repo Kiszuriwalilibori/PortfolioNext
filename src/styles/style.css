@@ -523,6 +523,9 @@ a {
     color: #001820;
   }
 }
+.page__content--contact, .contact__content {
+  font-weight: 400;
+}
 @media (max-width: 767px) {
   .page__content--contact, .contact__content {
     background-color: #24332a;
@@ -695,7 +698,7 @@ a {
   text-decoration: none;
 }
 .btn-active {
-  background: none repeat scroll 0% 0% #fff;
+  background: none repeat scroll 0% 0% #ffd700;
 }
 .btn-hamburger {
   position: fixed;
