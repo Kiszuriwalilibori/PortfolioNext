@@ -29,7 +29,7 @@ export interface Job {
     position: string;
     description: string[];
     contentStyle: { background: string; color: string };
-    style: any;
+    style: string;
     subtitle: string;
 }
 

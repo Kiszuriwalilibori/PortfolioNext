@@ -3,6 +3,7 @@ import { faBackward, faEnvelope, faFileDownload, faForward, faGlobe, faHandFist,
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { JSX } from "react";
+import React from "react";
 
 export const Icons: { [key: string]: JSX.Element } = {
     email: <FontAwesomeIcon icon={faEnvelope} aria-label="Send an email to author" />,
