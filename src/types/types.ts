@@ -2,7 +2,7 @@
 
 import { VerticalTimelineElementProps } from "react-vertical-timeline-component";
 
-export interface Skill {
+export interface SkillInfo {
     skill: string;
     level: string;
 }
@@ -17,7 +17,7 @@ export interface EducationData {
     period: string;
     subject: string;
 }
-export interface Certificate {
+export interface CertificateType {
     name: string;
     operator: string;
     link: string;
@@ -49,15 +49,9 @@ export interface ProjectType {
 
 export type Contacts = ContactType[];
 
-export type Skills = Skill[];
+export type Skills = SkillInfo[];
 
 export type Education = EducationData[];
-
-export interface SkillsPageProps {
-    skills: Skill[];
-    education: Education;
-    certificates: Certificate[];
-}
 
 export interface ProjectsPageProps {
     data: ProjectType[];
