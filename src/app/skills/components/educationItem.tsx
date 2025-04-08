@@ -1,5 +1,5 @@
 import Paper from "@mui/material/Paper";
-import { EducationData } from "types";
+import { EducationData } from "@/types";
 /// paper2 źle wygląda
 interface Props {
     educationData: EducationData;
