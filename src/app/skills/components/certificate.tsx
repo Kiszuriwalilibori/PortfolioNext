@@ -5,7 +5,7 @@ interface Props {
 }
 
 const createCertificateClassName = (isProfessional: CertificateType["isProfessional"]) => {
-    return isProfessional ? "certItem" : " certItem certItem--non-professional";
+    return isProfessional ? "certificate" : " certificate certificate--non-professional";
 };
 
 export function Certificate(props: Props) {

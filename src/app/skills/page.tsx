@@ -44,7 +44,7 @@ export default function Skills() {
                     </ul>
                     <h2>
                         Various trainings, courses and certificates,
-                        <span className="certItem--text-non-professional"> not only professional</span>:
+                        <span className="certificate--text-non-professional"> not only professional</span>:
                     </h2>
                     <ul className="education">
                         {certificates.map(certificate => {

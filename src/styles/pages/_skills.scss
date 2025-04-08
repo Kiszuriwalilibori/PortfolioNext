@@ -28,17 +28,19 @@
                         text-underline-offset: 4px;
                     }
                 }
+                &__item {
+                    @include rounded-shadowed-box;
+                    list-style-type: none;
+                    width: 100%;
+                    background-color: $olive-color--transparent;
+                    margin: 10px 0;
+                    padding: 6px;
+                    color: black;
+                }
             }
-            & .educationItem {
-                list-style-type: none;
-                width: 100%;
-                background-color: $olive-color--transparent;
-                margin: 10px 0;
-                padding: 6px;
-                color: black;
-            }
-            & .certItem {
-                @include paper2;
+
+            & .certificate {
+                @include rounded-shadowed-box;
                 list-style-type: none;
                 width: 100%;
                 background-color: $olive-color--transparent;
@@ -52,14 +54,6 @@
                 }
             }
 
-            // & h2 {
-            //     line-height: 1;
-            //     font-size: 36px;
-            //     font-weight: 400;
-            //     text-transform: uppercase;
-            //     padding-bottom: 45px;
-            //     padding-top: 45px;
-            // }
             & h2 {
                 @extend .subtitle-3;
                 padding-bottom: $grid;
