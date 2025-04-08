@@ -1,6 +1,7 @@
 export default function About() {
     return (
         <section className="aboutme">
+            <div className="leading-image-mobile leading-image-mobile--about" />
             <h1 className="sr-only">About me</h1>
             <div className="aboutme__content">
                 <div className="wrapper">

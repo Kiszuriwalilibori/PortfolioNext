@@ -7,6 +7,7 @@ export default function Contact() {
     const ID = useId();
     return (
         <section className="contact">
+            <div className="leading-image-mobile leading-image-mobile--contact" />
             <div className="contact__content">
                 <div className="container">
                     <PageTitle title="Contact me" />

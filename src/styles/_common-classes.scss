@@ -303,3 +303,41 @@
     height: 1px;
     overflow: hidden;
 }
+
+.leading-image-mobile {
+    display: block;
+
+    @include above-mobile {
+        display: none;
+    }
+
+    position: relative;
+    @include block-fixed(top, left);
+    @include size(100vw, $leading-image-mobile-height);
+
+    &--contact {
+        background: url(/mobile-backgrounds/contact.jpg) top right no-repeat;
+        background: url(/mobile-backgrounds/contact.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--about {
+        background: url(/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+        background: url(/mobile-backgrounds/aboutme.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--skills {
+        background: url(/mobile-backgrounds/skills.jpg) top right no-repeat;
+        background: url(/mobile-backgrounds/skills.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--career {
+        background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+        background: url(/mobile-backgrounds/career.webp) top right no-repeat;
+        background-size: cover;
+    }
+    &--projects {
+        background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+        background: url(/mobile-backgrounds/career.webp) top right no-repeat;
+        background-size: cover;
+    }
+}

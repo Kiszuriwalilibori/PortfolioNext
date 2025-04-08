@@ -17,6 +17,7 @@ function Career() {
 
     return (
         <section className="jobs">
+            <div className="leading-image-mobile leading-image-mobile--career" />
             <article className="jobs__content" aria-label=" details about author's jobs">
                 <div className="container">
                     <PageTitle title="Jobs" isWhite />

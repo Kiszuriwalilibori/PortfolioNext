@@ -25,6 +25,7 @@ export default function Skills() {
 
     return (
         <section className="skills">
+            <div className="leading-image-mobile leading-image-mobile--skills" />
             <div className="skills__content">
                 <div className="container">
                     <PageTitle title="Skills & Education" />

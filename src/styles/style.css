@@ -662,6 +662,46 @@ a {
   overflow: hidden;
 }
 
+.leading-image-mobile {
+  display: block;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 300px;
+}
+@media (min-width: 768px) {
+  .leading-image-mobile {
+    display: none;
+  }
+}
+.leading-image-mobile--contact {
+  background: url(/mobile-backgrounds/contact.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/contact.webp) top right no-repeat;
+  background-size: cover;
+}
+.leading-image-mobile--about {
+  background: url(/mobile-backgrounds/aboutme.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/aboutme.webp) top right no-repeat;
+  background-size: cover;
+}
+.leading-image-mobile--skills {
+  background: url(/mobile-backgrounds/skills.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/skills.webp) top right no-repeat;
+  background-size: cover;
+}
+.leading-image-mobile--career {
+  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
+  background-size: cover;
+}
+.leading-image-mobile--projects {
+  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
+  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
+  background-size: cover;
+}
+
 .btn {
   cursor: pointer;
   border: none;
@@ -817,31 +857,6 @@ a {
   left: 50%;
   display: flex;
   bottom: 10px;
-}
-.header-mobile--contact {
-  background: url(/mobile-backgrounds/contact.jpg) top right no-repeat;
-  background: url(/mobile-backgrounds/contact.webp) top right no-repeat;
-  background-size: cover;
-}
-.header-mobile--about {
-  background: url(/mobile-backgrounds/aboutme.jpg) top right no-repeat;
-  background: url(/mobile-backgrounds/aboutme.webp) top right no-repeat;
-  background-size: cover;
-}
-.header-mobile--skills {
-  background: url(/mobile-backgrounds/skills.jpg) top right no-repeat;
-  background: url(/mobile-backgrounds/skills.webp) top right no-repeat;
-  background-size: cover;
-}
-.header-mobile--career {
-  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
-  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
-  background-size: cover;
-}
-.header-mobile--projects {
-  background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
-  background: url(/mobile-backgrounds/career.webp) top right no-repeat;
-  background-size: cover;
 }
 .header-mobile .description {
   position: relative;
