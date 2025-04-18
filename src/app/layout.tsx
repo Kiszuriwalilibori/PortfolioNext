@@ -6,17 +6,14 @@ import { MenuVisibilityContextProvider, ViewportProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
 import DesktopSidebar from "@/components/sidebar/desktopSidebar";
 import { MobileSidebar } from "@/components/sidebar/mobileSidebar";
-
 import { headers } from "next/headers";
 import { metadata } from "../../public/metadata/metadata";
-import { Roboto } from "next/font/google";
 import { Noto_Sans } from "next/font/google";
-
 import theme from "@/themes/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
-const fonts = Noto_Sans({ subsets: ["latin"], weight: ["200", "300", "400", "500", "600", "700", "800", "900"] });
+const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
 // import { LoggedUser } from "@/components";
 
