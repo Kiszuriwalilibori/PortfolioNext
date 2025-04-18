@@ -502,7 +502,7 @@ a {
     width: 75%;
     min-height: 100vh;
     align-items: center;
-    font-weight: 200;
+    font-weight: 400;
     letter-spacing: 0.6px;
   }
 }
@@ -579,12 +579,12 @@ a {
 .page__content .subtitle-3, .contact__content .subtitle-3, .projects__content .subtitle-3, .jobs__content .subtitle-3, .jobs__content .container h3, .skills__content .subtitle-3, .skills__content .container h2, .aboutme__content .subtitle-3 {
   line-height: 1;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .page__content .subtitle-4, .contact__content .subtitle-4, .projects__content .subtitle-4, .projects__content .container h2, .jobs__content .subtitle-4, .jobs__content .container h4, .skills__content .subtitle-4, .skills__content .container h3, .aboutme__content .subtitle-4 {
   line-height: 1;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 400;
   padding-bottom: 15px;
   padding-top: 15px;
   position: relative;
