@@ -18,7 +18,7 @@ import PageTitle from "@/components/pageTitle";
 import { ProjectUtils } from "@/models/projects";
 
 export default function Projects() {
-    const featuresList = createFeaturesList(projects);
+    const featuresList = ProjectUtils.getFeatures(projects);
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
 
