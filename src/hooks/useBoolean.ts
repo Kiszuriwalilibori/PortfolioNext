@@ -1,4 +1,6 @@
-import { useCallback, useState } from 'react';
+"use client";
+
+import { useCallback, useState } from "react";
 
 function useBoolean(initialValue: boolean = false) {
     const [value, setValue] = useState(initialValue);
