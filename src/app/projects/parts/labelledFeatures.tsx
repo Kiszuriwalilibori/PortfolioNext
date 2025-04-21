@@ -1,4 +1,4 @@
-import { ProjectType } from "types";
+import { ProjectType } from "@/types";
 import { Checkbox, LabelledCheckbox } from "./styled";
 
 interface Props {
@@ -11,13 +11,7 @@ export const LabelledFeatures = (props: Props) => {
     return (
         <>
             {features.map((feature: string) => {
-                return (
-                    <LabelledCheckbox
-                        key={feature}
-                        control={<Checkbox disableRipple={true} onChange={() => handleCheck(feature)} />}
-                        label={feature}
-                    />
-                );
+                return <LabelledCheckbox key={feature} control={<Checkbox disableRipple={true} onChange={() => handleCheck(feature)} />} label={feature} />;
             })}
         </>
     );

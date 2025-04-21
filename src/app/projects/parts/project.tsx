@@ -1,10 +1,9 @@
 import isEmpty from "lodash/isEmpty";
 import Image from "next/image";
-import Link from "next/link";
 
 import { useId } from "react";
-import { ProjectType, ProjectNav } from "types";
-import { Button, Chip, Paper, Typography } from "@mui/material";
+import { ProjectType } from "@/types";
+import { Chip, Paper, Typography } from "@mui/material";
 import { ChipsContainer } from "../styled";
 import ButtonMore from "./buttonMore";
 
@@ -48,14 +47,7 @@ const Project = (props: Props) => {
                 {slides && !isEmpty(slides) && (
                     <div className="project__slides">
                         {slides.map(slide => (
-                            <Image
-                                key={`${ID}--${slide}`}
-                                className="image"
-                                src={slide}
-                                alt={title}
-                                width={300}
-                                height={200}
-                            />
+                            <Image key={`${ID}--${slide}`} className="image" src={slide} alt={title} width={300} height={200} />
                         ))}
                     </div>
                 )}
