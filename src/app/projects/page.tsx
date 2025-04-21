@@ -17,9 +17,9 @@ export default function Projects() {
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(features, data);
 
-    const projectsCategoryA = ProjectUtils.filterByCategory([...visibleProjects], "A").sort(ProjectUtils.sort);
+    const projectsCategoryA = ProjectUtils.filterByCategory([...visibleProjects], "A").sort(ProjectUtils.sortProjectsByTitle);
 
-    const projectsCategoryB = ProjectUtils.filterByCategory([...visibleProjects], "B").sort(ProjectUtils.sort);
+    const projectsCategoryB = ProjectUtils.filterByCategory([...visibleProjects], "B").sort(ProjectUtils.sortProjectsByTitle);
 
     const ID = useId();
     return (

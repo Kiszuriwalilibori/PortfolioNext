@@ -2,10 +2,12 @@ import isEmpty from "lodash/isEmpty";
 import Image from "next/image";
 
 import { useId } from "react";
+import { Chip, Paper, Typography } from "@mui/material";
 
 import { ProjectType } from "@/types";
-import { Chip, Paper, Typography } from "@mui/material";
+
 import { ChipsContainer } from "../styled";
+import { ProjectUtils } from "@/models/projects";
 
 import ButtonMore from "./buttonMore";
 
@@ -13,14 +15,13 @@ interface Props {
     projectData: ProjectType;
 }
 
+const slideSize = { width: 300, height: 200 };
 const Project = (props: Props) => {
     const {
         projectData: { description, title, features, slides },
     } = props;
     const ID = useId();
-    const sortedFeatures = features.sort(function (a, b) {
-        return a.toLowerCase().localeCompare(b.toLowerCase());
-    });
+    const sortedFeatures = features.sort(ProjectUtils.sortFeatures);
 
     return (
         <Paper
@@ -41,7 +42,7 @@ const Project = (props: Props) => {
 
                     <ChipsContainer>
                         {sortedFeatures.map(feature => (
-                            <Chip label={feature} key={`${ID}--${feature}`} />
+                            <Chip label={feature} key={ProjectUtils.getFeatureKey(ID, feature)} />
                         ))}
                     </ChipsContainer>
                     <ButtonMore title={title} />
@@ -49,7 +50,7 @@ const Project = (props: Props) => {
                 {slides && !isEmpty(slides) && (
                     <div className="project__slides">
                         {slides.map(slide => (
-                            <Image key={`${ID}--${slide}`} className="image" src={slide} alt={title} width={300} height={200} />
+                            <Image key={ProjectUtils.getSlideKey(ID, slide)} className="image" src={slide} alt={title} width={slideSize.width} height={slideSize.height} />
                         ))}
                     </div>
                 )}

@@ -1,9 +1,14 @@
 import { ProjectType } from "@/types";
 
 export abstract class ProjectUtils {
-    static sort(a: ProjectType, b: ProjectType) {
+    static sortProjectsByTitle(a: ProjectType, b: ProjectType) {
         return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
     }
+
+    static sortFeatures(a: string, b: string) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+    }
+
     static filterByCategory(projects: ProjectType[], category: string) {
         return projects.filter(item => item.category === category);
     }
@@ -22,5 +27,11 @@ export abstract class ProjectUtils {
     }
     static getKey(ID: string, item: ProjectType) {
         return `${ID}--${item.title}`;
+    }
+    static getSlideKey(ID: string, slide: string) {
+        return `${ID}--${slide}`;
+    }
+    static getFeatureKey(ID: string, feature: string) {
+        return `${ID}--${feature}`;
     }
 }
