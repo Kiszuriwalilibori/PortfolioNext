@@ -20,4 +20,7 @@ export abstract class ProjectUtils {
             return [];
         }
     }
+    static getKey(ID: string, item: ProjectType) {
+        return `${ID}--${item.title}`;
+    }
 }

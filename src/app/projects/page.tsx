@@ -1,26 +1,21 @@
 "use client";
+import { useId } from "react";
 
 import isEmpty from "lodash/isEmpty";
 
-import { useId, useMemo } from "react";
-
-import SingleProject from "./parts/project";
-
 import { Checkboxes } from "./parts";
-
 import { ProjectCategoryStack } from "./styled";
-
 import { projects } from "@/data/projects";
-import createFeaturesList from "./createFeaturesList";
 import { useGetProjects } from "@/hooks";
-import PageTitle from "@/components/pageTitle";
-
 import { ProjectUtils } from "@/models/projects";
 
+import PageTitle from "@/components/pageTitle";
+import SingleProject from "./parts/project";
+
 export default function Projects() {
-    const featuresList = ProjectUtils.getFeatures(projects);
+    const features = ProjectUtils.getFeatures(projects);
     const data = projects;
-    const { visibleProjects, changeHandler } = useGetProjects(featuresList, data);
+    const { visibleProjects, changeHandler } = useGetProjects(features, data);
 
     const projectsCategoryA = ProjectUtils.filterByCategory([...visibleProjects], "A").sort(ProjectUtils.sort);
 
@@ -32,12 +27,12 @@ export default function Projects() {
             <div className="projects__content">
                 <div className="container">
                     <PageTitle title="Projects" />
-                    <Checkboxes features={featuresList} handleChange={changeHandler} />
+                    <Checkboxes features={features} handleChange={changeHandler} />
                     {!isEmpty(projectsCategoryA) && (
                         <ProjectCategoryStack spacing={2}>
                             <h2>Primary, refined works with long commit history and usually a lot of features</h2>
                             {projectsCategoryA.map(item => (
-                                <SingleProject key={`${ID}--${item.title}`} projectData={item} />
+                                <SingleProject key={ProjectUtils.getKey(ID, item)} projectData={item} />
                             ))}
                         </ProjectCategoryStack>
                     )}
@@ -45,7 +40,7 @@ export default function Projects() {
                         <ProjectCategoryStack spacing={2}>
                             <h2>Better leave unseen... at least code. Old, not maintained and not modernised works</h2>
                             {projectsCategoryB.map(item => (
-                                <SingleProject key={`${ID}--${item.title}`} projectData={item} />
+                                <SingleProject key={ProjectUtils.getKey(ID, item)} projectData={item} />
                             ))}
                         </ProjectCategoryStack>
                     )}

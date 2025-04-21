@@ -2,9 +2,11 @@ import isEmpty from "lodash/isEmpty";
 import Image from "next/image";
 
 import { useId } from "react";
+
 import { ProjectType } from "@/types";
 import { Chip, Paper, Typography } from "@mui/material";
 import { ChipsContainer } from "../styled";
+
 import ButtonMore from "./buttonMore";
 
 interface Props {

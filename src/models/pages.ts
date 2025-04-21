@@ -17,4 +17,7 @@ export abstract class PageUtils {
     static pageToKey(ID: string, page: Pages): string {
         return `${ID}-${page}`;
     }
+    static projectPage(title: string) {
+        return `/projects/${title}`;
+    }
 }

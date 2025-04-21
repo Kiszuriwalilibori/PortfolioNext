@@ -1,6 +1,5 @@
 "use client";
 
-import isEqual from "lodash/isEqual";
 import isEmpty from "lodash/isEmpty";
 
 import { useState, useCallback } from "react";
@@ -37,3 +36,5 @@ const useGetProjects = (featuresList: string[], data: ProjectType[]) => {
 };
 
 export default useGetProjects;
+
+// todo: podejrzanie skomplikowane. Po co filtrować w tym miejscu

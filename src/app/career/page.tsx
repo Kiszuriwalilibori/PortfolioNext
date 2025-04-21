@@ -1,14 +1,12 @@
 import { useId } from "react";
 
 import { Timeline, TimelineElement } from "@/components/verticalTimeline";
-
-import Icons from "./icons";
-
-import PageTitle from "@/components/pageTitle";
 import { career } from "@/data/career";
 import { test } from "@/utils/test";
 import { CareerItem } from "@/types";
 
+import Icons from "./icons";
+import PageTitle from "@/components/pageTitle";
 import { Company, Duties, Position, Project } from "./styled";
 
 function Career() {

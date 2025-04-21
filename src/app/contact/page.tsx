@@ -1,7 +1,8 @@
 import { useId } from "react";
+
 import PageTitle from "@/components/pageTitle";
-import ContactDetails from "./contact";
 import contacts from "@/data/contacts";
+import ContactDetails from "./contactDetails";
 
 export default function Contact() {
     const ID = useId();
