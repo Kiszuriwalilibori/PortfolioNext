@@ -3,13 +3,13 @@
 import { useEffect } from "react";
 
 import { CheckboxGroup, FeaturesBox, FeaturesWrapper } from "./styled";
-import { Feature, ProjectType } from "@/types";
+import { Feature, Project } from "@/types";
 import { LabelledFeatures } from "./labelledFeatures";
 import { useArrayState } from "@/hooks";
 
 interface Props {
-    features: ProjectType["features"];
-    handleChange: (arg0: ProjectType["features"]) => void;
+    features: Project["features"];
+    handleChange: (arg0: Project["features"]) => void;
 }
 export function Features(props: Props) {
     const { features, handleChange } = props;

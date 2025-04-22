@@ -1,7 +1,7 @@
-import { ProjectType } from "@/types";
+import { Project } from "@/types";
 
 export abstract class ProjectUtils {
-    static sortProjectsByTitle(a: ProjectType, b: ProjectType) {
+    static sortProjectsByTitle(a: Project, b: Project) {
         return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
     }
 
@@ -9,12 +9,12 @@ export abstract class ProjectUtils {
         return a.toLowerCase().localeCompare(b.toLowerCase());
     }
 
-    static filterByCategory(projects: ProjectType[], category: string) {
+    static filterByCategory(projects: Project[], category: string) {
         return projects.filter(item => item.category === category);
     }
 
-    static getFeatures(data: ProjectType[]) {
-        const temp: ProjectType["features"] = [];
+    static getFeatures(data: Project[]) {
+        const temp: Project["features"] = [];
 
         if (data && data.length) {
             data.forEach(item => item.features && temp.push(...item.features));
@@ -25,7 +25,7 @@ export abstract class ProjectUtils {
             return [];
         }
     }
-    static getKey(ID: string, item: ProjectType) {
+    static getKey(ID: string, item: Project) {
         return `${ID}--${item.title}`;
     }
     static getSlideKey(ID: string, slide: string) {

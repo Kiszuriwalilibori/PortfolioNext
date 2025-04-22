@@ -31,16 +31,16 @@ export default function Projects() {
                     {!isEmpty(projectsCategoryA) && (
                         <ProjectCategoryStack spacing={2}>
                             <h2>Primary, refined works with long commit history and usually a lot of features</h2>
-                            {projectsCategoryA.map(item => (
-                                <SingleProject key={ProjectUtils.getKey(ID, item)} projectData={item} />
+                            {projectsCategoryA.map(project => (
+                                <SingleProject key={ProjectUtils.getKey(ID, project)} project={project} />
                             ))}
                         </ProjectCategoryStack>
                     )}
                     {!isEmpty(projectsCategoryB) && (
                         <ProjectCategoryStack spacing={2}>
                             <h2>Better leave unseen... at least code. Old, not maintained and not modernised works</h2>
-                            {projectsCategoryB.map(item => (
-                                <SingleProject key={ProjectUtils.getKey(ID, item)} projectData={item} />
+                            {projectsCategoryB.map(project => (
+                                <SingleProject key={ProjectUtils.getKey(ID, project)} project={project} />
                             ))}
                         </ProjectCategoryStack>
                     )}

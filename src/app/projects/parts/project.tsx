@@ -4,22 +4,17 @@ import Image from "next/image";
 import { useId } from "react";
 import { Chip, Paper, Typography } from "@mui/material";
 
-import { ProjectType } from "@/types";
+import { Project } from "@/types";
 
 import { ChipsContainer } from "../styled";
 import { ProjectUtils } from "@/models/projects";
 
 import ButtonMore from "./buttonMore";
 
-interface Props {
-    projectData: ProjectType;
-}
-
 const slideSize = { width: 300, height: 200 };
-const Project = (props: Props) => {
-    const {
-        projectData: { description, title, features, slides },
-    } = props;
+const SingleProject = ({ project }: { project: Project }) => {
+    const { description, title, features, slides } = project;
+
     const ID = useId();
     const sortedFeatures = features.sort(ProjectUtils.sortFeatures);
 
@@ -59,4 +54,4 @@ const Project = (props: Props) => {
     );
 };
 
-export default Project;
+export default SingleProject;

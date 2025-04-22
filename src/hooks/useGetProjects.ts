@@ -3,11 +3,11 @@
 import isEmpty from "lodash/isEmpty";
 
 import { useState, useCallback } from "react";
-import { ProjectType } from "@/types";
+import { Project } from "@/types";
 
-function getVisibleProjects(data: ProjectType[], filters: string[], props: string[]) {
+function getVisibleProjects(data: Project[], filters: string[], props: string[]) {
     if (isEmpty(filters)) return data;
-    const result: ProjectType[] = [];
+    const result: Project[] = [];
     data.forEach(project => {
         if (filters.every(filter => project.features.includes(filter))) result.push(project);
     });
@@ -15,7 +15,7 @@ function getVisibleProjects(data: ProjectType[], filters: string[], props: strin
     return result;
 }
 
-const useGetProjects = (featuresList: string[], data: ProjectType[]) => {
+const useGetProjects = (featuresList: string[], data: Project[]) => {
     const [activeFeatures, setActiveFeatures] = useState([] as string[]);
 
     const changeHandler = useCallback((ary: string[]) => {

@@ -34,7 +34,7 @@ export interface CareerItem extends VerticalTimelineElementProps {
 }
 export type Feature = string;
 
-export interface ProjectType {
+export interface Project {
     ID: string;
     title: string;
     description: string;
@@ -54,7 +54,7 @@ export type Skills = SkillInfo[];
 export type Education = EducationData[];
 
 export interface ProjectsPageProps {
-    data: ProjectType[];
+    data: Project[];
     featuresList: string[];
 }
 

@@ -1,8 +1,8 @@
-import { ProjectType } from "@/types";
+import { Project } from "@/types";
 import { Checkbox, LabelledCheckbox } from "./styled";
 
 interface Props {
-    features: ProjectType["features"];
+    features: Project["features"];
     handleCheck: (arg0: string) => void;
 }
 
