@@ -1,4 +1,5 @@
 import { IconButton, Stack, TextField, styled } from "@mui/material";
+import theme from "@/themes";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
 const COLOR_SUNNY_DARK = "#ffb800";

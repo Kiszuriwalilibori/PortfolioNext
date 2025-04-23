@@ -1,5 +1,5 @@
 import Stack from "@mui/material/Stack";
-import theme from "themes";
+import theme from "@/themes";
 import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
