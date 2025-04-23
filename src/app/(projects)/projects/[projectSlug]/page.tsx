@@ -46,8 +46,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
             {/* {projectNext && <ToNext target={projectNext} />
             {projectPrevious && <ToPrevious target={projectPrevious} />} */}
 
-            {/* {isLogged && user && isModalOpen && <AddComment isOpen={isLogged} onClose={closeModal} author={user.displayName} authorEmail={user.email} project={title} ID={ID} />} */}
-
             {/* <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={github} live={live} />
