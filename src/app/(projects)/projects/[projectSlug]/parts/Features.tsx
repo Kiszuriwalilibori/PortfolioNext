@@ -1,7 +1,8 @@
-import { ChipsContainer } from "@/app/(main)/projects/styled";
-import Chip from "@mui/material/Chip";
-
 import { useId } from "react";
+
+import { ChipsContainer } from "@/app/(main)/projects/styled";
+
+import Chip from "@mui/material/Chip";
 
 interface Props {
     features: string[];

@@ -1,5 +1,5 @@
 import { Project } from "@/types";
-import createProjectNav from "./utils";
+import createProjectNav from "../utils";
 import ToNext from "./ToNext";
 import ToPrevious from "./ToPrevious";
 

@@ -1,14 +1,11 @@
 import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
-import Header from "./Header";
-import Features from "./Features";
+
 // import { features } from "process";
 import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
-import Links from "./Links";
+
 // import Comments from "./Comments";
-import Description from "./Description";
-// import createProjectNav from "./utils";
-import ProjectsSwitch from "./ProjectsSwitch";
+import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
     const projectSlug = (await params).projectSlug;
