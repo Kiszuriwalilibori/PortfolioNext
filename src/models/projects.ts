@@ -34,4 +34,10 @@ export abstract class ProjectUtils {
     static getFeatureKey(ID: string, feature: string) {
         return `${ID}--${feature}`;
     }
+    static getProjectByID(projects: Project[], ID: string) {
+        return projects.find(item => item.ID === ID);
+    }
+    static getProjectBySlug(projects: Project[], slug: string) {
+        return projects.find(item => item.slug === slug);
+    }
 }

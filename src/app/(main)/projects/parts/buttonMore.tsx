@@ -5,15 +5,17 @@ import { MoreButtonStyled } from "./styled";
 import { PageUtils } from "@/models/pages";
 
 import Icons from "@/components/common/icons";
+import { Project } from "@/types";
 
 interface Props {
-    title: string;
+    slug: Project["slug"];
+    title: Project["title"];
 }
 
 export default function ButtonMore(props: Props) {
-    const { title } = props;
+    const { slug, title } = props;
     return (
-        <MoreButtonStyled variant="contained" color="primary" LinkComponent={Link} href={PageUtils.projectPage(title)} endIcon={Icons["send"]} aria-label={`Link to ${title} project`} sx={{ marginTop: "auto" }}>
+        <MoreButtonStyled variant="contained" color="primary" LinkComponent={Link} href={PageUtils.projectPage(slug)} endIcon={Icons["send"]} aria-label={`Link to ${title} project`} sx={{ marginTop: "auto" }}>
             <Box component="span">Details</Box>
         </MoreButtonStyled>
     );

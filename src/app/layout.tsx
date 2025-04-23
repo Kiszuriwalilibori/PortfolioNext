@@ -37,9 +37,9 @@ export default function RootLayout({
                         <MenuVisibilityContextProvider>
                             <Navigation />
                         </MenuVisibilityContextProvider>
-                        <ViewportProvider>
+                        {/* <ViewportProvider>
                             <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />{" "}
-                        </ViewportProvider>
+                        </ViewportProvider> */}
                         {/* <LoggedUser /> */}
                         {children}
                     </body>

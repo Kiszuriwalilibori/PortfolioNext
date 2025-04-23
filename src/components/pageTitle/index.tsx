@@ -1,9 +1,10 @@
 "use client";
 
+import { Project } from "@/types";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 interface Props {
-    title: string;
+    title: Project["title"];
     isWhite?: boolean;
 }
 

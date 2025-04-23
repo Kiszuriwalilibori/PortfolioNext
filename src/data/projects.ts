@@ -1,7 +1,10 @@
-export const projects = [
+import { Project } from "@/types";
+
+export const projects: Project[] = [
     {
         ID: "1",
         title: "PortfolioNext",
+        slug: "portfolio-next",
         description: "The most and only current portfolio",
         story: "Every human work can bear the footprints of its creator. In this case, it is also true. Have you seen other portfolios of mine? Dance, music, and so on. Now you've got something really different. Why? Many headhunters felt that the previous ones were over-individuated. So, here you have something calm, official, and almost toneless, which should satisfy everyone. Let'ss call it a bridge portfolio - it is a bridge between headhunters and me.",
         longDescription: [
@@ -20,6 +23,7 @@ export const projects = [
     {
         ID: "2",
         title: "Minifigs",
+        slug: "minifigs",
         description: "Get your own Harry Potter for free 😉",
         story: "Have you ever dreamt that with just a few clicks you could become a happy owner of Harry Potter figurine? Surely, you haven't. And now I've made it happen. Of course not me alone, the site owners have biggest and primary contribution, there is no doubt about it. My role was to create a page where users could request a free bonus Harry Potter minifig from online store of https://rebrickable.com/.  Why just Harry Potter? It remains a sweet secret of the hiring company staff. Currently, the programme strictly follows the task requirement of selecting HP; however, in the coming weeks, I hope to include a selection tool for individuals who do not like the Young Wizard from Hogwarts.",
         longDescription: [
@@ -40,6 +44,7 @@ export const projects = [
     {
         ID: "3",
         title: "Unsplash",
+        slug: "unsplash",
         description: "Browses and presents Unsplash resources",
         story: "I believed that one Unsplash site is enough, but apparently some guys do not share my view and requested prepare new thought similar version before consider joining their honourable company. So, I had no way out. Some logic is disregarded (contacted Unsplash staff in order to understand business logics behind some features, but answered me kindly to mind my own business). Then, you receive an imitation and not a copy. For example, trending search terms are hardcoded and not dynamically generated in any sense. The background image is just a random nature one.",
         longDescription: [
@@ -59,6 +64,7 @@ export const projects = [
     {
         ID: "4",
         title: "Cryptocurrency Tracker",
+        slug: "cryptocurrency-tracker",
         description: "Cryptocurrency tracker that updates with programmed intervals",
         story: "Most people enjoy making investments, selling, buying and all that staff. If you are one of these people, that app is just for you. Crypto Currency Tracker displays the most accurate live prices from the world's most trusted cryptocurrency exchanges. This app connects to the crypto-compare API. It fetches available cryptocurrencies list initially and permits create its pair with PLN, USD, or EUR. Then one can watch changes in 3-seconds intervals. Given is current price as well as both absolute values and percentile change for 1 day, 1 month, 5 months, 12 months, 30 months, and a year. Changes are not only visible in the table, but also signalled by pop-up with adequate message",
         longDescription: [
@@ -81,6 +87,7 @@ export const projects = [
     {
         ID: "5",
         title: "Chat",
+        slug: "fake-chat",
         story: "Do you think you desperately need to talk to anyone, no matter whom? If so that app is just for you (or rather, it will be soon). It is connected to random-user generating API. You'll get ten people for your select - there will be fair amount of details presented (you can take all of them if you wish, though), and then you can start 'conversation'. Yes, 'conversation', the app is still on the level of recruiting company requirements what precisely means, that the only thing you can hear from your new friends is `You said...(and here goes your statement)`. In the coming future the app will be connected to AI chat terminal, however.",
         description: "Fake chat with even more fake persons",
         longDescription: [
@@ -101,6 +108,7 @@ export const projects = [
     {
         ID: "6",
         title: "Floydian Portfolio",
+        slug: "floydian-portfolio",
         description: "The Dark Side of the Moon or my very old portfolio (possibly with some dead links)",
         longDescription: ["This is an old portfolio of mine, developed before fell in love in React.", "Pug permits reusing code and keep it reasonably simple"],
         story: "Have you ever heard or read that work reflects (or should reflect) its creator? More than often, yeah. Me too. This portfolio (being also my first portfolio and one of firsts web pages) is influenced by Pink Floyd. The welcome image alludes to the cover of the famous 'The Dark Side of the Moon' album. So does the title font (precisely, it is similar to the one from 'The Wall'). Yes, your guess is right - it's my favourite band ever. Also, the image puts folks in the mood of mystery and you almost hear `Set the Controls for the Heart of the Sun.` ",
@@ -113,6 +121,7 @@ export const projects = [
     {
         ID: "7",
         title: "Space Portfolio",
+        slug: "space-portfolio",
         description: "Ticket to the moon or my old, unused and not maintained portfolio (may contain dead links)",
         longDescription: ["This is another old portfolio of mine, developed before fell in love in React.", "I have Applied Granim library for smoothier animations", "Pug permits reusing code and keep ot reasonably simple"],
         live: "https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_2",
@@ -125,6 +134,7 @@ export const projects = [
     {
         ID: "8",
         title: "Physioterapy",
+        slug: "physioterapy-clinic",
         story: "Once I had an assignment from physioterapeutical company. Finally, what they got is very much different and developed with other stack, but first version is still OK. One can find many useful information about company profile (however, in the version you see the content is a foo text, merely one level above Lorem Ipsum) and send message. As all works in that section, this piece of code is neither maintained nor updated.",
         description: "My old, unused and not maintained web site of physioterapeutist's office",
         longDescription: ["Web site of physioterapy unit", "Applied GSAP library for smooth animations", "Pug permits reusing code and keep ot reasonably simple"],
@@ -137,6 +147,7 @@ export const projects = [
     {
         ID: "9",
         title: "Athletes",
+        slug: "athletes",
         description: "Surprising facts about hidden potential of few athletes",
         story: "Whether you are an athlete or not, I guess you heard a lot about sport stars. One usually knows what a given sport champion IS good in, but usually not what he/she COULD BE good. This app rates certain factors as per physical capabilities and gives - often surprising - suggestions.",
         longDescription: ["This is perhaps my first React app. A long time unattended and unmaintained", "The app works, so you can check it out, but you would be better off leaving the code unseen."],
@@ -149,6 +160,7 @@ export const projects = [
     {
         ID: "10",
         title: "Weather Forecast",
+        slug: "weather-forecast",
         description: "Just the tiny forecasting application that is loaded with extra powers",
         story: "If you travel a lot, then this app is just for you. In order to pack up appropriate clothing, one can not only see weather in any point on the Earth (identified by city name or geo-coordinates), but also compare it with weather in his current or whatever location. One can also maintain a convenient storage facility by storing data pertaining to significant locations.",
         longDescription: [
@@ -169,6 +181,7 @@ export const projects = [
     {
         ID: "11",
         title: "YouTube Player",
+        slug: "youtube-player",
         description: "Simplified You Tube player. ",
         story: "I had applied to work at a media company once, and the entry task description involved media.. A goal was to achieve an appearance that was somewhat similar to the original.",
         longDescription: [
@@ -187,6 +200,7 @@ export const projects = [
     {
         ID: "12",
         title: "Google Books Finder",
+        slug: "google-books-finder",
         story: "One day, while frantically working through an online Java Scripts course, I made the decision to take the author's advice and create an application that can retrieve any data from any public API. You know, I was just starting out in the IT field, and I thought the assignment was both challenging and not overly complicated. I've wandered through the list of accessible APIs and have chosen to begin with Google Books. That is how one of my most fascinating adventures begun. The app is not as logical and coherent as it could be because I experimented a lot of different programming techniques there.  It was quite little and simple at first, but it ended up being rather sophisticated. New features has appeared one after another. In the end, there is an app that searches for books based on specified parameters, sorts and filters the results, removes books from both the retrieve and display results, generates a local temporary storage, and much more. So - if you enjoy reading books, have a fun ;) ",
         description: "Finds books in Google Books resources and performs multiple actions with the found data.",
         longDescription: [
@@ -205,6 +219,7 @@ export const projects = [
     {
         ID: "13",
         title: "Firebase",
+        slug: "firebase-application",
         story: "Certain applications perform admirably, some satisfy somebody's needs,  still others show evidence of somebody's vanity, still others  support company, industry sector, country, etc. Not this particular one. This is purely the training or playground area of Firebase. You see, I work as a front-end developer, but I believe having some understanding of the back-end could be helpful.",
         description: "Uses a Firebase instance to store and retrieve foo data",
         longDescription: [
@@ -223,6 +238,7 @@ export const projects = [
     {
         ID: "14",
         title: "Decision Tree",
+        slug: "decision-tree-builder",
         story: "Sometimes I can't figure out what was going through the recruiter's mind when she/he puts up a certain task.  This is nothing more than a simple decision tree or equivalent diagram example. Nothing spectacular, I had to add some styling as the initial version made purely up to requirements was rather minimalistic. Oops, you can add and remove nodes and that is all. There are also some protective methods in place to prevent duplicate entries. Latest version is with Zustand, and has unlimited depth of levels. The code is almost entirely rewritten.",
         description: "Decision tree application interface",
         longDescription: ["An example of decision-tree building scheme"],
@@ -235,6 +251,7 @@ export const projects = [
     {
         ID: "15",
         title: "Dancer portfolio",
+        slug: "dancer-portfolio",
         description: "Cheerful portfolio, slightly inspired by Bollywood",
         story: "Let us leave behind the two moody portfolios and just dance. The portfolio you are about to explore is cheery, colorfull and simply brilliant. Boys, elephants,and girls are all dancing to the beat. Only Pope is absent (yeah, it is a pretty common gif and I did have him here,, I can say, but after some emails with rather fierce threats I decided to let him go. Not this time, not the place yet.) By the way, I am not the fan of Bollywood indeed, but appreciate the enormous load of joy inherent in each of their productions. Join us, dance, and enjoy the work.",
         longDescription: ["The latest portfolio version to the one you're looking at just now. Interesting as a playground for Web Components only."],

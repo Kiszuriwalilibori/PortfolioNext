@@ -37,6 +37,7 @@ export type Feature = string;
 export interface Project {
     ID: string;
     title: string;
+    slug: string;
     description: string;
     category: string;
     features: Feature[];

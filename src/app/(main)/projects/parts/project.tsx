@@ -13,7 +13,7 @@ import ButtonMore from "./buttonMore";
 
 const slideSize = { width: 300, height: 200 };
 const SingleProject = ({ project }: { project: Project }) => {
-    const { description, title, features, slides } = project;
+    const { description, title, features, slides, slug } = project;
 
     const ID = useId();
     const sortedFeatures = features.sort(ProjectUtils.sortFeatures);
@@ -40,7 +40,7 @@ const SingleProject = ({ project }: { project: Project }) => {
                             <Chip label={feature} key={ProjectUtils.getFeatureKey(ID, feature)} />
                         ))}
                     </ChipsContainer>
-                    <ButtonMore title={title} />
+                    <ButtonMore title={title} slug={slug} />
                 </div>
                 {slides && !isEmpty(slides) && (
                     <div className="project__slides">
