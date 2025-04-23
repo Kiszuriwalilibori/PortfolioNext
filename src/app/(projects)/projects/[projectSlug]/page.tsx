@@ -10,8 +10,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         return <h1>Project not found</h1>;
     }
 
-
-   
     // const showMessage = useMessage();
     // const [isModalOpen, openModal, closeModal] = useBoolean(false);
 
@@ -43,12 +41,12 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
 
     return (
         <>
-               <Header title={project.title} description={project.description} />
+            <Header title={project.title} description={project.description} />
 
             {/* {projectNext && <ToNext target={projectNext} />
             {projectPrevious && <ToPrevious target={projectPrevious} />} */}
-         
-            {/* {isLogged && user && isModalOpen && <AddComment isOpen={isLogged} onClose={closeModal} author={user.displayName} authorEmail={user.email} project={title} ID={ID} />} */} */}
+
+            {/* {isLogged && user && isModalOpen && <AddComment isOpen={isLogged} onClose={closeModal} author={user.displayName} authorEmail={user.email} project={title} ID={ID} />} */}
 
             {/* <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
