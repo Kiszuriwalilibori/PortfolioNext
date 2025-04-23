@@ -40,4 +40,7 @@ export abstract class ProjectUtils {
     static getProjectBySlug(projects: Project[], slug: string) {
         return projects.find(item => item.slug === slug);
     }
+    static getSlugs(projects: Project[]) {
+        return projects.map(item => item.slug);
+    }
 }

@@ -1,11 +1,10 @@
 import "./globals.css";
 import "@/styles/style.css";
 
-import { Navigation, DesktopSidebarWrapper } from "@/components";
-import { MenuVisibilityContextProvider, ViewportProvider } from "@/contexts";
+import { Navigation } from "@/components";
+import { MenuVisibilityContextProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
-import DesktopSidebar from "@/components/sidebar/desktopSidebar";
-import { MobileSidebar } from "@/components/sidebar/mobileSidebar";
+
 import { headers } from "next/headers";
 import { metadata } from "../../public/metadata/metadata";
 import { Noto_Sans } from "next/font/google";
@@ -37,10 +36,7 @@ export default function RootLayout({
                         <MenuVisibilityContextProvider>
                             <Navigation />
                         </MenuVisibilityContextProvider>
-                        {/* <ViewportProvider>
-                            <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />{" "}
-                        </ViewportProvider> */}
-                        {/* <LoggedUser /> */}
+
                         {children}
                     </body>
                 </ThemeProvider>

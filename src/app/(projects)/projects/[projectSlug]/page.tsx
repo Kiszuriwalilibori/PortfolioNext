@@ -1,6 +1,14 @@
 import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
 import Header from "./Header";
+import Features from "./Features";
+// import { features } from "process";
+import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
+import Links from "./Links";
+// import Comments from "./Comments";
+import Description from "./Description";
+// import createProjectNav from "./utils";
+import ProjectsSwitch from "./ProjectsSwitch";
 
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
     const projectSlug = (await params).projectSlug;
@@ -13,9 +21,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
     // const showMessage = useMessage();
     // const [isModalOpen, openModal, closeModal] = useBoolean(false);
 
-    // const { projectNext, projectPrevious } = createProjectNav(data.title, titles);
-
-    // const { ID, title, description, story, live, github, longDescription, features } = data;
+    // const { projectNext, projectPrevious } = createProjectNav(projectSlug);
 
     // const { user, isLogged } = useAuthContext();
 
@@ -41,31 +47,32 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
 
     return (
         <>
+            <ProjectsSwitch projectSlug={projectSlug} />
             <Header title={project.title} description={project.description} />
 
-            {/* {projectNext && <ToNext target={projectNext} />
+            {/* {projectNext && <ToNext target={projectNext} />}
             {projectPrevious && <ToPrevious target={projectPrevious} />} */}
 
-            {/* <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
+            <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
-                    <Links github={github} live={live} />
-                    <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
+                    <Links github={project.github} live={project.live} />
+                    <CommentsButton variant="contained" /*onClick={handleLeaveACommentClick}*/ id="Log in button">
                         Leave a comment
                     </CommentsButton>
-                    <Comments ID={ID} />
+                    {/* <Comments ID={project.ID} /> */}
                 </SingleProjectInformationsColumn>
 
                 <SingleProjectInformationsColumn>
                     <h2>Story</h2>
-                    {story}
+                    {project.story}
                 </SingleProjectInformationsColumn>
 
                 <SingleProjectInformationsColumn>
                     <h2>Tech</h2>
-                    <Description longDescription={longDescription} />
-                    <Features features={features} />
+                    <Description longDescription={project.longDescription} />
+                    <Features features={project.features} />
                 </SingleProjectInformationsColumn>
-            </SingleProjectInformations> */}
+            </SingleProjectInformations>
         </>
     );
 }
