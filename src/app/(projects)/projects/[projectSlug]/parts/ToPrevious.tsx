@@ -1,5 +1,5 @@
 import Icons from "@/components/common/icons";
-import { PreviousButton } from "./styled";
+import { PreviousButton } from "../styled";
 
 interface Props {
     target: string;
