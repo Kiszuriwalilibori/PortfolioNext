@@ -1,4 +1,5 @@
-import { COMMENTS_VALIDITY_THRESHOLD } from "@/config/config";
+// import { COMMENTS_VALIDITY_THRESHOLD } from "@/config/config";
+const COMMENTS_VALIDITY_THRESHOLD = 0.75;
 
 export function checkValidity(intents: any) {
     let validity = true;
