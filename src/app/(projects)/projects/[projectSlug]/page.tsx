@@ -1,10 +1,6 @@
 import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
-
-// import { features } from "process";
 import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
-
-// import Comments from "./Comments";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
@@ -46,9 +42,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
             <Header title={project.title} description={project.description} />
-
-            {/* {projectNext && <ToNext target={projectNext} />}
-            {projectPrevious && <ToPrevious target={projectPrevious} />} */}
 
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
