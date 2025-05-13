@@ -3,6 +3,12 @@ import { ProjectUtils } from "@/models/projects";
 import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 
+export async function generateStaticParams() {
+    return projects.map(project => ({
+        projectSlug: project.slug,
+    }));
+}
+
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
     const projectSlug = (await params).projectSlug;
 
@@ -42,6 +48,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
             <Header title={project.title} description={project.description} />
+            <h2>rendered at {new Date().toLocaleTimeString()}</h2>
 
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
