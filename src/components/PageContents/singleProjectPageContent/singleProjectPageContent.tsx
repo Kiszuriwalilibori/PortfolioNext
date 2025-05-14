@@ -67,9 +67,9 @@ function SingleProjectPageContent(props: Props) {
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={github} live={live} />
-                    {/* <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
+                    <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="Log in button">
                         Leave a comment
-                    </CommentsButton> */}
+                    </CommentsButton>
                     <Comments ID={ID} />
                 </SingleProjectInformationsColumn>
 
