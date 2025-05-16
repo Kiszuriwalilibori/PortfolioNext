@@ -1,5 +1,8 @@
+// "use client";
+
 import moment from "moment";
-import Gravatar from "react-gravatar";
+import Gravatar from "./Gravatar";
+// import Gravatar from "react-gravatar";
 // import removeComment from "fbase/firestore/removeComment";
 
 // import { MouseEventHandler, useCallback } from "react";
@@ -37,7 +40,7 @@ export const Comment = (props: Props) => {
     return (
         <CommentPaper>
             <SummaryStack spacing={1} direction="row">
-                {/* {comment.authorEmail && <Gravatar email={comment.authorEmail} size={40} style={{ borderRadius: "50%" }} />} */}
+                <Gravatar authorEmail={comment.authorEmail} />
                 <Author id="Author">{comment.author}</Author>
                 <When id="When">{moment(comment.created).fromNow()}</When>
             </SummaryStack>
