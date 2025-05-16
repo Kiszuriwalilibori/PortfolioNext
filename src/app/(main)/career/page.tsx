@@ -2,7 +2,6 @@ import { useId } from "react";
 
 import { Timeline, TimelineElement } from "@/components/verticalTimeline";
 import { career } from "@/data/career";
-import { test } from "@/utils/test";
 import { CareerItem } from "@/types";
 
 import Icons from "./icons";
@@ -11,7 +10,6 @@ import { Company, Duties, Position, Project } from "./styled";
 
 function Career() {
     const ID = useId();
-    test();
 
     return (
         <section className="jobs">

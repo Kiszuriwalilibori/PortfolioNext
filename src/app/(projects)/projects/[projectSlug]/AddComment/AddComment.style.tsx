@@ -1,3 +1,5 @@
+"use client";
+
 import { IconButton, Stack, TextField, styled } from "@mui/material";
 import theme from "@/themes";
 

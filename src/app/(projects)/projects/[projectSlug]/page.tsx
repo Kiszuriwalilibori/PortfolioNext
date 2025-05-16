@@ -2,6 +2,9 @@ import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
 import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
+import Comments from "./Comments/latestComments";
+
+// import { test } from "@/utils/test";
 
 export async function generateStaticParams() {
     return projects.map(project => ({
@@ -10,6 +13,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
+    // test();
     const projectSlug = (await params).projectSlug;
 
     const project = ProjectUtils.getProjectBySlug(projects, projectSlug);
@@ -48,15 +52,13 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
             <Header title={project.title} description={project.description} />
-            <h2>rendered at {new Date().toLocaleTimeString()}</h2>
-
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
                     <CommentsButton variant="contained" /*onClick={handleLeaveACommentClick}*/ id="Log in button">
                         Leave a comment
                     </CommentsButton>
-                    {/* <Comments ID={project.ID} /> */}
+                    <Comments projectID={project.ID} title={project.title} />
                 </SingleProjectInformationsColumn>
 
                 <SingleProjectInformationsColumn>

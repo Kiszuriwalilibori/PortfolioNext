@@ -1,3 +1,5 @@
+"use client";
+
 import Stack from "@mui/material/Stack";
 import theme from "@/themes";
 import { styled } from "@mui/system";
