@@ -1,5 +1,5 @@
-import { getDocs, collection, query, where } from "firebase/firestore";
-import { db } from "@/fbase/config";
+import { getDocs, collection, query, where, getFirestore } from "firebase/firestore";
+import firebase_app, { db } from "@/fbase/config";
 import { CommentType } from "@/types";
 
 interface FetchError {
@@ -13,6 +13,7 @@ interface GetCommentsResult {
 }
 
 export async function getComments(projectID: string): Promise<GetCommentsResult> {
+    const db = getFirestore(firebase_app);
     let comments: CommentType[] = [];
     let error: FetchError | null = null;
 
