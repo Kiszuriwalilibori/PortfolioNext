@@ -6,6 +6,7 @@ import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import { Button } from "@mui/material";
 
 export const SummaryStack = styled(Stack)(({ theme }) => ({
     alignItems: "center",
@@ -44,4 +45,10 @@ export const RemoveButton = styled(IconButton)(({ theme }) => ({
 
 export const Actions = styled(Stack)(({ theme }) => ({
     alignItems: "center",
+}));
+
+export const CommentsButton = styled(Button)(({ theme }) => ({
+    display: "block",
+    margin: "0 auto",
+    marginTop: theme.spacing(4),
 }));

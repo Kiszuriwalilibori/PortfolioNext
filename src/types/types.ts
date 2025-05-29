@@ -1,5 +1,5 @@
 // import { ModalProps } from "../components/modal/Modal";
-
+import { User as FirebaseUser } from "firebase/auth";
 import { VerticalTimelineElementProps } from "react-vertical-timeline-component";
 
 export interface SkillInfo {
@@ -73,7 +73,7 @@ export interface CommentType {
     projectID: string;
 }
 
-export interface User {
+export interface AuthUser {
     uid: string;
     email: string;
     displayName: string;
@@ -90,3 +90,11 @@ export interface ContactType {
     link: string;
     alias: string;
 }
+
+// fbase user
+
+type Mutable<Type> = {
+    -readonly [Key in keyof Type]: Type[Key];
+};
+
+export type FirebaseUserSubset = { [key in keyof Mutable<Pick<FirebaseUser, "uid" | "email" | "displayName">>]: string };

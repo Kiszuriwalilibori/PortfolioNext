@@ -1,36 +1,41 @@
-// import uuid from "react-uuid";
+import uuid from "react-uuid";
 
-// import Comment from "../Comment";
+import Comment from "../Comment";
 
-// import { useMessage, useSubscribeComments } from "hooks";
-// import { CommentsStack } from "./Comments.style";
+import { getComments } from "./getComments";
+import { CommentType } from "@/types";
+import { CommentsStack } from "./Comments.style";
 
-// interface Props {
-//     ID: string;
-// }
+interface Props {
+    projectID: string;
+    title: string;
+}
 
-// export function Comments(props: Props) {
-//     const { ID } = props;
-//     const { comments, error } = useSubscribeComments(ID);
-//     const showMessage = useMessage();
+export default async function Comments({ projectID, title }: Props) {
+    const { comments, error } = await getComments(projectID);
 
-//     if (error) {
-//         showMessage.error(error.message || JSON.stringify(error));
-//     }
+    if (error) {
+        return (
+            <>
+                <h3>Error Loading Comments for project {title}</h3>
+                <p>{error.message}</p>
+                {error.code && <p>Error Code: {error.code}</p>}
+            </>
+        );
+    }
 
-//     if (!comments || !comments.length) return null;
+    if (!comments || !comments.length) {
+        return <p>No comments yet for project {title}.</p>;
+    }
 
-//     return (
-//         <>
-//             <h2>Comments</h2>
-//             <CommentsStack spacing={1}>
-//                 {comments.map(comment => {
-//                     return <Comment comment={comment as any} key={uuid()} />;
-//                 })}
-//             </CommentsStack>
-//         </>
-//     );
-// }
-
-// export default Comments;
-export default {};
+    return (
+        <>
+            <h2>Comments</h2>
+            <CommentsStack spacing={1}>
+                {comments.map((comment: CommentType) => (
+                    <Comment comment={comment} key={uuid()} />
+                ))}
+            </CommentsStack>
+        </>
+    );
+}

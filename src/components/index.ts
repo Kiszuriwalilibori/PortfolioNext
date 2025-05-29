@@ -11,6 +11,6 @@ import MyButton from "./common/MyButton";
 import Navigation from "./navigation";
 import { SidebarWrapper } from "./sidebar/sidebarWrapper";
 
-// import LoggedUser from "./LoggedUser";
+import LoggedUser from "./LoggedUser";
 
-export { /*HiddenH1,*/ SidebarWrapper as DesktopSidebarWrapper, MyButton, Navigation /*MainLayout, Modal, PageTitle, ProjectLayout,  SingleProjectPageContent as SingleProject*/ };
+export { /*HiddenH1,*/ SidebarWrapper as DesktopSidebarWrapper, MyButton, Navigation, LoggedUser /*MainLayout, Modal, PageTitle, ProjectLayout,  SingleProjectPageContent as SingleProject*/ };

@@ -2,7 +2,7 @@ import "./globals.css";
 import "@/styles/style.css";
 
 import { Navigation } from "@/components";
-import { MenuVisibilityContextProvider } from "@/contexts";
+import { MenuVisibilityContextProvider, FirebaseAuthContextProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
 
 import { headers } from "next/headers";
@@ -11,11 +11,10 @@ import { Noto_Sans } from "next/font/google";
 import theme from "@/themes/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-// import { AuthProvider } from "@/components/AuthProvider";
 
 const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
-// import { LoggedUser } from "@/components";
+import { LoggedUser } from "@/components";
 
 export async function generateMetadata() {
     const headerList = headers();
@@ -33,15 +32,16 @@ export default function RootLayout({
         <html lang="en">
             <AppRouterCacheProvider>
                 <ThemeProvider theme={theme}>
-                    {/* <AuthProvider> */}
-                    <body className={fonts.className}>
-                        <MenuVisibilityContextProvider>
-                            <Navigation />
-                        </MenuVisibilityContextProvider>
+                    <FirebaseAuthContextProvider>
+                        <body className={fonts.className}>
+                            <MenuVisibilityContextProvider>
+                                <LoggedUser />
+                                <Navigation />
+                            </MenuVisibilityContextProvider>
 
-                        {children}
-                    </body>
-                    {/* </AuthProvider> */}
+                            {children}
+                        </body>
+                    </FirebaseAuthContextProvider>
                 </ThemeProvider>
             </AppRouterCacheProvider>
         </html>

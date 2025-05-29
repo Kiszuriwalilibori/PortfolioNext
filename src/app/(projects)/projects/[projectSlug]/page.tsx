@@ -1,8 +1,10 @@
 import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
-import { SingleProjectInformations, StackDivider, SingleProjectInformationsColumn, CommentsButton } from "./styled";
+import { SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
-import Comments from "./Comments/latestComments";
+
+import Comments from "./Comments";
+import AddCommentsButton from "./Comment/AddCommentsButton";
 
 // import { test } from "@/utils/test";
 
@@ -55,9 +57,8 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
-                    <CommentsButton variant="contained" /*onClick={handleLeaveACommentClick}*/ id="Log in button">
-                        Leave a comment
-                    </CommentsButton>
+                    <AddCommentsButton />
+
                     <Comments projectID={project.ID} title={project.title} />
                 </SingleProjectInformationsColumn>
 
