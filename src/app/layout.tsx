@@ -15,6 +15,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
 import { LoggedUser } from "@/components";
+import SnackbarProviderWrapper from "@/components/common/SnackBarClientProvider";
 
 export async function generateMetadata() {
     const headerList = headers();
@@ -33,14 +34,16 @@ export default function RootLayout({
             <AppRouterCacheProvider>
                 <ThemeProvider theme={theme}>
                     <FirebaseAuthContextProvider>
-                        <body className={fonts.className}>
-                            <MenuVisibilityContextProvider>
-                                <LoggedUser />
-                                <Navigation />
-                            </MenuVisibilityContextProvider>
+                        <SnackbarProviderWrapper>
+                            <body className={fonts.className}>
+                                <MenuVisibilityContextProvider>
+                                    <LoggedUser />
+                                    <Navigation />
+                                </MenuVisibilityContextProvider>
 
-                            {children}
-                        </body>
+                                {children}
+                            </body>
+                        </SnackbarProviderWrapper>
                     </FirebaseAuthContextProvider>
                 </ThemeProvider>
             </AppRouterCacheProvider>

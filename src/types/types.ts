@@ -98,3 +98,12 @@ type Mutable<Type> = {
 };
 
 export type FirebaseUserSubset = { [key in keyof Mutable<Pick<FirebaseUser, "uid" | "email" | "displayName">>]: string };
+
+export interface ModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    subtitle?: string;
+    actions?: React.ReactNode;
+    content?: React.ReactNode;
+}

@@ -57,7 +57,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
-                    <AddCommentsButton />
+                    <AddCommentsButton ID={project.ID} title={project.title} />
 
                     <Comments projectID={project.ID} title={project.title} />
                 </SingleProjectInformationsColumn>
