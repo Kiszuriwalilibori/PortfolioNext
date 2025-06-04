@@ -17,6 +17,7 @@ export const AddCommentsButton = (props: Props) => {
     const { title, ID } = props;
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
     const { user, isLogged } = useFirebaseAuth();
+
     const showMessage = useMessage();
 
     const handleLeaveACommentClick = useCallback(() => {

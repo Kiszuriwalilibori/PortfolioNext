@@ -3,18 +3,16 @@
 import Button from "@mui/material/Button";
 
 import { useCallback } from "react";
-// import { useSpeechRecognition } from "react-speech-kit";
 
 import addComments from "@/fbase/firestore/addComments";
 
 import Modal from "@/components/modal";
 import { ModalProps, CommentType } from "@/types";
 import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./CommentInputModal.style";
-import { useComment, useMessage } from "@/hooks";
+import { useComment, useMessage, useSpeech } from "@/hooks";
 
-// import { useComment, useMessage, useVoice } from "hooks";
-// import { Icons } from "components/common";
 import { processComment } from "./utils";
+import Icons from "@/components/common/icons";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
@@ -27,7 +25,7 @@ const INITIAL_COMMENT = "" as string;
 export const CommentInputModal = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project, ID } = props;
     const { comment, createComment, clearComment } = useComment(INITIAL_COMMENT);
-    //     const { handleClickMicrophone, isMicrophoneDisabled, listening } = useVoice(createComment);
+    const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
     const showMessage = useMessage();
 
     const handleError = useCallback((message: string) => {
@@ -81,9 +79,9 @@ export const CommentInputModal = (props: Props) => {
                     <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="Log out button">
                         Clear
                     </Button>
-                    {/* <MicrophoneButton sx={{ ...listeningMicrophoneSx(listening) }} className="with-tooltip" data-tooltip={"Switch microphone"} aria-label="Search by voice" disabled={isMicrophoneDisabled} onClick={handleClickMicrophone}>
+                    <MicrophoneButton sx={{ ...listeningMicrophoneSx(listening) }} className="with-tooltip" data-tooltip={"Switch microphone"} aria-label="Search by voice" disabled={!isSpeechRecognitionSupported} onClick={toggleListening}>
                         {Icons.microphone}
-                    </MicrophoneButton> */}
+                    </MicrophoneButton>
                 </ButtonsStack>
             }
         ></Modal>

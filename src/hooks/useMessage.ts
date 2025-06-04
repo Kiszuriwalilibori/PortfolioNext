@@ -1,27 +1,28 @@
-import { useSnackbar } from "notistack";
+import { SnackbarOrigin, useSnackbar } from "notistack";
 
-const useMessage = () => {
-  const { enqueueSnackbar } = useSnackbar();
+interface MessageOptions {
+    autoHideDuration?: number;
+    anchorOrigin?: SnackbarOrigin;
+    [key: string]: any; // Allow other notistack options
+}
+interface MessageMethods {
+    info: (message: string, options?: MessageOptions) => void;
+    error: (message: string, options?: MessageOptions) => void;
+    success: (message: string, options?: MessageOptions) => void;
+    warning: (message: string, options?: MessageOptions) => void;
+}
 
-  const showMessage = {
-    info: function (str: string) {
-      enqueueSnackbar(str, { variant: "info" });
-    },
+export const useMessage = (): MessageMethods => {
+    const { enqueueSnackbar } = useSnackbar();
 
-    error: function (str: string) {
-      enqueueSnackbar(str, { variant: "error" });
-    },
+    const showMessage: MessageMethods = {
+        info: (message, options) => enqueueSnackbar(message, { variant: "info", ...options }),
+        error: (message, options) => enqueueSnackbar(message, { variant: "error", ...options }),
+        success: (message, options) => enqueueSnackbar(message, { variant: "success", ...options }),
+        warning: (message, options) => enqueueSnackbar(message, { variant: "warning", ...options }),
+    };
 
-    success: function (str: string) {
-      enqueueSnackbar(str, { variant: "success" });
-    },
-
-    warning: function (str: string) {
-      enqueueSnackbar(str, { variant: "warning" });
-    },
-  };
-
-  return showMessage;
+    return showMessage;
 };
 
 export default useMessage;
