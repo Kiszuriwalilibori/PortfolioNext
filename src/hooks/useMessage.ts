@@ -3,9 +3,9 @@ import { SnackbarOrigin, useSnackbar } from "notistack";
 interface MessageOptions {
     autoHideDuration?: number;
     anchorOrigin?: SnackbarOrigin;
-    [key: string]: any; // Allow other notistack options
+    [key: string]: any;
 }
-interface MessageMethods {
+export interface MessageMethods {
     info: (message: string, options?: MessageOptions) => void;
     error: (message: string, options?: MessageOptions) => void;
     success: (message: string, options?: MessageOptions) => void;

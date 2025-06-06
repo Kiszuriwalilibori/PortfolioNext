@@ -1,24 +1,35 @@
-import { NextResponse } from "next/server";
-import addComments from "@/fbase/firestore/addComments";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import firebase_app from "@/fbase/config";
 import { CommentType } from "@/types";
+import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
     try {
-        const body: CommentType = await request.json();
-        if (!body.content || !body.author || !body.authorEmail || !body.project || !body.projectID) {
+        const comment: CommentType = await request.json();
+
+        if (!comment.projectID || !comment.content || !comment.author || !comment.authorEmail) {
             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
         }
 
-        await addComments(
-            body,
-            () => {},
-            (error: string) => {
-                throw new Error(error);
-            }
-        );
+        const db = getFirestore(firebase_app);
 
-        return NextResponse.json({ message: "Comment added successfully" }, { status: 200 });
+        const docRef = await addDoc(collection(db, "comments"), {
+            author: comment.author,
+            active: comment.active,
+            content: comment.content,
+            created: comment.created,
+            authorEmail: comment.authorEmail,
+            project: comment.project,
+            projectID: comment.projectID,
+        });
+
+        const path = `/projects/${comment.projectID}`;
+        revalidatePath(path);
+
+        return NextResponse.json({ id: docRef.id }, { status: 200 });
     } catch (error) {
-        return NextResponse.json({ error: error instanceof Error ? error.message : "Server error" }, { status: 500 });
+        const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+        return NextResponse.json({ error: `Failed to save comment: ${errorMessage}` }, { status: 500 });
     }
 }

@@ -1,10 +1,12 @@
-import uuid from "react-uuid";
-
 import Comment from "../Comment";
 
 import { getComments } from "./getComments";
 import { CommentType } from "@/types";
 import { CommentsStack } from "./Comments.style";
+
+function sortCommentsByCreated(comments: CommentType[]): CommentType[] {
+    return [...comments].sort((a, b) => a.created - b.created);
+}
 
 interface Props {
     projectID: string;
@@ -13,6 +15,12 @@ interface Props {
 
 export default async function Comments({ projectID, title }: Props) {
     const { comments, error } = await getComments(projectID);
+
+    if (!comments || !comments.length) {
+        return <p>No comments yet for project {title}.</p>;
+    }
+
+    const sortedComments = sortCommentsByCreated(comments);
 
     if (error) {
         return (
@@ -24,16 +32,12 @@ export default async function Comments({ projectID, title }: Props) {
         );
     }
 
-    if (!comments || !comments.length) {
-        return <p>No comments yet for project {title}.</p>;
-    }
-
     return (
         <>
             <h2>Comments</h2>
             <CommentsStack spacing={1}>
-                {comments.map((comment: CommentType) => (
-                    <Comment comment={comment} key={uuid()} />
+                {sortedComments.map((comment: CommentType) => (
+                    <Comment comment={comment} key={comment.ID} />
                 ))}
             </CommentsStack>
         </>

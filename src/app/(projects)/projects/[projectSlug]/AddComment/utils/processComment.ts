@@ -1,7 +1,11 @@
 import axios from "axios";
 import { checkValidity } from "./checkValidity";
+import { MessageMethods } from "@/hooks/useMessage";
 
-export const PERSPECTIVE_API_URL = "https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=" + process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+let lastRequestTime = 0;
+const MIN_REQUEST_INTERVAL = 1000;
+
+export const PERSPECTIVE_API_URL = `https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`;
 
 const config = {
     languages: ["en"],
@@ -13,29 +17,32 @@ const config = {
     },
 };
 
-export const processComment = (comment: string, onSuccess: (arg0: string) => void, handleInvalidComment: () => void) => {
-    let isCommentValid = true;
-    axios
-        .post(PERSPECTIVE_API_URL, {
-            comment: {
-                text: comment,
-            },
-            ...config,
-        })
-        .then(res => {
-            const intents = res.data.attributeScores;
-            isCommentValid = checkValidity(intents);
-        })
-        .then(() => {
-            if (isCommentValid) {
-                onSuccess(comment);
-            } else {
-                handleInvalidComment();
-            }
-        })
-        .catch(() => {
-            onSuccess(comment);
-        });
-};
+export const processComment = async (comment: string, onSuccess: (comment: string) => Promise<void>, handleInvalidComment: () => void, showMessage: MessageMethods): Promise<void> => {
+    const currentTime = Date.now();
+    if (currentTime - lastRequestTime < MIN_REQUEST_INTERVAL) {
+        showMessage.warning("Please wait a moment before submitting another comment.");
+        handleInvalidComment();
+        return;
+    }
+    lastRequestTime = currentTime;
 
+    try {
+        const response = await axios.post(PERSPECTIVE_API_URL, {
+            comment: { text: comment },
+            ...config,
+        });
+
+        const intents = response.data.attributeScores;
+        const isCommentValid = checkValidity(intents);
+
+        if (isCommentValid) {
+            await onSuccess(comment);
+        } else {
+            handleInvalidComment();
+        }
+    } catch (error) {
+        showMessage.error("Failed to analyze comment. Proceeding with submission.");
+        await onSuccess(comment);
+    }
+};
 export default processComment;

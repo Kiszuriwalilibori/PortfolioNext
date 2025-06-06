@@ -23,33 +23,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         return <h1>Project not found</h1>;
     }
 
-    // const showMessage = useMessage();
-    // const [isModalOpen, openModal, closeModal] = useBoolean(false);
-
-    // const { projectNext, projectPrevious } = createProjectNav(projectSlug);
-
-    // const { user, isLogged } = useAuthContext();
-
-    // const handleSuccess = () => {
-    //     openModal();
-    // };
-
-    // const handleError = useCallback((message: string) => {
-    //     showMessage.error("Login attempt failure: " + message);
-    // }, []);
-
-    // const handleLeaveACommentClick = useCallback(() => {
-    //     if (isLogged) {
-    //         openModal();
-    //     } else {
-    //         requestLogin(handleSuccess, handleError);
-    //     }
-    // }, [isLogged, handleError]);
-
-    // const temporary = useCallback(() => {
-    //     showMessage.warning("The service is currently out of order and there are works continuously going  on making it back active");
-    // }, []);
-
     return (
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
