@@ -1,13 +1,21 @@
 "use client";
 
 import { SnackbarProvider } from "notistack";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface SnackbarProviderWrapperProps {
     children: ReactNode;
 }
 
 export default function SnackbarProviderWrapper({ children }: SnackbarProviderWrapperProps) {
+    const containerRef = useRef<HTMLElement | null>(null);
+
+    useEffect(() => {
+        containerRef.current = document.getElementById("snackbar-container");
+    }, []);
+
+    const domRoot = containerRef.current ?? undefined;
+
     return (
         <SnackbarProvider
             maxSnack={3}
@@ -16,6 +24,7 @@ export default function SnackbarProviderWrapper({ children }: SnackbarProviderWr
                 vertical: "top",
                 horizontal: "center",
             }}
+            domRoot={domRoot}
         >
             {children}
         </SnackbarProvider>

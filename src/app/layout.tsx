@@ -34,16 +34,16 @@ export default function RootLayout({
             <AppRouterCacheProvider>
                 <ThemeProvider theme={theme}>
                     <FirebaseAuthContextProvider>
-                        <SnackbarProviderWrapper>
-                            <body className={fonts.className}>
+                        <body className={fonts.className}>
+                            <div id="snackbar-container" style={{ position: "absolute", width: "100%", zIndex: 9999 }} />
+                            <SnackbarProviderWrapper>
                                 <MenuVisibilityContextProvider>
                                     <LoggedUser />
                                     <Navigation />
                                 </MenuVisibilityContextProvider>
-
                                 {children}
-                            </body>
-                        </SnackbarProviderWrapper>
+                            </SnackbarProviderWrapper>
+                        </body>
                     </FirebaseAuthContextProvider>
                 </ThemeProvider>
             </AppRouterCacheProvider>
