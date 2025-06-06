@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { CommentType } from "@/types";
 import { useBoolean, useMessage } from "@/hooks";
@@ -9,6 +10,7 @@ import { useFirebaseAuth } from "@/contexts";
 import { CommentsButton } from "./Comment.style";
 import { CommentInputModal } from "../AddComment/CommentInputModal";
 import { CommentsStack } from "../Comments/Comments.style";
+
 import Comment from "../Comment";
 
 interface Props {
@@ -22,6 +24,7 @@ export const AddCommentsButton = (props: Props) => {
     const { user, isLogged } = useFirebaseAuth();
     const showMessage = useMessage();
     const [optimisticComments, setOptimisticComments] = useState<CommentType[]>([]);
+    const [refreshKey, setRefreshKey] = useState(0);
     const router = useRouter();
 
     const handleLeaveACommentClick = useCallback(() => {
@@ -41,29 +44,41 @@ export const AddCommentsButton = (props: Props) => {
                 setOptimisticComments([]);
                 return;
             }
-            setOptimisticComments(prev => [...prev, comment]);
-            router.refresh();
+            setOptimisticComments([comment]);
+            setRefreshKey(prev => prev + 1);
 
-            setTimeout(() => {
-                setOptimisticComments([]);
-            }, 2000);
+            router.refresh();
+            closeModal();
         },
         [router]
     );
+    useEffect(() => {
+        setOptimisticComments([]);
+    }, [refreshKey, ID]);
+
+    const commentsContainer = typeof document !== "undefined" ? document.getElementById("comments-stack") : null;
 
     return (
         <>
-            <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="add comment button" aria-label="Leave a comment on the project">
+            <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="add-comment-button" aria-label="Leave a comment on the project">
                 Leave a comment
             </CommentsButton>
-            <CommentsStack spacing={1}>
-                {optimisticComments.map(comment => (
-                    <Comment comment={comment} key={comment.ID} />
-                ))}
-            </CommentsStack>
+            {commentsContainer &&
+                createPortal(
+                    <CommentsStack spacing={1}>
+                        {optimisticComments.map(comment => (
+                            <Comment comment={comment} key={comment.ID} />
+                        ))}
+                    </CommentsStack>,
+                    commentsContainer
+                )}
+
             {isModalOpen && user && <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} onCommentAdded={handleCommentAdded} />}
         </>
     );
 };
 
 export default AddCommentsButton;
+
+// <SnackbarContainer dense={false} anchorOrigin={{vertical:"top", ...}} classes={undefined}>
+// >                             <div className="notistack-SnackbarContainer go3118922589 go4034260886 go1141946668"></div>

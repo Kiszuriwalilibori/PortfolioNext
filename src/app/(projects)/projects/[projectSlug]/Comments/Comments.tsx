@@ -35,7 +35,7 @@ export default async function Comments({ projectID, title }: Props) {
     return (
         <>
             <h2>Comments</h2>
-            <CommentsStack spacing={1}>
+            <CommentsStack spacing={1} id="comments-stack">
                 {sortedComments.map((comment: CommentType) => (
                     <Comment comment={comment} key={comment.ID} />
                 ))}
