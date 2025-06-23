@@ -3,10 +3,11 @@ import { ProjectUtils } from "@/models/projects";
 import { SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 
-import Comments from "./Comments";
-import AddCommentsButton from "./Comment/AddCommentsButton";
+import { Comments, AddCommentButton } from "./Comments";
 
 // import { test } from "@/utils/test";
+
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
     return projects.map(project => ({
@@ -30,7 +31,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
-                    <AddCommentsButton ID={project.ID} title={project.title} />
+                    <AddCommentButton ID={project.ID} title={project.title} />
 
                     <Comments projectID={project.ID} title={project.title} />
                 </SingleProjectInformationsColumn>

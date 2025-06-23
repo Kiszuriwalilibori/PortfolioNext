@@ -1,20 +1,23 @@
 "use client";
 
 import Button from "@mui/material/Button";
+
 import { useCallback, useEffect, useState } from "react";
+
 import Modal from "@/components/modal";
-import { ModalProps, CommentType } from "@/types";
-import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./CommentInputModal.style";
-import { useComment, useMessage, useSpeech } from "@/hooks";
-import { processComment } from "./utils";
 import Icons from "@/components/common/icons";
+
+import { ModalProps } from "@/types";
+import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
+import { useComment, useMessage, useSpeech } from "@/hooks";
+import { validateAndSubmitComment } from "../AddComment/utils";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
     project: string;
     authorEmail: string;
     ID: string;
-    onCommentAdded?: (comment: CommentType | null) => void;
+    onCommentAdded?: () => void;
 }
 
 const INITIAL_COMMENT = "" as string;
@@ -51,18 +54,17 @@ export const CommentInputModal = (props: Props) => {
             return;
         }
         setIsSubmitting(true);
-        const newCommentInfo: CommentType = {
+        const newCommentInfo = {
             author,
             active: true,
             content: comment,
             created: Date.now(),
             authorEmail,
-            ID: `temp-${Date.now()}`,
             project,
             projectID: ID,
         };
         try {
-            const response = await fetch("/api/comments", {
+            const response = await fetch("/api/add-comment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newCommentInfo),
@@ -74,7 +76,7 @@ export const CommentInputModal = (props: Props) => {
             }
 
             if (onCommentAdded) {
-                onCommentAdded(newCommentInfo);
+                onCommentAdded();
             }
 
             handleSuccess();
@@ -82,9 +84,6 @@ export const CommentInputModal = (props: Props) => {
             onClose();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
-            if (onCommentAdded) {
-                onCommentAdded(null);
-            }
         } finally {
             setIsSubmitting(false);
         }
@@ -117,7 +116,7 @@ export const CommentInputModal = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" spacing={2} id="Buttons stack">
-                    <Button disabled={comment === INITIAL_COMMENT || isSubmitting} color="success" variant="contained" onClick={() => processComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button">
+                    <Button disabled={comment === INITIAL_COMMENT || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button">
                         Accept
                     </Button>
                     <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button">
