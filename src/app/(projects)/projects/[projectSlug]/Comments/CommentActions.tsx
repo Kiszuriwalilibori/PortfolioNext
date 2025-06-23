@@ -4,6 +4,8 @@ import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFirebaseAuth } from "@/contexts";
 import { useMessage } from "@/hooks";
+import { useBoolean } from "@/hooks";
+import { CommentInputModal } from "./CommentInputModal";
 import Icons from "@/components/common/icons";
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
 
@@ -11,11 +13,14 @@ interface Props {
     commentId: string;
     commentAuthor: string;
     projectID: string;
+    projectTitle: string;
+    commentContent: string;
 }
 
-const CommentActions = ({ commentId, commentAuthor, projectID }: Props) => {
+const CommentActions = ({ commentId, commentAuthor, projectID, projectTitle, commentContent }: Props) => {
     const { user, isLogged } = useFirebaseAuth();
     const [isRemoving, setIsRemoving] = useState(false);
+    const [isModalOpen, openModal, closeModal] = useBoolean(false);
     const router = useRouter();
     const showMessage = useMessage();
 
@@ -33,12 +38,13 @@ const CommentActions = ({ commentId, commentAuthor, projectID }: Props) => {
         setIsRemoving(false);
     }, [showMessage, router]);
 
-    // const handleEditComment = useCallback(() => {
-    //     router.push(`/projects/${projectID}/comments/edit/${commentId}`);
-    // }, [commentId, projectID, router]);
-    const handleEditComment = () => {
-        console.log("Edit comment functionality is not implemented yet");
-    };
+    const handleEditComment = useCallback(() => {
+        openModal();
+    }, [openModal]);
+
+    const handleCommentUpdated = useCallback(() => {
+        closeModal();
+    }, [closeModal]);
 
     const handleRemoveComment = useCallback(async () => {
         if (isRemoving) {
@@ -77,6 +83,9 @@ const CommentActions = ({ commentId, commentAuthor, projectID }: Props) => {
             <EditButton id="edit-button" aria-label="edit comment" onClick={handleEditComment}>
                 {Icons.edit}
             </EditButton>
+            {isModalOpen && user && (
+                <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
+            )}
         </Actions>
     );
 };

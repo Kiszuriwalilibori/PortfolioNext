@@ -9,9 +9,10 @@ import CommentActions from "./CommentActions";
 interface Props {
     comment: CommentType;
     projectID: string;
+    projectTitle: string;
 }
 export const Comment = (props: Props) => {
-    const { comment, projectID } = props;
+    const { comment, projectID, projectTitle } = props;
 
     return (
         <CommentPaper>
@@ -26,7 +27,7 @@ export const Comment = (props: Props) => {
             </Box>
 
             <CommentDivider />
-            <CommentActions commentId={comment.ID} commentAuthor={comment.author} projectID={projectID} />
+            <CommentActions commentId={comment.ID} commentAuthor={comment.author} projectID={projectID} projectTitle={projectTitle} commentContent={comment.content} />
         </CommentPaper>
     );
 };

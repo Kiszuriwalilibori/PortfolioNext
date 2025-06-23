@@ -55,6 +55,7 @@ export const Actions = styled(Stack)(({ theme }) => ({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    gap: theme.spacing(1),
 }));
 
 export const CommentsButton = styled(Button)(({ theme }) => ({

@@ -3,6 +3,7 @@
 import Button from "@mui/material/Button";
 
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Modal from "@/components/modal";
 import Icons from "@/components/common/icons";
@@ -17,16 +18,21 @@ interface Props extends Omit<ModalProps, "title"> {
     project: string;
     authorEmail: string;
     ID: string;
+    initialComment?: string;
+    commentId?: string;
+    isEditing?: boolean;
     onCommentAdded?: () => void;
 }
 
 const INITIAL_COMMENT = "" as string;
 
 export const CommentInputModal = (props: Props) => {
-    const { isOpen, onClose, author, authorEmail, project, ID, onCommentAdded } = props;
+    const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false, onCommentAdded } = props;
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { comment, createComment, clearComment } = useComment(INITIAL_COMMENT);
+    const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
+    const router = useRouter();
+
     const showMessage = useMessage();
 
     const handleError = useCallback(
@@ -37,8 +43,8 @@ export const CommentInputModal = (props: Props) => {
     );
 
     const handleSuccess = useCallback(() => {
-        showMessage.success("Comment posted successfully!");
-    }, [showMessage]);
+        showMessage.success(isEditing ? "Comment updated successfully!" : "Comment posted successfully!");
+    }, [showMessage, isEditing]);
 
     const handleInvalidComment = useCallback(() => {
         showMessage.warning("Your comment was not published due to potentially toxic or abusive content.");
@@ -58,13 +64,13 @@ export const CommentInputModal = (props: Props) => {
             author,
             active: true,
             content: comment,
-            created: Date.now(),
             authorEmail,
             project,
             projectID: ID,
+            ...(isEditing && commentId ? { ID: commentId } : {}),
         };
         try {
-            const response = await fetch("/api/add-comment", {
+            const response = await fetch(isEditing ? "/api/update-comment" : "/api/add-comment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newCommentInfo),
@@ -72,7 +78,7 @@ export const CommentInputModal = (props: Props) => {
 
             if (!response.ok) {
                 const { error } = await response.json();
-                throw new Error(error || "Failed to submit comment");
+                throw new Error(error || `Failed to ${isEditing ? "update" : "submit"} comment`);
             }
 
             if (onCommentAdded) {
@@ -82,23 +88,24 @@ export const CommentInputModal = (props: Props) => {
             handleSuccess();
             clearComment();
             onClose();
+            router.refresh();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         } finally {
             setIsSubmitting(false);
         }
-    }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded]);
+    }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId, router]);
 
     useEffect(() => {
         if (isSubmitting) {
-            showMessage.info("Submitting your comment...");
+            showMessage.info(isEditing ? "Updating your comment..." : "Submitting your comment...");
         }
-    }, [isSubmitting, showMessage]);
+    }, [isSubmitting, showMessage, isEditing]);
 
     return (
         <Modal
-            title="Comment"
-            subtitle="Type your comments in form below:"
+            title={isEditing ? "Edit Comment" : "Comment"}
+            subtitle={isEditing ? "Update your comment below:" : "Type your comments in form below:"}
             isOpen={isOpen}
             onClose={onClose}
             content={
@@ -116,8 +123,8 @@ export const CommentInputModal = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" spacing={2} id="Buttons stack">
-                    <Button disabled={comment === INITIAL_COMMENT || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button">
-                        Accept
+                    <Button disabled={comment === initialComment || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button">
+                        {isEditing ? "Update" : "Accept"}
                     </Button>
                     <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button">
                         Clear
