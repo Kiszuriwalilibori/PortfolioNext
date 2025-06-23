@@ -45,9 +45,16 @@ export const RemoveButton = styled(IconButton)(({ theme }) => ({
     width: "40px",
     height: "40px",
 }));
+export const EditButton = styled(IconButton)(({ theme }) => ({
+    color: theme.palette.error.main,
+    width: "40px",
+    height: "40px",
+}));
 
 export const Actions = styled(Stack)(({ theme }) => ({
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
 }));
 
 export const CommentsButton = styled(Button)(({ theme }) => ({

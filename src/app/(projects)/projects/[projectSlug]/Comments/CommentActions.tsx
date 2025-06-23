@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useFirebaseAuth } from "@/contexts";
 import { useMessage } from "@/hooks";
 import Icons from "@/components/common/icons";
-import { Actions, RemoveButton } from "./Comments.style";
+import { Actions, EditButton, RemoveButton } from "./Comments.style";
 
 interface Props {
     commentId: string;
@@ -32,6 +32,13 @@ const CommentActions = ({ commentId, commentAuthor, projectID }: Props) => {
         router.refresh();
         setIsRemoving(false);
     }, [showMessage, router]);
+
+    // const handleEditComment = useCallback(() => {
+    //     router.push(`/projects/${projectID}/comments/edit/${commentId}`);
+    // }, [commentId, projectID, router]);
+    const handleEditComment = () => {
+        console.log("Edit comment functionality is not implemented yet");
+    };
 
     const handleRemoveComment = useCallback(async () => {
         if (isRemoving) {
@@ -67,6 +74,9 @@ const CommentActions = ({ commentId, commentAuthor, projectID }: Props) => {
             <RemoveButton id="remove-button" aria-label="remove comment" onClick={handleRemoveComment}>
                 {Icons.close}
             </RemoveButton>
+            <EditButton id="edit-button" aria-label="edit comment" onClick={handleEditComment}>
+                {Icons.edit}
+            </EditButton>
         </Actions>
     );
 };
