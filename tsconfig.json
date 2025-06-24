@@ -19,7 +19,8 @@
             }
         ],
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@icons": ["./src/components/common/icons"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/sidebar/desktopSidebar/wrapper.js", "src/components/sidebar/desktopSidebar/wrapper.js"],

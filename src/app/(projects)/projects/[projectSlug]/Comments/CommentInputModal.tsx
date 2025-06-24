@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import Modal from "@/components/modal";
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
 
 import { ModalProps } from "@/types";
 import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
@@ -21,6 +21,7 @@ interface Props extends Omit<ModalProps, "title"> {
     initialComment?: string;
     commentId?: string;
     isEditing?: boolean;
+
     onCommentAdded?: () => void;
 }
 
@@ -60,6 +61,7 @@ export const CommentInputModal = (props: Props) => {
             return;
         }
         setIsSubmitting(true);
+
         const newCommentInfo = {
             author,
             active: true,
@@ -67,6 +69,7 @@ export const CommentInputModal = (props: Props) => {
             authorEmail,
             project,
             projectID: ID,
+            created: Date.now(),
             ...(isEditing && commentId ? { ID: commentId } : {}),
         };
         try {
@@ -139,3 +142,5 @@ export const CommentInputModal = (props: Props) => {
 };
 
 export default CommentInputModal;
+
+//todo przyjrzeć się obiegowi created żeby nie zmieniał się jeżeli juz jest

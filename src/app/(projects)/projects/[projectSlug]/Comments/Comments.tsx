@@ -11,7 +11,6 @@ interface Props {
 
 export default async function Comments({ projectID, title }: Props) {
     const { comments, error } = await getComments(projectID);
-    console.log("comments", comments);
 
     if (!comments || !comments.length) {
         return <p>No comments yet for project {title}.</p>;

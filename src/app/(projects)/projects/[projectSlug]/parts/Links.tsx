@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
 
 interface Props {
     live: string;

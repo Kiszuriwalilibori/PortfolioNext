@@ -5,7 +5,7 @@ export const Mobica = () => {
     return <div></div>;
 };
 
-const Icons: { [key: string]: () => JSX.Element } = {
+const CareerIcons: { [key: string]: () => JSX.Element } = {
     PKT: () => {
         return <Image src="/images/pkt.png" width={30} height={15} alt="pkt logo" className="self-centered"></Image>;
     },
@@ -33,4 +33,4 @@ const Icons: { [key: string]: () => JSX.Element } = {
     },
 };
 
-export default Icons;
+export default CareerIcons;

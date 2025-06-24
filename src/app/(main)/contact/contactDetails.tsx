@@ -2,7 +2,7 @@ import React from "react";
 
 import { ContactType } from "@/types";
 
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
 
 interface Props {
     contactData: ContactType;

@@ -4,7 +4,7 @@ import { Timeline, TimelineElement } from "@/components/verticalTimeline";
 import { career } from "@/data/career";
 import { CareerItem } from "@/types";
 
-import Icons from "./icons";
+import CareerIcons from "./icons";
 import PageTitle from "@/components/pageTitle";
 import { Company, Duties, Position, Project } from "./styled";
 
@@ -28,7 +28,7 @@ function Career() {
                                     contentArrowStyle={{ borderRight: `7px solid  ${job.contentStyle!.background}` }}
                                     date={job.period}
                                     iconStyle={job.contentStyle}
-                                    icon={job.name && Icons[job.name] ? Icons[job.name]() : undefined}
+                                    icon={job.name && CareerIcons[job.name] ? CareerIcons[job.name]() : undefined}
                                 >
                                     <Company>{job.name}</Company>
 

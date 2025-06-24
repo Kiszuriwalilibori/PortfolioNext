@@ -69,7 +69,7 @@ export interface CommentType {
     ID: string;
     project: string;
     parent?: string;
-    authorEmail?: string;
+    authorEmail: string;
     projectID: string;
 }
 

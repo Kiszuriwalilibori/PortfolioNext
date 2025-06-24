@@ -2,27 +2,32 @@
 
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
+
+import { useBoolean, useMessage } from "@/hooks";
+
 import { useFirebaseAuth } from "@/contexts";
-import { useMessage } from "@/hooks";
-import { useBoolean } from "@/hooks";
+
 import { CommentInputModal } from "./CommentInputModal";
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
+import { CommentType, Project } from "@/types";
+
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
 
 interface Props {
-    commentId: string;
-    commentAuthor: string;
-    projectID: string;
-    projectTitle: string;
-    commentContent: string;
+    commentId: CommentType["ID"];
+    projectID: Project["ID"];
+    projectTitle: Project["title"];
+    commentContent: CommentType["content"];
+    commentAuthorEmail: CommentType["authorEmail"];
 }
 
-const CommentActions = ({ commentId, commentAuthor, projectID, projectTitle, commentContent }: Props) => {
+const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle, commentContent }: Props) => {
     const { user, isLogged } = useFirebaseAuth();
     const [isRemoving, setIsRemoving] = useState(false);
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
     const router = useRouter();
     const showMessage = useMessage();
+    const isCommentAuthorLoggedIn = isLogged && user && user.email === commentAuthorEmail;
 
     const handleError = useCallback(
         (message: string) => {
@@ -71,7 +76,7 @@ const CommentActions = ({ commentId, commentAuthor, projectID, projectTitle, com
         }
     }, [commentId, projectID, handleSuccess, handleError]);
 
-    if (!isLogged || !user || user.displayName !== commentAuthor) {
+    if (!isCommentAuthorLoggedIn) {
         return <Actions />;
     }
 

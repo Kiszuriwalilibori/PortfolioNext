@@ -27,7 +27,7 @@ export const Comment = (props: Props) => {
             </Box>
 
             <CommentDivider />
-            <CommentActions commentId={comment.ID} commentAuthor={comment.author} projectID={projectID} projectTitle={projectTitle} commentContent={comment.content} />
+            <CommentActions commentId={comment.ID} /*commentAuthor={comment.author}*/ commentAuthorEmail={comment.authorEmail} projectID={projectID} projectTitle={projectTitle} commentContent={comment.content} />
         </CommentPaper>
     );
 };

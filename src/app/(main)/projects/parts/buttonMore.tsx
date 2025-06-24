@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MoreButtonStyled } from "./styled";
 import { PageUtils } from "@/models/pages";
 
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
 import { Project } from "@/types";
 
 interface Props {

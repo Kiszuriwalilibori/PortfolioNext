@@ -1,4 +1,4 @@
-import Icons from "@/components/common/icons";
+import Icons from "@icons";
 import { NextButton } from "../styled";
 
 interface Props {

@@ -1,4 +1,4 @@
-import Icons from "../common/icons";
+import Icons from "@icons";
 import { Actions, Content, CloseButton, Dialog, Subtitle, Title, TitleText } from "./Modal.styles";
 
 export interface ModalProps {
