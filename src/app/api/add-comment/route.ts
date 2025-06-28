@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore, query, where, getDocs, orderBy, limit } from "firebase/firestore";
 import firebase_app from "@/fbase/config";
 import { CommentType } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
@@ -13,6 +13,19 @@ export async function POST(request: NextRequest) {
         }
 
         const db = getFirestore(firebase_app);
+        const oneMinuteAgo = Date.now() - 60000;
+        const userCommentsQuery = query(collection(db, "comments"), where("projectID", "==", comment.projectID), where("authorEmail", "==", comment.authorEmail));
+
+        const userCommentsSnapshot = await getDocs(userCommentsQuery);
+
+        const hasRecentComment = userCommentsSnapshot.docs.some(doc => {
+            const commentData = doc.data();
+            return commentData.created > oneMinuteAgo;
+        });
+
+        if (hasRecentComment) {
+            return NextResponse.json({ error: "Please wait at least 1 minute before posting another comment on this project" }, { status: 429 });
+        }
 
         const docRef = await addDoc(collection(db, "comments"), {
             author: comment.author,
@@ -29,6 +42,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ id: docRef.id }, { status: 200 });
     } catch (error) {
+        console.log(error);
         const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
         return NextResponse.json({ error: `Failed to save comment: ${errorMessage}` }, { status: 500 });
     }
