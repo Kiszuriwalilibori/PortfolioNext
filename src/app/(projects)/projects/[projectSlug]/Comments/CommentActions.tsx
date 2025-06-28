@@ -112,7 +112,6 @@ import { CommentType, Project } from "@/types";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
 
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
-import { green } from "@mui/material/colors";
 
 interface Props {
     commentId: CommentType["ID"];
