@@ -15,7 +15,7 @@ export default function LoggedUser() {
     if (!isLogged || !user) return null;
 
     return (
-        <Paper elevation={2} component="aside" aria-label="user card">
+        <Paper elevation={2} component="aside" aria-label="Logged in user information">
             <UserCard>
                 <Box>
                     {user.email && <Gravatar email={user.email} size={40} style={gravatarStyle} />}

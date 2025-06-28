@@ -23,16 +23,16 @@ export const Icons: { [key: string]: JSX.Element } = {
 
 export const IconLabels: { [key: string]: string } = {
     edit: "Edit comment",
-    email: "Send e-mail",
-    facebook: "Jump to Facebook",
-    github: "Jump to GitHub",
-    linkedin: "Jump to LinkedIn",
-    live: "Jump to live version of this project",
-    send: "See details",
+    email: "Send email to author",
+    facebook: "Visit Facebook profile",
+    github: "View GitHub repository",
+    linkedin: "Visit LinkedIn profile",
+    live: "View live project",
+    send: "View project details",
     cv: "Download CV",
-    close: "Close",
-    motivation: "Motivation",
-    microphone: "Microphone",
+    close: "Close dialog",
+    motivation: "View motivation",
+    microphone: "Activate microphone",
 };
 
 export default Icons;

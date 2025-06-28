@@ -18,7 +18,7 @@ export default function Modal(props: ModalProps) {
             <Title>
                 <TitleText>{title}</TitleText>
                 {subtitle && <Subtitle>{subtitle} </Subtitle>}
-                <CloseButton aria-label="close" onClick={onClose}>
+                <CloseButton aria-label="Close dialog" onClick={onClose}>
                     {Icons.close}
                 </CloseButton>
             </Title>
