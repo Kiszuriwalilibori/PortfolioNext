@@ -15,18 +15,20 @@ export default function LoggedUser() {
     if (!isLogged || !user) return null;
 
     return (
-        <Paper elevation={2} component="aside" aria-label="Logged in user information">
+        <aside role="complementary" aria-labelledby="user-info-heading">
             <UserCard>
                 <Box>
                     {user.email && <Gravatar email={user.email} size={40} style={gravatarStyle} />}
                     <CardContent>
-                        <Name>{user.displayName || user.email}</Name>
+                        <Name id="user-info-heading" role="heading" aria-level={2}>
+                            {user.displayName || user.email}
+                        </Name>
                         <LogOut variant="contained" onClick={() => requestLogout()}>
                             LogOut
                         </LogOut>
                     </CardContent>
                 </Box>
             </UserCard>
-        </Paper>
+        </aside>
     );
 }

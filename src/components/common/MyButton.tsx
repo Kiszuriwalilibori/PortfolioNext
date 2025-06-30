@@ -6,7 +6,7 @@ export const MyButton = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonEleme
     const { children, className = "", type = "button", ...rest } = props;
 
     return (
-        <button className={className} type={type} {...rest} tabIndex={0} ref={ref}>
+        <button className={className} type={type} {...rest} ref={ref}>
             {children}
         </button>
     );
