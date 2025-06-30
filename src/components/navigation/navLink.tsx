@@ -14,8 +14,8 @@ function NavLink(props: Props) {
     const linkClassName = isActive ? "btn btn-normal btn-active" : "btn btn-normal";
 
     return (
-        <li className="navbar__item" onClick={clickHandler}>
-            <Link href={PageUtils.pageToHref(page)} rel="noopener" className={linkClassName} aria-label={page} tabIndex={0}>
+        <li className="navbar__item">
+            <Link href={PageUtils.pageToHref(page)} rel="noopener" className={linkClassName} aria-label={`Navigate to ${page} page`} tabIndex={0} onClick={clickHandler}>
                 <Image src={PageUtils.pageToIconSrc(page)} alt={PageUtils.pageToImgAlt(page)} width={40} height={40} />
                 <span>{page}</span>
             </Link>
