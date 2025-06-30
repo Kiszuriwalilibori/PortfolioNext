@@ -12,6 +12,7 @@ import { ModalProps } from "@/types";
 import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
 import { useComment, useMessage, useSpeech } from "@/hooks";
 import { validateAndSubmitComment } from "../AddComment/utils";
+import { getAuth } from "firebase/auth";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
@@ -73,9 +74,15 @@ export const CommentInputModal = (props: Props) => {
             ...(isEditing && commentId ? { ID: commentId } : {}),
         };
         try {
+            const auth = getAuth();
+            const token = await auth.currentUser?.getIdToken();
+            if (!token) {
+                throw new Error("Failed to obtain authentication token");
+            }
+            console.log("newCommentInfo");
             const response = await fetch(isEditing ? "/api/update-comment" : "/api/add-comment", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                 body: JSON.stringify(newCommentInfo),
             });
 
@@ -142,5 +149,4 @@ export const CommentInputModal = (props: Props) => {
 };
 
 export default CommentInputModal;
-
-//todo przyjrzeć się obiegowi created żeby nie zmieniał się jeżeli juz jest
+// Error: failed to update comment: Service account object must contain a string project_id
