@@ -51,7 +51,6 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({ id: docRef.id }, { status: 200 });
     } catch (error) {
-        console.log(error);
         const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
         return NextResponse.json({ error: `Failed to save comment: ${errorMessage}` }, { status: 500 });
     }

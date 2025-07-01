@@ -79,7 +79,7 @@ export const CommentInputModal = (props: Props) => {
             if (!token) {
                 throw new Error("Failed to obtain authentication token");
             }
-            console.log("newCommentInfo");
+
             const response = await fetch(isEditing ? "/api/update-comment" : "/api/add-comment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },

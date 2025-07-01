@@ -21,9 +21,10 @@ interface Props {
     projectTitle: Project["title"];
     commentContent: CommentType["content"];
     commentAuthorEmail: CommentType["authorEmail"];
+    commentAuthor: CommentType["author"];
 }
 
-const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle, commentContent }: Props) => {
+const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectID, projectTitle, commentContent }: Props) => {
     const { user, isLogged } = useFirebaseAuth();
     const [isRemoving, setIsRemoving] = useState(false);
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
@@ -68,9 +69,14 @@ const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle
         setIsRemoving(true);
         showMessage.info("Removing comment...");
         try {
+            const auth = getAuth();
+            const token = await auth.currentUser?.getIdToken();
+            if (!token) {
+                throw new Error("Failed to obtain authentication token");
+            }
             const response = await fetch(`/api/remove-comment`, {
                 method: "DELETE",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                 body: JSON.stringify({ projectID, commentId }),
             });
 
@@ -83,11 +89,11 @@ const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
-    }, [commentId, projectID, handleSuccess, handleError]);
+    }, [commentId, projectID, handleSuccess, handleError, isRemoving, showMessage]);
 
-    if (!isCommentAuthorLoggedIn) {
-        return <Actions />;
-    }
+    // if (!isCommentAuthorLoggedIn) {
+    //     return <Actions />;
+    // }
 
     return (
         <Actions id="Actions">
@@ -98,7 +104,7 @@ const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle
                 {Icons.edit}
             </EditButton>
             {isModalOpen && user && (
-                <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
+                <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={commentAuthor} authorEmail={commentAuthorEmail} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
             )}
             <Dialog open={isConfirmOpen} onClose={closeConfirm} aria-labelledby="confirm-delete-dialog-title" aria-describedby="confirm-delete-dialog-description">
                 <DialogTitle id="confirm-delete-dialog-title">Confirm Delete</DialogTitle>
@@ -119,3 +125,9 @@ const CommentActions = ({ commentId, commentAuthorEmail, projectID, projectTitle
 };
 
 export default CommentActions;
+
+//  TODO OK, I have error source but not solution In CommentActions there is line:
+// {isModalOpen && user && (
+//                 <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
+//             )}
+// authorEmail receives value of user.email always, and if it is opened for edition, it should be not user but real author

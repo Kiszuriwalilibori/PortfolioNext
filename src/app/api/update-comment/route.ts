@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
         }
 
         const decodedToken = await auth.verifyIdToken(token);
+
         if (decodedToken.email !== comment.authorEmail) {
             return NextResponse.json({ error: "Forbidden: You can only edit your own comments" }, { status: 403 });
         }
