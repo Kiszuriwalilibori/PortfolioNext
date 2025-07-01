@@ -55,3 +55,9 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: `Failed to save comment: ${errorMessage}` }, { status: 500 });
     }
 }
+
+// TODO: coś dziwnego dzieje się kiedy:
+// 1 najpierw jestem zalogowany
+// 2 potem się wylogowuję
+// 3będąc wylogowanym próbuję dodawać komentarze albo edytować istniejące
+// 4 jak się po tym wszystkim zaloguję, to pokazują mi się po kolei wszystkie modale od operacji których nie mogłem dokoną

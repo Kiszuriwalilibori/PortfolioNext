@@ -4,7 +4,8 @@ import { NextRequest } from "next/server";
 import { revalidatePath } from "next/cache";
 import { CommentType } from "@/types";
 
-/** * Verifies the user token from the request headers
+/**
+ * Verifies the user token from the request headers
  * @param request - The NextRequest object
  * @returns {Promise<any>} - Returns the decoded token
  * @throws {Error} - Throws error if token is invalid or missing
