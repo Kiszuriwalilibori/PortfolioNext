@@ -16,22 +16,19 @@ import { Actions, EditButton, RemoveButton } from "./Comments.style";
 import { getAuth } from "firebase/auth";
 
 interface Props {
-    commentId: CommentType["ID"];
-    projectID: Project["ID"];
-    projectTitle: Project["title"];
-    commentContent: CommentType["content"];
-    commentAuthorEmail: CommentType["authorEmail"];
-    commentAuthor: CommentType["author"];
+    comment: CommentType;
+    projectID: string;
+    projectTitle: string;
 }
 
-const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectID, projectTitle, commentContent }: Props) => {
+const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
     const { user, isLogged } = useFirebaseAuth();
     const [isRemoving, setIsRemoving] = useState(false);
     const [isModalOpen, openModal, closeModal] = useBoolean(false);
     const [isConfirmOpen, openConfirm, closeConfirm] = useBoolean(false);
     const router = useRouter();
     const showMessage = useMessage();
-    const isCommentAuthorLoggedIn = isLogged && user && user.email === commentAuthorEmail;
+    const isCommentAuthorLoggedIn = isLogged && user && user.email === comment.authorEmail;
 
     const handleError = useCallback(
         (message: string) => {
@@ -62,10 +59,7 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
     }, [openConfirm]);
 
     const handleConfirmRemove = useCallback(async () => {
-        if (isRemoving) {
-            showMessage.warning("Comment is already being removed");
-            return;
-        }
+        if (isRemoving) return;
         setIsRemoving(true);
         showMessage.info("Removing comment...");
         try {
@@ -77,7 +71,7 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
             const response = await fetch(`/api/remove-comment`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-                body: JSON.stringify({ projectID, commentId }),
+                body: JSON.stringify({ projectID, commentId: comment.ID }),
             });
 
             if (!response.ok) {
@@ -89,7 +83,7 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
-    }, [commentId, projectID, handleSuccess, handleError, isRemoving, showMessage]);
+    }, [comment, projectID, handleSuccess, handleError, isRemoving, showMessage]);
 
     if (!isCommentAuthorLoggedIn) {
         return <Actions />;
@@ -104,7 +98,7 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
                 {Icons.edit}
             </EditButton>
             {isModalOpen && user && (
-                <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={commentAuthor} authorEmail={commentAuthorEmail} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
+                <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={comment.author} authorEmail={comment.authorEmail} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={comment.content} commentId={comment.ID} isEditing={true} />
             )}
             <Dialog open={isConfirmOpen} onClose={closeConfirm} aria-labelledby="confirm-delete-dialog-title" aria-describedby="confirm-delete-dialog-description">
                 <DialogTitle id="confirm-delete-dialog-title">Confirm Delete</DialogTitle>

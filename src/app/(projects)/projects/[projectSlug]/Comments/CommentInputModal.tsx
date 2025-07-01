@@ -63,7 +63,7 @@ export const CommentInputModal = (props: Props) => {
         }
         setIsSubmitting(true);
 
-        const newCommentInfo = {
+        const commentData = {
             author,
             active: true,
             content: comment,
@@ -79,11 +79,11 @@ export const CommentInputModal = (props: Props) => {
             if (!token) {
                 throw new Error("Failed to obtain authentication token");
             }
-
-            const response = await fetch(isEditing ? "/api/update-comment" : "/api/add-comment", {
+            const endpoint = isEditing ? "/api/update-comment" : "/api/add-comment";
+            const response = await fetch(endpoint, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-                body: JSON.stringify(newCommentInfo),
+                body: JSON.stringify(commentData),
             });
 
             if (!response.ok) {
