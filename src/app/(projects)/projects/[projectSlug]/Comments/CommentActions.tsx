@@ -91,9 +91,9 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
         }
     }, [commentId, projectID, handleSuccess, handleError, isRemoving, showMessage]);
 
-    // if (!isCommentAuthorLoggedIn) {
-    //     return <Actions />;
-    // }
+    if (!isCommentAuthorLoggedIn) {
+        return <Actions />;
+    }
 
     return (
         <Actions id="Actions">
@@ -125,9 +125,3 @@ const CommentActions = ({ commentId, commentAuthorEmail, commentAuthor, projectI
 };
 
 export default CommentActions;
-
-//  TODO OK, I have error source but not solution In CommentActions there is line:
-// {isModalOpen && user && (
-//                 <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={commentContent} commentId={commentId} isEditing={true} />
-//             )}
-// authorEmail receives value of user.email always, and if it is opened for edition, it should be not user but real author
