@@ -35,21 +35,24 @@ export async function DELETE(request: NextRequest) {
 
         CommentsUtils.revalidateProjectPath(projectID);
         return NextResponse.json({ message: "Comment removed successfully" }, { status: 200 });
-    } catch (error: any) {
-        if (error.message === "No token provided") {
-            return NextResponse.json({ error: "Unauthorized: No token provided" }, { status: 401 });
-        }
-        if (error.message === "Token expired") {
-            return NextResponse.json({ error: "Unauthorized: Token expired" }, { status: 401 });
-        }
-        if (error.message === "Invalid token") {
-            return NextResponse.json({ error: "Unauthorized: Invalid token" }, { status: 401 });
-        }
-        if (error.message === "Forbidden: You can only modify your own comments") {
-            return NextResponse.json({ error: error.message }, { status: 403 });
-        }
+    } catch (error: unknown) {
         const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
 
+        if (errorMessage.includes("Missing required fields")) {
+            return NextResponse.json({ error: errorMessage }, { status: 400 });
+        }
+        if (errorMessage === "No token provided") {
+            return NextResponse.json({ error: "Unauthorized: No token provided" }, { status: 401 });
+        }
+        if (errorMessage === "Token expired") {
+            return NextResponse.json({ error: "Unauthorized: Token expired" }, { status: 401 });
+        }
+        if (errorMessage === "Invalid token") {
+            return NextResponse.json({ error: "Unauthorized: Invalid token" }, { status: 401 });
+        }
+        if (errorMessage === "Forbidden: You can only modify your own comments") {
+            return NextResponse.json({ error: errorMessage }, { status: 403 });
+        }
         if (errorMessage.includes("Service account object must contain a string project_id")) {
             return NextResponse.json({ error: "Server configuration error: Invalid service account" }, { status: 500 });
         }

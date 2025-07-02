@@ -35,7 +35,7 @@ function Career() {
                                     <Position>{job.position}</Position>
 
                                     {job.subtitle && <Project>{job.subtitle}</Project>}
-                                    {job.description.map((item: any) => {
+                                    {job.description.map(item => {
                                         return <Duties key={item}>{item}</Duties>;
                                     })}
                                 </TimelineElement>
