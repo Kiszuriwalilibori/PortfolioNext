@@ -1,8 +1,7 @@
-import { deleteDoc, doc, getFirestore } from "firebase/firestore";
-import firebase_app from "@/fbase/config";
 import { NextRequest, NextResponse } from "next/server";
-import { getDoc } from "firebase/firestore";
-import { revalidateProjectPath } from "@/lib/comment-utils";
+import { deleteDoc, doc, getDoc, getFirestore } from "firebase/firestore";
+
+import firebase_app from "@/fbase/config";
 import { CommentsUtils } from "@/models/comments";
 
 export async function DELETE(request: NextRequest) {

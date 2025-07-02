@@ -47,8 +47,6 @@ export async function POST(request: NextRequest) {
             projectID: comment.projectID,
         });
 
-        // const path = `/projects/${comment.projectID}`;
-        // revalidatePath(path);
         CommentsUtils.revalidateProjectPath(comment.projectID);
 
         return NextResponse.json({ id: docRef.id }, { status: 200 });
