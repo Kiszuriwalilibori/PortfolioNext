@@ -5,7 +5,7 @@ import isEmpty from "lodash/isEmpty";
 import { useState, useCallback } from "react";
 import { Project } from "@/types";
 
-function getVisibleProjects(data: Project[], filters: string[], props: string[]) {
+function getVisibleProjects(data: Project[], filters: string[]) {
     if (isEmpty(filters)) return data;
     const result: Project[] = [];
     data.forEach(project => {
@@ -26,7 +26,7 @@ const useGetProjects = (featuresList: string[], data: Project[]) => {
         }
     }, []);
 
-    const visibleProjects = getVisibleProjects(data, activeFeatures, featuresList);
+    const visibleProjects = getVisibleProjects(data, activeFeatures);
 
     const titles = visibleProjects.map(project => {
         return project.title;

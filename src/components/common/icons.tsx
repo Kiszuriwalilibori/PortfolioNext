@@ -1,4 +1,4 @@
-import { faBackward, faEnvelope, faFileDownload, faForward, faGlobe, faHandFist, faMicrophone, faPaperPlane, faXmark, faPenToSquare, faPencil } from "@fortawesome/free-solid-svg-icons";
+import { faBackward, faEnvelope, faFileDownload, faForward, faGlobe, faHandFist, faMicrophone, faPaperPlane, faXmark, faPencil } from "@fortawesome/free-solid-svg-icons";
 
 import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

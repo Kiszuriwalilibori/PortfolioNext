@@ -5,10 +5,6 @@ import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 
 import { Comments, AddCommentButton } from "./Comments";
 
-// import { test } from "@/utils/test";
-
-import type { Metadata } from "next";
-
 export async function generateStaticParams() {
     return projects.map(project => ({
         projectSlug: project.slug,
@@ -16,7 +12,6 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
-    // test();
     const projectSlug = (await params).projectSlug;
 
     const project = ProjectUtils.getProjectBySlug(projects, projectSlug);

@@ -1,21 +1,21 @@
 "use client";
 import Stack from "@mui/material/Stack";
-import theme from "@/themes";
 import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { Button, TextField } from "@mui/material";
+// import theme from "@/themes";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
 const COLOR_SUNNY_DARK = "#ffb800";
 const COLOR_SUNNY_HOVER = "#ffe37e";
 
-export const SummaryStack = styled(Stack)(({ theme }) => ({
+export const SummaryStack = styled(Stack)(() => ({
     alignItems: "center",
 }));
 
-export const Author = styled("h3")(({ theme }) => ({
+export const Author = styled("h3")(() => ({
     lineHeight: 1,
     fontSize: "clamp(12px, 3.125vw, 16px) !important",
     fontWeight: 700,

@@ -3,7 +3,7 @@ import { SnackbarOrigin, useSnackbar } from "notistack";
 interface MessageOptions {
     autoHideDuration?: number;
     anchorOrigin?: SnackbarOrigin;
-    [key: string]: any;
+    [key: string]: unknown;
 }
 export interface MessageMethods {
     info: (message: string, options?: MessageOptions) => void;

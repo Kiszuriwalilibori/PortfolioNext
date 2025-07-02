@@ -1,4 +1,3 @@
-import Paper from "@mui/material/Paper";
 import { EducationData } from "@/types";
 
 interface Props {

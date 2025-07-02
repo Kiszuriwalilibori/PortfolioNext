@@ -5,7 +5,7 @@ const auth = getAuth();
 
 export const requestLogin = (handleSuccess: () => void, handleError: (message: string) => void) => {
     signInWithPopup(auth, provider)
-        .then(result => {
+        .then(() => {
             handleSuccess();
         })
         .catch(error => {

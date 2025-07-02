@@ -41,7 +41,7 @@ export const validateAndSubmitComment = async (comment: string, onSuccess: (comm
             handleInvalidComment();
         }
     } catch (error) {
-        showMessage.error("Failed to analyze comment. Proceeding with submission.");
+        showMessage.error("Failed to analyze comment. Proceeding with submission." + JSON.stringify(error, Object.getOwnPropertyNames(error)));
         await onSuccess(comment);
     }
 };

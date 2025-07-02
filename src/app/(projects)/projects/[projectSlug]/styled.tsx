@@ -33,9 +33,9 @@ export const SingleProjectInformationsColumn = styled(Box)(({ theme }) => ({
 
 export const StackDivider = () => <Divider orientation={useMediaQuery(theme.breakpoints.down("md")) ? "horizontal" : "vertical"} flexItem sx={{ backgroundColor: theme.palette.primary.light }} />;
 
-export const Summary = styled(AccordionSummary)(({ theme }) => ({}));
+export const Summary = styled(AccordionSummary)(() => ({}));
 
-export const SummaryStack = styled(Stack)(({ theme }) => ({
+export const SummaryStack = styled(Stack)(() => ({
     alignItems: "center",
 }));
 

@@ -50,7 +50,7 @@ export const Checkbox = styled(RawCheckbox)(({ theme }) => ({
     },
 }));
 
-export const FeaturesBox = styled(Box)(({ theme }) => ({
+export const FeaturesBox = styled(Box)(() => ({
     marginTop: 20,
     width: 240,
 }));

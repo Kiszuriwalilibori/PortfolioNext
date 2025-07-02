@@ -12,7 +12,7 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
     },
 }));
 
-const StyledDialogActions = styled(DialogActions)(({ theme }) => ({
+const StyledDialogActions = styled(DialogActions)(() => ({
     padding: 0,
     paddingTop: 3,
 }));
@@ -51,12 +51,4 @@ const Subtitle = styled(Typography)(({ theme }) => ({
     padding: theme.spacing(1.75, 0, 0.75, 0),
 }));
 
-export {
-    StyledDialog as Dialog,
-    StyledDialogActions as Actions,
-    StyledDialogContent as Content,
-    StyledIconButton as CloseButton,
-    StyledDialogTitle as Title,
-    StyledTitleText as TitleText,
-    Subtitle,
-};
+export { StyledDialog as Dialog, StyledDialogActions as Actions, StyledDialogContent as Content, StyledIconButton as CloseButton, StyledDialogTitle as Title, StyledTitleText as TitleText, Subtitle };

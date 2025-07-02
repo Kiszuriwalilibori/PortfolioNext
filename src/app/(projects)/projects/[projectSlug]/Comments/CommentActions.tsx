@@ -9,7 +9,7 @@ import { useFirebaseAuth } from "@/contexts";
 
 import { CommentInputModal } from "./CommentInputModal";
 import Icons from "@icons";
-import { CommentType, Project } from "@/types";
+import { CommentType } from "@/types";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
 
 import { Actions, EditButton, RemoveButton } from "./Comments.style";

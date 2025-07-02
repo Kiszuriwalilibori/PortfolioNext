@@ -1,7 +1,6 @@
 "use client";
 
 import CardContent from "@mui/material/CardContent";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Gravatar from "react-gravatar";
 
