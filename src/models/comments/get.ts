@@ -12,7 +12,7 @@ interface GetCommentsResult {
     error: FetchError | null;
 }
 
-export async function getComments(projectID: string): Promise<GetCommentsResult> {
+export async function get(projectID: string): Promise<GetCommentsResult> {
     const db = getFirestore(firebase_app);
     let comments: CommentType[] = [];
     let error: FetchError | null = null;

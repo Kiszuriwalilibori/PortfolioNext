@@ -1,11 +1,9 @@
 import { deleteDoc, doc, getFirestore } from "firebase/firestore";
 import firebase_app from "@/fbase/config";
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
-import { getAuth } from "firebase-admin/auth";
-import { getFirebaseAdminApp } from "@/fbase/admin-config";
 import { getDoc } from "firebase/firestore";
-import { verifyUserToken, revalidateProjectPath } from "@/lib/comment-utils";
+import { revalidateProjectPath } from "@/lib/comment-utils";
+import { CommentsUtils } from "@/models/comments";
 
 export async function DELETE(request: NextRequest) {
     try {
@@ -20,15 +18,8 @@ export async function DELETE(request: NextRequest) {
         if (!commentId || !projectID) {
             return NextResponse.json({ error: "Missing required fields: commentId and projectID are required" }, { status: 400 });
         }
-        // const auth = getAuth(getFirebaseAdminApp());
-        // const token = request.headers.get("authorization")?.split("Bearer ")[1];
-        // if (!token) {
-        //     return NextResponse.json({ error: "Unauthorized: No token provided" }, { status: 401 });
-        // }
 
-        // const decodedToken = await auth.verifyIdToken(token);
-
-        const decodedToken = await verifyUserToken(request);
+        const decodedToken = await CommentsUtils.verifyUserToken(request);
 
         const db = getFirestore(firebase_app);
         const commentRef = doc(db, "comments", commentId);
@@ -43,9 +34,7 @@ export async function DELETE(request: NextRequest) {
 
         await deleteDoc(commentRef);
 
-        // const path = `/projects/${projectID}`;
-        // revalidatePath(path);
-        revalidateProjectPath(projectID);
+        CommentsUtils.revalidateProjectPath(projectID);
         return NextResponse.json({ message: "Comment removed successfully" }, { status: 200 });
     } catch (error: any) {
         if (error.message === "No token provided") {
@@ -62,9 +51,6 @@ export async function DELETE(request: NextRequest) {
         }
         const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
 
-        // if (errorMessage.includes("auth/id-token-expired")) {
-        //     return NextResponse.json({ error: "Unauthorized: Token expired" }, { status: 401 });
-        // }
         if (errorMessage.includes("Service account object must contain a string project_id")) {
             return NextResponse.json({ error: "Server configuration error: Invalid service account" }, { status: 500 });
         }

@@ -49,5 +49,3 @@ function Career() {
 }
 
 export default Career;
-
-// todo przepisać te jobsrelated na kalsę abstra

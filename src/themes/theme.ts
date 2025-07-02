@@ -169,5 +169,3 @@ theme = createTheme(theme, {
     },
 });
 export default theme;
-
-// todo są akurat trzy wersje czerwonego rózniące sie nasyceniem i trzy wersje border, zrobi z tego constans

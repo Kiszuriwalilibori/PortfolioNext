@@ -36,5 +36,3 @@ const useGetProjects = (featuresList: string[], data: Project[]) => {
 };
 
 export default useGetProjects;
-
-// todo: podejrzanie skomplikowane. Po co filtrować w tym miejscu

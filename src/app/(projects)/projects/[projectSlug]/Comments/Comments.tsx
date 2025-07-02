@@ -1,8 +1,8 @@
 import { CommentsStack } from "./Comments.style";
-import { getComments } from "./utils/getComments";
+
 import { CommentType } from "@/types";
 import { Comment } from "./Comment";
-import { sortCommentsByCreated } from "./utils/sortComments";
+import { CommentsUtils } from "@/models/comments";
 
 interface Props {
     projectID: string;
@@ -10,13 +10,13 @@ interface Props {
 }
 
 export default async function Comments({ projectID, title }: Props) {
-    const { comments, error } = await getComments(projectID);
+    const { comments, error } = await CommentsUtils.get(projectID);
 
     if (!comments || !comments.length) {
         return <p>No comments yet for project {title}.</p>;
     }
 
-    const sortedComments = sortCommentsByCreated(comments);
+    const sortedComments = CommentsUtils.sort(comments);
 
     if (error) {
         return (

@@ -2,27 +2,16 @@ import { doc, updateDoc, getFirestore } from "firebase/firestore";
 import firebase_app from "@/fbase/config";
 import { CommentType } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
-import { getAuth } from "firebase-admin/auth";
-import { getFirebaseAdminApp } from "@/fbase/admin-config";
-import { verifyUserToken, validateCommentFields, revalidateProjectPath } from "@/lib/comment-utils";
+
+import { CommentsUtils } from "@/models/comments";
 
 export async function POST(request: NextRequest) {
     try {
         const comment: CommentType & { ID: string } = await request.json();
 
-        // if (!comment.ID || !comment.projectID || !comment.content || !comment.author || !comment.authorEmail) {
-        //     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-        // }
-        validateCommentFields(comment, true);
-        // const auth = getAuth(getFirebaseAdminApp());
-        // const token = request.headers.get("authorization")?.split("Bearer ")[1];
-        // if (!token) {
-        //     return NextResponse.json({ error: "Unauthorized: No token provided" }, { status: 401 });
-        // }
+        CommentsUtils.validateCommentFields(comment, true);
 
-        // const decodedToken = await auth.verifyIdToken(token);
-        const decodedToken = await verifyUserToken(request);
+        const decodedToken = await CommentsUtils.verifyUserToken(request);
 
         if (decodedToken.email !== comment.authorEmail) {
             return NextResponse.json({ error: "Forbidden: You can only edit your own comments" }, { status: 403 });
@@ -35,9 +24,7 @@ export async function POST(request: NextRequest) {
             content: comment.content,
         });
 
-        // const path = `/projects/${comment.projectID}`;
-        // revalidatePath(path);
-        revalidateProjectPath(comment.projectID);
+        CommentsUtils.revalidateProjectPath(comment.projectID);
 
         return NextResponse.json({ ID: comment.ID }, { status: 200 });
     } catch (error: any) {
