@@ -1,0 +1,20 @@
+// to co jest opisane jak section aria-label navigation-container wyświetla się puste i w dziwnym miejscu - niby nie błąd ale nie powinno tak być
+
+// // todo przepisać te jobsrelated na kalsę abstra
+
+// w theme.ts:
+// // todo są akurat trzy wersje czerwonego rózniące sie nasyceniem i trzy wersje border, zrobi z tego constans
+
+// w useGetProjects.tsx:
+// // todo: podejrzanie skomplikowane. Po co filtrować w tym miejscu
+
+// w mobilnym guziki od nawigacji między projektami powinny być raczej w polowie obrazku , bo trochę zasłaniają
+
+// Incremental Static Regeneration (ISR): If project data changes frequently (e.g., comments or project details), use ISR to revalidate static pages periodically without rebuilding the entire site.Example: Modify ProjectDetails to use ISR by adding revalidate to generateMetadata or the page itself.typescript
+
+// export const revalidate = 3600; // Revalidate every hour
+// export default async function ProjectDetails({ params }: { params: Promise<{ projectSlug: string }> }) {
+//   // Existing code
+// }
+
+// Benefit for Your Project: Since Comments and AddCommentButton allow user interaction, ISR can ensure fresh comment data without sacrificing the benefits of static generation.
