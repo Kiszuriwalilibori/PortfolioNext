@@ -1,7 +1,7 @@
 import { CommentType } from "@/types";
 import { ERROR_MESSAGES } from "./errorConstants";
 
-const MAX_LENGTH = 500; // Maximum length for comment content
+export const MAX_LENGTH = 500; // Maximum length for comment content
 
 /**
  * Validates required comment fields

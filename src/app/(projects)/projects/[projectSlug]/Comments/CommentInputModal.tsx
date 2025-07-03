@@ -9,10 +9,11 @@ import Modal from "@/components/modal";
 import Icons from "@icons";
 
 import { ModalProps } from "@/types";
-import { ButtonsStack, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
+import { ButtonsStack, CharacterCounter, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
 import { useComment, useMessage, useSpeech } from "@/hooks";
 import { validateAndSubmitComment } from "../AddComment/utils";
 import { getAuth } from "firebase/auth";
+import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: string;
@@ -119,17 +120,23 @@ export const CommentInputModal = (props: Props) => {
             isOpen={isOpen}
             onClose={onClose}
             content={
-                <CommentTextField
-                    id="comment-text-field"
-                    label="Comment"
-                    multiline
-                    rows={8}
-                    value={comment}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                        createComment(event.target.value);
-                    }}
-                    aria-describedby="comment-error"
-                />
+                <>
+                    <CommentTextField
+                        id="comment-text-field"
+                        label="Comment"
+                        multiline
+                        rows={8}
+                        value={comment}
+                        slotProps={{ htmlInput: { maxLength: MAX_LENGTH } }}
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                            createComment(event.target.value);
+                        }}
+                        aria-describedby="comment-error"
+                    />
+                    <CharacterCounter>
+                        {comment.length}/{MAX_LENGTH}
+                    </CharacterCounter>
+                </>
             }
             actions={
                 <ButtonsStack direction="row" spacing={2} id="Buttons stack">

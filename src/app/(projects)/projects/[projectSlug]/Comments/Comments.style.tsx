@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 // import theme from "@/themes";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
@@ -126,3 +126,14 @@ export const listeningMicrophoneSx = (listening: boolean) => {
         };
     }
 };
+
+export const CharacterCounter = styled(Typography)(({ theme }) => ({
+    position: "absolute",
+    bottom: theme.spacing(1),
+    right: theme.spacing(1),
+    fontSize: "0.75rem",
+    color: theme.palette.text.secondary,
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(0.5),
+    borderRadius: theme.shape.borderRadius,
+}));
