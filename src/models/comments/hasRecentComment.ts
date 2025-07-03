@@ -1,5 +1,6 @@
 import { CommentType } from "@/types";
 import { Firestore, query, collection, where, getDocs } from "firebase/firestore";
+import { ERROR_MESSAGES } from "./errorConstants";
 
 /**
  * Checks if the user has posted a comment on the same project within the last minute.
@@ -18,6 +19,6 @@ export async function hasRecentComment(db: Firestore, comment: CommentType): Pro
         return commentData.created > oneMinuteAgo;
     });
     if (hasRecentComment) {
-        throw new Error("Please wait at least 1 minute before posting another comment on this project");
+        throw new Error(`${ERROR_MESSAGES.RATE_LIMIT_WAIT} before posting another comment on this project`);
     }
 }

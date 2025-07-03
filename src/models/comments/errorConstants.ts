@@ -1,0 +1,18 @@
+export const ERROR_MESSAGES = {
+    MISSING_REQUIRED_FIELDS: "Missing required fields",
+    RATE_LIMIT_WAIT: "Please wait at least 1 minute",
+    INVALID_EMAIL_FORMAT: "Invalid email format",
+    CONTENT_TOO_LONG: "Comment content exceeds maximum length",
+    CONTENT_EMPTY: "Comment content cannot be empty",
+    AUTHOR_NAME_TOO_LONG: "Author name exceeds maximum length",
+    INVALID_HTML: "Comment content contains invalid HTML",
+    NO_TOKEN_PROVIDED: "No token provided",
+    TOKEN_EXPIRED: "Token expired",
+    INVALID_TOKEN: "Invalid token",
+    TOKEN_REVOKED: "Token revoked",
+    USER_EMAIL_REQUIRED: "User email is required",
+    FORBIDDEN_MODIFY_ONLY_OWN: "You can only",
+    FORBIDDEN_GENERAL: "Forbidden",
+    COMMENT_NOT_FOUND: "Comment not found",
+    RATE_LIMIT_EXCEEDED: "Rate limit exceeded",
+} as const;

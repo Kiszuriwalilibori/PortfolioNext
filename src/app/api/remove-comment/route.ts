@@ -15,7 +15,7 @@ export async function DELETE(request: NextRequest) {
         const { commentId, projectID } = body;
 
         if (!commentId || !projectID) {
-            return NextResponse.json({ error: "Missing required fields: commentId and projectID are required" }, { status: 400 });
+            return NextResponse.json({ error: `${CommentsUtils.ERROR_MESSAGES.MISSING_REQUIRED_FIELDS}: commentId and projectID are required` }, { status: 400 });
         }
 
         const decodedToken = await CommentsUtils.verifyUserToken(request);
@@ -24,8 +24,8 @@ export async function DELETE(request: NextRequest) {
 
         const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, commentId);
         const commentData = commentDoc.data();
-
-        CommentsUtils.verifyCommentOwnership(commentData.email, decodedToken.email);
+        console.log(commentData, decodedToken.email);
+        CommentsUtils.verifyCommentOwnership(commentData.authorEmail, decodedToken.email);
 
         await deleteDoc(commentRef);
 

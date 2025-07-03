@@ -6,11 +6,14 @@
  * @throws {Error} If the user is not the owner of the comment.
  */
 
+import { ERROR_MESSAGES } from "./errorConstants";
+
 export function verifyCommentOwnership(authorEmail: string, userEmail: string | undefined): void {
     if (!userEmail) {
-        throw new Error("Unauthorized: User email is required");
+        throw new Error(`Unauthorized: ${ERROR_MESSAGES.USER_EMAIL_REQUIRED}`);
     }
+
     if (userEmail !== authorEmail) {
-        throw new Error("Forbidden: You can only modify your own comments");
+        throw new Error(`${ERROR_MESSAGES.FORBIDDEN_GENERAL}: ${ERROR_MESSAGES.FORBIDDEN_MODIFY_ONLY_OWN} modify your own comments`);
     }
 }

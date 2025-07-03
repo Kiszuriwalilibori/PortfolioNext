@@ -1,4 +1,5 @@
 import { CommentType } from "@/types";
+import { ERROR_MESSAGES } from "./errorConstants";
 
 const MAX_LENGTH = 500; // Maximum length for comment content
 
@@ -14,23 +15,23 @@ export function validateCommentFields(comment: CommentType & { ID?: string }, re
 
     const missingFields = requiredFields.filter(field => !comment[field as keyof typeof comment]);
     if (missingFields.length > 0) {
-        throw new Error(`Missing required fields: ${missingFields.join(", ")}`);
+        throw new Error(`${ERROR_MESSAGES.MISSING_REQUIRED_FIELDS}: ${missingFields.join(", ")}`);
     }
 
     if (comment.content && comment.content.length > MAX_LENGTH) {
-        throw new Error(`Comment content exceeds maximum length of ${MAX_LENGTH} characters`);
+        throw new Error(`${ERROR_MESSAGES.CONTENT_TOO_LONG} of ${MAX_LENGTH} characters`);
     }
 
     if (comment.content && comment.content.trim().length === 0) {
-        throw new Error("Comment content cannot be empty");
+        throw new Error(ERROR_MESSAGES.CONTENT_EMPTY);
     }
 
     if (comment.author && comment.author.length > 100) {
-        throw new Error("Author name exceeds maximum length of 100 characters");
+        throw new Error(`${ERROR_MESSAGES.AUTHOR_NAME_TOO_LONG} of 100 characters`);
     }
 
     // Basic XSS prevention - reject script tags
     if (comment.content && /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi.test(comment.content)) {
-        throw new Error("Comment content contains invalid HTML");
+        throw new Error(ERROR_MESSAGES.INVALID_HTML);
     }
 }
