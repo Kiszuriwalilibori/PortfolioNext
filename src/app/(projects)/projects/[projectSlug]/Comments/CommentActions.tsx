@@ -85,9 +85,9 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
         }
     }, [comment, projectID, handleSuccess, handleError, isRemoving, showMessage]);
 
-    // if (!isCommentAuthorLoggedIn) {
-    //     return <Actions />;
-    // }
+    if (!isCommentAuthorLoggedIn) {
+        return <Actions />;
+    }
 
     return (
         <Actions id="Actions">

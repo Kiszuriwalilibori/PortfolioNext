@@ -14,7 +14,7 @@ export default function Modal(props: ModalProps) {
     const { isOpen, onClose, title, actions, content, subtitle } = props;
 
     return (
-        <Dialog open={isOpen} keepMounted onClose={onClose}>
+        <Dialog open={isOpen} keepMounted onClose={onClose} disableScrollLock>
             <Title>
                 <TitleText>{title}</TitleText>
                 {subtitle && <Subtitle>{subtitle} </Subtitle>}
