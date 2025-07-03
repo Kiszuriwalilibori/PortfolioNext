@@ -1,8 +1,7 @@
 import moment from "moment";
 import Gravatar from "./Gravatar";
-import { Box, Typography } from "@mui/material";
 import { CommentType } from "@/types";
-import { Author, CommentDivider, CommentPaper, SummaryStack, When } from "./Comments.style";
+import { Author, CommentBox, CommentDivider, CommentPaper, CommentTypography, SummaryStack, When } from "./Comments.style";
 
 import CommentActions from "./CommentActions";
 
@@ -22,17 +21,9 @@ export const Comment = (props: Props) => {
                 <When id="When">{moment(comment.created).fromNow()}</When>
             </SummaryStack>
             <CommentDivider />
-            <Box sx={{ maxWidth: "100%", overflow: "hidden" }}>
-                <Typography
-                    sx={{
-                        wordBreak: "break-word",
-                        overflowWrap: "break-word",
-                        hyphens: "auto",
-                    }}
-                >
-                    {comment.content}
-                </Typography>
-            </Box>
+            <CommentBox>
+                <CommentTypography>{comment.content}</CommentTypography>
+            </CommentBox>
 
             <CommentDivider />
             <CommentActions comment={comment} projectID={projectID} projectTitle={projectTitle} />

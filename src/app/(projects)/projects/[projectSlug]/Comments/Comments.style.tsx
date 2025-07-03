@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 // import theme from "@/themes";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
@@ -16,6 +16,8 @@ export const SummaryStack = styled(Stack)(() => ({
     maxWidth: "100%",
     overflow: "hidden",
 }));
+export const CommentBox = styled(Box)(() => ({ maxWidth: "100%", overflow: "hidden" }));
+export const CommentTypography = styled("p")(() => ({ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }));
 
 export const Author = styled("h3")(() => ({
     lineHeight: 1,

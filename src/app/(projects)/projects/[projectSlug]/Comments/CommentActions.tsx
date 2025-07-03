@@ -101,22 +101,20 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
                 <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={comment.author} authorEmail={comment.authorEmail} project={projectTitle} ID={projectID} onCommentAdded={handleCommentUpdated} initialComment={comment.content} commentId={comment.ID} isEditing={true} />
             )}
             {isCommentAuthorLoggedIn && (
-                <div>
-                    <Dialog open={isConfirmOpen} onClose={closeConfirm} aria-labelledby="confirm-delete-dialog-title" aria-describedby="confirm-delete-dialog-description" disableScrollLock>
-                        <DialogTitle id="confirm-delete-dialog-title">Confirm Delete</DialogTitle>
-                        <DialogContent>
-                            <DialogContentText id="confirm-delete-dialog-description">Are you sure you want to delete this comment? This action cannot be undone.</DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={closeConfirm} color="info" variant="contained">
-                                Cancel
-                            </Button>
-                            <Button onClick={handleConfirmRemove} color="error" variant="contained" disabled={isRemoving}>
-                                {isRemoving ? "Deleting..." : "Delete"}
-                            </Button>
-                        </DialogActions>
-                    </Dialog>
-                </div>
+                <Dialog open={isConfirmOpen} onClose={closeConfirm} aria-labelledby="confirm-delete-dialog-title" aria-describedby="confirm-delete-dialog-description" disableScrollLock>
+                    <DialogTitle id="confirm-delete-dialog-title">Confirm Delete</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="confirm-delete-dialog-description">Are you sure you want to delete this comment? This action cannot be undone.</DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={closeConfirm} color="info" variant="contained">
+                            Cancel
+                        </Button>
+                        <Button onClick={handleConfirmRemove} color="error" variant="contained" disabled={isRemoving}>
+                            {isRemoving ? "Deleting..." : "Delete"}
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             )}
         </Actions>
     );
