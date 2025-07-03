@@ -13,6 +13,8 @@ const COLOR_SUNNY_HOVER = "#ffe37e";
 
 export const SummaryStack = styled(Stack)(() => ({
     alignItems: "center",
+    maxWidth: "100%",
+    overflow: "hidden",
 }));
 
 export const Author = styled("h3")(() => ({
@@ -31,6 +33,9 @@ export const CommentPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.grey[300],
     border: "2px solid grey",
     padding: theme.spacing(1),
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxSizing: "border-box",
 }));
 
 export const CommentDivider = styled(Divider)(({ theme }) => ({

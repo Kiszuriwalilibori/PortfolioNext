@@ -22,8 +22,16 @@ export const Comment = (props: Props) => {
                 <When id="When">{moment(comment.created).fromNow()}</When>
             </SummaryStack>
             <CommentDivider />
-            <Box>
-                <Typography>{comment.content}</Typography>
+            <Box sx={{ maxWidth: "100%", overflow: "hidden" }}>
+                <Typography
+                    sx={{
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
+                    }}
+                >
+                    {comment.content}
+                </Typography>
             </Box>
 
             <CommentDivider />

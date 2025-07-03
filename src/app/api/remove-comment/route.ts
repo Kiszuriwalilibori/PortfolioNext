@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { deleteDoc, doc, getDoc, getFirestore } from "firebase/firestore";
+import { deleteDoc, getFirestore } from "firebase/firestore";
 
 import firebase_app from "@/fbase/config";
 import { CommentsUtils } from "@/models/comments";
@@ -21,42 +21,17 @@ export async function DELETE(request: NextRequest) {
         const decodedToken = await CommentsUtils.verifyUserToken(request);
 
         const db = getFirestore(firebase_app);
-        const commentRef = doc(db, "comments", commentId);
-        const commentDoc = await getDoc(commentRef);
-        if (!commentDoc.exists()) {
-            return NextResponse.json({ error: "Comment not found" }, { status: 404 });
-        }
+
+        const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, commentId);
         const commentData = commentDoc.data();
-        if (decodedToken.email !== commentData.authorEmail) {
-            return NextResponse.json({ error: "Forbidden: You can only delete your own comments" }, { status: 403 });
-        }
+
+        CommentsUtils.verifyCommentOwnership(commentData.email, decodedToken.email);
 
         await deleteDoc(commentRef);
 
         CommentsUtils.revalidateProjectPath(projectID);
         return NextResponse.json({ message: "Comment removed successfully" }, { status: 200 });
     } catch (error: unknown) {
-        const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
-
-        if (errorMessage.includes("Missing required fields")) {
-            return NextResponse.json({ error: errorMessage }, { status: 400 });
-        }
-        if (errorMessage === "No token provided") {
-            return NextResponse.json({ error: "Unauthorized: No token provided" }, { status: 401 });
-        }
-        if (errorMessage === "Token expired") {
-            return NextResponse.json({ error: "Unauthorized: Token expired" }, { status: 401 });
-        }
-        if (errorMessage === "Invalid token") {
-            return NextResponse.json({ error: "Unauthorized: Invalid token" }, { status: 401 });
-        }
-        if (errorMessage === "Forbidden: You can only modify your own comments") {
-            return NextResponse.json({ error: errorMessage }, { status: 403 });
-        }
-        if (errorMessage.includes("Service account object must contain a string project_id")) {
-            return NextResponse.json({ error: "Server configuration error: Invalid service account" }, { status: 500 });
-        }
-
-        return NextResponse.json({ error: `Failed to remove comment: ${errorMessage}` }, { status: 500 });
+        return CommentsUtils.handleApiError(error);
     }
 }
