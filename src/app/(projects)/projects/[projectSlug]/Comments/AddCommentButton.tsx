@@ -1,16 +1,17 @@
 "use client";
-
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
+
 import { useBoolean, useMessage } from "@/hooks";
-import { requestLogin } from "@/fbase";
 import { useFirebaseAuth } from "@/contexts";
-import { CommentsButton } from "./Comments.style";
 import { CommentInputModal } from "./CommentInputModal";
+import { CommentsButton } from "./Comments.style";
+import { Project } from "@/types";
+import { requestLogin } from "@/fbase/auth";
 
 interface Props {
-    title: string;
-    ID: string;
+    title: Project["title"];
+    ID: Project["ID"];
 }
 
 export const AddCommentButton = (props: Props) => {

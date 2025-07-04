@@ -1,11 +1,11 @@
 import { useId } from "react";
-
-import { ChipsContainer } from "@/app/(main)/projects/styled";
-
 import Chip from "@mui/material/Chip";
 
+import { ChipsContainer } from "@/app/(main)/projects/styled";
+import { Project } from "@/types";
+
 interface Props {
-    features: string[];
+    features: Project["features"];
 }
 export function Features(props: Props) {
     const { features } = props;

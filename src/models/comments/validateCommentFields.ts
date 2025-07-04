@@ -1,4 +1,4 @@
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 import { ERROR_MESSAGES } from "./errorConstants";
 
 export const MAX_LENGTH = 500; // Maximum length for comment content
@@ -9,7 +9,7 @@ export const MAX_LENGTH = 500; // Maximum length for comment content
  * @param requireId - Whether ID field is required (for updates)
  * @throws {Error} - Throws error if required fields are missing
  */
-export function validateCommentFields(comment: CommentType & { ID?: string }, requireId: boolean = false) {
+export function validateCommentFields(comment: Comment & { ID?: string }, requireId: boolean = false) {
     const requiredFields = ["projectID", "content", "author", "authorEmail"];
     if (requireId) requiredFields.push("ID");
 

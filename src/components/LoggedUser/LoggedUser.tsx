@@ -6,7 +6,7 @@ import Gravatar from "react-gravatar";
 
 import { LogOut, Name, UserCard, gravatarStyle } from "./LoggedUser.style";
 import { useFirebaseAuth } from "@/contexts";
-import { requestLogout } from "@/fbase";
+import { requestLogout } from "@/fbase/auth";
 
 export default function LoggedUser() {
     const { user, isLogged } = useFirebaseAuth();

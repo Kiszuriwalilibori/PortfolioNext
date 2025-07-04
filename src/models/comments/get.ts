@@ -1,6 +1,6 @@
 import { getDocs, collection, query, where, getFirestore } from "firebase/firestore";
 import firebase_app from "@/fbase/config";
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 
 interface FetchError {
     message: string;
@@ -8,13 +8,13 @@ interface FetchError {
 }
 
 interface GetCommentsResult {
-    comments: CommentType[];
+    comments: Comment[];
     error: FetchError | null;
 }
 
 export async function get(projectID: string): Promise<GetCommentsResult> {
     const db = getFirestore(firebase_app);
-    let comments: CommentType[] = [];
+    let comments: Comment[] = [];
     let error: FetchError | null = null;
 
     try {
@@ -29,7 +29,7 @@ export async function get(projectID: string): Promise<GetCommentsResult> {
                 ({
                     ...doc.data(),
                     ID: doc.id,
-                } as CommentType)
+                } as Comment)
         );
     } catch (err) {
         const firebaseError = err as { code?: string; message: string };

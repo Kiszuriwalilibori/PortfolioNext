@@ -1,7 +1,8 @@
+import { Project } from "@/types";
 import { useId } from "react";
 
 interface Props {
-    longDescription: string[];
+    longDescription: Project["description"][];
 }
 export function Description(props: Props) {
     const ID = useId();

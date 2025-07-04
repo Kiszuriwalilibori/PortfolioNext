@@ -1,12 +1,11 @@
+import { Comment, Project } from "@/types";
+import { CommentsUtils } from "@/models/comments";
+import { ProjectComment } from "./ProjectComment";
 import { CommentsStack } from "./Comments.style";
 
-import { CommentType } from "@/types";
-import { Comment } from "./Comment";
-import { CommentsUtils } from "@/models/comments";
-
 interface Props {
-    projectID: string;
-    title: string;
+    projectID: Project["ID"];
+    title: Project["title"];
 }
 
 export default async function Comments({ projectID, title }: Props) {
@@ -32,8 +31,8 @@ export default async function Comments({ projectID, title }: Props) {
         <>
             <h2>Comments</h2>
             <CommentsStack spacing={1} id="comments-stack">
-                {sortedComments.map((comment: CommentType) => (
-                    <Comment comment={comment} key={comment.ID} projectID={projectID} projectTitle={title} />
+                {sortedComments.map((comment: Comment) => (
+                    <ProjectComment comment={comment} key={comment.ID} projectID={projectID} projectTitle={title} />
                 ))}
             </CommentsStack>
         </>

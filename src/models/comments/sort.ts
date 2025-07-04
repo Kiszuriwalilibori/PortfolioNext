@@ -1,6 +1,6 @@
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 
-export function sort<K extends keyof CommentType>(comments: CommentType[], field: K = "created" as K): CommentType[] {
+export function sort<K extends keyof Comment>(comments: Comment[], field: K = "created" as K): Comment[] {
     return [...comments].sort((a, b) => {
         const aValue = a[field];
         const bValue = b[field];

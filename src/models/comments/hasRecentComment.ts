@@ -1,4 +1,4 @@
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 import { Firestore, query, collection, where, getDocs } from "firebase/firestore";
 import { ERROR_MESSAGES } from "./errorConstants";
 
@@ -9,7 +9,7 @@ import { ERROR_MESSAGES } from "./errorConstants";
  * @returns {Promise<boolean>} - Returns true if a recent comment exists, false otherwise
  */
 const FLOOD_LIMIT = 60000; // 1 minute in milliseconds
-export async function hasRecentComment(db: Firestore, comment: CommentType): Promise<void> {
+export async function hasRecentComment(db: Firestore, comment: Comment): Promise<void> {
     const oneMinuteAgo = Date.now() - FLOOD_LIMIT;
     const userCommentsQuery = query(collection(db, "comments"), where("projectID", "==", comment.projectID), where("authorEmail", "==", comment.authorEmail));
     const userCommentsSnapshot = await getDocs(userCommentsQuery);

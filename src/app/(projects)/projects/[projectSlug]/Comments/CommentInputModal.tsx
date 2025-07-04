@@ -1,33 +1,30 @@
 "use client";
-
 import Button from "@mui/material/Button";
-
+import { getAuth } from "firebase/auth";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Modal from "@/components/modal";
 import Icons from "@icons";
-
-import { ModalProps } from "@/types";
-import { ButtonsStack, CharacterCounter, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
+import Modal from "@/components/modal";
 import { useComment, useMessage, useSpeech } from "@/hooks";
-import { validateAndSubmitComment } from "../AddComment/utils";
-import { getAuth } from "firebase/auth";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
+import { Comment, Project, ModalProps } from "@/types";
+import { validateAndSubmitComment } from "../AddComment/utils";
+import { ButtonsStack, CharacterCounter, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
 
 interface Props extends Omit<ModalProps, "title"> {
-    author: string;
-    project: string;
-    authorEmail: string;
-    ID: string;
-    initialComment?: string;
-    commentId?: string;
+    author: Comment["author"];
+    project: Project["title"];
+    authorEmail: Comment["authorEmail"];
+    ID: Project["ID"];
+    initialComment?: Comment["content"];
+    commentId?: Comment["ID"];
     isEditing?: boolean;
 
     onCommentAdded?: () => void;
 }
 
-const INITIAL_COMMENT = "" as string;
+const INITIAL_COMMENT = "" as Comment["content"];
 
 export const CommentInputModal = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false, onCommentAdded } = props;

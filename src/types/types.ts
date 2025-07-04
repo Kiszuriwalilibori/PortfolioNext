@@ -1,22 +1,52 @@
-// import { ModalProps } from "../components/modal/Modal";
 import { User as FirebaseUser } from "firebase/auth";
 import { VerticalTimelineElementProps } from "react-vertical-timeline-component";
 
-export interface SkillInfo {
-    skill: string;
-    level: string;
+// Basic types and primitives
+export type Feature = string;
+
+// User and Authentication types
+export interface AuthUser {
+    uid: string;
+    email: string;
+    displayName: string;
 }
+
+type Mutable<Type> = {
+    -readonly [Key in keyof Type]: Type[Key];
+};
+
+export type FirebaseUserSubset = {
+    [key in keyof Mutable<Pick<FirebaseUser, "uid" | "email" | "displayName">>]: string;
+};
+
+// Contact types
 export interface ContactType {
     ID: string;
     text: string;
     link: string;
     alias: string;
 }
+
+export type Contacts = ContactType[];
+
+// Skills types
+export interface SkillInfo {
+    skill: string;
+    level: string;
+}
+
+export type Skills = SkillInfo[];
+
+// Education types
 export interface EducationData {
     school: string;
     period: string;
     subject: string;
 }
+
+export type Education = EducationData[];
+
+// Certificate types
 export interface CertificateType {
     name: string;
     operator: string;
@@ -24,6 +54,7 @@ export interface CertificateType {
     isProfessional: boolean;
 }
 
+// Career types
 export interface CareerItem extends VerticalTimelineElementProps {
     period: string;
     name: string;
@@ -32,8 +63,8 @@ export interface CareerItem extends VerticalTimelineElementProps {
     subtitle?: string;
     description: string[];
 }
-export type Feature = string;
 
+// Project types
 export interface Project {
     ID: string;
     title: string;
@@ -48,20 +79,18 @@ export interface Project {
     slides?: string[];
 }
 
-export type Contacts = ContactType[];
-
-export type Skills = SkillInfo[];
-
-export type Education = EducationData[];
+export interface ProjectNav {
+    projectNext: string | undefined;
+    projectPrevious: string | undefined;
+}
 
 export interface ProjectsPageProps {
     data: Project[];
     featuresList: string[];
 }
 
-// export type { ModalProps };
-
-export interface CommentType {
+// Comment types
+export interface Comment {
     author: string;
     active?: boolean;
     content: string;
@@ -73,32 +102,7 @@ export interface CommentType {
     projectID: string;
 }
 
-export interface AuthUser {
-    uid: string;
-    email: string;
-    displayName: string;
-}
-
-export interface ProjectNav {
-    projectNext: string | undefined;
-    projectPrevious: string | undefined;
-}
-
-export interface ContactType {
-    ID: string;
-    text: string;
-    link: string;
-    alias: string;
-}
-
-// fbase user
-
-type Mutable<Type> = {
-    -readonly [Key in keyof Type]: Type[Key];
-};
-
-export type FirebaseUserSubset = { [key in keyof Mutable<Pick<FirebaseUser, "uid" | "email" | "displayName">>]: string };
-
+// UI Component types
 export interface ModalProps {
     isOpen: boolean;
     onClose: () => void;

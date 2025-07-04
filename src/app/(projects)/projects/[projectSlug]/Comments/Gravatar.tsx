@@ -1,10 +1,10 @@
 "use client";
 
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 import Gravatar from "react-gravatar";
 
 interface Props {
-    authorEmail: CommentType["authorEmail"] | undefined;
+    authorEmail: Comment["authorEmail"] | undefined;
 }
 
 export const CustomGravatar = (props: Props) => {

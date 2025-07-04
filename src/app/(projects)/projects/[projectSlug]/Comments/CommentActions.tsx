@@ -2,23 +2,20 @@
 
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
-
-import { useBoolean, useMessage } from "@/hooks";
-
-import { useFirebaseAuth } from "@/contexts";
-
-import { CommentInputModal } from "./CommentInputModal";
-import Icons from "@icons";
-import { CommentType } from "@/types";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
-
-import { Actions, EditButton, RemoveButton } from "./Comments.style";
 import { getAuth } from "firebase/auth";
 
+import { useBoolean, useMessage } from "@/hooks";
+import { useFirebaseAuth } from "@/contexts";
+import { Comment, Project } from "@/types";
+import Icons from "@icons";
+import { Actions, EditButton, RemoveButton } from "./Comments.style";
+import { CommentInputModal } from "./CommentInputModal";
+
 interface Props {
-    comment: CommentType;
-    projectID: string;
-    projectTitle: string;
+    comment: Comment;
+    projectID: Project["ID"];
+    projectTitle: Project["title"];
 }
 
 const CommentActions = ({ comment, projectID, projectTitle }: Props) => {

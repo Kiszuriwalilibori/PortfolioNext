@@ -1,16 +1,15 @@
 import moment from "moment";
-import Gravatar from "./Gravatar";
-import { CommentType } from "@/types";
-import { Author, CommentBox, CommentDivider, CommentPaper, CommentTypography, SummaryStack, When } from "./Comments.style";
 
+import { Comment, Project } from "@/types";
 import CommentActions from "./CommentActions";
-
+import Gravatar from "./Gravatar";
+import { Author, CommentBox, CommentDivider, CommentPaper, CommentTypography, SummaryStack, When } from "./Comments.style";
 interface Props {
-    comment: CommentType;
-    projectID: string;
-    projectTitle: string;
+    comment: Comment;
+    projectID: Project["ID"];
+    projectTitle: Project["title"];
 }
-export const Comment = (props: Props) => {
+export const ProjectComment = (props: Props) => {
     const { comment, projectID, projectTitle } = props;
 
     return (
@@ -31,4 +30,4 @@ export const Comment = (props: Props) => {
     );
 };
 
-export default Comment;
+export default ProjectComment;

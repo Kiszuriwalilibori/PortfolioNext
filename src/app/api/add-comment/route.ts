@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import firebase_app from "@/fbase/config";
-import { CommentType } from "@/types";
+import { Comment } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
 import { CommentsUtils } from "@/models/comments";
@@ -8,7 +8,7 @@ import { CommentsUtils } from "@/models/comments";
 export async function POST(request: NextRequest) {
     try {
         const decodedToken = await CommentsUtils.verifyUserToken(request);
-        const comment: CommentType = await request.json();
+        const comment: Comment = await request.json();
         CommentsUtils.validateCommentFields(comment, false);
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
         const db = getFirestore(firebase_app);
