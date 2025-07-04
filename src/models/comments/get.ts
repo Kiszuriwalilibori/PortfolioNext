@@ -1,5 +1,5 @@
-import { getDocs, collection, query, where, getFirestore } from "firebase/firestore";
-import firebase_app from "@/fbase/config";
+import { getDocs, collection, query, where /*, getFirestore*/ } from "firebase/firestore";
+import { /*firebase_app, */ db } from "@/fbase/config";
 import { Comment } from "@/types";
 
 interface FetchError {
@@ -13,16 +13,13 @@ interface GetCommentsResult {
 }
 
 export async function get(projectID: string): Promise<GetCommentsResult> {
-    const db = getFirestore(firebase_app);
+    // const db = getFirestore(firebase_app);
     let comments: Comment[] = [];
     let error: FetchError | null = null;
 
     try {
         const commentsQuery = query(collection(db, "comments"), where("projectID", "==", projectID));
         const querySnapshot = await getDocs(commentsQuery);
-        // if (querySnapshot.empty) {
-        //     return { comments: [], error: null }; // No comments found
-        // }
 
         comments = querySnapshot.docs.map(
             doc =>
