@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { deleteDoc, getFirestore } from "firebase/firestore";
+import { deleteDoc /*, getFirestore*/ } from "firebase/firestore";
 
-import firebase_app from "@/fbase/config";
+import { /*firebase_app,*/ db } from "@/fbase/config";
 import { CommentsUtils } from "@/models/comments";
 
 export async function DELETE(request: NextRequest) {
@@ -20,7 +20,7 @@ export async function DELETE(request: NextRequest) {
 
         const decodedToken = await CommentsUtils.verifyUserToken(request);
 
-        const db = getFirestore(firebase_app);
+        // const db = getFirestore(firebase_app);
 
         const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, commentId);
         const commentData = commentDoc.data();

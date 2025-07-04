@@ -1,5 +1,5 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import firebase_app from "@/fbase/config";
+import { addDoc, collection /*, getFirestore*/ } from "firebase/firestore";
+import { /*firebase_app, */ db } from "@/fbase/config";
 import { Comment } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
         const comment: Comment = await request.json();
         CommentsUtils.validateCommentFields(comment, false);
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
-        const db = getFirestore(firebase_app);
+        // const db = getFirestore(firebase_app);
         await CommentsUtils.hasRecentComment(db, comment);
 
         const docRef = await addDoc(collection(db, "comments"), {
