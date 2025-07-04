@@ -64,13 +64,6 @@
                 width: $page-container-mobile-width;
             }
 
-            // & h3 {
-            //     @extend .subtitle-3;
-            //     padding-bottom: $grid;
-            //     padding-top: $grid;
-            //     color: $red-color--subdued;
-            // }
-
             & h2 {
                 @extend .subtitle-4;
                 color: $red-color--subdued;

@@ -21,7 +21,6 @@ function mapFirebaseUserToAuthUser(user: FirebaseUserSubset): AuthUser {
     return authUser;
 }
 
-/// definicje powyżej nie są takie jak u mnie - nullowalne są. Na później
 export const FirebaseAuthContext = React.createContext({} as FirebaseAuthContextValue);
 
 export const useFirebaseAuth = () => React.useContext(FirebaseAuthContext);

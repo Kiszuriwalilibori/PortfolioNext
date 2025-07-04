@@ -2,7 +2,7 @@ import React, { forwardRef, Ref } from "react";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     className?: string;
-    type?: "button" | "submit" | "reset"; // Add type validation
+    type?: "button" | "submit" | "reset";
 };
 
 export const MyButton = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonElement> | undefined) => {

@@ -14,9 +14,8 @@ const useSpeech = (createComment: (text: string) => void): SpeechHook => {
     const [listening, setListening] = useState<boolean>(false);
     const showMessage = useMessage();
     const recognitionRef = useRef<SpeechRecognition | null>(null);
-    const isClient = typeof window !== "undefined"; // Check for client-side
+    const isClient = typeof window !== "undefined";
 
-    // Get SpeechRecognition
     const SpeechRecognition = isClient ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
 
     if (!SpeechRecognition) {
@@ -27,10 +26,9 @@ const useSpeech = (createComment: (text: string) => void): SpeechHook => {
         };
     }
 
-    // Initialize recognition only once
     if (!recognitionRef.current) {
         recognitionRef.current = new SpeechRecognition();
-        recognitionRef.current.lang = "pl-PL"; // Set to Polish
+        recognitionRef.current.lang = "pl-PL";
         recognitionRef.current.continuous = true;
         recognitionRef.current.interimResults = true;
 

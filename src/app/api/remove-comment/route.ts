@@ -20,11 +20,9 @@ export async function DELETE(request: NextRequest) {
 
         const decodedToken = await CommentsUtils.verifyUserToken(request);
 
-        // const db = getFirestore(firebase_app);
-
         const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, commentId);
         const commentData = commentDoc.data();
-        console.log(commentData, decodedToken.email);
+
         CommentsUtils.verifyCommentOwnership(commentData.authorEmail, decodedToken.email);
 
         await deleteDoc(commentRef);

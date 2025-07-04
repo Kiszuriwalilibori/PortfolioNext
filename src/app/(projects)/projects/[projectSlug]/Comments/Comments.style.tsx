@@ -5,7 +5,6 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { Box, Button, TextField, Typography } from "@mui/material";
-// import theme from "@/themes";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
 const COLOR_SUNNY_DARK = "#ffb800";

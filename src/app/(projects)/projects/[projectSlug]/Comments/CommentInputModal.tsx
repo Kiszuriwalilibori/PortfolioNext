@@ -153,4 +153,3 @@ export const CommentInputModal = (props: Props) => {
 };
 
 export default CommentInputModal;
-// Error: failed to update comment: Service account object must contain a string project_id

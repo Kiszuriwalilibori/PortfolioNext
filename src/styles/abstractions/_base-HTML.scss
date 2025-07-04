@@ -38,25 +38,7 @@ main {
     @extend full-screen !optional;
 }
 
-// @media (prefers-color-scheme: dark) {
-//     html {
-//         color-scheme: dark;
-//     }
-//     body {
-//         color: $text-color--light;
-//         background: black;
-//     }
-// }
-
 *:focus {
     outline: 2px ridge #036397;
     outline-offset: 1px;
 }
-
-// html,
-// body {
-//     padding: 0;
-//     margin: 0;
-//     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-//         Helvetica Neue, sans-serif;
-// }

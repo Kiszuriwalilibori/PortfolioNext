@@ -59,10 +59,6 @@ theme = createTheme(theme, {
                     borderRadius: "0",
                     boxShadow: theme.shadows[1],
                 },
-                // label: {
-                //     backgroundColor: theme.palette.primary.main,
-                //     color: theme.palette.common.white,
-                // },
             },
         },
     },

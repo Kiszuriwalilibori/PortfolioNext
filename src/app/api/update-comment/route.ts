@@ -12,8 +12,6 @@ export async function POST(request: NextRequest) {
         const decodedToken = await CommentsUtils.verifyUserToken(request);
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
 
-        // const db = getFirestore(firebase_app);
-
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, comment.ID);
         await updateDoc(commentRef, {

@@ -11,7 +11,6 @@ export async function POST(request: NextRequest) {
         const comment: Comment = await request.json();
         CommentsUtils.validateCommentFields(comment, false);
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
-        // const db = getFirestore(firebase_app);
         await CommentsUtils.hasRecentComment(db, comment);
 
         const docRef = await addDoc(collection(db, "comments"), {
