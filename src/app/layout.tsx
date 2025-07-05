@@ -21,7 +21,12 @@ export async function generateMetadata() {
     const headerList = headers();
     const pathName = (await headerList).get("x-current-path");
     const page = pathName && pathName.length ? pathName.slice(pathName.lastIndexOf("/") + 1, pathName.length) : "default";
-    return metadata[page as Pages];
+    return {
+        ...metadata[page as Pages],
+        verification: {
+            google: "cFu6GdRx-Aw37ldkxLM8oi8l8DqxVXEVswbcZPdsd3o",
+        },
+    };
 }
 
 export default function RootLayout({
