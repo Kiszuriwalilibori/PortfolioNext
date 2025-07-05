@@ -1,6 +1,6 @@
 import "./globals.css";
 import "@/styles/style.css";
-//test
+
 import { Navigation } from "@/components";
 import { MenuVisibilityContextProvider, FirebaseAuthContextProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
@@ -11,9 +11,9 @@ import { Noto_Sans } from "next/font/google";
 import theme from "@/themes/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import GoogleAnalytics from "@/components/Googleanalytics";
-import { GA_TRACKING_ID } from "@/lib/gtag";
-import Script from "next/script";
+// import GoogleAnalytics from "@/components/Googleanalytics";
+// import { GA_TRACKING_ID } from "@/lib/gtag";
+// import Script from "next/script";
 
 const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
@@ -40,7 +40,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             {/* Google Analytics */}
-            {GA_TRACKING_ID && (
+            {/* {GA_TRACKING_ID && (
                 <>
                     <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
                     <Script
@@ -58,7 +58,7 @@ export default function RootLayout({
                         }}
                     />
                 </>
-            )}
+            )} */}
             <AppRouterCacheProvider>
                 <ThemeProvider theme={theme}>
                     <FirebaseAuthContextProvider>
@@ -66,7 +66,7 @@ export default function RootLayout({
                             <div id="snackbar-container" style={{ position: "absolute", width: "100%", zIndex: 9999 }} />
                             <SnackbarProviderWrapper>
                                 <MenuVisibilityContextProvider>
-                                    <GoogleAnalytics />
+                                    {/* <GoogleAnalytics /> */}
                                     <LoggedUser />
                                     <Navigation />
                                 </MenuVisibilityContextProvider>
