@@ -4,7 +4,7 @@ export default function About() {
     return (
         <>
             <Head>
-                <link rel="preload" as="image" href="/mobile-backgrounds/aboutme.webp" />
+                <link rel="preload" as="image" href="/mobile-backgrounds/aboutme.webp" type="image/webp" />
             </Head>
             <section className="aboutme">
             <div className="leading-image-mobile leading-image-mobile--about" />
