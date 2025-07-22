@@ -1,6 +1,12 @@
+import Head from "next/head";
+
 export default function About() {
     return (
-        <section className="aboutme">
+        <>
+            <Head>
+                <link rel="preload" as="image" href="/mobile-backgrounds/aboutme.webp" />
+            </Head>
+            <section className="aboutme">
             <div className="leading-image-mobile leading-image-mobile--about" />
             <h1 className="sr-only">About me</h1>
             <div className="aboutme__content">
@@ -14,5 +20,6 @@ export default function About() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
