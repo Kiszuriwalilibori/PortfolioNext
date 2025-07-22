@@ -344,6 +344,54 @@ a {
   outline-offset: 1px;
 }
 
+.project-not-found-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-not-found-title {
+  color: #d3101c;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+article h1,
+aside h1,
+nav h1,
+section h1 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  color: inherit;
+}
+@media (max-width: 999px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 28px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 549px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
 .section, .contact, .projects, .jobs, .skills, .aboutme {
   position: fixed;
   top: 0;
@@ -700,6 +748,54 @@ a {
   background: url(/mobile-backgrounds/career.jpg) top right no-repeat;
   background: url(/mobile-backgrounds/career.webp) top right no-repeat;
   background-size: cover;
+}
+
+.project-not-found-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-not-found-title {
+  color: #d3101c;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+article h1,
+aside h1,
+nav h1,
+section h1 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  color: inherit;
+}
+@media (max-width: 999px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 28px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 549px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 }
 
 .btn {
@@ -1462,4 +1558,37 @@ a {
 }
 .privacy b {
   font-weight: 600;
+}
+
+article h1,
+aside h1,
+nav h1,
+section h1 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  color: inherit;
+}
+@media (max-width: 900px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 28px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 600px) {
+  article h1,
+  aside h1,
+  nav h1,
+  section h1 {
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 }

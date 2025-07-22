@@ -71,7 +71,11 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
 
     const project = ProjectUtils.getProjectBySlug(projects, projectSlug);
     if (!project) {
-        return <h1>Project not found</h1>;
+        return (
+            <div className="project-not-found-container">
+                <h1 className="project-not-found-title">Nie znaleziono projektu {projectSlug}.</h1>
+            </div>
+        );
     }
 
     return (
