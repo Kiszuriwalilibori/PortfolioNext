@@ -43,12 +43,19 @@ const SingleProject = ({ project }: { project: Project }) => {
                     <ButtonMore title={title} slug={slug} />
                 </div>
                 {slides && !isEmpty(slides) && (
-                    <div className="project__slides">
-                        {slides.map(slide => (
-                            <Image key={ProjectUtils.getSlideKey(ID, slide)} className="image" src={slide} alt={title} width={slideSize.width} height={slideSize.height} />
-                        ))}
-                    </div>
-                )}
+    <div className="project__slides">
+        {slides.map((slide, idx) => (
+            <Image
+                key={ProjectUtils.getSlideKey(ID, slide)}
+                className="image"
+                src={slide}
+                alt={`Screenshot of ${title} project - slide ${idx + 1}`}
+                width={slideSize.width}
+                height={slideSize.height}
+            />
+        ))}
+    </div>
+)}
             </article>
         </Paper>
     );

@@ -8,8 +8,8 @@ const NavigationToggler = () => {
 
     return (
         <ClickAwayListener onClickAway={hideMenu}>
-            <MyButton aria-label={isMenuVisible ? "Close navigation menu" : "Open navigation menu"} className="btn btn-normal btn-hamburger" onClick={toggleMenuVisibility}>
-                <Image src={`/icons/hamburger.svg`} alt={`web site navigation toggler`} width={30} height={30} />
+            <MyButton aria-label={isMenuVisible ? "Close navigation menu" : "Open navigation menu"} className="btn btn-normal btn-hamburger" onClick={toggleMenuVisibility} role="button" aria-pressed={isMenuVisible}>
+                <Image src={`/icons/hamburger.svg`} alt={isMenuVisible ? "Close navigation menu" : "Open navigation menu"} width={30} height={30} />
             </MyButton>
         </ClickAwayListener>
     );

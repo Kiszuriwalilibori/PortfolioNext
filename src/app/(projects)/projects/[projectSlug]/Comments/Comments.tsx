@@ -30,11 +30,13 @@ export default async function Comments({ projectID, title }: Props) {
     return (
         <>
             <h2>Comments</h2>
-            <CommentsStack spacing={1} id="comments-stack">
-                {sortedComments.map((comment: Comment) => (
-                    <ProjectComment comment={comment} key={comment.ID} projectID={projectID} projectTitle={title} />
-                ))}
-            </CommentsStack>
+            <CommentsStack spacing={1} id="comments-stack" role="list">
+    {sortedComments.map((comment: Comment) => (
+        <div role="listitem" key={comment.ID}>
+            <ProjectComment comment={comment} projectID={projectID} projectTitle={title} />
+        </div>
+    ))}
+</CommentsStack>
         </>
     );
 }

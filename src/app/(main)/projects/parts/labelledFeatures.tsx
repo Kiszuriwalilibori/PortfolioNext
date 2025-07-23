@@ -9,12 +9,12 @@ interface Props {
 export const LabelledFeatures = (props: Props) => {
     const { features, handleCheck } = props;
     return (
-        <>
-            {features.map((feature: string) => {
-                return <LabelledCheckbox key={feature} control={<Checkbox disableRipple={true} onChange={() => handleCheck(feature)} />} label={feature} />;
-            })}
-        </>
-    );
+    <div role="group" aria-label="Project features selection">
+        {features.map((feature: string) => {
+            return <LabelledCheckbox key={feature} control={<Checkbox disableRipple={true} onChange={() => handleCheck(feature)} />} label={feature} />;
+        })}
+    </div>
+);
 };
 
 export default LabelledFeatures;

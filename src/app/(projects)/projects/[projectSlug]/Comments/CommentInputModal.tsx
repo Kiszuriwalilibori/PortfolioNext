@@ -143,7 +143,12 @@ export const CommentInputModal = (props: Props) => {
                     <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button">
                         Clear
                     </Button>
-                    <MicrophoneButton sx={{ ...listeningMicrophoneSx(listening) }} className="with-tooltip" data-tooltip={"Switch microphone"} aria-label="Search by voice" disabled={!isSpeechRecognitionSupported} onClick={toggleListening}>
+                    <MicrophoneButton
+                        onClick={toggleListening}
+                        disabled={!isSpeechRecognitionSupported}
+                        sx={listeningMicrophoneSx(listening)}
+                        aria-label={listening ? "Stop voice input" : "Start voice input"}
+                    >
                         {Icons.microphone}
                     </MicrophoneButton>
                 </ButtonsStack>

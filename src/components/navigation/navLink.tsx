@@ -15,8 +15,8 @@ function NavLink(props: Props) {
 
     return (
         <li className="navbar__item">
-            <Link href={PageUtils.pageToHref(page)} rel="noopener" className={linkClassName} aria-label={`Navigate to ${page} page`} tabIndex={0} onClick={clickHandler}>
-                <Image src={PageUtils.pageToIconSrc(page)} alt={PageUtils.pageToImgAlt(page)} width={40} height={40} />
+            <Link href={PageUtils.pageToHref(page)} rel="noopener" className={linkClassName} aria-label={`Navigate to ${page} page`} tabIndex={0} onClick={clickHandler} role="menuitem">
+                <Image src={PageUtils.pageToIconSrc(page)} alt={`Navigate to ${page} page`} width={40} height={40} />
                 <span>{page}</span>
             </Link>
         </li>

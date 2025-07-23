@@ -7,13 +7,13 @@ export const Mobica = () => {
 
 const CareerIcons: { [key: string]: () => JSX.Element } = {
     PKT: () => {
-        return <Image src="/images/pkt.png" width={30} height={15} alt="pkt logo" className="self-centered"></Image>;
+        return <Image src="/images/pkt.png" width={30} height={15} alt="PKT company logo" className="self-centered" />;
     },
     Moonheads: () => {
-        return <Image src="/images/moonheads.png" width={25} height={25} alt="MoonHeads logo" className="self-centered"></Image>;
+        return <Image src="/images/moonheads.png" width={25} height={25} alt="MoonHeads company logo" className="self-centered" />;
     },
     They: () => {
-        return <Image src="/images/they.png" width={25} height={5} alt="Th-ey logo" className="self-centered"></Image>;
+        return <Image src="/images/they.png" width={25} height={5} alt="They company logo" className="self-centered" />;
     },
     Mobica: () => {
         return (

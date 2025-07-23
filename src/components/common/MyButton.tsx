@@ -6,10 +6,10 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export const MyButton = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonElement> | undefined) => {
-    const { children, className = "", type = "button", ...rest } = props;
+    const { children, className = "", type = "button", "aria-label": ariaLabel, ...rest } = props;
 
     return (
-        <button className={className} type={type} {...rest} ref={ref}>
+        <button className={className} type={type} {...rest} ref={ref} aria-label={ariaLabel}>
             {children}
         </button>
     );
