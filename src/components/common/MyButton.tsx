@@ -3,6 +3,7 @@ import React, { forwardRef, Ref } from "react";
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     className?: string;
     type?: "button" | "submit" | "reset";
+    "aria-label"?: string;
 };
 
 export const MyButton = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonElement> | undefined) => {
