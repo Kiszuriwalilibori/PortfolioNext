@@ -9,6 +9,13 @@ import PageTitle from "@/components/pageTitle";
 import { Company, Duties, Position, Project } from "./styled";
 
 function Career() {
+    if (!career || career.length === 0) {
+        return (
+            <div className="items-not-found-container">
+                <h1 className="items-not-found-title">Nie znaleziono historii zatrudnienia.</h1>
+            </div>
+        );
+    }
     const ID = useId();
 
     return (

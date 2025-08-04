@@ -342,14 +342,14 @@
     }
 }
 
-.project-not-found-container {
+.items-not-found-container {
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.project-not-found-title {
+.items-not-found-title {
     color: $red-color--vivid;
     font-size: 2.5rem;
     font-weight: 700;

@@ -30,9 +30,13 @@ export interface ContactType {
 export type Contacts = ContactType[];
 
 // Skills types
+
+export const SkillLevels = ["good", "fair", "basic"] as const;
+export type SkillLevel = (typeof SkillLevels)[number];
+
 export interface SkillInfo {
     skill: string;
-    level: string;
+    level: SkillLevel;
 }
 
 export type Skills = SkillInfo[];

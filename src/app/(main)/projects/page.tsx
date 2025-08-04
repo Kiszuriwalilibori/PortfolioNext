@@ -16,6 +16,13 @@ export default function Projects() {
     const features = ProjectUtils.getFeatures(projects);
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(features, data);
+    if (!visibleProjects || visibleProjects.length === 0) {
+        return (
+            <div className="items-not-found-container">
+                <h1 className="items-not-found-title">Nie znaleziono projektów</h1>
+            </div>
+        );
+    }
 
     const projectsCategoryA = ProjectUtils.filterByCategory([...visibleProjects], "A").sort(ProjectUtils.sortProjectsByTitle);
 
