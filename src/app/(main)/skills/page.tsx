@@ -1,15 +1,15 @@
 import Divider from "@mui/material/Divider";
+import React from "react";
 
 import { useId } from "react";
 
-import filterSkillsByLevel from "./utils/filterSkillsByLevel";
 import PageTitle from "@/components/pageTitle";
 
 import { SkillsByCategory, EducationItem, Certificate } from "./components";
 import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 import { education } from "@/data/education";
-import { SkillLevel, SkillLevels } from "@/types";
+import { SkillLevel } from "@/types";
 
 const headings: Record<SkillLevel, string> = {
     good: "I feel reasonably comfortable with:",
@@ -18,16 +18,13 @@ const headings: Record<SkillLevel, string> = {
 };
 
 export default function Skills() {
-    if (!skills || skills.length === 0) {
+    if (!skills) {
         return (
             <div className="items-not-found-container">
                 <h1 className="items-not-found-title">Nie znaleziono umiejętności</h1>
             </div>
         );
     }
-    const skillsGood = filterSkillsByLevel(skills, SkillLevels[0]); // "good"
-    const skillsFair = filterSkillsByLevel(skills, SkillLevels[1]); // "fair"
-    const skillsBasic = filterSkillsByLevel(skills, SkillLevels[2]); // "basic"
 
     const ID = useId();
 
@@ -39,11 +36,17 @@ export default function Skills() {
                     <PageTitle title="Skills & Education" />
                     <h2>Skills:</h2>
                     <Divider sx={{ width: 1 }} />
-                    {skillsGood && skillsGood.length && <SkillsByCategory skillsSelectedByCategory={skillsGood} heading={headings.good} />}
-                    <Divider sx={{ width: 1 }} />
-                    {skillsFair && skillsFair.length && <SkillsByCategory skillsSelectedByCategory={skillsFair} heading={headings.fair} />}
-                    <Divider sx={{ width: 1 }} />
-                    {skillsBasic && skillsBasic.length && <SkillsByCategory skillsSelectedByCategory={skillsBasic} heading={headings.basic} />}
+                    {Object.entries(skills).map(([level, skillsByLevel], index) => (
+                        <React.Fragment key={level}>
+                            <SkillsByCategory
+                                skillsSelectedByCategory={skillsByLevel as string[]}
+                                heading={headings[level as SkillLevel]}
+                            />
+                            {index < Object.entries(skills).length - 1 && (
+                                <Divider sx={{ width: 1 }} />
+                            )}
+                        </React.Fragment>
+                    ))}
                     <Divider sx={{ width: 1 }} />
                     <h2>Education:</h2>
                     <ul className="education">
