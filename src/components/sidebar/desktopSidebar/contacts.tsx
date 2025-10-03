@@ -9,7 +9,7 @@ export const Contacts = () => {
     return (
         <div className="sidebar__contacts">
             {CONTACTS.map((contact: ContactType) => (
-                <a key={`${ID}-${contact.ID}`} href={contact.link} aria-label={IconLabels[contact.ID]}>
+                <a key={`${ID}-${contact.ID}`} href={contact.link} aria-label={IconLabels[contact.ID]} role="listitem">
                     {Icons[contact.ID]}
                 </a>
             ))}
