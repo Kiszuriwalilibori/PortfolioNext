@@ -112,8 +112,8 @@ export const CommentInputModal = (props: Props) => {
 
     return (
         <Modal
-            title={isEditing ? "Edit Comment" : "Comment"}
-            subtitle={isEditing ? "Update your comment below:" : "Type your comments in form below:"}
+            title={isEditing ? "Edit Comment" : "Add aComment"}
+            subtitle={"Your feedback is valuable and helps improve the content"}
             isOpen={isOpen}
             onClose={onClose}
             content={
@@ -137,11 +137,11 @@ export const CommentInputModal = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" spacing={2} id="Buttons stack">
-                    <Button disabled={comment === initialComment || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button">
-                        {isEditing ? "Update" : "Accept"}
+                    <Button disabled={comment === initialComment || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button" aria-label={isEditing ? "Save changes to comment" : "Post comment"}>
+                        {isEditing ? "Save" : "Post"}
                     </Button>
-                    <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button">
-                        Clear
+                    <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button"aria-label="Cancel and close comment dialog">
+                        Cancel
                     </Button>
                     <MicrophoneButton
                         onClick={toggleListening}

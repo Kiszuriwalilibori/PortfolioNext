@@ -11,6 +11,7 @@ export default function About() {
             <h1 className="sr-only">About me</h1>
             <div className="aboutme__content">
                 <div className="wrapper">
+                    <h2 className="sr-only">Introduction</h2>
                     <p> I am front-end developer in love with React and its ecosystem.</p>
                     <p>I used to learn front-end on my own from web resources, however quite recently earned a degree as an IT Technician and completed one of CISCO courses.</p>
                     <p>Currently, do make my living by doing small freelance orders.I am available for hire and open to any ideas of cooperation.</p>

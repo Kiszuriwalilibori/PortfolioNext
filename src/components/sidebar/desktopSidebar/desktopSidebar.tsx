@@ -8,7 +8,7 @@ const DesktopSidebar = () => {
     test();
 
     return (
-        <aside className="sidebar" aria-label="Author information and contact links" role="complementary">
+        <aside className="sidebar" aria-label="Author information and contact links">
             <div className="author" aria-label="information about site author">
                 <Image className="image" src="/images/author.webp" alt="Portrait of Piotr Maksymiuk, author of this site" width={500} height={500} priority={true} />
                 <Typography variant="sidebarName">Piotr Maksymiuk</Typography>
