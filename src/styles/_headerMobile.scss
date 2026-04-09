@@ -5,6 +5,9 @@
     @include block-fixed(top, left);
     @include size(100vw, $header-mobile-height);
     color: $text-color--light;
+    background: url(/backgrounds/skills.jpg) 100% 0 no-repeat;
+    background-size: auto;
+    background-size: cover;
     &__contacts {
         @include center(horizontal);
         display: flex;

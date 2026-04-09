@@ -488,8 +488,6 @@ section h1 {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
   width: 130px;
   height: 130px;
-  border-radius: 50%;
-  opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .author-base-image, .header-mobile .image, .sidebar .image {
@@ -502,6 +500,10 @@ section h1 {
     width: 150px;
     height: 150px;
   }
+}
+.author-base-image, .header-mobile .image, .sidebar .image {
+  border-radius: 50%;
+  opacity: 1;
 }
 
 .fa-icon, .contact__content .container dl dd svg, .header-mobile__contacts svg, .sidebar__contacts svg {
@@ -712,17 +714,19 @@ section h1 {
 
 .leading-image-mobile {
   display: block;
+}
+@media (min-width: 768px) {
+  .leading-image-mobile {
+    display: none;
+  }
+}
+.leading-image-mobile {
   position: relative;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 300px;
-}
-@media (min-width: 768px) {
-  .leading-image-mobile {
-    display: none;
-  }
 }
 .leading-image-mobile--contact {
   background: url(/mobile-backgrounds/contact.jpg) top right no-repeat;
@@ -882,6 +886,19 @@ section h1 {
 
 .sidebar {
   display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
+}
+@media (min-width: 1500px) {
+  .sidebar {
+    max-width: 375px;
+    margin-left: calc((100vw - 1500px) / 2);
+  }
+}
+.sidebar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -896,17 +913,6 @@ section h1 {
   color: #fff;
   text-align: left;
   background-color: rgba(145, 13, 13, 0.8);
-}
-@media (min-width: 768px) {
-  .sidebar {
-    display: flex;
-  }
-}
-@media (min-width: 1500px) {
-  .sidebar {
-    max-width: 375px;
-    margin-left: calc((100vw - 1500px) / 2);
-  }
 }
 .sidebar .author {
   text-align: center;
@@ -946,6 +952,9 @@ section h1 {
   width: 100vw;
   height: 300px;
   color: #ffffff;
+  background: url(/backgrounds/skills.jpg) 100% 0 no-repeat;
+  background-size: auto;
+  background-size: cover;
 }
 .header-mobile__contacts {
   position: absolute;
@@ -1276,12 +1285,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--firebase .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--firebase .project-screen {
+  background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
 }
 .single-project .top-section--portfolionext {
   background-color: #3f51b5;
@@ -1294,12 +1305,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--portfolionext .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--portfolionext .project-screen {
+  background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
 }
 .single-project .top-section--unsplash {
   background-color: #546e7a;
@@ -1312,12 +1325,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--unsplash .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--unsplash .project-screen {
+  background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
 }
 .single-project .top-section--athletes {
   background-color: #1076ab;
@@ -1330,12 +1345,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--athletes .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--athletes .project-screen {
+  background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
 }
 .single-project .top-section--chat {
   background-color: #00796b;
@@ -1348,12 +1365,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--chat .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--chat .project-screen {
+  background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
 }
 .single-project .top-section--cryptocurrency-tracker {
   background-color: #ab221d;
@@ -1366,12 +1385,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--cryptocurrency-tracker .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--cryptocurrency-tracker .project-screen {
+  background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
 }
 .single-project .top-section--minifigs {
   background-color: #1f2136;
@@ -1384,12 +1405,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--minifigs .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--minifigs .project-screen {
+  background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
 }
 .single-project .top-section--space-portfolio {
   background-color: #063851;
@@ -1402,12 +1425,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--space-portfolio .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--space-portfolio .project-screen {
+  background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
 }
 .single-project .top-section--floydian-portfolio {
   background-color: #1d424b;
@@ -1420,12 +1445,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--floydian-portfolio .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--floydian-portfolio .project-screen {
+  background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
 }
 .single-project .top-section--dancer-portfolio {
   background-color: #d81b60;
@@ -1438,12 +1465,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--dancer-portfolio .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--dancer-portfolio .project-screen {
+  background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
 }
 .single-project .top-section--physioterapy {
   background-color: #6071c3;
@@ -1456,12 +1485,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--physioterapy .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--physioterapy .project-screen {
+  background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
 }
 .single-project .top-section--weather-forecast {
   background-color: #0077d1;
@@ -1474,12 +1505,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--weather-forecast .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--weather-forecast .project-screen {
+  background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
 }
 .single-project .top-section--google-books-finder {
   background-color: #117f8d;
@@ -1492,12 +1525,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--google-books-finder .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--google-books-finder .project-screen {
+  background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
 }
 .single-project .top-section--decision-tree {
   background-color: #3f51b5;
@@ -1510,12 +1545,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--decision-tree .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--decision-tree .project-screen {
+  background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
 }
 .single-project .top-section--youtube-player {
   background-color: #27817b;
@@ -1528,12 +1565,14 @@ section h1 {
   left: 0;
   right: 0;
   height: 100%;
-  background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
 }
 @media (max-width: 767px) {
   .single-project .top-section--youtube-player .project-screen {
     background-size: contain !important;
   }
+}
+.single-project .top-section--youtube-player .project-screen {
+  background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
 }
 
 .privacy {
