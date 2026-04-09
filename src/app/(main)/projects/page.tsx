@@ -16,6 +16,8 @@ export default function Projects() {
     const features = ProjectUtils.getFeatures(projects);
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(features, data);
+    const ID = useId();
+
     if (!visibleProjects || visibleProjects.length === 0) {
         return (
             <div className="items-not-found-container">
@@ -28,7 +30,6 @@ export default function Projects() {
 
     const projectsCategoryB = ProjectUtils.filterByCategory([...visibleProjects], "B").sort(ProjectUtils.sortProjectsByTitle);
 
-    const ID = useId();
     return (
         <section className="projects" id="Projects Page Content">
             <div className="projects__content">

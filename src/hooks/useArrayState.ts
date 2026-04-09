@@ -5,18 +5,27 @@ import { useCallback, useState } from "react";
 export const useSwitchableArrayState = <T>() => {
     const [items, setItems] = useState([] as T[]);
 
-    const handleSwitch = useCallback(
-        (item: T) => {
-            const temp = [...items];
-            if (temp.includes(item)) {
-                temp.splice(temp.indexOf(item), 1);
-            } else {
-                temp.push(item);
+    const handleSwitch = useCallback((item: T) => {
+        setItems(prev => {
+            if (prev.includes(item)) {
+                return prev.filter(i => i !== item);
             }
-            setItems(temp);
-        },
-        [items]
-    );
+            return [...prev, item];
+        });
+    }, []);
+
+    // const handleSwitch = useCallback(
+    //     (item: T) => {
+    //         const temp = [...items];
+    //         if (temp.includes(item)) {
+    //             temp.splice(temp.indexOf(item), 1);
+    //         } else {
+    //             temp.push(item);
+    //         }
+    //         setItems(temp);
+    //     },
+    //     [items]
+    // );
     return { handleSwitch, items };
 };
 
