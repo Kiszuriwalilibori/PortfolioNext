@@ -2,6 +2,25 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
     {
+        ID: "0",
+        title: "Cookbook",
+        slug: "cookbook",
+        description: "A kind of culinary recipes page or blog",
+        story: "Cooking is my hobby. I do it on daily basis for 2-3 persons, and decided to share some of my best experience with the world. Initially I used to make notes in my cahier. Some later had it in Excell file.And later, when Excel hit a wall, I relied on my front-end experience. Cooking is unimaginable fun. But writing about cooking is the Himalayas.",
+        longDescription: [
+            " That is my second job with Next.js and the Vercel hosting platform, first with Sanity, and greatest one developed so far",
+            " It is coded with 15.x Next.js version and React 19 version",
+            " Users can browse recipes and filter them with the following criterias:name, kitchen (in a sense of geografic origin), products, labels, and dietary issues",
+            " Users are also welcome to leave comments, which are validated agains abusive content with PERSPECTIVE",
+            " Registered (Google account requested) users have more options - for example, are authorised to leave private notes an mark as favorite",
+        ],
+        live: "https://cook-book-inky.vercel.app/",
+        github: "https://github.com/Kiszuriwalilibori/CookBook",
+        features: ["react", "material-ui", "next", "SSR", "typescript", "Sanity", "GoogleOAuth"],
+        category: "A",
+        slides: ["/images/project_images/cookbook1.jpg", "/images/project_images/cookbook2.jpg"],
+    },
+    {
         ID: "1",
         title: "PortfolioNext",
         slug: "portfolio-next",

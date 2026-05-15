@@ -112,7 +112,7 @@ export const CommentInputModal = (props: Props) => {
 
     return (
         <Modal
-            title={isEditing ? "Edit Comment" : "Add aComment"}
+            title={isEditing ? "Edit Comment" : "Add a Comment"}
             subtitle={"Your feedback is valuable and helps improve the content"}
             isOpen={isOpen}
             onClose={onClose}
@@ -137,18 +137,20 @@ export const CommentInputModal = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" spacing={2} id="Buttons stack">
-                    <Button disabled={comment === initialComment || isSubmitting} color="success" variant="contained" onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)} id="accept-button" aria-label={isEditing ? "Save changes to comment" : "Post comment"}>
+                    <Button
+                        disabled={comment === initialComment || isSubmitting}
+                        color="success"
+                        variant="contained"
+                        onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)}
+                        id="accept-button"
+                        aria-label={isEditing ? "Save changes to comment" : "Post comment"}
+                    >
                         {isEditing ? "Save" : "Post"}
                     </Button>
-                    <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button"aria-label="Cancel and close comment dialog">
+                    <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button" aria-label="Cancel and close comment dialog">
                         Cancel
                     </Button>
-                    <MicrophoneButton
-                        onClick={toggleListening}
-                        disabled={!isSpeechRecognitionSupported}
-                        sx={listeningMicrophoneSx(listening)}
-                        aria-label={listening ? "Stop voice input" : "Start voice input"}
-                    >
+                    <MicrophoneButton onClick={toggleListening} disabled={!isSpeechRecognitionSupported} sx={listeningMicrophoneSx(listening)} aria-label={listening ? "Stop voice input" : "Start voice input"}>
                         {Icons.microphone}
                     </MicrophoneButton>
                 </ButtonsStack>

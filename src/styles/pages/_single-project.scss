@@ -89,6 +89,13 @@
                 background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
             }
         }
+        &--cookbook {
+            background-color: $cookbook-background-color;
+            & .project-screen {
+                @include project-screen;
+                background: url("/images/project_images_with_device/cookbook.png") no-repeat bottom;
+            }
+        }
         &--space-portfolio {
             background-color: $space-portfolio-background-color;
             & .project-screen {

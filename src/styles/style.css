@@ -1414,6 +1414,26 @@ section h1 {
 .single-project .top-section--minifigs .project-screen {
   background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
 }
+.single-project .top-section--cookbook {
+  background-color: #117f8d;
+}
+.single-project .top-section--cookbook .project-screen {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .single-project .top-section--cookbook .project-screen {
+    background-size: contain !important;
+  }
+}
+.single-project .top-section--cookbook .project-screen {
+  background: url("/images/project_images_with_device/cookbook.png") no-repeat bottom;
+}
 .single-project .top-section--space-portfolio {
   background-color: #063851;
 }
