@@ -1,7 +1,7 @@
 import "./globals.css";
 import "@/styles/style.css";
 
-import { Navigation } from "@/components";
+import Navigation from "@/components/navigation/Navigation";
 import { MenuVisibilityContextProvider, FirebaseAuthContextProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
 
