@@ -30,16 +30,24 @@ export default function Navigation() {
         });
     }, [isMenuVisible]);
 
-    const closeMenu = () => {
+    // const closeMenu = () => {
+    //     hideMenu();
+    //     togglerRef.current?.focus();
+    // };
+
+    const closeMenu = (returnFocus = false) => {
         hideMenu();
-        togglerRef.current?.focus();
+
+        if (returnFocus) {
+            togglerRef.current?.focus();
+        }
     };
     useEffect(() => {
         if (!isMenuVisible) return;
 
         const handleEscape = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
-                closeMenu();
+                closeMenu(true);
             }
         };
 
@@ -51,7 +59,7 @@ export default function Navigation() {
     }, [isMenuVisible]);
 
     return (
-        <ClickAwayListener onClickAway={closeMenu}>
+        <ClickAwayListener onClickAway={() => closeMenu()}>
             <Box>
                 <NavigationToggler ref={togglerRef} />
                 <Fade in={isMenuVisible} unmountOnExit>
