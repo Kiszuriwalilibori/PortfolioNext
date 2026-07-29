@@ -51,6 +51,11 @@
             margin: 0;
             padding: 0;
         }
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         & svg {
             @extend .fa-icon, .fa-icon--large, .fa-icon--light, .fa-icon--loose-group;
         }

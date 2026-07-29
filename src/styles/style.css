@@ -860,6 +860,11 @@ section h1 {
   margin: 0;
   padding: 0;
 }
+.sidebar__contacts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .header {
   z-index: 100;
   position: relative;
@@ -890,6 +895,13 @@ section h1 {
 .header-mobile__contacts li {
   margin: 0;
   padding: 0;
+}
+.header-mobile__contacts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
 }
 .header-mobile .description {
   position: relative;

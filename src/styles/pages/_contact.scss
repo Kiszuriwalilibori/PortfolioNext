@@ -42,6 +42,7 @@
                     & svg {
                         @extend .fa-icon, .fa-icon--red;
                     }
+
                     & a span {
                         padding-left: 6px;
                         &:hover {

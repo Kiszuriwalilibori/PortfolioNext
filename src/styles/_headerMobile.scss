@@ -17,6 +17,13 @@
             margin: 0;
             padding: 0;
         }
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
+        }
         & svg {
             @extend .fa-icon, .fa-icon--red, .fa-icon--big, .fa-icon--loose-group;
         }
