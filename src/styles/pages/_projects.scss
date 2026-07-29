@@ -35,7 +35,7 @@
                 }
                 @include mobile {
                     flex-direction: column;
-                    padding-bottom: 90px;
+                    // padding-bottom: 90px;
                 }
 
                 &__slides {
@@ -52,6 +52,7 @@
                     @include mobile {
                         width: 100%;
                         padding: unset;
+                        padding-top: 10px;
                     }
                 }
             }

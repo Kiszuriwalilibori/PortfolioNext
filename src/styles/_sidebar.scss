@@ -46,6 +46,11 @@
         display: flex;
         justify-content: center;
         padding: 10px;
+        list-style: none;
+        & li {
+            margin: 0;
+            padding: 0;
+        }
         & svg {
             @extend .fa-icon, .fa-icon--large, .fa-icon--light, .fa-icon--loose-group;
         }

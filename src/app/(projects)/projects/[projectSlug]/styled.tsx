@@ -3,7 +3,7 @@
 import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+// import CardMedia from "@mui/material/CardMedia";
 import theme from "@/themes";
 import { AccordionSummary, Box, Button, Stack, styled } from "@mui/material";
 
@@ -49,15 +49,6 @@ export const UserCard = styled(Card)(({ theme }) => ({
     border: "1px solid",
     cursor: "default !important",
     zIndex: "3000",
-}));
-
-export const Media = styled(CardMedia)(({ theme }) => ({
-    height: 60,
-    width: 60,
-    margin: "12px auto 0 auto",
-    backgroundSize: "contain",
-    color: theme.palette.primary.main,
-    // backgroundColor: "#1f9a73",
 }));
 
 export const NextButton = styled(Button)(({ theme }) => ({

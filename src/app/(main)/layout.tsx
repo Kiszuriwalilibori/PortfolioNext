@@ -11,7 +11,9 @@ export default function Layout({
     return (
         <ViewportProvider>
             <DesktopSidebarWrapper mobileSidebar={<MobileSidebar />} desktopSidebar={<DesktopSidebar />} />
-            <main id="main-content" tabIndex={-1}>{children}</main>
+            <main id="main-content" tabIndex={-1}>
+                {children}
+            </main>
         </ViewportProvider>
     );
 }

@@ -854,6 +854,11 @@ section h1 {
   display: flex;
   justify-content: center;
   padding: 10px;
+  list-style: none;
+}
+.sidebar__contacts li {
+  margin: 0;
+  padding: 0;
 }
 .header {
   z-index: 100;
@@ -880,6 +885,11 @@ section h1 {
   left: 50%;
   display: flex;
   bottom: 10px;
+  list-style: none;
+}
+.header-mobile__contacts li {
+  margin: 0;
+  padding: 0;
 }
 .header-mobile .description {
   position: relative;
@@ -1050,7 +1060,6 @@ section h1 {
 @media (max-width: 767px) {
   .projects__content .container .project {
     flex-direction: column;
-    padding-bottom: 90px;
   }
 }
 .projects__content .container .project__slides {
@@ -1071,6 +1080,7 @@ section h1 {
   .projects__content .container .project .image {
     width: 100%;
     padding: unset;
+    padding-top: 10px;
   }
 }
 @media (min-width: 768px) {
