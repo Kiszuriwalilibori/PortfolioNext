@@ -2,7 +2,7 @@
 import Button from "@mui/material/Button";
 import { getAuth } from "firebase/auth";
 import { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useSWRConfig } from "swr";
 
 import Icons from "@icons";
 import Modal from "@/components/modal";
@@ -31,9 +31,9 @@ export const CommentInputModal = (props: Props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
-    const router = useRouter();
 
     const showMessage = useMessage();
+    const { mutate } = useSWRConfig();
 
     const handleError = useCallback(
         (message: string) => {
@@ -89,20 +89,16 @@ export const CommentInputModal = (props: Props) => {
                 throw new Error(error || `Failed to ${isEditing ? "update" : "submit"} comment`);
             }
 
-            if (onCommentAdded) {
-                onCommentAdded();
-            }
-
+            await mutate(`/api/comments?projectID=${ID}`);
             handleSuccess();
             clearComment();
             onClose();
-            router.refresh();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         } finally {
             setIsSubmitting(false);
         }
-    }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId, router]);
+    }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
 
     useEffect(() => {
         if (isSubmitting) {

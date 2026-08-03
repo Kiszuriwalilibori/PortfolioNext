@@ -78,6 +78,8 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         );
     }
 
+    console.log("project page renders");
+
     return (
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
