@@ -1,7 +1,7 @@
 "use client";
 import Button from "@mui/material/Button";
 import { getAuth } from "firebase/auth";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useSWRConfig } from "swr";
 
 import Icons from "@icons";
@@ -11,6 +11,7 @@ import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 import { Comment, Project, ModalProps } from "@/types";
 import { validateAndSubmitComment } from "../AddComment/utils";
 import { ButtonsStack, CharacterCounter, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
+import LoadingIndicator from "@/components/LoadingIndicator";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: Comment["author"];
@@ -100,11 +101,11 @@ export const CommentInputModal = (props: Props) => {
         }
     }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
 
-    useEffect(() => {
-        if (isSubmitting) {
-            showMessage.info(isEditing ? "Updating your comment..." : "Submitting your comment...");
-        }
-    }, [isSubmitting, showMessage, isEditing]);
+    // useEffect(() => {
+    //     if (isSubmitting) {
+    //         showMessage.info(isEditing ? "Updating your comment..." : "Submitting your comment...");
+    //     }
+    // }, [isSubmitting, showMessage, isEditing]);
 
     return (
         <Modal
@@ -129,6 +130,7 @@ export const CommentInputModal = (props: Props) => {
                     <CharacterCounter>
                         {comment.length}/{MAX_LENGTH}
                     </CharacterCounter>
+                    {isSubmitting && <LoadingIndicator open centeredInParent prompt={isEditing ? "Updating..." : "Posting..."} size={80} />}
                 </>
             }
             actions={
