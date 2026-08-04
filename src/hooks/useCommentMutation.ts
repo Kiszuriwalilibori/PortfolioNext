@@ -58,9 +58,50 @@ export function useCommentMutation({ projectID, isEditing = false, commentId }: 
         },
         [commentId, isEditing, isSubmitting, mutate, projectID]
     );
+    const removeComment = useCallback(
+        async (commentId: Comment["ID"]) => {
+            if (isSubmitting) {
+                throw new Error("Comment is already being submitted");
+            }
+
+            setIsSubmitting(true);
+
+            try {
+                const auth = getAuth();
+                const token = await auth.currentUser?.getIdToken();
+
+                if (!token) {
+                    throw new Error("Failed to obtain authentication token");
+                }
+
+                const response = await fetch("/api/comments", {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({
+                        projectID,
+                        commentId,
+                    }),
+                });
+
+                if (!response.ok) {
+                    const { error } = await response.json();
+                    throw new Error(error || "Failed to remove comment");
+                }
+
+                await mutate(`/api/comments?projectID=${projectID}`);
+            } finally {
+                setIsSubmitting(false);
+            }
+        },
+        [isSubmitting, mutate, projectID]
+    );
 
     return {
         submitComment,
+        removeComment,
         isSubmitting,
     };
 }

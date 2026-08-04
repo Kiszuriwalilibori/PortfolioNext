@@ -18,7 +18,7 @@ export const projects: Project[] = [
         github: "https://github.com/Kiszuriwalilibori/CookBook",
         features: ["react", "material-ui", "next", "SSR", "typescript", "Sanity", "GoogleOAuth"],
         category: "A",
-        slides: ["/images/project_images/cookbook1.jpg", "/images/project_images/cookbook2.jpg"],
+        slides: ["/images/project_images/cookbook1.jpg", "/images/project_images/cookbook2.png"],
     },
     {
         ID: "1",
