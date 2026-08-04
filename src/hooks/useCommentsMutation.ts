@@ -12,11 +12,24 @@ interface Params {
     commentId?: Comment["ID"];
 }
 
-export function useCommentMutation({ projectID, isEditing = false, commentId }: Params) {
+export function useCommentsMutation({ projectID, isEditing = false, commentId }: Params) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { mutate } = useSWRConfig();
 
-    const submitComment = useCallback(
+    const getAuthorizationHeaders = useCallback(async () => {
+        const token = await getAuth().currentUser?.getIdToken();
+
+        if (!token) {
+            throw new Error("Failed to obtain authentication token");
+        }
+
+        return {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        };
+    }, []);
+
+    const saveComment = useCallback(
         async (commentData: Omit<Comment, "ID"> & { ID?: Comment["ID"] }) => {
             if (isSubmitting) {
                 throw new Error("Comment is already being submitted");
@@ -25,19 +38,20 @@ export function useCommentMutation({ projectID, isEditing = false, commentId }: 
             setIsSubmitting(true);
 
             try {
-                const auth = getAuth();
-                const token = await auth.currentUser?.getIdToken();
+                // const auth = getAuth();
+                // const token = await auth.currentUser?.getIdToken();
 
-                if (!token) {
-                    throw new Error("Failed to obtain authentication token");
-                }
+                // if (!token) {
+                //     throw new Error("Failed to obtain authentication token");
+                // }
 
                 const response = await fetch("/api/comments", {
                     method: isEditing ? "PATCH" : "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
+                    // headers: {
+                    //     "Content-Type": "application/json",
+                    //     Authorization: `Bearer ${token}`,
+                    // },
+                    headers: await getAuthorizationHeaders(),
                     body: JSON.stringify({
                         ...commentData,
                         ...(isEditing && commentId ? { ID: commentId } : {}),
@@ -58,7 +72,7 @@ export function useCommentMutation({ projectID, isEditing = false, commentId }: 
         },
         [commentId, isEditing, isSubmitting, mutate, projectID]
     );
-    const removeComment = useCallback(
+    const deleteComment = useCallback(
         async (commentId: Comment["ID"]) => {
             if (isSubmitting) {
                 throw new Error("Comment is already being submitted");
@@ -67,19 +81,9 @@ export function useCommentMutation({ projectID, isEditing = false, commentId }: 
             setIsSubmitting(true);
 
             try {
-                const auth = getAuth();
-                const token = await auth.currentUser?.getIdToken();
-
-                if (!token) {
-                    throw new Error("Failed to obtain authentication token");
-                }
-
                 const response = await fetch("/api/comments", {
                     method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
+                    headers: await getAuthorizationHeaders(),
                     body: JSON.stringify({
                         projectID,
                         commentId,
@@ -100,8 +104,8 @@ export function useCommentMutation({ projectID, isEditing = false, commentId }: 
     );
 
     return {
-        submitComment,
-        removeComment,
+        saveComment,
+        deleteComment,
         isSubmitting,
     };
 }

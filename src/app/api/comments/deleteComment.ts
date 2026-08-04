@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/fbase/config";
 import { CommentsUtils } from "@/models/comments";
 
-export async function removeComment(request: NextRequest) {
+export async function deleteComment(request: NextRequest) {
     try {
         const body = await request.json().catch(() => null);
 

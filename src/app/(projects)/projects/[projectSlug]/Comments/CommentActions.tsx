@@ -3,14 +3,14 @@
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
-import { useCommentMutation } from "@/hooks/useCommentMutation";
+import { useCommentsMutation } from "@/hooks/useCommentsMutation";
 
 import { useBoolean, useMessage } from "@/hooks";
 import { useFirebaseAuth } from "@/contexts";
 import { Comment, Project } from "@/types";
 import Icons from "@icons";
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
-import { CommentInputModal } from "./CommentInputModal";
+import { CommentEditorDialog } from "./CommentEditorDialog";
 import LoadingIndicator from "@/components/LoadingIndicator";
 
 interface Props {
@@ -25,7 +25,7 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
     const [isConfirmOpen, openConfirm, closeConfirm] = useBoolean(false);
     const router = useRouter();
     const showMessage = useMessage();
-    const { removeComment, isSubmitting } = useCommentMutation({
+    const { deleteComment, isSubmitting } = useCommentsMutation({
         projectID,
     });
 
@@ -82,13 +82,13 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
     // }, [comment, projectID, handleSuccess, handleError, isRemoving, showMessage]);
     const handleConfirmRemove = useCallback(async () => {
         try {
-            await removeComment(comment.ID);
+            await deleteComment(comment.ID);
 
             handleSuccess();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
-    }, [comment.ID, removeComment, handleSuccess, handleError]);
+    }, [comment.ID, deleteComment, handleSuccess, handleError]);
     if (!isCommentAuthorLoggedIn) {
         return <Actions />;
     }
@@ -101,7 +101,7 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
             <EditButton id="edit-button" aria-label="edit comment" onClick={handleEditComment}>
                 {Icons.edit}
             </EditButton>
-            {isModalOpen && user && <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={comment.author} authorEmail={comment.authorEmail} project={projectTitle} ID={projectID} initialComment={comment.content} commentId={comment.ID} isEditing={true} />}
+            {isModalOpen && user && <CommentEditorDialog isOpen={isModalOpen} onClose={closeModal} author={comment.author} authorEmail={comment.authorEmail} project={projectTitle} ID={projectID} initialComment={comment.content} commentId={comment.ID} isEditing={true} />}
             {isCommentAuthorLoggedIn && (
                 <Dialog open={isConfirmOpen} onClose={closeConfirm} aria-labelledby="confirm-delete-dialog-title" aria-describedby="confirm-delete-dialog-description" disableScrollLock>
                     <DialogTitle id="confirm-delete-dialog-title">Confirm Delete</DialogTitle>

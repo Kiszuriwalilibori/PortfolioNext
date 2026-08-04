@@ -2,7 +2,7 @@
 import { useCallback } from "react";
 import { useBoolean, useMessage } from "@/hooks";
 import { useFirebaseAuth } from "@/contexts";
-import { CommentInputModal } from "./CommentInputModal";
+import { CommentEditorDialog } from "./CommentEditorDialog";
 import { CommentsButton } from "./Comments.style";
 import { Project } from "@/types";
 import { requestLogin } from "@/fbase/auth";
@@ -34,7 +34,7 @@ export const AddCommentButton = (props: Props) => {
             <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="add-comment-button" aria-label="Leave a comment on the project">
                 Leave a comment
             </CommentsButton>
-            {isModalOpen && user && <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} />}
+            {isModalOpen && user && <CommentEditorDialog isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} />}
         </>
     );
 };

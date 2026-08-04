@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 import Icons from "@icons";
 import Modal from "@/components/modal";
-import { useCommentMutation } from "@/hooks/useCommentMutation";
+import { useCommentsMutation } from "@/hooks/useCommentsMutation";
 import { useComment, useMessage, useSpeech } from "@/hooks";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 import { Comment, Project, ModalProps } from "@/types";
@@ -25,12 +25,12 @@ interface Props extends Omit<ModalProps, "title"> {
 
 const INITIAL_COMMENT = "" as Comment["content"];
 
-export const CommentInputModal = (props: Props) => {
+export const CommentEditorDialog = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false } = props;
 
     const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
-    const { submitComment, isSubmitting } = useCommentMutation({
+    const { saveComment, isSubmitting } = useCommentsMutation({
         projectID: ID,
         isEditing,
         commentId,
@@ -52,7 +52,7 @@ export const CommentInputModal = (props: Props) => {
     const handleInvalidComment = useCallback(() => {
         showMessage.warning("Your comment was not published due to potentially toxic or abusive content.");
     }, [showMessage]);
-    const sendComment = useCallback(async () => {
+    const handleSaveComment = useCallback(async () => {
         if (!comment.trim()) {
             handleError("Comment cannot be empty");
             return;
@@ -69,7 +69,7 @@ export const CommentInputModal = (props: Props) => {
         };
 
         try {
-            await submitComment(commentData);
+            await saveComment(commentData);
 
             handleSuccess();
             clearComment();
@@ -77,9 +77,8 @@ export const CommentInputModal = (props: Props) => {
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
-    }, [comment, author, authorEmail, project, ID, submitComment, clearComment, onClose, handleError, handleSuccess]);
+    }, [comment, author, authorEmail, project, ID, saveComment, clearComment, onClose, handleError, handleSuccess]);
 
-    // const sendComment = useCallback(async () => {
     //     if (!comment.trim()) {
     //         handleError("Comment cannot be empty");
     //         return;
@@ -162,7 +161,7 @@ export const CommentInputModal = (props: Props) => {
                         disabled={comment === initialComment || isSubmitting}
                         color="success"
                         variant="contained"
-                        onClick={() => validateAndSubmitComment(comment, sendComment, handleInvalidComment, showMessage)}
+                        onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)}
                         id="accept-button"
                         aria-label={isEditing ? "Save changes to comment" : "Post comment"}
                     >
@@ -180,4 +179,4 @@ export const CommentInputModal = (props: Props) => {
     );
 };
 
-export default CommentInputModal;
+export default CommentEditorDialog;
