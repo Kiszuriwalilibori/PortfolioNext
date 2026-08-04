@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { CommentsUtils } from "@/models/comments";
+import addComment from "./addComment";
+import { updateComment } from "./updateComment";
+import { removeComment } from "./removeComment";
 
 export async function GET(request: NextRequest) {
     const projectID = request.nextUrl.searchParams.get("projectID");
@@ -16,4 +19,13 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(comments);
+}
+export async function POST(request: NextRequest) {
+    return addComment(request);
+}
+export async function PATCH(request: NextRequest) {
+    return updateComment(request);
+}
+export async function DELETE(request: NextRequest) {
+    return removeComment(request);
 }

@@ -35,7 +35,7 @@ export default function Comments({ projectID, title }: Props) {
     }
 
     if (showLoading) {
-        return <LoadingIndicator prompt="Loading comments..." />;
+        return <LoadingIndicator prompt="Loading comments..." size={80} />;
     }
 
     if (isLoading) {

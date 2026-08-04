@@ -1,19 +1,22 @@
-import { updateDoc /*, getFirestore*/ } from "firebase/firestore";
-import { /*firebase_app,*/ db } from "@/fbase/config";
+import { updateDoc } from "firebase/firestore";
+import { db } from "@/fbase/config";
 import { Comment } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
 import { CommentsUtils } from "@/models/comments";
 
-export async function POST(request: NextRequest) {
+export async function updateComment(request: NextRequest) {
     try {
         const comment: Comment & { ID: string } = await request.json();
+
         CommentsUtils.validateCommentFields(comment, true);
+
         const decodedToken = await CommentsUtils.verifyUserToken(request);
+
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, comment.ID);
+        const { commentRef } = await CommentsUtils.getCommentRefAndDoc(db, comment.ID);
+
         await updateDoc(commentRef, {
             content: comment.content,
         });

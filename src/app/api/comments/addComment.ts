@@ -1,21 +1,30 @@
-import { addDoc, collection /*, getFirestore*/ } from "firebase/firestore";
-import { /*firebase_app, */ db } from "@/fbase/config";
-import { Comment } from "@/types";
+import { addDoc, collection } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
+import { db } from "@/fbase/config";
+import { Comment } from "@/types";
 import { CommentsUtils } from "@/models/comments";
 
-export async function POST(request: NextRequest) {
+export async function addComment(request: NextRequest) {
     try {
         console.log("ADD COMMENT START");
+
         const decodedToken = await CommentsUtils.verifyUserToken(request);
+
         console.log("TOKEN OK", decodedToken.uid);
+
         const comment: Comment = await request.json();
+
         console.log("COMMENT BODY", comment);
+
         CommentsUtils.validateCommentFields(comment, false);
+
         CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
+
         await CommentsUtils.hasRecentComment(db, comment);
+
         console.log("decoded", decodedToken.uid);
+
         const docRef = await addDoc(collection(db, "comments"), {
             author: comment.author,
             active: comment.active,
@@ -36,3 +45,4 @@ export async function POST(request: NextRequest) {
         return CommentsUtils.handleApiError(error);
     }
 }
+export default addComment;

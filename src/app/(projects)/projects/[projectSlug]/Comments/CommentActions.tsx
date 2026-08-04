@@ -11,6 +11,8 @@ import { Comment, Project } from "@/types";
 import Icons from "@icons";
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
 import { CommentInputModal } from "./CommentInputModal";
+import { useSWRConfig } from "swr";
+import LoadingIndicator from "@/components/LoadingIndicator";
 
 interface Props {
     comment: Comment;
@@ -25,6 +27,8 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
     const [isConfirmOpen, openConfirm, closeConfirm] = useBoolean(false);
     const router = useRouter();
     const showMessage = useMessage();
+    const { mutate } = useSWRConfig();
+
     const isCommentAuthorLoggedIn = isLogged && user && user.email === comment.authorEmail;
 
     const handleError = useCallback(
@@ -38,7 +42,6 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
 
     const handleSuccess = useCallback(() => {
         showMessage.success("Your comment has been removed");
-        router.refresh();
         setIsRemoving(false);
         closeConfirm();
     }, [showMessage, router, closeConfirm]);
@@ -58,14 +61,13 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
     const handleConfirmRemove = useCallback(async () => {
         if (isRemoving) return;
         setIsRemoving(true);
-        showMessage.info("Removing comment...");
         try {
             const auth = getAuth();
             const token = await auth.currentUser?.getIdToken();
             if (!token) {
                 throw new Error("Failed to obtain authentication token");
             }
-            const response = await fetch(`/api/remove-comment`, {
+            const response = await fetch(`/api/comments`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                 body: JSON.stringify({ projectID, commentId: comment.ID }),
@@ -75,10 +77,12 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
                 const { error } = await response.json();
                 throw new Error(error || "Failed to remove comment");
             }
-
+            await mutate(`/api/comments?projectID=${projectID}`);
             handleSuccess();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
+        } finally {
+            setIsRemoving(false);
         }
     }, [comment, projectID, handleSuccess, handleError, isRemoving, showMessage]);
 
@@ -108,8 +112,9 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
                             Cancel
                         </Button>
                         <Button onClick={handleConfirmRemove} color="error" variant="contained" disabled={isRemoving}>
-                            {isRemoving ? "Deleting..." : "Delete"}
+                            Delete
                         </Button>
+                        {isRemoving && <LoadingIndicator open centeredInParent prompt="Deleting..." size={70} />}
                     </DialogActions>
                 </Dialog>
             )}

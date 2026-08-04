@@ -78,9 +78,10 @@ export const CommentInputModal = (props: Props) => {
             if (!token) {
                 throw new Error("Failed to obtain authentication token");
             }
-            const endpoint = isEditing ? "/api/update-comment" : "/api/add-comment";
+            const endpoint = "/api/comments";
+
             const response = await fetch(endpoint, {
-                method: "POST",
+                method: isEditing ? "PATCH" : "POST",
                 headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
                 body: JSON.stringify(commentData),
             });
@@ -100,12 +101,6 @@ export const CommentInputModal = (props: Props) => {
             setIsSubmitting(false);
         }
     }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
-
-    // useEffect(() => {
-    //     if (isSubmitting) {
-    //         showMessage.info(isEditing ? "Updating your comment..." : "Submitting your comment...");
-    //     }
-    // }, [isSubmitting, showMessage, isEditing]);
 
     return (
         <Modal
