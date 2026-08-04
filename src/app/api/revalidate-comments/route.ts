@@ -23,3 +23,4 @@
 //     }
 // }
 // prawdopodobnie niepotrzebne
+export {};
