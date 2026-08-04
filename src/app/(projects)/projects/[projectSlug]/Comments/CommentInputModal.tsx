@@ -1,11 +1,11 @@
 "use client";
 import Button from "@mui/material/Button";
-import { getAuth } from "firebase/auth";
-import { useCallback, useState } from "react";
-import { useSWRConfig } from "swr";
+
+import { useCallback } from "react";
 
 import Icons from "@icons";
 import Modal from "@/components/modal";
+import { useCommentMutation } from "@/hooks/useCommentMutation";
 import { useComment, useMessage, useSpeech } from "@/hooks";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 import { Comment, Project, ModalProps } from "@/types";
@@ -21,20 +21,22 @@ interface Props extends Omit<ModalProps, "title"> {
     initialComment?: Comment["content"];
     commentId?: Comment["ID"];
     isEditing?: boolean;
-
-    onCommentAdded?: () => void;
 }
 
 const INITIAL_COMMENT = "" as Comment["content"];
 
 export const CommentInputModal = (props: Props) => {
-    const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false, onCommentAdded } = props;
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false } = props;
+
     const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
+    const { submitComment, isSubmitting } = useCommentMutation({
+        projectID: ID,
+        isEditing,
+        commentId,
+    });
 
     const showMessage = useMessage();
-    const { mutate } = useSWRConfig();
 
     const handleError = useCallback(
         (message: string) => {
@@ -50,17 +52,11 @@ export const CommentInputModal = (props: Props) => {
     const handleInvalidComment = useCallback(() => {
         showMessage.warning("Your comment was not published due to potentially toxic or abusive content.");
     }, [showMessage]);
-
     const sendComment = useCallback(async () => {
         if (!comment.trim()) {
             handleError("Comment cannot be empty");
             return;
         }
-        if (isSubmitting) {
-            handleError("Comment is already being submitted");
-            return;
-        }
-        setIsSubmitting(true);
 
         const commentData = {
             author,
@@ -70,37 +66,69 @@ export const CommentInputModal = (props: Props) => {
             project,
             projectID: ID,
             created: Date.now(),
-            ...(isEditing && commentId ? { ID: commentId } : {}),
         };
+
         try {
-            const auth = getAuth();
-            const token = await auth.currentUser?.getIdToken();
-            if (!token) {
-                throw new Error("Failed to obtain authentication token");
-            }
-            const endpoint = "/api/comments";
+            await submitComment(commentData);
 
-            const response = await fetch(endpoint, {
-                method: isEditing ? "PATCH" : "POST",
-                headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-                body: JSON.stringify(commentData),
-            });
-
-            if (!response.ok) {
-                const { error } = await response.json();
-                throw new Error(error || `Failed to ${isEditing ? "update" : "submit"} comment`);
-            }
-
-            await mutate(`/api/comments?projectID=${ID}`);
             handleSuccess();
             clearComment();
             onClose();
         } catch (error) {
             handleError(error instanceof Error ? error.message : "Unknown error");
-        } finally {
-            setIsSubmitting(false);
         }
-    }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
+    }, [comment, author, authorEmail, project, ID, submitComment, clearComment, onClose, handleError, handleSuccess]);
+
+    // const sendComment = useCallback(async () => {
+    //     if (!comment.trim()) {
+    //         handleError("Comment cannot be empty");
+    //         return;
+    //     }
+    //     if (isSubmitting) {
+    //         handleError("Comment is already being submitted");
+    //         return;
+    //     }
+    //     setIsSubmitting(true);
+
+    //     const commentData = {
+    //         author,
+    //         active: true,
+    //         content: comment,
+    //         authorEmail,
+    //         project,
+    //         projectID: ID,
+    //         created: Date.now(),
+    //         ...(isEditing && commentId ? { ID: commentId } : {}),
+    //     };
+    //     try {
+    //         const auth = getAuth();
+    //         const token = await auth.currentUser?.getIdToken();
+    //         if (!token) {
+    //             throw new Error("Failed to obtain authentication token");
+    //         }
+    //         const endpoint = "/api/comments";
+
+    //         const response = await fetch(endpoint, {
+    //             method: isEditing ? "PATCH" : "POST",
+    //             headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+    //             body: JSON.stringify(commentData),
+    //         });
+
+    //         if (!response.ok) {
+    //             const { error } = await response.json();
+    //             throw new Error(error || `Failed to ${isEditing ? "update" : "submit"} comment`);
+    //         }
+
+    //         await mutate(`/api/comments?projectID=${ID}`);
+    //         handleSuccess();
+    //         clearComment();
+    //         onClose();
+    //     } catch (error) {
+    //         handleError(error instanceof Error ? error.message : "Unknown error");
+    //     } finally {
+    //         setIsSubmitting(false);
+    //     }
+    // }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
 
     return (
         <Modal

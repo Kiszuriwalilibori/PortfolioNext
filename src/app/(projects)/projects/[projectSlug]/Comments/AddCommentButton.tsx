@@ -29,16 +29,12 @@ export const AddCommentButton = (props: Props) => {
         }
     }, [isLogged, user, openModal, showMessage]);
 
-    const handleCommentAdded = useCallback(() => {
-        closeModal();
-    }, [closeModal]);
-
     return (
         <>
             <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="add-comment-button" aria-label="Leave a comment on the project">
                 Leave a comment
             </CommentsButton>
-            {isModalOpen && user && <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} onCommentAdded={handleCommentAdded} />}
+            {isModalOpen && user && <CommentInputModal isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} />}
         </>
     );
 };
