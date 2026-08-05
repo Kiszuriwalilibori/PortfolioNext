@@ -124,3 +124,5 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
 };
 
 export default CommentActions;
+
+// todo cancel powinien też wychodzić z modala z zamknięciem

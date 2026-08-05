@@ -6,7 +6,8 @@ import { hasRecentComment } from "./hasRecentComment";
 import { revalidateProjectPath } from "./revalidateProjectPath";
 import { sort } from "./sort";
 import { validateCommentFields } from "./validateCommentFields";
+import { verifyCommentOwnershipByUid } from "./verifyCommentOwnerhipByUid";
 import { verifyCommentOwnership } from "./verifyCommentOwnership";
 import { verifyUserToken } from "./verifyUserToken";
 
-export const CommentsUtils = { sort, get, getCommentRefAndDoc, ERROR_MESSAGES, hasRecentComment, handleApiError, verifyUserToken, revalidateProjectPath, validateCommentFields, verifyCommentOwnership };
+export const CommentsUtils = { verifyCommentOwnershipByUid, sort, get, getCommentRefAndDoc, ERROR_MESSAGES, hasRecentComment, handleApiError, verifyUserToken, revalidateProjectPath, validateCommentFields, verifyCommentOwnership };

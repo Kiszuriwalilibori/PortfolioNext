@@ -1,4 +1,5 @@
-import { addDoc, collection } from "firebase/firestore";
+// import { addDoc, collection } from "firebase/firestore";
+import { adminDb } from "@/fbase/admin";
 import { NextRequest, NextResponse } from "next/server";
 
 import { db } from "@/fbase/config";
@@ -24,13 +25,14 @@ export async function addComment(request: NextRequest) {
         await CommentsUtils.hasRecentComment(db, comment);
 
         console.log("decoded", decodedToken.uid);
-
-        const docRef = await addDoc(collection(db, "comments"), {
+        const docRef = await adminDb.collection("comments").add({
+            // const docRef = await addDoc(collection(db, "comments"), {
             author: comment.author,
             active: comment.active,
             content: comment.content,
             created: Date.now(),
-            authorEmail: comment.authorEmail,
+            authorEmail: decodedToken.email,
+            // authorEmail: comment.authorEmail,
             userId: decodedToken.uid,
             project: comment.project,
             projectID: comment.projectID,

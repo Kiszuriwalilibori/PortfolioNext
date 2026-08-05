@@ -1,5 +1,6 @@
-import { updateDoc } from "firebase/firestore";
-import { db } from "@/fbase/config";
+// import { updateDoc } from "firebase/firestore";
+// import { db } from "@/fbase/config";
+import { adminDb } from "@/fbase/admin";
 import { Comment } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -13,11 +14,23 @@ export async function updateComment(request: NextRequest) {
 
         const decodedToken = await CommentsUtils.verifyUserToken(request);
 
-        CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
+        // CommentsUtils.verifyCommentOwnership(comment.authorEmail, decodedToken.email);
 
-        const { commentRef } = await CommentsUtils.getCommentRefAndDoc(db, comment.ID);
+        // const { commentRef } = await CommentsUtils.getCommentRefAndDoc(db, comment.ID);
 
-        await updateDoc(commentRef, {
+        // await updateDoc(commentRef, {
+        //     content: comment.content,
+        // });
+
+        const commentRef = adminDb.collection("comments").doc(comment.ID);
+
+        const commentDoc = await commentRef.get();
+
+        if (!commentDoc.exists) {
+            throw new Error("Comment not found");
+        }
+        CommentsUtils.verifyCommentOwnershipByUid(commentDoc.data()?.userId, decodedToken.uid);
+        await commentRef.update({
             content: comment.content,
         });
 
