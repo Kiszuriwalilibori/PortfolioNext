@@ -43,3 +43,5 @@ export async function DELETE(request: NextRequest) {
 // Jeżeli chcesz jeszcze podnieść bezpieczeństwo Firebase, rozważyłbym w przyszłości Firebase App Check.
 
 // On pozwala ograniczyć korzystanie z usług Firebase do rzeczywiście uruchomionej aplikacji (np. przez reCAPTCHA Enterprise lub inne mechanizmy atestacji). Nie zastępuje autoryzacji, ale utrudnia nadużycia.
+
+// todo get nigdy nie jest używane a więc i przetestowane nie było

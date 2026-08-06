@@ -30,18 +30,28 @@ export const FirebaseAuthContextProvider: FC<{ children: ReactNode }> = ({ child
     const [isAuthenticated, setIsAuthenticatedTrue, setIsAuthenticatedFalse] = useBoolean(false);
 
     React.useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, user => {
-            if (user) {
-                setAuthUser(mapFirebaseUserToAuthUser(user as FirebaseUserSubset));
-                setIsAuthenticatedTrue();
-            } else {
+        const unsubscribe = onAuthStateChanged(
+            auth,
+            user => {
+                if (user) {
+                    setAuthUser(mapFirebaseUserToAuthUser(user as FirebaseUserSubset));
+                    setIsAuthenticatedTrue();
+                } else {
+                    setAuthUser(INITIAL_USER_STATE);
+                    setIsAuthenticatedFalse();
+                }
+            },
+            error => {
+                console.error("Firebase auth listener error:", error);
+
                 setAuthUser(INITIAL_USER_STATE);
                 setIsAuthenticatedFalse();
             }
-        });
+        );
 
-        return () => unsubscribe();
-    }, []);
-
+        return unsubscribe;
+    }, [setIsAuthenticatedTrue, setIsAuthenticatedFalse]);
     return <FirebaseAuthContext.Provider value={{ user: authUser, isLogged: isAuthenticated }}>{children}</FirebaseAuthContext.Provider>;
 };
+
+//todo ten błąd trzeba jakoś skkonsumować, prawda?

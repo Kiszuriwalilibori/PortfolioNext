@@ -11,7 +11,7 @@ describe("useDelayedCondition", () => {
     });
 
     afterEach(() => {
-        jest.runOnlyPendingTimers();
+        jest.clearAllTimers();
         jest.useRealTimers();
     });
 
