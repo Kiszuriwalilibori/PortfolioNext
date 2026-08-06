@@ -1,5 +1,9 @@
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
+export function isValidGaId(id: string | undefined): id is string {
+    return typeof id === "string" && /^G-[A-Z0-9]+$|^UA-\d+-\d+$|^GTM-[A-Z0-9]+$/.test(id);
+}
+
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
     if (typeof window !== "undefined" && GA_TRACKING_ID) {

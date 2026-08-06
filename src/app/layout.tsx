@@ -11,9 +11,9 @@ import { Noto_Sans } from "next/font/google";
 import theme from "@/themes/theme";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import GoogleAnalytics from "@/components/Googleanalytics";
-import { GA_TRACKING_ID } from "@/lib/gtag";
-import Script from "next/script";
+
+import { isValidGaId } from "@/lib/gtag";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
@@ -37,28 +37,10 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const gaId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+    const validId = isValidGaId(gaId) ? gaId : undefined;
     return (
         <html lang="en">
-            {/* Google Analytics */}
-            {GA_TRACKING_ID && (
-                <>
-                    <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-                    <Script
-                        id="google-analytics"
-                        strategy="afterInteractive"
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                                   window.dataLayer = window.dataLayer || [];
-                                   function gtag(){dataLayer.push(arguments);}
-                                   gtag('js', new Date());
-                                   gtag('config', '${GA_TRACKING_ID}', {
-                                       page_path: window.location.pathname,
-                                   });
-                               `,
-                        }}
-                    />
-                </>
-            )}
             <AppRouterCacheProvider>
                 <ThemeProvider theme={theme}>
                     <FirebaseAuthContextProvider>
@@ -66,12 +48,12 @@ export default function RootLayout({
                             <div id="snackbar-container" style={{ position: "absolute", width: "100%", zIndex: 9999 }} />
                             <SnackbarProviderWrapper>
                                 <MenuVisibilityContextProvider>
-                                    <GoogleAnalytics />
                                     <LoggedUser />
                                     <Navigation />
                                 </MenuVisibilityContextProvider>
                                 {children}
                             </SnackbarProviderWrapper>
+                            {gaId && validId && <GoogleAnalytics gaId={gaId} />}
                         </body>
                     </FirebaseAuthContextProvider>
                 </ThemeProvider>
@@ -79,13 +61,3 @@ export default function RootLayout({
         </html>
     );
 }
-
-// <!-- Google tag (gtag.js) -->
-// <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ENPV4XS95"></script>
-// <script>
-//   window.dataLayer = window.dataLayer || [];
-//   function gtag(){dataLayer.push(arguments);}
-//   gtag('js', new Date());
-
-//   gtag('config', 'G-6ENPV4XS95');
-// </script>
