@@ -21,7 +21,7 @@ export const SingleProjectInformationsColumn = styled(Box)(({ theme }) => ({
     flexBasis: 0,
     padding: theme.spacing(1.25),
     "&>h2": { paddingBottom: theme.spacing(1) },
-    "& svg": {
+    "& .project-link svg": {
         display: "inline-block",
         height: "1em",
         overflow: "visible",

@@ -11,11 +11,11 @@ export const Links = (props: Props) => {
     return (
         <>
             <h2>Links</h2>
-            <a href={live} style={{ display: "block" }} rel="noopener">
+            <a href={live} style={{ display: "block" }} rel="noopener" className="project-link">
                 {Icons.live}
                 <Typography variant="singleProjectLink">See project live</Typography>
             </a>
-            <a href={github} style={{ display: "block" }} rel="noopener">
+            <a href={github} style={{ display: "block" }} rel="noopener" className="project-link">
                 {Icons.github}
                 <Typography variant="singleProjectLink">Go to GitHub repository</Typography>
             </a>
