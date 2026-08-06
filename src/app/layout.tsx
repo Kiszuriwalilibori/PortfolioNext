@@ -27,7 +27,7 @@ export async function generateMetadata() {
     return {
         ...metadata[page as Pages],
         verification: {
-            google: "cFu6GdRx-Aw37ldkxLM8oi8l8DqxVXEVswbcZPdsd3o",
+            google: process.env.GOOGLE_VERIFICATION_TOKEN,
         },
     };
 }
