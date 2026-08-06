@@ -1,5 +1,4 @@
-import { getDocs, collection, query, where /*, getFirestore*/ } from "firebase/firestore";
-import { /*firebase_app, */ db } from "@/fbase/config";
+import { adminDb } from "@/fbase/admin";
 import { Comment } from "@/types";
 
 interface FetchError {
@@ -17,8 +16,7 @@ export async function get(projectID: string): Promise<GetCommentsResult> {
     let error: FetchError | null = null;
 
     try {
-        const commentsQuery = query(collection(db, "comments"), where("projectID", "==", projectID));
-        const querySnapshot = await getDocs(commentsQuery);
+        const querySnapshot = await adminDb.collection("comments").where("projectID", "==", projectID).get();
 
         comments = querySnapshot.docs.map(
             doc =>
@@ -29,6 +27,7 @@ export async function get(projectID: string): Promise<GetCommentsResult> {
         );
     } catch (err) {
         const firebaseError = err as { code?: string; message: string };
+
         error = {
             message: firebaseError.message || `Failed to fetch comments for project ${projectID}`,
             code: firebaseError.code,

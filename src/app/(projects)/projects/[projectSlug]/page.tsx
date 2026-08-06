@@ -78,8 +78,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         );
     }
 
-    console.log("project page renders");
-
     return (
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
@@ -88,7 +86,6 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
                     <AddCommentButton ID={project.ID} title={project.title} />
-
                     <Comments projectID={project.ID} title={project.title} />
                 </SingleProjectInformationsColumn>
 
