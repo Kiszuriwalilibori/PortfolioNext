@@ -29,8 +29,7 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
         projectID,
     });
 
-    const isCommentAuthorLoggedIn = isLogged && user && user.email === comment.authorEmail;
-
+    const isCommentAuthorLoggedIn = isLogged && user && user.uid === comment.userId;
     const handleError = useCallback(
         (message: string) => {
             showMessage.error("Error: " + message);
@@ -53,33 +52,6 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
         openConfirm();
     }, [openConfirm]);
 
-    // const handleConfirmRemove = useCallback(async () => {
-    //     if (isRemoving) return;
-    //     setIsRemoving(true);
-    //     try {
-    //         const auth = getAuth();
-    //         const token = await auth.currentUser?.getIdToken();
-    //         if (!token) {
-    //             throw new Error("Failed to obtain authentication token");
-    //         }
-    //         const response = await fetch(`/api/comments`, {
-    //             method: "DELETE",
-    //             headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-    //             body: JSON.stringify({ projectID, commentId: comment.ID }),
-    //         });
-
-    //         if (!response.ok) {
-    //             const { error } = await response.json();
-    //             throw new Error(error || "Failed to remove comment");
-    //         }
-    //         await mutate(`/api/comments?projectID=${projectID}`);
-    //         handleSuccess();
-    //     } catch (error) {
-    //         handleError(error instanceof Error ? error.message : "Unknown error");
-    //     } finally {
-    //         setIsRemoving(false);
-    //     }
-    // }, [comment, projectID, handleSuccess, handleError, isRemoving, showMessage]);
     const handleConfirmRemove = useCallback(async () => {
         try {
             await deleteComment(comment.ID);

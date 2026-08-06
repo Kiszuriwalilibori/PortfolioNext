@@ -1,7 +1,4 @@
-// import { deleteDoc } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
-
-// import { db } from "@/fbase/config";
 import { adminDb } from "@/fbase/admin";
 import { CommentsUtils } from "@/models/comments";
 
@@ -25,14 +22,6 @@ export async function deleteComment(request: NextRequest) {
         }
 
         const decodedToken = await CommentsUtils.verifyUserToken(request);
-
-        // const { commentRef, commentDoc } = await CommentsUtils.getCommentRefAndDoc(db, commentId);
-
-        // const commentData = commentDoc.data();
-
-        // CommentsUtils.verifyCommentOwnership(commentData.authorEmail, decodedToken.email);
-
-        // await deleteDoc(commentRef);
 
         const commentRef = adminDb.collection("comments").doc(commentId);
 

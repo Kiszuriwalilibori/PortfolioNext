@@ -99,6 +99,7 @@ export interface Comment {
     parent?: string;
     authorEmail: string;
     projectID: string;
+    userId?: string;
 }
 
 // UI Component types
@@ -110,3 +111,5 @@ export interface ModalProps {
     actions?: React.ReactNode;
     content?: React.ReactNode;
 }
+
+// todo userId?: string;tak musi być póki są starek komentarze bez tego pola. Potem wywalić

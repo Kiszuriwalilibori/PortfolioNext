@@ -38,19 +38,8 @@ export function useCommentsMutation({ projectID, isEditing = false, commentId }:
             setIsSubmitting(true);
 
             try {
-                // const auth = getAuth();
-                // const token = await auth.currentUser?.getIdToken();
-
-                // if (!token) {
-                //     throw new Error("Failed to obtain authentication token");
-                // }
-
                 const response = await fetch("/api/comments", {
                     method: isEditing ? "PATCH" : "POST",
-                    // headers: {
-                    //     "Content-Type": "application/json",
-                    //     Authorization: `Bearer ${token}`,
-                    // },
                     headers: await getAuthorizationHeaders(),
                     body: JSON.stringify({
                         ...commentData,

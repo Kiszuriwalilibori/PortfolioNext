@@ -13,7 +13,6 @@ interface GetCommentsResult {
 }
 
 export async function get(projectID: string): Promise<GetCommentsResult> {
-    // const db = getFirestore(firebase_app);
     let comments: Comment[] = [];
     let error: FetchError | null = null;
 
@@ -26,7 +25,7 @@ export async function get(projectID: string): Promise<GetCommentsResult> {
                 ({
                     ...doc.data(),
                     ID: doc.id,
-                } as Comment)
+                }) as Comment
         );
     } catch (err) {
         const firebaseError = err as { code?: string; message: string };
