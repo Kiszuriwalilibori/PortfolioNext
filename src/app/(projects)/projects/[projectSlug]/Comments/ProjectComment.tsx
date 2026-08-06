@@ -1,5 +1,4 @@
-import moment from "moment";
-
+import { formatDistanceToNow } from "date-fns";
 import { Comment, Project } from "@/types";
 import CommentActions from "./CommentActions";
 import Gravatar from "./Gravatar";
@@ -17,7 +16,11 @@ export const ProjectComment = (props: Props) => {
             <SummaryStack spacing={1} direction="row">
                 <Gravatar authorEmail={comment.authorEmail} />
                 <Author id="Author">{comment.author}</Author>
-                <When id="When">{moment(comment.created).fromNow()}</When>
+                <When id="When">
+                    {formatDistanceToNow(new Date(comment.created), {
+                        addSuffix: true,
+                    })}
+                </When>
             </SummaryStack>
             <CommentDivider />
             <CommentBox>
