@@ -1,17 +1,3 @@
-// import { NextResponse } from "next/server";
-// import type { NextRequest } from "next/server";
-
-// export function middleware(request: NextRequest) {
-//     const headers = new Headers(request.headers);
-//     headers.set("x-current-path", request.nextUrl.pathname);
-
-//     return NextResponse.next({ headers });
-// }
-
-// export const config = {
-//     matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-// };
-
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -31,6 +17,21 @@ export function middleware(request: NextRequest) {
     response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
 
     response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+    response.headers.set(
+        "Content-Security-Policy",
+        [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src 'self' data: blob: https:",
+            "font-src 'self' data: https:",
+            "connect-src 'self' https:",
+            "frame-ancestors 'none'",
+            "base-uri 'self'",
+            "form-action 'self'",
+            "object-src 'none'",
+        ].join("; ")
+    );
 
     return response;
 }
