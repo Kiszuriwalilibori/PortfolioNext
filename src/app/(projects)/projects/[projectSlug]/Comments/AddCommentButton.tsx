@@ -40,3 +40,36 @@ export const AddCommentButton = (props: Props) => {
 };
 
 export default AddCommentButton;
+
+// Jeżeli użytkownik zamknie popup Google/Firebase bez wybrania konta, Firebase zwraca:
+
+// auth/popup-closed-by-user
+
+// To jest normalny, oczekiwany stan, ale Twoja aplikacja nie powinna traktować go jako „awarii logowania” i pokazywać użytkownikowi komunikatu typu Login failed.
+
+// Powinieneś rozróżnić ten przypadek od rzeczywistego błędu.
+
+// Przykładowo:
+
+// try {
+//     await signInWithPopup(auth, provider);
+// } catch (error) {
+//     if (
+//         error instanceof FirebaseError &&
+//         error.code === "auth/popup-closed-by-user"
+//     ) {
+//         return;
+//     }
+
+//     // rzeczywisty błąd
+//     showError(...);
+// }
+
+// Czyli:
+
+// użytkownik zamknął popup → nic nie pokazujesz,
+// anulował logowanie → nic nie pokazujesz,
+// rzeczywisty błąd Firebase → pokazujesz komunikat.
+
+// To jest raczej drobna poprawka UX/error handlingu, a nie kwestia bezpieczeństwa/CSP.
+// todo wdrożyć powyższe
