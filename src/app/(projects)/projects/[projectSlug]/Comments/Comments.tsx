@@ -39,10 +39,6 @@ export default function Comments({ projectID, title }: Props) {
         return <LoadingIndicator prompt="Loading comments..." size={80} />;
     }
 
-    if (isLoading) {
-        return null;
-    }
-
     if (!comments.length) {
         return <CommentsEmptyState />;
     }
@@ -50,8 +46,8 @@ export default function Comments({ projectID, title }: Props) {
     const sortedComments = [...comments].sort((a, b) => b.created - a.created);
 
     return (
-        <>
-            <h2>Comments</h2>
+        <section aria-labelledby="comments-heading">
+            <h2 id="comments-heading">Comments</h2>
 
             <CommentsStack spacing={1} id="comments-stack" role="list">
                 {sortedComments.map((comment: Comment) => (
@@ -60,6 +56,6 @@ export default function Comments({ projectID, title }: Props) {
                     </div>
                 ))}
             </CommentsStack>
-        </>
+        </section>
     );
 }

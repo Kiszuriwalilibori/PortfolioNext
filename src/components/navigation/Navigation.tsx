@@ -30,11 +30,6 @@ export default function Navigation() {
         });
     }, [isMenuVisible]);
 
-    // const closeMenu = () => {
-    //     hideMenu();
-    //     togglerRef.current?.focus();
-    // };
-
     const closeMenu = (returnFocus = false) => {
         hideMenu();
 
