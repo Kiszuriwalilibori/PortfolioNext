@@ -29,10 +29,8 @@ export const navigationListSx: SystemStyleObject<Theme> = {
 
 export const navigationItemSx: SystemStyleObject<Theme> = {
     listStyleType: "none",
-
     position: "relative",
     right: 0,
-
     transition: "right 0.5s ease-out 0s",
 
     "&:hover": {

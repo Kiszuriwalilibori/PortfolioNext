@@ -18,7 +18,7 @@ function NavigationLink({ page, clickHandler, currentPathName }: Props) {
     const isActive = currentPathName === PageUtils.pageToHref(page) || currentPathName.startsWith(PageUtils.pageToHref(page));
 
     return (
-        <ListItem disablePadding sx={navigationItemSx}>
+        <ListItem id="List Item" disablePadding sx={navigationItemSx}>
             <Button component={Link} href={PageUtils.pageToHref(page)} rel="noopener" onClick={clickHandler} aria-label={`Navigate to ${page} page`} sx={navigationButtonSx(isActive)} disableRipple>
                 <Image src={PageUtils.pageToIconSrc(page)} alt={`Navigate to ${page} page`} width={40} height={40} />
                 <Typography component="span" sx={navigationLabelSx(isActive)}>
