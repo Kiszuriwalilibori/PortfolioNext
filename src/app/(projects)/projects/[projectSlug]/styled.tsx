@@ -5,7 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Card from "@mui/material/Card";
 
 import theme from "@/themes";
-import { AccordionSummary, Box, Button, Stack, styled, Typography } from "@mui/material";
+import { AccordionSummary, Box, Button, Stack, styled } from "@mui/material";
 
 const PROJECT_BUTTON_SIZE = "40px";
 
@@ -93,19 +93,4 @@ export const CommentsButton = styled(Button)(({ theme }) => ({
     display: "block",
     margin: "0 auto",
     marginTop: theme.spacing(4),
-}));
-
-export const ProjectNotFoundContainer = styled(Box)(() => ({
-    minHeight: "60vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-}));
-
-export const ProjectNotFoundTitle = styled(Typography)(({ theme }) => ({
-    color: theme.palette.error.main,
-    fontSize: "2.5rem",
-    fontWeight: 700,
-    textAlign: "center",
-    textShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
 }));

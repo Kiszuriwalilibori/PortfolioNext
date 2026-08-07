@@ -7,14 +7,11 @@ import { CareerItem } from "@/types";
 import CareerIcons from "./icons";
 import PageTitle from "@/components/pageTitle";
 import { Company, Duties, Position, Project } from "./styled";
+import { NotFound } from "@/components/common/NotFound/NotFound";
 
 function Career() {
     if (!career || career.length === 0) {
-        return (
-            <div className="items-not-found-container">
-                <h1 className="items-not-found-title">Nie znaleziono historii zatrudnienia.</h1>
-            </div>
-        );
+        return <NotFound message="Nie znaleziono historii zatrudnienia." />;
     }
     const ID = useId();
 

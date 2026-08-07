@@ -3,9 +3,9 @@ import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
 import { SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
-import ProjectNotFound from "./parts/ProjectNotFound";
 
 import { Comments, AddCommentButton } from "./Comments";
+import NotFound from "@/components/common/NotFound/NotFound";
 
 const BASE_URL = "https://portfolio-next-ten-sigma.vercel.app";
 const DEFAULT_KEYWORDS = ["portfolio", "developer", "react", "next.js"];
@@ -72,7 +72,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
 
     const project = ProjectUtils.getProjectBySlug(projects, projectSlug);
     if (!project) {
-        return <ProjectNotFound projectSlug={projectSlug} />;
+        return <NotFound message={`Nie znaleziono projektu ${projectSlug}.`} />;
     }
 
     return (

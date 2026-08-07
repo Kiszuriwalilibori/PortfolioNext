@@ -11,6 +11,7 @@ import { ProjectUtils } from "@/models/projects";
 
 import PageTitle from "@/components/pageTitle";
 import SingleProject from "./parts/project";
+import { NotFound } from "@/components/common/NotFound/NotFound";
 
 export default function Projects() {
     const ID = useId();
@@ -30,13 +31,10 @@ export default function Projects() {
             <div className="projects__content">
                 <div className="container">
                     <PageTitle title="Projects" />
-
                     <Checkboxes features={features} handleChange={changeHandler} />
 
                     {isEmptyState ? (
-                        <div className="items-not-found-container">
-                            <p className="items-not-found-title">Nie znaleziono projektów dla wybranych filtrów</p>
-                        </div>
+                        <NotFound message="Nie znaleziono projektów dla wybranych filtrów" />
                     ) : (
                         <>
                             {!isEmpty(projectsCategoryA) && (

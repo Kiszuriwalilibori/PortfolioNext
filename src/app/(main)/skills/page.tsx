@@ -10,6 +10,7 @@ import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 import { education } from "@/data/education";
 import { SkillLevel } from "@/types";
+import { NotFound } from "@/components/common/NotFound/NotFound";
 
 const headings: Record<SkillLevel, string> = {
     good: "I feel reasonably comfortable with:",
@@ -19,11 +20,7 @@ const headings: Record<SkillLevel, string> = {
 
 export default function Skills() {
     if (!skills) {
-        return (
-            <div className="items-not-found-container">
-                <h1 className="items-not-found-title">Nie znaleziono umiejętności</h1>
-            </div>
-        );
+        return <NotFound message="Nie znaleziono umiejętności." />;
     }
 
     const ID = useId();
@@ -38,13 +35,8 @@ export default function Skills() {
                     <Divider sx={{ width: 1 }} />
                     {Object.entries(skills).map(([level, skillsByLevel], index) => (
                         <React.Fragment key={level}>
-                            <SkillsByCategory
-                                skillsSelectedByCategory={skillsByLevel as string[]}
-                                heading={headings[level as SkillLevel]}
-                            />
-                            {index < Object.entries(skills).length - 1 && (
-                                <Divider sx={{ width: 1 }} />
-                            )}
+                            <SkillsByCategory skillsSelectedByCategory={skillsByLevel as string[]} heading={headings[level as SkillLevel]} />
+                            {index < Object.entries(skills).length - 1 && <Divider sx={{ width: 1 }} />}
                         </React.Fragment>
                     ))}
                     <Divider sx={{ width: 1 }} />
