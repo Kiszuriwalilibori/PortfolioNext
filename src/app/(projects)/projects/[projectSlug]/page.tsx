@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import { ProjectUtils } from "@/models/projects";
 import { SingleProjectInformations, SingleProjectInformationsColumn, StackDivider } from "./styled";
 import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
+import ProjectNotFound from "./parts/ProjectNotFound";
 
 import { Comments, AddCommentButton } from "./Comments";
 
@@ -71,11 +72,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
 
     const project = ProjectUtils.getProjectBySlug(projects, projectSlug);
     if (!project) {
-        return (
-            <div className="items-not-found-container">
-                <h1 className="items-not-found-title">Nie znaleziono projektu {projectSlug}.</h1>
-            </div>
-        );
+        return <ProjectNotFound projectSlug={projectSlug} />;
     }
 
     return (

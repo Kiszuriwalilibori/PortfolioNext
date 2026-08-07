@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import CommentIcon from "@mui/icons-material/Comment";
 
 const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
 const COLOR_SUNNY_DARK = "#ffb800";
@@ -135,4 +136,17 @@ export const CharacterCounter = styled(Typography)(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(0.5),
     borderRadius: theme.shape.borderRadius,
+}));
+
+export const CommentsEmptyStateBox = styled(Box)(({ theme }) => ({
+    textAlign: "center",
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
+    color: theme.palette.text.secondary,
+}));
+
+export const CommentsEmptyStateIcon = styled(CommentIcon)(() => ({
+    fontSize: 48,
+    marginBottom: 16,
+    opacity: 0.5,
 }));

@@ -6,6 +6,7 @@ import { ProjectComment } from "./ProjectComment";
 import { CommentsStack } from "./Comments.style";
 import LoadingIndicator from "@/components/LoadingIndicator";
 import { useDelayedCondition } from "@/hooks/useDelayedCondition";
+import CommentsEmptyState from "./CommentEmptyState";
 
 interface Props {
     projectID: Project["ID"];
@@ -43,7 +44,7 @@ export default function Comments({ projectID, title }: Props) {
     }
 
     if (!comments.length) {
-        return <p>No comments yet for project {title}.</p>;
+        return <CommentsEmptyState />;
     }
 
     const sortedComments = [...comments].sort((a, b) => b.created - a.created);
