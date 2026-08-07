@@ -7,7 +7,11 @@ interface Props {
 export const ToPrevious = (props: Props) => {
     const { target } = props;
 
-    return <PreviousButton href={target}>{Icons.backward}</PreviousButton>;
+    return (
+        <PreviousButton id="Previous Button" href={target} aria-label="Go to previous project">
+            {Icons.backward}
+        </PreviousButton>
+    );
 };
 
 export default ToPrevious;

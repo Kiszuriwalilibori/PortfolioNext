@@ -32,7 +32,7 @@ export const When = styled("span")(({ theme }) => ({
 }));
 
 export const CommentPaper = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.grey[300],
+    backgroundColor: theme.palette.grey[200],
     border: "2px solid grey",
     padding: theme.spacing(1),
     maxWidth: "100%",

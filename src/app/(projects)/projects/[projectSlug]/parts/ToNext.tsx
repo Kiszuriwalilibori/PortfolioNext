@@ -7,7 +7,11 @@ interface Props {
 export const ToNext = (props: Props) => {
     const { target } = props;
 
-    return <NextButton href={target}>{Icons.forward}</NextButton>;
+    return (
+        <NextButton id="Next Button" href={target} aria-label="Go to next project">
+            {Icons.forward}
+        </NextButton>
+    );
 };
 
 export default ToNext;
