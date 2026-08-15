@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 import { useCommentsMutation } from "@/hooks/useCommentsMutation";
 
 import { useBoolean, useMessage } from "@/hooks";
@@ -12,6 +12,7 @@ import Icons from "@icons";
 import { Actions, EditButton, RemoveButton } from "./Comments.style";
 import { CommentEditorDialog } from "./CommentEditorDialog";
 import LoadingIndicator from "@/components/LoadingIndicator";
+import ActionButton from "@/components/common/ActionButton/ActionButton";
 
 interface Props {
     comment: Comment;
@@ -80,13 +81,10 @@ const CommentActions = ({ comment, projectID, projectTitle }: Props) => {
                     <DialogContent>
                         <DialogContentText id="confirm-delete-dialog-description">Are you sure you want to delete this comment? This action cannot be undone.</DialogContentText>
                     </DialogContent>
-                    <DialogActions>
-                        <Button onClick={closeConfirm} color="info" variant="contained">
-                            Cancel
-                        </Button>
-                        <Button onClick={handleConfirmRemove} color="error" variant="contained" disabled={isSubmitting}>
-                            Delete
-                        </Button>
+                    <DialogActions sx={{ justifyContent: "center", gap: 1 }}>
+                        <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={closeConfirm} />
+
+                        <ActionButton variant="remove" icon="/icons/delete.svg" label="Delete" onClick={handleConfirmRemove} disabled={isSubmitting} />
                         {isSubmitting && <LoadingIndicator open centeredInParent prompt="Deleting..." size={70} />}
                     </DialogActions>
                 </Dialog>

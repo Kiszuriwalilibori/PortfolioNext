@@ -1,10 +1,11 @@
 "use client";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 import { useCallback } from "react";
 
 import Icons from "@icons";
 import Modal from "@/components/modal";
+import ActionButton from "@/components/common/ActionButton/ActionButton";
 import { useCommentsMutation } from "@/hooks/useCommentsMutation";
 import { useComment, useMessage, useSpeech } from "@/hooks";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
@@ -156,20 +157,9 @@ export const CommentEditorDialog = (props: Props) => {
                 </>
             }
             actions={
-                <ButtonsStack direction="row" spacing={2} id="Buttons stack">
-                    <Button
-                        disabled={comment === initialComment || isSubmitting}
-                        color="success"
-                        variant="contained"
-                        onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)}
-                        id="accept-button"
-                        aria-label={isEditing ? "Save changes to comment" : "Post comment"}
-                    >
-                        {isEditing ? "Save" : "Post"}
-                    </Button>
-                    <Button disabled={comment === INITIAL_COMMENT} variant="contained" color="warning" onClick={clearComment} id="clear-button" aria-label="Cancel and close comment dialog">
-                        Cancel
-                    </Button>
+                <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
+                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
+                    <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} />
                     <MicrophoneButton onClick={toggleListening} disabled={!isSpeechRecognitionSupported} sx={listeningMicrophoneSx(listening)} aria-label={listening ? "Stop voice input" : "Start voice input"}>
                         {Icons.microphone}
                     </MicrophoneButton>
