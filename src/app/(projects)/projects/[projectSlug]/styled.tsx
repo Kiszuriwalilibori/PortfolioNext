@@ -21,14 +21,6 @@ export const SingleProjectInformationsColumn = styled(Box)(({ theme }) => ({
     flexBasis: 0,
     padding: theme.spacing(1.25),
     "&>h2": { paddingBottom: theme.spacing(1) },
-    "& .project-link svg": {
-        display: "inline-block",
-        height: "1em",
-        overflow: "visible",
-        verticalAlign: "-0.125em",
-        color: theme.palette.primary.dark,
-        marginRight: theme.spacing(1),
-    },
 }));
 
 export const StackDivider = () => <Divider orientation={useMediaQuery(theme.breakpoints.down("md")) ? "horizontal" : "vertical"} flexItem sx={{ backgroundColor: theme.palette.primary.light }} />;
@@ -94,3 +86,40 @@ export const CommentsButton = styled(Button)(({ theme }) => ({
     margin: "0 auto",
     marginTop: theme.spacing(4),
 }));
+import { SystemStyleObject, Theme } from "@mui/system";
+
+export const projectLinkSx: SystemStyleObject<Theme> = {
+    display: "flex",
+    alignItems: "center",
+    gap: "4px",
+
+    height: "48px",
+
+    borderRadius: "4px",
+
+    textDecoration: "none",
+
+    transition: "background-color 150ms ease",
+
+    "&:hover": {
+        backgroundColor: "action.hover",
+    },
+
+    "&:focus-visible": {
+        outline: "3px solid #036397",
+        outlineOffset: "2px",
+    },
+    "& svg": {
+        display: "inline-block",
+        height: "1em",
+        overflow: "visible",
+        verticalAlign: "-0.125em",
+        color: theme.palette.primary.dark,
+        marginRight: theme.spacing(1),
+        // display: "inline-block",
+        // height: "1em",
+        // overflow: "visible",
+        // verticalAlign: "-0.125em",
+        // color: theme.palette.primary.dark,
+    },
+};

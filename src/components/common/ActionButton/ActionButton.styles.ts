@@ -37,8 +37,7 @@ export const actionButtonSx = (variant: ActionButtonVariant): SystemStyleObject<
 
         width: "140px",
         minWidth: "140px",
-        minHeight: "44px",
-
+        height: "48px",
         padding: "5px",
         boxSizing: "border-box",
 

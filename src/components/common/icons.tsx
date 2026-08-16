@@ -36,3 +36,19 @@ export const IconLabels: { [key: string]: string } = {
 };
 
 export default Icons;
+
+export const SimpleIcons = {
+    email: faEnvelope,
+    facebook: faFacebook,
+    github: faGithub,
+    linkedin: faLinkedin,
+    live: faGlobe,
+    send: faPaperPlane,
+    cv: faFileDownload,
+    close: faXmark,
+    forward: faForward,
+    backward: faBackward,
+    motivation: faHandFist,
+    microphone: faMicrophone,
+    edit: faPencil,
+};

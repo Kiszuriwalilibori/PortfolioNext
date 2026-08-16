@@ -1,6 +1,9 @@
 import Typography from "@mui/material/Typography";
-import Icons from "@icons";
+import { SimpleIcons } from "@icons";
 import React from "react";
+import Box from "@mui/material/Box";
+import { projectLinkSx } from "../styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
     live: string;
@@ -12,38 +15,14 @@ export const Links = (props: Props) => {
     return (
         <>
             <h2>Links</h2>
-            <a
-                href={live}
-                rel="noopener"
-                className="project-link"
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    minHeight: "48px",
-                }}
-            >
-                {React.cloneElement(Icons.live, {
-                    "aria-hidden": true,
-                })}
+            <Box component="a" href={live} rel="noopener" sx={projectLinkSx}>
+                <FontAwesomeIcon icon={SimpleIcons.live} aria-hidden="true" />
                 <Typography variant="singleProjectLink">See project live</Typography>
-            </a>
-            <a
-                href={github}
-                rel="noopener"
-                className="project-link"
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    minHeight: "48px",
-                }}
-            >
-                {React.cloneElement(Icons.github, {
-                    "aria-hidden": true,
-                })}
+            </Box>
+            <Box component="a" href={github} rel="noopener" sx={projectLinkSx}>
+                <FontAwesomeIcon icon={SimpleIcons.github} aria-hidden="true" />
                 <Typography variant="singleProjectLink">Go to GitHub repository</Typography>
-            </a>
+            </Box>
         </>
     );
 };

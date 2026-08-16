@@ -87,8 +87,8 @@ export const MicrophoneButton = styled(IconButton)(({ theme }) => ({
     backgroundColor: INITIAL_BTN_MIC_COLOR,
     marginLeft: theme.spacing(0.5),
     padding: "10px",
-    width: "40px",
-    height: "40px",
+    width: "48px",
+    height: "48px",
     color: theme.palette.common.black,
     "@media(max-width: 430px)": { display: "none" },
     "&.Mui-disabled": {
@@ -150,3 +150,4 @@ export const CommentsEmptyStateIcon = styled(CommentIcon)(() => ({
     marginBottom: 16,
     opacity: 0.5,
 }));
+//todo sprawdzić jak wyglądają microphone button wnętrze
