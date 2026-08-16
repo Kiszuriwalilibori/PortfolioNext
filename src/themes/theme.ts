@@ -149,7 +149,7 @@ theme = createTheme(theme, {
             lineHeight: 1,
             fontSize: "24px",
             fontWeight: theme.typography.fontWeightLight,
-            marginBottom: "1em",
+            // marginBottom: "1em",
             letterSpacing: "0.6px",
             [theme.breakpoints.down("sm")]: {
                 fontSize: "20px",

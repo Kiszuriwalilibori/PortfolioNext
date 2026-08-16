@@ -1,59 +1,87 @@
 "use client";
-import { useId } from "react";
+
+import { useId, useState } from "react";
 
 import isEmpty from "lodash/isEmpty";
 
+import { FormControlLabel, Switch, Typography } from "@mui/material";
+import { ProjectCategoryLegend, ProjectCategoryLegendItem, ProjectCategoryIndicator, ProjectCategoryStack, ProjectSortControls, ProjectSortSwitch } from "./page.styles";
 import { Checkboxes } from "./parts";
-import { ProjectCategoryStack } from "./styled";
 import { projects } from "@/data/projects";
 import { useGetProjects } from "@/hooks";
 import { ProjectUtils } from "@/models/projects";
 
 import PageTitle from "@/components/pageTitle";
-import SingleProject from "./parts/project";
+
 import { NotFound } from "@/components/common/NotFound/NotFound";
+import SingleProject from "./parts/SingleProject";
 
 export default function Projects() {
     const ID = useId();
+    const [sortByCategory, setSortByCategory] = useState(false);
 
     const features = ProjectUtils.getFeatures(projects);
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(features, data);
 
-    const projectsCategoryA = ProjectUtils.filterByCategory([...visibleProjects], "A").sort(ProjectUtils.sortProjectsByTitle);
+    const sortedProjects = [...visibleProjects].sort((projectA, projectB) => {
+        if (sortByCategory && projectA.category !== projectB.category) {
+            return projectA.category === "A" ? -1 : 1;
+        }
 
-    const projectsCategoryB = ProjectUtils.filterByCategory([...visibleProjects], "B").sort(ProjectUtils.sortProjectsByTitle);
+        return ProjectUtils.sortProjectsByTitle(projectA, projectB);
+    });
 
-    const isEmptyState = !visibleProjects || visibleProjects.length === 0;
+    const isEmptyState = isEmpty(visibleProjects);
 
     return (
         <section className="projects" id="Projects Page Content">
             <div className="projects__content">
                 <div className="container">
                     <PageTitle title="Projects" />
+
                     <Checkboxes features={features} handleChange={changeHandler} />
 
                     {isEmptyState ? (
                         <NotFound message="Nie znaleziono projektów dla wybranych filtrów" />
                     ) : (
                         <>
-                            {!isEmpty(projectsCategoryA) && (
-                                <ProjectCategoryStack spacing={2}>
-                                    <h2>Primary, refined works with long commit history and usually a lot of features</h2>
-                                    {projectsCategoryA.map(project => (
-                                        <SingleProject key={ProjectUtils.getKey(ID, project)} project={project} />
-                                    ))}
-                                </ProjectCategoryStack>
-                            )}
+                            <ProjectCategoryLegend>
+                                <ProjectCategoryLegendItem>
+                                    <ProjectCategoryIndicator
+                                        aria-hidden="true"
+                                        sx={{
+                                            backgroundColor: "success.main",
+                                        }}
+                                    />
 
-                            {!isEmpty(projectsCategoryB) && (
-                                <ProjectCategoryStack spacing={2}>
-                                    <h2>Better leave unseen... at least code. Old, not maintained and not modernised works</h2>
-                                    {projectsCategoryB.map(project => (
-                                        <SingleProject key={ProjectUtils.getKey(ID, project)} project={project} />
-                                    ))}
-                                </ProjectCategoryStack>
-                            )}
+                                    <Typography>Primary, refined works with long commit history and usually a lot of features</Typography>
+                                </ProjectCategoryLegendItem>
+
+                                <ProjectCategoryLegendItem>
+                                    <ProjectCategoryIndicator
+                                        aria-hidden="true"
+                                        sx={{
+                                            backgroundColor: "warning.main",
+                                        }}
+                                    />
+
+                                    <Typography>Better leave unseen... at least code. Old, not maintained and not modernised works</Typography>
+                                </ProjectCategoryLegendItem>
+                            </ProjectCategoryLegend>
+                            <ProjectSortSwitch>
+                                <ProjectSortControls>
+                                    <FormControlLabel label="Alphabetical" labelPlacement="start" control={<Switch checked={sortByCategory} onChange={event => setSortByCategory(event.target.checked)} />} />
+
+                                    <Typography component="span">Category</Typography>
+                                </ProjectSortControls>
+                            </ProjectSortSwitch>
+
+                            <ProjectCategoryStack spacing={2}>
+                                {sortedProjects.map(project => (
+                                    <SingleProject key={ProjectUtils.getKey(ID, project)} project={project} />
+                                ))}
+                            </ProjectCategoryStack>
                         </>
                     )}
                 </div>

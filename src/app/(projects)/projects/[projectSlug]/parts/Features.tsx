@@ -1,7 +1,7 @@
 import { useId } from "react";
 import Chip from "@mui/material/Chip";
 
-import { ChipsContainer } from "@/app/(main)/projects/styled";
+import { ChipsContainer } from "@/app/(main)/projects/page.styles";
 import { Project } from "@/types";
 
 interface Props {
