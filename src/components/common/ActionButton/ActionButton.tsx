@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { actionButtonSx, actionButtonLabelSx } from "./ActionButton.styles";
 
-export type ActionButtonVariant = "cancel" | "remove" | "save";
+export type ActionButtonVariant = "cancel" | "remove" | "save" | "logout";
 
 interface Props {
     variant: ActionButtonVariant;

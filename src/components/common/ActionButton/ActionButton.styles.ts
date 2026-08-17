@@ -21,6 +21,10 @@ const ACTION_BUTTON_COLORS: Record<
         background: "success.light",
         hoverBackground: "success.main",
     },
+    logout: {
+        background: "primary.main",
+        hoverBackground: "primary.dark",
+    },
 };
 
 const BORDER_RADIUS = "5px";
