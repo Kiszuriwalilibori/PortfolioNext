@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 import theme from "@/themes";
 import { AccordionSummary, Box, Button, Stack, styled } from "@mui/material";
 
-const PROJECT_BUTTON_SIZE = "40px";
+const PROJECT_BUTTON_SIZE = "44px";
 
 export const SingleProjectInformations = styled(Stack)(({ theme }) => ({
     maxWidth: "1500px",
