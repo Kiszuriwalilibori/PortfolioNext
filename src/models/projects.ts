@@ -43,4 +43,13 @@ export abstract class ProjectUtils {
     static getSlugs(projects: Project[]) {
         return projects.map(item => item.slug);
     }
+    static sortProjects(projects: Project[], sortByCategory: boolean): Project[] {
+        return [...projects].sort((projectA, projectB) => {
+            if (sortByCategory && projectA.category !== projectB.category) {
+                return projectA.category === "A" ? -1 : 1;
+            }
+
+            return this.sortProjectsByTitle(projectA, projectB);
+        });
+    }
 }

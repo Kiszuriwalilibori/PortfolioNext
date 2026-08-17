@@ -170,3 +170,4 @@ export const CommentEditorDialog = (props: Props) => {
 };
 
 export default CommentEditorDialog;
+//todo dziwnie zachowuje się modaldodawaniakomentarza kiedy zmniejszamy ekran, to jest kiedy  włączamy dolny pasek z console logiem.
