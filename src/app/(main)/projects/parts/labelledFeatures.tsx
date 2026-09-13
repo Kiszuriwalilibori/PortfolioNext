@@ -1,20 +1,23 @@
 import { Project } from "@/types";
-import { Checkbox, LabelledCheckbox } from "./styled";
-
+import Chip from "@mui/material/Chip";
+import { createFeatureChipSx } from "./LabelledFeatures.styles";
 interface Props {
     features: Project["features"];
     handleCheck: (arg0: string) => void;
+    selectedFeatures: Project["features"];
 }
 
 export const LabelledFeatures = (props: Props) => {
-    const { features, handleCheck } = props;
+    const { features, handleCheck, selectedFeatures } = props;
+    console.log("selectedFeatures", selectedFeatures);
+
     return (
-    <div role="group" aria-label="Project features selection">
-        {features.map((feature: string) => {
-            return <LabelledCheckbox key={feature} control={<Checkbox disableRipple={true} onChange={() => handleCheck(feature)} />} label={feature} />;
-        })}
-    </div>
-);
+        <div role="group" aria-label="Project features selection">
+            {features.map((feature: string) => {
+                return <Chip key={feature} label={feature} onClick={() => handleCheck(feature)} sx={createFeatureChipSx(feature, selectedFeatures)} />;
+            })}
+        </div>
+    );
 };
 
 export default LabelledFeatures;

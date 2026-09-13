@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 
 import isEmpty from "lodash/isEmpty";
 
-import { FormControlLabel, Switch, Typography } from "@mui/material";
+import { Switch, Typography } from "@mui/material";
 import { ProjectCategoryLegend } from "./parts/ProjectCategoryLegend";
 import { ProjectCategoryStack, ProjectSortControls, ProjectSortSwitch } from "./page.styles";
 import { Checkboxes } from "./parts";
@@ -25,13 +25,6 @@ export default function Projects() {
     const data = projects;
     const { visibleProjects, changeHandler } = useGetProjects(features, data);
 
-    // const sortedProjects = [...visibleProjects].sort((projectA, projectB) => {
-    //     if (sortByCategory && projectA.category !== projectB.category) {
-    //         return projectA.category === "A" ? -1 : 1;
-    //     }
-
-    //     return ProjectUtils.sortProjectsByTitle(projectA, projectB);
-    // });
     const sortedProjects = ProjectUtils.sortProjects(visibleProjects, sortByCategory);
 
     const isEmptyState = isEmpty(visibleProjects);
@@ -49,14 +42,31 @@ export default function Projects() {
                     ) : (
                         <>
                             <ProjectCategoryLegend />
-
                             <ProjectSortSwitch>
+                                <ProjectSortControls>
+                                    <Typography component="span">Alphabetical</Typography>
+
+                                    <Switch
+                                        checked={sortByCategory}
+                                        onChange={event => setSortByCategory(event.target.checked)}
+                                        slotProps={{
+                                            input: {
+                                                "aria-label": "Sort projects by category instead of alphabetically",
+                                            },
+                                        }}
+                                    />
+
+                                    <Typography component="span">Category</Typography>
+                                </ProjectSortControls>
+                            </ProjectSortSwitch>
+
+                            {/* <ProjectSortSwitch>
                                 <ProjectSortControls>
                                     <FormControlLabel label="Alphabetical" labelPlacement="start" control={<Switch checked={sortByCategory} onChange={event => setSortByCategory(event.target.checked)} />} />
 
                                     <Typography component="span">Category</Typography>
                                 </ProjectSortControls>
-                            </ProjectSortSwitch>
+                            </ProjectSortSwitch> */}
 
                             <ProjectCategoryStack spacing={2}>
                                 {sortedProjects.map(project => (

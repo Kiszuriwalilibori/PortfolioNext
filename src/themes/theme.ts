@@ -4,6 +4,7 @@ import { createTheme } from "@mui/material";
 
 import { COLOR_RED_SUBDUED_LIGHTER, COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
 import { common } from "@mui/material/colors";
+import { design } from "./design";
 
 declare module "@mui/material/styles" {
     interface TypographyVariants {
@@ -15,6 +16,13 @@ declare module "@mui/material/styles" {
         singleProjectLink?: React.CSSProperties;
         sidebarName: React.CSSProperties;
         pageTitle: React.CSSProperties;
+    }
+    interface Palette {
+        active: Palette["primary"];
+    }
+
+    interface PaletteOptions {
+        active?: PaletteOptions["primary"];
     }
 }
 declare module "@mui/material/Typography" {
@@ -30,7 +38,18 @@ let theme = createTheme({
         primary: {
             main: COLOR_RED_SUBDUED,
             dark: COLOR_RED_VIVID,
-            light: COLOR_RED_SUBDUED_LIGHTER,
+            light: COLOR_RED_SUBDUED_LIGHTER, // jedno wystąpienie
+        },
+        secondary: {
+            main: design.secondary.main,
+            dark: design.secondary.dark,
+            light: design.secondary.light,
+        },
+        active: {
+            main: design.active.main,
+            light: design.active.light,
+            dark: design.active.dark,
+            contrastText: common.black,
         },
     },
     breakpoints: {
@@ -49,15 +68,21 @@ theme = createTheme(theme, {
         MuiChip: {
             styleOverrides: {
                 root: {
-                    backgroundColor: theme.palette.primary.main,
+                    backgroundColor: theme.palette.secondary.main,
                     display: "inline-flex",
-                    color: theme.palette.common.white,
+                    color: theme.palette.secondary.contrastText,
                     padding: theme.spacing(0.5, 1),
-                    border: `1px solid ${theme.palette.common.black}`,
+                    border: `1px solid ${theme.palette.secondary.dark}`,
                     fontSize: "12px",
                     textTransform: "uppercase",
                     borderRadius: "0",
-                    boxShadow: theme.shadows[1],
+                    boxShadow: theme.shadows[2],
+                    margin: 2,
+                    minHeight: "40px",
+                    "&:hover": {
+                        backgroundColor: theme.palette.secondary.light,
+                        borderColor: theme.palette.secondary.main,
+                    },
                 },
             },
         },
