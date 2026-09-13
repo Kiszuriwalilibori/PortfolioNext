@@ -14,7 +14,7 @@ export const LabelledFeatures = (props: Props) => {
     return (
         <div role="group" aria-label="Project features selection">
             {features.map((feature: string) => {
-                return <Chip key={feature} label={feature} onClick={() => handleCheck(feature)} sx={createFeatureChipSx(feature, selectedFeatures)} />;
+                return <Chip aria-pressed={selectedFeatures.includes(feature)} key={feature} label={feature} onClick={() => handleCheck(feature)} sx={createFeatureChipSx(feature, selectedFeatures)} />;
             })}
         </div>
     );

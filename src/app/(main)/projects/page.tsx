@@ -44,19 +44,26 @@ export default function Projects() {
                             <ProjectCategoryLegend />
                             <ProjectSortSwitch>
                                 <ProjectSortControls>
-                                    <Typography component="span">Alphabetical</Typography>
+                                    <Typography id="projects-sort-label" component="span" className="sort-label">
+                                        Sort projects by:
+                                    </Typography>
+                                    <Typography component="span" className={!sortByCategory ? "active" : undefined}>
+                                        Alphabetical
+                                    </Typography>
 
                                     <Switch
                                         checked={sortByCategory}
                                         onChange={event => setSortByCategory(event.target.checked)}
                                         slotProps={{
                                             input: {
-                                                "aria-label": "Sort projects by category instead of alphabetically",
+                                                "aria-labelledby": "projects-sort-label",
                                             },
                                         }}
                                     />
 
-                                    <Typography component="span">Category</Typography>
+                                    <Typography component="span" className={sortByCategory ? "active" : undefined}>
+                                        Category
+                                    </Typography>
                                 </ProjectSortControls>
                             </ProjectSortSwitch>
 

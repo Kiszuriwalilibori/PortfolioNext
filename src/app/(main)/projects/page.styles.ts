@@ -38,7 +38,27 @@ export const ProjectSortSwitch = styled(Box)({
 });
 
 export const ProjectSortControls = styled(Box)(({ theme }) => ({
-    display: "flex",
+    display: "inline-flex",
     alignItems: "center",
     gap: theme.spacing(1),
+    padding: theme.spacing(0.5, 1),
+    border: `1px solid ${theme.palette.secondary.dark}`,
+    borderRadius: theme.spacing(0.5),
+
+    "& .sort-label": {
+        color: theme.palette.text.secondary,
+        fontSize: "0.8rem",
+        textTransform: "uppercase",
+        letterSpacing: "0.05em",
+        marginRight: theme.spacing(0.5),
+    },
+
+    "& .active": {
+        fontWeight: 600,
+        color: theme.palette.text.primary,
+    },
+
+    "& .MuiSwitch-root": {
+        margin: theme.spacing(0, -0.25),
+    },
 }));
