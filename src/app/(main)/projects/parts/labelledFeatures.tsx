@@ -9,7 +9,6 @@ interface Props {
 
 export const LabelledFeatures = (props: Props) => {
     const { features, handleCheck, selectedFeatures } = props;
-    console.log("selectedFeatures", selectedFeatures);
 
     return (
         <div role="group" aria-label="Project features selection">

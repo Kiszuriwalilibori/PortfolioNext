@@ -18,7 +18,7 @@ export function Features(props: Props) {
     useEffect(() => {
         handleChange(checkedFeatures);
     }, [checkedFeatures]);
-    console.log("checked from checkboxes", checkedFeatures);
+
     return (
         <FeaturesWrapper>
             <h2>Select projects by features</h2>

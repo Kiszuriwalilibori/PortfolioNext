@@ -1,6 +1,6 @@
 import isEmpty from "lodash/isEmpty";
 import Image from "next/image";
-
+import { projectImageDimensions } from "@/data/project-image-dimensions";
 import { useId } from "react";
 import { Chip, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -12,8 +12,16 @@ import { ProjectUtils } from "@/models/projects";
 
 import ButtonMore from "./buttonMore";
 import { ProjectAccordion, ProjectAccordionDetails, ProjectAccordionHeader, ProjectHeader, ProjectCategoryIndicator, ProjectPaper } from "./SingleProject.styles";
+const getSlideDimensions = (slide: string) => {
+    const dimensions = projectImageDimensions[slide as keyof typeof projectImageDimensions];
 
-const slideSize = { width: 300, height: 200 };
+    if (!dimensions) {
+        throw new Error(`Missing generated dimensions for project image: ${slide}`);
+    }
+
+    return dimensions;
+};
+// const slideSize = { width: 300, height: 200 };
 
 const SingleProject = ({ project }: { project: Project }) => {
     const { description, title, features, slides, slug, category } = project;
@@ -54,9 +62,31 @@ const SingleProject = ({ project }: { project: Project }) => {
 
                         {slides && !isEmpty(slides) && (
                             <div className="project__slides">
-                                {slides.map((slide, idx) => (
-                                    <Image key={ProjectUtils.getSlideKey(ID, slide)} className="image" src={slide} alt={`Screenshot of ${title} project - slide ${idx + 1}`} width={slideSize.width} height={slideSize.height} />
-                                ))}
+                                {/* {slides.map((slide, idx) => (
+                                    <Image key={ProjectUtils.getSlideKey(ID, slide)} className="image" src={slide} alt={`Screenshot of ${title} project - slide ${idx + 1}`} width={slideSize.width} height={slideSize.height} sizes="(max-width: 767px) 100vw, 300px" />
+                                ))} */}
+                                {slides.map((slide, idx) => {
+                                    const { width, height } = getSlideDimensions(slide);
+
+                                    // if (!dimensions) {
+                                    //     throw new Error(`Missing generated dimensions for project image: ${slide}`);
+                                    // }
+
+                                    return (
+                                        <Image
+                                            style={{
+                                                aspectRatio: `${width} / ${height}`,
+                                            }}
+                                            key={ProjectUtils.getSlideKey(ID, slide)}
+                                            className="image"
+                                            src={slide}
+                                            alt={`Screenshot of ${title} project - slide ${idx + 1}`}
+                                            width={width}
+                                            height={height}
+                                            sizes="(max-width: 767px) 100vw, 300px"
+                                        />
+                                    );
+                                })}
                             </div>
                         )}
                     </article>
