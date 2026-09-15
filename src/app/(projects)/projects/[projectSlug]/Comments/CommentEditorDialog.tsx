@@ -3,7 +3,6 @@
 
 import { useCallback } from "react";
 
-import Icons from "@icons";
 import Modal from "@/components/modal";
 import ActionButton from "@/components/common/ActionButton/ActionButton";
 import { useCommentsMutation } from "@/hooks/useCommentsMutation";
@@ -11,8 +10,9 @@ import { useComment, useMessage, useSpeech } from "@/hooks";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 import { Comment, Project, ModalProps } from "@/types";
 import { validateAndSubmitComment } from "../AddComment/utils";
-import { ButtonsStack, CharacterCounter, CommentTextField, MicrophoneButton, listeningMicrophoneSx } from "./Comments.style";
+import { ButtonsStack, CharacterCounter, CommentTextField /*MicrophoneButton,*/ /*listeningMicrophoneSx*/ } from "./Comments.style";
 import LoadingIndicator from "@/components/LoadingIndicator";
+import MicrophoneButton from "./MicropohoneButton";
 
 interface Props extends Omit<ModalProps, "title"> {
     author: Comment["author"];
@@ -36,6 +36,7 @@ export const CommentEditorDialog = (props: Props) => {
         isEditing,
         commentId,
     });
+    console.log("speech", isSpeechRecognitionSupported);
 
     const showMessage = useMessage();
 
@@ -158,9 +159,12 @@ export const CommentEditorDialog = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
-                    <MicrophoneButton onClick={toggleListening} disabled={!isSpeechRecognitionSupported} sx={listeningMicrophoneSx(listening)} aria-label={listening ? "Stop voice input" : "Start voice input"}>
+                    {/* <MicrophoneButton onClick={toggleListening} disabled={!isSpeechRecognitionSupported} sx={listeningMicrophoneSx(listening)} aria-label={listening ? "Stop voice input" : "Start voice input"}>
                         {Icons.microphone}
-                    </MicrophoneButton>
+                    </MicrophoneButton> */}
+
+                    <MicrophoneButton listening={listening} onClick={toggleListening} disabled={!isSpeechRecognitionSupported} />
+
                     <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} disabled={!comment} />
                     <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>
@@ -170,4 +174,5 @@ export const CommentEditorDialog = (props: Props) => {
 };
 
 export default CommentEditorDialog;
+// todo powinno być raczej isListening
 //todo dziwnie zachowuje się modaldodawaniakomentarza kiedy zmniejszamy ekran, to jest kiedy  włączamy dolny pasek z console logiem.
