@@ -14,6 +14,7 @@ interface Props {
 }
 
 const ActionButton = ({ variant, icon, label, onClick, disabled = false }: Props) => {
+    console.log("actbutton", label, disabled);
     return (
         <Button type="button" onClick={onClick} disabled={disabled} aria-label={label} disableRipple sx={actionButtonSx(variant)}>
             <Image src={icon} alt="" width={40} height={40} aria-hidden="true" />

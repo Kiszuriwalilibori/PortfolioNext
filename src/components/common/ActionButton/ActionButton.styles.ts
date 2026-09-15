@@ -1,25 +1,28 @@
 import { SystemStyleObject, Theme } from "@mui/system";
 
 import { ActionButtonVariant } from "./ActionButton";
+import theme from "@/themes";
 
 const ACTION_BUTTON_COLORS: Record<
     ActionButtonVariant,
     {
         background: string;
         hoverBackground: string;
+        color?: string;
     }
 > = {
     cancel: {
-        background: "grey.300",
-        hoverBackground: "grey.400",
+        background: theme.palette.secondary.main,
+        hoverBackground: theme.palette.secondary.light,
+        color: theme.palette.secondary.contrastText,
     },
     remove: {
         background: "error.main",
         hoverBackground: "error.dark",
     },
     save: {
-        background: "success.light",
-        hoverBackground: "success.main",
+        background: theme.palette.primary.dark,
+        hoverBackground: theme.palette.primary.main,
     },
     logout: {
         background: "primary.main",
@@ -34,11 +37,9 @@ export const actionButtonSx = (variant: ActionButtonVariant): SystemStyleObject<
 
     return {
         cursor: "pointer",
-
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-
         width: "140px",
         minWidth: "140px",
         height: "48px",
@@ -49,6 +50,7 @@ export const actionButtonSx = (variant: ActionButtonVariant): SystemStyleObject<
         borderRadius: BORDER_RADIUS,
 
         backgroundColor: colors.background,
+        color: colors.color,
 
         boxShadow: 4,
 
@@ -56,12 +58,13 @@ export const actionButtonSx = (variant: ActionButtonVariant): SystemStyleObject<
 
         "&:hover": {
             backgroundColor: colors.hoverBackground,
-
             boxShadow: 6,
         },
 
         "&:disabled": {
             cursor: "default",
+            backgroundColor: "action.disabledBackground",
+            color: "action.disabled",
         },
 
         "&.Mui-focusVisible": {

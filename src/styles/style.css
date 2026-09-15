@@ -1071,7 +1071,6 @@ section h1 {
 .projects__content .container .project .image {
   width: 300px;
   height: auto;
-  padding: 3px;
 }
 @media (max-width: 767px) {
   .projects__content .container .project .image {

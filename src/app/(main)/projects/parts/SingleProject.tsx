@@ -21,7 +21,6 @@ const getSlideDimensions = (slide: string) => {
 
     return dimensions;
 };
-// const slideSize = { width: 300, height: 200 };
 
 const SingleProject = ({ project }: { project: Project }) => {
     const { description, title, features, slides, slug, category } = project;

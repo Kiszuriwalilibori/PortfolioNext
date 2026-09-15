@@ -2,7 +2,7 @@
 
 import { createTheme } from "@mui/material";
 
-import { COLOR_RED_SUBDUED_LIGHTER, COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
+import { COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
 import { common } from "@mui/material/colors";
 import { design } from "./design";
 
@@ -38,12 +38,12 @@ let theme = createTheme({
         primary: {
             main: COLOR_RED_SUBDUED,
             dark: COLOR_RED_VIVID,
-            light: COLOR_RED_SUBDUED_LIGHTER, // jedno wystąpienie
         },
         secondary: {
             main: design.secondary.main,
             dark: design.secondary.dark,
             light: design.secondary.light,
+            contrastText: design.secondary.contrastText,
         },
         active: {
             main: design.active.main,

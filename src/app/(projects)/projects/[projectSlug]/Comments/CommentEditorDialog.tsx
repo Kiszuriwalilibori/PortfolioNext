@@ -129,7 +129,7 @@ export const CommentEditorDialog = (props: Props) => {
     //         setIsSubmitting(false);
     //     }
     // }, [comment, author, authorEmail, project, ID, clearComment, onClose, handleError, handleSuccess, onCommentAdded, isEditing, commentId]);
-
+    console.log("comment", comment, "initialComment", initialComment, "isSubmitting", isSubmitting);
     return (
         <Modal
             title={isEditing ? "Edit Comment" : "Add a Comment"}
@@ -158,11 +158,11 @@ export const CommentEditorDialog = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
-                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
-                    <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} />
                     <MicrophoneButton onClick={toggleListening} disabled={!isSpeechRecognitionSupported} sx={listeningMicrophoneSx(listening)} aria-label={listening ? "Stop voice input" : "Start voice input"}>
                         {Icons.microphone}
                     </MicrophoneButton>
+                    <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} disabled={!comment} />
+                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>
             }
         />

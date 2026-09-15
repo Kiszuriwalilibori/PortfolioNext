@@ -47,7 +47,6 @@ const Subtitle = styled(Typography)(({ theme }) => ({
     fontWeight: 400,
     fontSize: "14px",
     lineHeight: "16px",
-    color: theme.palette.primary.lighterGrey,
     padding: theme.spacing(1.75, 0, 0.75, 0),
 }));
 

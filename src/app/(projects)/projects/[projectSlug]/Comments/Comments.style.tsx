@@ -6,8 +6,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
+import theme from "@/themes";
 
-const INITIAL_BTN_MIC_COLOR = "rgba(67, 84, 22, 0.4)";
 const COLOR_SUNNY_DARK = "#ffb800";
 const COLOR_SUNNY_HOVER = "#ffe37e";
 
@@ -84,15 +84,17 @@ export const ButtonsStack = styled(Stack)(({ theme }) => ({
 }));
 
 export const MicrophoneButton = styled(IconButton)(({ theme }) => ({
-    backgroundColor: INITIAL_BTN_MIC_COLOR,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
     marginLeft: theme.spacing(0.5),
     padding: "10px",
     width: "48px",
     height: "48px",
-    color: theme.palette.common.black,
+
     "@media(max-width: 430px)": { display: "none" },
     "&.Mui-disabled": {
-        opacity: 0.3,
+        color: "action.disabled",
+        backgroundColor: "action.backgroundColor",
     },
 }));
 
@@ -100,6 +102,7 @@ export const listeningMicrophoneSx = (listening: boolean) => {
     if (listening) {
         return {
             backgroundColor: COLOR_SUNNY_DARK,
+            color: theme.palette.primary.contrastText,
             animation: "bgr 1s infinite",
             "&:hover": {
                 backgroundColor: COLOR_SUNNY_HOVER,
@@ -117,14 +120,15 @@ export const listeningMicrophoneSx = (listening: boolean) => {
                 },
             },
         };
-    } else {
-        return {
-            backgroundColor: INITIAL_BTN_MIC_COLOR,
-            "&:hover": {
-                backgroundColor: "lightgrey",
-            },
-        };
     }
+    //else {
+    //     return {
+    //         backgroundColor: INITIAL_BTN_MIC_COLOR,
+    //         "&:hover": {
+    //             backgroundColor: "lightgrey",
+    //         },
+    //     };
+    // }
 };
 
 export const CharacterCounter = styled(Typography)(({ theme }) => ({

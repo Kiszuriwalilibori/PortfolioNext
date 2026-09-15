@@ -48,7 +48,7 @@
                 & .image {
                     width: 300px;
                     height: auto;
-                    padding: 3px;
+                    // padding: 3px;
                     @include mobile {
                         width: 100%;
                         padding: unset;
