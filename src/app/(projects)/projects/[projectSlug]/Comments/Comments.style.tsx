@@ -85,6 +85,7 @@ export const ButtonsStack = styled(Stack)(({ theme }) => ({
 
 export const MicrophoneButton = styled(IconButton)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
+    "&:hover": { backgroundColor: theme.palette.secondary.light },
     color: theme.palette.secondary.contrastText,
     marginLeft: theme.spacing(0.5),
     padding: "10px",
