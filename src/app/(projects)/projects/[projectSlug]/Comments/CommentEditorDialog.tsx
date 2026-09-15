@@ -6,7 +6,7 @@ import { useCallback } from "react";
 import Modal from "@/components/modal";
 import ActionButton from "@/components/common/ActionButton/ActionButton";
 import { useCommentsMutation } from "@/hooks/useCommentsMutation";
-import { useComment, useMessage, useSpeech } from "@/hooks";
+import { useComment, useMessage, useMicrophone, useSpeech } from "@/hooks";
 import { MAX_LENGTH } from "@/models/comments/validateCommentFields";
 import { Comment, Project, ModalProps } from "@/types";
 import { validateAndSubmitComment } from "../AddComment/utils";
@@ -31,12 +31,14 @@ export const CommentEditorDialog = (props: Props) => {
 
     const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
+    const { hasMicrophone, microphonePermission } = useMicrophone();
     const { saveComment, isSubmitting } = useCommentsMutation({
         projectID: ID,
         isEditing,
         commentId,
     });
     console.log("speech", isSpeechRecognitionSupported);
+    console.log("micper", microphonePermission);
 
     const showMessage = useMessage();
 
@@ -80,7 +82,7 @@ export const CommentEditorDialog = (props: Props) => {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
     }, [comment, author, authorEmail, project, ID, saveComment, clearComment, onClose, handleError, handleSuccess]);
-
+    console.log("hasMic", hasMicrophone);
     return (
         <Modal
             title={isEditing ? "Edit Comment" : "Add a Comment"}
@@ -109,7 +111,7 @@ export const CommentEditorDialog = (props: Props) => {
             }
             actions={
                 <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
-                    <MicrophoneButton listening={listening} onClick={toggleListening} disabled={!isSpeechRecognitionSupported} />
+                    <MicrophoneButton listening={listening} onClick={toggleListening} disabled={!isSpeechRecognitionSupported || !hasMicrophone || microphonePermission !== "granted"} />
                     <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} disabled={!comment} />
                     <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>

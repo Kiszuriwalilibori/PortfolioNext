@@ -4,5 +4,6 @@ import useComment from "./useComment";
 import useGetProjects from "./useGetProjects";
 import useMessage from "./useMessage";
 import useSpeech from "./useSpeech";
+import useMicrophone from "./useMicrophone";
 
-export { useArrayState, useBoolean, useGetProjects, useComment, useMessage, useSpeech };
+export { useArrayState, useMicrophone, useBoolean, useGetProjects, useComment, useMessage, useSpeech };

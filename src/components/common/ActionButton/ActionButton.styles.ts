@@ -23,6 +23,7 @@ const ACTION_BUTTON_COLORS: Record<
     save: {
         background: theme.palette.primary.dark,
         hoverBackground: theme.palette.primary.main,
+        color: theme.palette.common.black,
     },
     logout: {
         background: "primary.main",
@@ -78,8 +79,6 @@ export const actionButtonLabelSx: SystemStyleObject<Theme> = {
     display: "inline",
 
     paddingLeft: "15px",
-
-    color: "#000",
 
     fontSize: "16px",
     fontFamily: "sans-serif",
