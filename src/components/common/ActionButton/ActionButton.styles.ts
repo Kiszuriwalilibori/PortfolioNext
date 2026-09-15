@@ -67,11 +67,6 @@ export const actionButtonSx = (variant: ActionButtonVariant): SystemStyleObject<
             backgroundColor: "action.disabledBackground",
             color: "action.disabled",
         },
-
-        "&.Mui-focusVisible": {
-            outline: "3px solid #036397",
-            outlineOffset: "3px",
-        },
     };
 };
 

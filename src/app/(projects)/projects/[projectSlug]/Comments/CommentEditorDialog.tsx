@@ -37,9 +37,6 @@ export const CommentEditorDialog = (props: Props) => {
         isEditing,
         commentId,
     });
-    console.log("speech", isSpeechRecognitionSupported);
-    console.log("micper", microphonePermission);
-
     const showMessage = useMessage();
 
     const handleError = useCallback(
@@ -92,6 +89,7 @@ export const CommentEditorDialog = (props: Props) => {
             content={
                 <>
                     <CommentTextField
+                        autoFocus
                         id="comment-text-field"
                         label="Comment"
                         multiline

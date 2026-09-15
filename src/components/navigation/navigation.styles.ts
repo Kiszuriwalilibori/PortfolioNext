@@ -118,13 +118,13 @@ export const navigationTogglerSx: SystemStyleObject<Theme> = {
         bgcolor: "primary.dark",
     },
 
-    "&:focus-visible": {
-        outline: "3px solid #036397",
-        outlineOffset: 2,
-    },
+    // "&:focus-visible": {
+    //     outline: "3px solid #036397",
+    //     outlineOffset: 2,
+    // },
 
-    "&.Mui-focusVisible": {
-        outline: "3px solid #036397",
-        outlineOffset: "2px",
-    },
+    // "&.Mui-focusVisible": {
+    //     outline: "3px solid #036397",
+    //     outlineOffset: "2px",
+    // },
 };

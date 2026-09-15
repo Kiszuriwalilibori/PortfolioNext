@@ -10,5 +10,7 @@ export const design = {
         light: "#085757",
         contrastText: "#ffffff",
     },
+    focusColor: "#036397",
+
     active: { main: "#ffd700", light: "#ffdf33", dark: "#b29600", contrastText: "#000000" },
 };

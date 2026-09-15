@@ -65,6 +65,26 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
     components: {
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: design.focusColor,
+                        borderWidth: "3px",
+                    },
+                },
+            },
+        },
+        MuiButtonBase: {
+            styleOverrides: {
+                root: {
+                    "&.Mui-focusVisible": {
+                        outline: `3px solid ${design.focusColor}`,
+                        outlineOffset: "3px",
+                    },
+                },
+            },
+        },
         MuiChip: {
             styleOverrides: {
                 root: {

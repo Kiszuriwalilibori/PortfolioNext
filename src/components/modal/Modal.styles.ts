@@ -36,6 +36,10 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
     color: theme.palette.error.main,
     width: "40px",
     height: "40px",
+
+    "&:hover": {
+        backgroundColor: theme.palette.action.hover,
+    },
 }));
 
 const StyledTitleText = styled(Typography)(({ theme }) => ({
