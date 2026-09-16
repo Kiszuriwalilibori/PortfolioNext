@@ -94,6 +94,9 @@ export const CommentEditorDialog = (props: Props) => {
         }
     }, [comment, author, authorEmail, project, ID, saveComment, clearComment, onClose, handleError, handleSuccess]);
 
+    const handleSubmit = useCallback(() => {
+        void validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, handleError);
+    }, [comment, handleSaveComment, handleInvalidComment, handleError]);
     return (
         <Modal
             title={isEditing ? "Edit Comment" : "Add a Comment"}
@@ -120,6 +123,12 @@ export const CommentEditorDialog = (props: Props) => {
                         helperText={commentError ?? " "}
                         aria-invalid={Boolean(commentError)}
                         slotProps={{ htmlInput: { maxLength: MAX_LENGTH } }}
+                        onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+                            if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+                                event.preventDefault();
+                                handleSubmit();
+                            }
+                        }}
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             const value = event.target.value;
                             createComment(value);
@@ -149,7 +158,7 @@ export const CommentEditorDialog = (props: Props) => {
                         }}
                         disabled={isEditing ? comment === initialComment : !comment}
                     />
-                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, handleError)} disabled={comment === initialComment || isSubmitting} />
+                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={handleSubmit} /*onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, handleError)}*/ disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>
             }
         />
