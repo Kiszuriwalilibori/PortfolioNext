@@ -101,19 +101,6 @@ export const CommentEditorDialog = (props: Props) => {
             onClose={onClose}
             content={
                 <>
-                    {/* <CommentTextField
-                        inputRef={commentTextFieldRef}
-                        id="comment-text-field"
-                        label="Comment"
-                        multiline
-                        rows={8}
-                        value={comment}
-                        slotProps={{ htmlInput: { maxLength: MAX_LENGTH } }}
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                            createComment(event.target.value);
-                        }}
-                        aria-describedby="comment-error"
-                    /> */}
                     <CommentTextField
                         inputRef={commentTextFieldRef}
                         id="comment-text-field"
@@ -124,7 +111,6 @@ export const CommentEditorDialog = (props: Props) => {
                         error={Boolean(commentError)}
                         helperText={commentError ?? " "}
                         aria-invalid={Boolean(commentError)}
-                        aria-describedby="comment-error"
                         slotProps={{ htmlInput: { maxLength: MAX_LENGTH } }}
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             const value = event.target.value;
