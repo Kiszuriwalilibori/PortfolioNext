@@ -66,6 +66,7 @@ export const CommentEditorDialog = (props: Props) => {
         setCommentError("Your comment was not published because it contains potentially inappropriate content.");
         showMessage.warning("Your comment was not published due to potentially toxic or abusive content.");
     }, [showMessage]);
+
     const handleSaveComment = useCallback(async () => {
         if (!comment.trim()) {
             handleError("Comment cannot be empty");
@@ -131,7 +132,7 @@ export const CommentEditorDialog = (props: Props) => {
                 <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
                     <MicrophoneButton listening={listening} onClick={toggleListening} disabled={!isSpeechRecognitionSupported || !hasMicrophone || microphonePermission !== "granted"} />
                     <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} disabled={!comment} />
-                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, showMessage)} disabled={comment === initialComment || isSubmitting} />
+                    <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, handleError)} disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>
             }
         />

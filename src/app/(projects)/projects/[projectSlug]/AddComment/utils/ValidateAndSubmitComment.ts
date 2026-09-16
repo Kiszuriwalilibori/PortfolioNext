@@ -1,6 +1,5 @@
 import axios from "axios";
 import { validateCommentIntents } from "./validateCommentIntents";
-import { MessageMethods } from "@/hooks/useMessage";
 
 let lastRequestTime = 0;
 const MIN_REQUEST_INTERVAL = 1000;
@@ -17,7 +16,7 @@ const config = {
     },
 };
 
-export const validateAndSubmitComment = async (comment: string, onSuccess: (comment: string) => Promise<void>, handleInvalidComment: () => void, showMessage: MessageMethods): Promise<void> => {
+export const validateAndSubmitComment = async (comment: string, onSuccess: (comment: string) => Promise<void>, handleInvalidComment: () => void, handleError: (message: string) => void): Promise<void> => {
     const currentTime = Date.now();
     if (currentTime - lastRequestTime < MIN_REQUEST_INTERVAL) {
         handleInvalidComment();
@@ -39,8 +38,8 @@ export const validateAndSubmitComment = async (comment: string, onSuccess: (comm
         } else {
             handleInvalidComment();
         }
-    } catch (error) {
-        showMessage.error("Failed to analyze comment. Proceeding with submission." + JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    } catch {
+        handleError("Failed to analyze comment. Proceeding with submission.");
         await onSuccess(comment);
     }
 };
