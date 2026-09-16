@@ -21,7 +21,6 @@ export function Features(props: Props) {
 
     return (
         <FeaturesWrapper>
-            <h2>Select projects by features</h2>
             <FeaturesBox>
                 <CheckboxGroup>
                     <LabelledFeatures features={features} handleCheck={handleSwitch} selectedFeatures={checkedFeatures} />

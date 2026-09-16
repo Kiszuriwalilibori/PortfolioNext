@@ -36,7 +36,7 @@ export default function Projects() {
                     <PageTitle title="Projects" />
 
                     <Checkboxes features={features} handleChange={changeHandler} />
-                    <h2>Search projects by name</h2>
+
                     <ProjectSearchField type="search" label="Search projects" placeholder="Search by project name" value={searchQuery} onChange={event => searchHandler(event.target.value)} fullWidth />
                     {isEmptyState ? (
                         <NotFound message="Nie znaleziono projektów dla wybranych filtrów" />

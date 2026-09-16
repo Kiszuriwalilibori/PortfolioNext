@@ -33,7 +33,7 @@ export const ProjectCategoryIndicator = styled(Box)({
 
 export const ProjectSortSwitch = styled(Box)({
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "100%",
 });
 
@@ -41,15 +41,21 @@ export const ProjectSortControls = styled(Box)(({ theme }) => ({
     display: "inline-flex",
     alignItems: "center",
     gap: theme.spacing(1),
+    minHeight: 56,
+    boxSizing: "border-box",
     padding: theme.spacing(0.5, 1),
-    border: `1px solid ${theme.palette.secondary.dark}`,
-    borderRadius: theme.spacing(0.5),
+    width: 520,
+
+    border: "2px solid rgba(0, 0, 0, 0.23)",
+    borderRadius: theme.spacing(1),
+
+    "&:hover": {
+        borderColor: theme.palette.text.secondary,
+    },
 
     "& .sort-label": {
         color: theme.palette.text.secondary,
-        fontSize: "0.8rem",
-        textTransform: "uppercase",
-        letterSpacing: "0.05em",
+
         marginRight: theme.spacing(0.5),
     },
 
@@ -72,6 +78,9 @@ export const ProjectSearchField = styled(TextField)(({ theme }) => ({
         borderRadius: theme.spacing(1),
         backgroundColor: "transparent",
         transition: theme.transitions.create(["border-color"]),
+        "& .MuiOutlinedInput-notchedOutline": {
+            borderWidth: 2,
+        },
 
         "&:hover .MuiOutlinedInput-notchedOutline": {
             borderColor: theme.palette.text.secondary,
