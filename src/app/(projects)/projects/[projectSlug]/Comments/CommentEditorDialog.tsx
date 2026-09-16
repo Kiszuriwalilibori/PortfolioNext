@@ -131,7 +131,16 @@ export const CommentEditorDialog = (props: Props) => {
             actions={
                 <ButtonsStack direction="row" justifyContent="center" alignItems="center" spacing={2} id="Buttons stack">
                     <MicrophoneButton listening={listening} onClick={toggleListening} disabled={!isSpeechRecognitionSupported || !hasMicrophone || microphonePermission !== "granted"} />
-                    <ActionButton variant="cancel" icon="/icons/cancel.svg" label="Cancel" onClick={onClose} disabled={!comment} />
+                    <ActionButton
+                        variant="cancel"
+                        icon="/icons/cancel.svg"
+                        label="Cancel"
+                        onClick={() => {
+                            createComment(isEditing ? initialComment : "");
+                            setCommentError(null);
+                        }}
+                        disabled={isEditing ? comment === initialComment : !comment}
+                    />
                     <ActionButton variant="save" icon="/icons/save.svg" label={isEditing ? "Save" : "Post"} onClick={() => validateAndSubmitComment(comment, handleSaveComment, handleInvalidComment, handleError)} disabled={comment === initialComment || isSubmitting} />
                 </ButtonsStack>
             }

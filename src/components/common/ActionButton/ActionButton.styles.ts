@@ -19,6 +19,7 @@ const ACTION_BUTTON_COLORS: Record<
     remove: {
         background: "error.main",
         hoverBackground: "error.dark",
+        color: theme.palette.common.black,
     },
     save: {
         background: theme.palette.primary.dark,
