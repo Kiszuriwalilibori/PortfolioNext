@@ -52,6 +52,7 @@ export const CommentEditorDialog = (props: Props) => {
 
     const handleError = useCallback(
         (message: string) => {
+            setCommentError(message);
             showMessage.error("Error: " + message);
         },
         [showMessage]

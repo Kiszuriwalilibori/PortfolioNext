@@ -20,7 +20,6 @@ const config = {
 export const validateAndSubmitComment = async (comment: string, onSuccess: (comment: string) => Promise<void>, handleInvalidComment: () => void, showMessage: MessageMethods): Promise<void> => {
     const currentTime = Date.now();
     if (currentTime - lastRequestTime < MIN_REQUEST_INTERVAL) {
-        showMessage.warning("Please wait a moment before submitting another comment.");
         handleInvalidComment();
         return;
     }
