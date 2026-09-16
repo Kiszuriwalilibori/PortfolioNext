@@ -151,3 +151,4 @@ export const CommentEditorDialog = (props: Props) => {
 export default CommentEditorDialog;
 // todo powinno być raczej isListening
 //todo dziwnie zachowuje się modaldodawaniakomentarza kiedy zmniejszamy ekran, to jest kiedy  włączamy dolny pasek z console logiem.
+// zastanowić sie czy jest sens miać handleInvalidcomment i handleerror osobno

@@ -6,7 +6,7 @@ import isEmpty from "lodash/isEmpty";
 
 import { Switch, Typography } from "@mui/material";
 import { ProjectCategoryLegend } from "./parts/ProjectCategoryLegend";
-import { ProjectCategoryStack, ProjectSortControls, ProjectSortSwitch } from "./page.styles";
+import { ProjectCategoryStack, ProjectSearchField, ProjectSortControls, ProjectSortSwitch } from "./page.styles";
 import { Checkboxes } from "./parts";
 import { projects } from "@/data/projects";
 import { useGetProjects } from "@/hooks";
@@ -23,8 +23,8 @@ export default function Projects() {
 
     const features = ProjectUtils.getFeatures(projects);
     const data = projects;
-    const { visibleProjects, changeHandler } = useGetProjects(features, data);
-
+    // const { visibleProjects, changeHandler } = useGetProjects(features, data);
+    const { visibleProjects, changeHandler, searchQuery, searchHandler } = useGetProjects(features, data);
     const sortedProjects = ProjectUtils.sortProjects(visibleProjects, sortByCategory);
 
     const isEmptyState = isEmpty(visibleProjects);
@@ -36,7 +36,8 @@ export default function Projects() {
                     <PageTitle title="Projects" />
 
                     <Checkboxes features={features} handleChange={changeHandler} />
-
+                    <h2>Search projects by name</h2>
+                    <ProjectSearchField type="search" label="Search projects" placeholder="Search by project name" value={searchQuery} onChange={event => searchHandler(event.target.value)} fullWidth />
                     {isEmptyState ? (
                         <NotFound message="Nie znaleziono projektów dla wybranych filtrów" />
                     ) : (

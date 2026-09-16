@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, TextField } from "@mui/material";
 import { styled } from "@mui/material";
 
 export const ProjectCategoryStack = styled(Stack)(({ theme }) => ({
@@ -60,5 +60,33 @@ export const ProjectSortControls = styled(Box)(({ theme }) => ({
 
     "& .MuiSwitch-root": {
         margin: theme.spacing(0, -0.25),
+    },
+}));
+
+export const ProjectSearchField = styled(TextField)(({ theme }) => ({
+    width: "100%",
+    maxWidth: 520,
+    margin: theme.spacing(2, 0, 3),
+
+    "& .MuiOutlinedInput-root": {
+        borderRadius: theme.spacing(1),
+        backgroundColor: "transparent",
+        transition: theme.transitions.create(["border-color"]),
+
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: theme.palette.text.secondary,
+        },
+    },
+
+    "& .MuiInputLabel-root": {
+        color: theme.palette.text.secondary,
+    },
+
+    "& .MuiInputLabel-root.Mui-focused": {
+        color: theme.palette.text.primary,
+    },
+
+    "& .MuiOutlinedInput-input": {
+        padding: theme.spacing(2, 2),
     },
 }));

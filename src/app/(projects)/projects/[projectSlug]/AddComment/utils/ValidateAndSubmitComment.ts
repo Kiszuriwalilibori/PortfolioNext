@@ -19,7 +19,7 @@ const config = {
 export const validateAndSubmitComment = async (comment: string, onSuccess: (comment: string) => Promise<void>, handleInvalidComment: () => void, handleError: (message: string) => void): Promise<void> => {
     const currentTime = Date.now();
     if (currentTime - lastRequestTime < MIN_REQUEST_INTERVAL) {
-        handleInvalidComment();
+        handleError("Please wait a moment before submitting another comment.");
         return;
     }
     lastRequestTime = currentTime;
@@ -44,3 +44,5 @@ export const validateAndSubmitComment = async (comment: string, onSuccess: (comm
     }
 };
 export default validateAndSubmitComment;
+
+//todo admin nie powinien być ogr. przez czas
