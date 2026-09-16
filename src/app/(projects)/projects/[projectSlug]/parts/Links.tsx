@@ -23,6 +23,10 @@ export const Links = (props: Props) => {
                 <FontAwesomeIcon icon={SimpleIcons.github} aria-hidden="true" />
                 <Typography variant="singleProjectLink">Go to GitHub repository</Typography>
             </Box>
+            <Box component="a" href="mailto:piotrmaksymiuk@yahoo.com" sx={projectLinkSx}>
+                <FontAwesomeIcon icon={SimpleIcons.message} aria-hidden="true" />
+                <Typography variant="singleProjectLink">Contact me</Typography>
+            </Box>
         </>
     );
 };

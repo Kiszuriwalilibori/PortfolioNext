@@ -51,4 +51,5 @@ export const SimpleIcons = {
     motivation: faHandFist,
     microphone: faMicrophone,
     edit: faPencil,
+    message: faEnvelope,
 };
