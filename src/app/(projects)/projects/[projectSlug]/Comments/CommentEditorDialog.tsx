@@ -1,7 +1,7 @@
 "use client";
 // import Button from "@mui/material/Button";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Modal from "@/components/modal";
 import ActionButton from "@/components/common/ActionButton/ActionButton";
@@ -28,7 +28,7 @@ const INITIAL_COMMENT = "" as Comment["content"];
 
 export const CommentEditorDialog = (props: Props) => {
     const { isOpen, onClose, author, authorEmail, project, ID, initialComment = INITIAL_COMMENT, commentId, isEditing = false } = props;
-
+    const [commentError, setCommentError] = useState<string | null>(null);
     const { comment, createComment, clearComment } = useComment(initialComment);
     const { toggleListening, listening, isSpeechRecognitionSupported } = useSpeech(createComment);
     const { hasMicrophone, microphonePermission } = useMicrophone();
@@ -62,6 +62,7 @@ export const CommentEditorDialog = (props: Props) => {
     }, [showMessage, isEditing]);
 
     const handleInvalidComment = useCallback(() => {
+        setCommentError("Your comment was not published because it contains potentially inappropriate content.");
         showMessage.warning("Your comment was not published due to potentially toxic or abusive content.");
     }, [showMessage]);
     const handleSaveComment = useCallback(async () => {
@@ -90,7 +91,7 @@ export const CommentEditorDialog = (props: Props) => {
             handleError(error instanceof Error ? error.message : "Unknown error");
         }
     }, [comment, author, authorEmail, project, ID, saveComment, clearComment, onClose, handleError, handleSuccess]);
-    console.log("hasMic", hasMicrophone);
+
     return (
         <Modal
             title={isEditing ? "Edit Comment" : "Add a Comment"}
@@ -99,7 +100,7 @@ export const CommentEditorDialog = (props: Props) => {
             onClose={onClose}
             content={
                 <>
-                    <CommentTextField
+                    {/* <CommentTextField
                         inputRef={commentTextFieldRef}
                         id="comment-text-field"
                         label="Comment"
@@ -111,6 +112,27 @@ export const CommentEditorDialog = (props: Props) => {
                             createComment(event.target.value);
                         }}
                         aria-describedby="comment-error"
+                    /> */}
+                    <CommentTextField
+                        inputRef={commentTextFieldRef}
+                        id="comment-text-field"
+                        label="Comment"
+                        multiline
+                        rows={8}
+                        value={comment}
+                        error={Boolean(commentError)}
+                        helperText={commentError ?? " "}
+                        aria-invalid={Boolean(commentError)}
+                        aria-describedby="comment-error"
+                        slotProps={{ htmlInput: { maxLength: MAX_LENGTH } }}
+                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                            const value = event.target.value;
+                            createComment(value);
+
+                            if (commentError) {
+                                setCommentError(null);
+                            }
+                        }}
                     />
                     <CharacterCounter>
                         {comment.length}/{MAX_LENGTH}

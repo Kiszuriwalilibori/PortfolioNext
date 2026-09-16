@@ -102,3 +102,4 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         </>
     );
 }
+// todo na stronie z projektami, po kliknięciu rozwijania powinien się scroloować tak aby dany projekt był widoczny
