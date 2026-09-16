@@ -15,7 +15,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { isValidGaId } from "@/lib/gtag";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const fonts = Noto_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
+const fonts = Noto_Sans({ subsets: ["latin"], weight: ["200", "300", "400", "500", "600", "700"] });
 
 import { LoggedUser } from "@/components";
 import SnackbarProviderWrapper from "@/components/common/SnackBarClientProvider";
