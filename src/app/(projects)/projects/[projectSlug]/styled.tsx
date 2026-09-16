@@ -23,7 +23,7 @@ export const SingleProjectInformationsColumn = styled(Box)(({ theme }) => ({
     "&>h2": { paddingBottom: theme.spacing(1) },
 }));
 
-export const StackDivider = () => <Divider orientation={useMediaQuery(theme.breakpoints.down("md")) ? "horizontal" : "vertical"} flexItem sx={{ backgroundColor: theme.palette.primary.light }} />;
+export const StackDivider = () => <Divider orientation={useMediaQuery(theme.breakpoints.down("md")) ? "horizontal" : "vertical"} flexItem sx={{ backgroundColor: theme.palette.divider }} />;
 
 export const Summary = styled(AccordionSummary)(() => ({}));
 
@@ -105,10 +105,6 @@ export const projectLinkSx: SystemStyleObject<Theme> = {
         backgroundColor: "action.hover",
     },
 
-    "&:focus-visible": {
-        outline: "3px solid #036397",
-        outlineOffset: "2px",
-    },
     "& svg": {
         display: "inline-block",
         height: "1em",
@@ -116,10 +112,5 @@ export const projectLinkSx: SystemStyleObject<Theme> = {
         verticalAlign: "-0.125em",
         color: theme.palette.primary.dark,
         marginRight: theme.spacing(1),
-        // display: "inline-block",
-        // height: "1em",
-        // overflow: "visible",
-        // verticalAlign: "-0.125em",
-        // color: theme.palette.primary.dark,
     },
 };

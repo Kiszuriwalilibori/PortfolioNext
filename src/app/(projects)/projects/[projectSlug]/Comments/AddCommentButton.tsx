@@ -31,7 +31,7 @@ export const AddCommentButton = (props: Props) => {
 
     return (
         <>
-            <CommentsButton variant="contained" onClick={handleLeaveACommentClick} id="add-comment-button" aria-label="Leave a comment on the project">
+            <CommentsButton disableFocusRipple variant="contained" onClick={handleLeaveACommentClick} id="add-comment-button" aria-label="Leave a comment on the project">
                 Leave a comment
             </CommentsButton>
             {isModalOpen && user && <CommentEditorDialog isOpen={isModalOpen} onClose={closeModal} author={user.displayName || "Anonymous"} authorEmail={user.email || ""} project={title} ID={ID} />}

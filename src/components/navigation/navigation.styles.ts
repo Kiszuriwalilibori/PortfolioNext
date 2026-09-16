@@ -69,16 +69,6 @@ export const navigationButtonSx = (isActive: boolean): SystemStyleObject<Theme> 
     "&:disabled": {
         cursor: "default",
     },
-
-    "&:focus-visible": {
-        outline: "2px solid #036397",
-        outlineOffset: "2px",
-    },
-
-    "&.Mui-focusVisible": {
-        outline: "3px solid #036397",
-        outlineOffset: "3px",
-    },
 });
 
 export const navigationLabelSx = (isActive: boolean): SystemStyleObject<Theme> => ({
@@ -117,14 +107,4 @@ export const navigationTogglerSx: SystemStyleObject<Theme> = {
     "&:hover": {
         bgcolor: "primary.dark",
     },
-
-    // "&:focus-visible": {
-    //     outline: "3px solid #036397",
-    //     outlineOffset: 2,
-    // },
-
-    // "&.Mui-focusVisible": {
-    //     outline: "3px solid #036397",
-    //     outlineOffset: "2px",
-    // },
 };

@@ -5,6 +5,8 @@ export const createFeatureChipSx =
     theme => ({
         cursor: "pointer",
 
+        "&.Mui-focusVisible": { backgroundColor: selectedFeatures.includes(feature) ? theme.palette.active.main : theme.palette.secondary.main },
+
         ...(selectedFeatures.includes(feature) && {
             backgroundColor: theme.palette.active.main,
             color: theme.palette.active.contrastText,
