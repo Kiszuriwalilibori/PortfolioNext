@@ -1,7 +1,7 @@
 "use client";
 // import Button from "@mui/material/Button";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 import Modal from "@/components/modal";
 import ActionButton from "@/components/common/ActionButton/ActionButton";
@@ -38,6 +38,17 @@ export const CommentEditorDialog = (props: Props) => {
         commentId,
     });
     const showMessage = useMessage();
+    const commentTextFieldRef = useRef<HTMLTextAreaElement | null>(null);
+
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const frame = requestAnimationFrame(() => {
+            commentTextFieldRef.current?.focus();
+        });
+
+        return () => cancelAnimationFrame(frame);
+    }, [isOpen]);
 
     const handleError = useCallback(
         (message: string) => {
@@ -89,7 +100,7 @@ export const CommentEditorDialog = (props: Props) => {
             content={
                 <>
                     <CommentTextField
-                        autoFocus
+                        inputRef={commentTextFieldRef}
                         id="comment-text-field"
                         label="Comment"
                         multiline
