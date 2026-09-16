@@ -2,7 +2,7 @@
 // import Button from "@mui/material/Button";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-
+import { Alert, Box } from "@mui/material";
 import Modal from "@/components/modal";
 import ActionButton from "@/components/common/ActionButton/ActionButton";
 import { useCommentsMutation } from "@/hooks/useCommentsMutation";
@@ -102,6 +102,13 @@ export const CommentEditorDialog = (props: Props) => {
             onClose={onClose}
             content={
                 <>
+                    <Box sx={{ minHeight: "52px" }}>
+                        {commentError && (
+                            <Alert severity="error" role="alert" aria-live="polite" aria-atomic="true">
+                                {commentError}
+                            </Alert>
+                        )}
+                    </Box>
                     <CommentTextField
                         inputRef={commentTextFieldRef}
                         id="comment-text-field"
@@ -116,8 +123,9 @@ export const CommentEditorDialog = (props: Props) => {
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                             const value = event.target.value;
                             createComment(value);
-
-                            if (commentError) {
+                            if (!value.trim()) {
+                                setCommentError("Comment cannot be empty");
+                            } else if (commentError) {
                                 setCommentError(null);
                             }
                         }}
