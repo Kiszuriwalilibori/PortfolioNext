@@ -19,7 +19,7 @@ function NavigationLink({ page, clickHandler, currentPathName }: Props) {
 
     return (
         <ListItem id="List Item" disablePadding sx={navigationItemSx}>
-            <Button component={Link} href={PageUtils.pageToHref(page)} rel="noopener" onClick={clickHandler} aria-label={`Navigate to ${page} page`} sx={navigationButtonSx(isActive)} disableRipple>
+            <Button component={Link} scroll={false} href={PageUtils.pageToHref(page)} rel="noopener" onClick={clickHandler} aria-label={`Navigate to ${page} page`} sx={navigationButtonSx(isActive)} disableRipple>
                 <Image src={PageUtils.pageToIconSrc(page)} alt={`Navigate to ${page} page`} width={40} height={40} />
                 <Typography component="span" sx={navigationLabelSx(isActive)}>
                     {page}

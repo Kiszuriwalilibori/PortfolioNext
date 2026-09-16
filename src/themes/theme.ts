@@ -2,7 +2,6 @@
 
 import { createTheme } from "@mui/material";
 
-import { COLOR_RED_SUBDUED, COLOR_RED_VIVID } from "./constans";
 import { common } from "@mui/material/colors";
 import { design } from "./design";
 
@@ -36,8 +35,8 @@ declare module "@mui/material/Typography" {
 let theme = createTheme({
     palette: {
         primary: {
-            main: COLOR_RED_SUBDUED,
-            dark: COLOR_RED_VIVID,
+            main: design.primary.main,
+            dark: design.primary.dark,
         },
         secondary: {
             main: design.secondary.main,
