@@ -37,6 +37,7 @@ let theme = createTheme({
         primary: {
             main: design.primary.main,
             dark: design.primary.dark,
+            light: design.primary.light,
         },
         secondary: {
             main: design.secondary.main,
