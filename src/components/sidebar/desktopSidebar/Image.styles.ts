@@ -2,7 +2,7 @@ export const imageContainerSx = {
     display: "block",
     width: 130,
     height: 130,
-    marginBottom: 1.875,
+    marginBottom: 2,
 
     "@media (min-width: 768px) and (max-width: 990px)": {
         width: 140,

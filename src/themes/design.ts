@@ -1,7 +1,7 @@
 export const design = {
     primary: {
         main: "#910D0D",
-        light: "rgba(145, 13, 13, 0.3)",
+        light: "rgba(145, 13, 13, 0.8)",
         dark: "#d3101c",
     },
     secondary: {
