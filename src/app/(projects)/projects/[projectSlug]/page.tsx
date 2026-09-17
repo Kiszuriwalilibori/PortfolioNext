@@ -7,6 +7,7 @@ import { Description, Features, Header, Links, ProjectsSwitch } from "./parts";
 import { Comments, AddCommentButton } from "./Comments";
 import NotFound from "@/components/common/NotFound/NotFound";
 import BackToProjects from "./parts/BackToProjects";
+import { FirebaseAuthContextProvider } from "@/contexts/FirebaseAuthContext";
 
 const BASE_URL = "https://portfolio-next-ten-sigma.vercel.app";
 const DEFAULT_KEYWORDS = ["portfolio", "developer", "react", "next.js"];
@@ -84,8 +85,10 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
-                    <AddCommentButton ID={project.ID} title={project.title} />
-                    <Comments projectID={project.ID} title={project.title} />
+                    <FirebaseAuthContextProvider>
+                        <AddCommentButton ID={project.ID} title={project.title} />
+                        <Comments projectID={project.ID} title={project.title} />
+                    </FirebaseAuthContextProvider>
                 </SingleProjectInformationsColumn>
 
                 <SingleProjectInformationsColumn>

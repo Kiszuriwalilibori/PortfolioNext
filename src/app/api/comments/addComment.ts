@@ -1,8 +1,6 @@
-// import { addDoc, collection } from "firebase/firestore";
 import { adminDb } from "@/fbase/admin";
 import { NextRequest, NextResponse } from "next/server";
 
-// import { db } from "@/fbase/config";
 import db from "@/fbase/firestore";
 import { Comment } from "@/types";
 import { CommentsUtils } from "@/models/comments";
