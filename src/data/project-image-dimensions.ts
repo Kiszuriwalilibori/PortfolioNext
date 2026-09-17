@@ -46,12 +46,12 @@ export const projectImageDimensions = {
         "height": 175
     },
     "/images/project_images/cookbook1.jpg": {
-        "width": 1680,
-        "height": 1050
+        "width": 346,
+        "height": 216
     },
     "/images/project_images/cookbook2.png": {
-        "width": 1680,
-        "height": 1050
+        "width": 345,
+        "height": 216
     },
     "/images/project_images/cryptocurrency.jpg": {
         "width": 1440,

@@ -19,3 +19,26 @@
 
 // Benefit for Your Project: Since Comments and AddCommentButton allow user interaction, ISR can ensure fresh comment data without sacrificing the benefits of static generation.
 Było next 15.2.3 teraz jest 15.2.8
+
+
+
+
+
+Pewne martwe elementy
+PageUtils.pageToImgAlt()
+metoda jest zdefiniowana w src/models/pages.ts, ale poza własną definicją nie ma żadnego użycia. Pozostałe metody PageUtils są wykorzystywane.
+Do usunięcia.
+ProjectUtils.filterByCategory()
+zdefiniowana, ale brak użycia poza definicją.
+Do usunięcia.
+ProjectUtils.getProjectByID()
+brak użycia poza definicją.
+Do usunięcia.
+ProjectsPageProps
+interfejs występuje wyłącznie w src/types/types.ts; nie ma żadnego użycia.
+Do usunięcia.
+SkillLevels
+sama stała jest nieużywana. SkillLevel jest natomiast używany przez stronę Skills, więc usuwamy tylko SkillLevels, nie SkillLevel.
+MenuVisibilityContext jako eksport z contexts/index.ts
+kontekst jest używany wewnętrznie przez provider, ale nie znalazłem konsumenta importującego go z barrel exportu. Konsumenci korzystają z useMenuVisibilityContext.
+Do usunięcia z contexts/index.ts jako publiczny eksport. Samego kontekstu w MenuVisibilityProvider.tsx oczywiście nie usuwamy.
