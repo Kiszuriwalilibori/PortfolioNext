@@ -22,6 +22,7 @@ export const ProjectAccordionHeader = styled(AccordionSummary)({
 
     "& .MuiAccordionSummary-content": {
         alignItems: "center",
+        minWidth: 0,
     },
 });
 
@@ -29,7 +30,12 @@ export const ProjectHeader = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     gap: theme.spacing(1.5),
+    minWidth: 0,
     width: "100%",
+    "& .MuiTypography-root": {
+        minWidth: 0,
+        overflowWrap: "anywhere",
+    },
 }));
 
 export const ProjectCategoryIndicator = styled(Box, {

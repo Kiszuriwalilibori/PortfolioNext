@@ -22,6 +22,9 @@ export const ProjectCategoryLegendItem = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     gap: theme.spacing(1),
+    "& .MuiTypography-root": {
+        minWidth: 0,
+    },
 }));
 
 export const ProjectCategoryIndicator = styled(Box)({
@@ -39,12 +42,14 @@ export const ProjectSortSwitch = styled(Box)({
 
 export const ProjectSortControls = styled(Box)(({ theme }) => ({
     display: "inline-flex",
+    flexWrap: "wrap",
     alignItems: "center",
     gap: theme.spacing(1),
     minHeight: 56,
     boxSizing: "border-box",
     padding: theme.spacing(0.5, 1),
-    width: 520,
+    width: "100%",
+    maxWidth: 520,
 
     border: "2px solid rgba(0, 0, 0, 0.23)",
     borderRadius: theme.spacing(1),

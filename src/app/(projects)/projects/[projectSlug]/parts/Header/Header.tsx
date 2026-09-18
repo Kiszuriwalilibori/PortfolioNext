@@ -1,5 +1,10 @@
 import { Project } from "@/types";
 
+import { HeaderSubtitle } from "./Header.Subtitle";
+import { HeaderTitle } from "./Header.Title";
+import { projectHeroSx } from "./ProjectHero.styles";
+import Box from "@mui/material/Box";
+
 interface Props {
     title: Project["title"];
     description: Project["description"];
@@ -11,10 +16,10 @@ export const Header = (props: Props) => {
         <header className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}>
             <div className="project-screen"></div>
             <div className="project-container">
-                <div className="header">
-                    <h1 className="header__title">{title}</h1>
-                    <h2 className="header__subtitle">{description}</h2>
-                </div>
+                <Box sx={projectHeroSx}>
+                    <HeaderTitle>{title}</HeaderTitle>
+                    <HeaderSubtitle>{description}</HeaderSubtitle>
+                </Box>
             </div>
         </header>
     );

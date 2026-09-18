@@ -55,10 +55,10 @@ let theme = createTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 991,
-            xl: 1024,
+            sm: design.breakpoints.values.sm,
+            md: design.breakpoints.values.md,
+            lg: design.breakpoints.values.lg,
+            xl: design.breakpoints.values.xl,
         },
     },
 });
