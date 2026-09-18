@@ -13,7 +13,21 @@ interface Props {
 export const Header = (props: Props) => {
     const { title, description } = props;
     return (
-        <header className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}>
+        <Box
+            component="header"
+            className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}
+            sx={{
+                position: "relative",
+                zIndex: 1,
+                minHeight: 640,
+                backgroundColor: "secondary.main",
+                [`@media (min-width: 1500px)`]: {
+                    maxWidth: 1500,
+                    margin: "0 auto",
+                },
+            }}
+        >
+            {/* <header className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}> */}
             <div className="project-screen"></div>
             <Box sx={projectContainerSx}>
                 <Box sx={projectHeroSx}>
@@ -21,7 +35,8 @@ export const Header = (props: Props) => {
                     <HeaderSubtitle>{description}</HeaderSubtitle>
                 </Box>
             </Box>
-        </header>
+            {/* </header> */}
+        </Box>
     );
 };
 

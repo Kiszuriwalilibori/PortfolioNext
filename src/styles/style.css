@@ -1082,26 +1082,12 @@ section h1 {
   }
 }
 
-.single-project .top-section {
-  position: relative;
-  z-index: 1;
-  min-height: 640px;
-}
-@media only screen and (min-width: 1500px) {
-  .single-project .top-section {
-    max-width: 1500px;
-    margin: 0 auto;
-  }
-}
 .single-project .top-section .project-container {
   box-sizing: content-box;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 4vw 0;
-}
-.single-project .top-section--firebase {
-  background-color: #2b8251;
 }
 .single-project .top-section--firebase .project-screen {
   position: absolute;
@@ -1120,9 +1106,6 @@ section h1 {
 .single-project .top-section--firebase .project-screen {
   background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
 }
-.single-project .top-section--portfolionext {
-  background-color: #3f51b5;
-}
 .single-project .top-section--portfolionext .project-screen {
   position: absolute;
   z-index: 0;
@@ -1139,9 +1122,6 @@ section h1 {
 }
 .single-project .top-section--portfolionext .project-screen {
   background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
-}
-.single-project .top-section--unsplash {
-  background-color: #546e7a;
 }
 .single-project .top-section--unsplash .project-screen {
   position: absolute;
@@ -1160,9 +1140,6 @@ section h1 {
 .single-project .top-section--unsplash .project-screen {
   background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
 }
-.single-project .top-section--athletes {
-  background-color: #1076ab;
-}
 .single-project .top-section--athletes .project-screen {
   position: absolute;
   z-index: 0;
@@ -1179,9 +1156,6 @@ section h1 {
 }
 .single-project .top-section--athletes .project-screen {
   background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
-}
-.single-project .top-section--chat {
-  background-color: #00796b;
 }
 .single-project .top-section--chat .project-screen {
   position: absolute;
@@ -1200,9 +1174,6 @@ section h1 {
 .single-project .top-section--chat .project-screen {
   background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
 }
-.single-project .top-section--cryptocurrency-tracker {
-  background-color: #ab221d;
-}
 .single-project .top-section--cryptocurrency-tracker .project-screen {
   position: absolute;
   z-index: 0;
@@ -1219,9 +1190,6 @@ section h1 {
 }
 .single-project .top-section--cryptocurrency-tracker .project-screen {
   background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
-}
-.single-project .top-section--minifigs {
-  background-color: #1f2136;
 }
 .single-project .top-section--minifigs .project-screen {
   position: absolute;
@@ -1240,9 +1208,6 @@ section h1 {
 .single-project .top-section--minifigs .project-screen {
   background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
 }
-.single-project .top-section--cookbook {
-  background-color: #117f8d;
-}
 .single-project .top-section--cookbook .project-screen {
   position: absolute;
   z-index: 0;
@@ -1259,9 +1224,6 @@ section h1 {
 }
 .single-project .top-section--cookbook .project-screen {
   background: url("/images/project_images_with_device/cookbook.png") no-repeat bottom;
-}
-.single-project .top-section--space-portfolio {
-  background-color: #063851;
 }
 .single-project .top-section--space-portfolio .project-screen {
   position: absolute;
@@ -1280,9 +1242,6 @@ section h1 {
 .single-project .top-section--space-portfolio .project-screen {
   background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
 }
-.single-project .top-section--floydian-portfolio {
-  background-color: #1d424b;
-}
 .single-project .top-section--floydian-portfolio .project-screen {
   position: absolute;
   z-index: 0;
@@ -1299,9 +1258,6 @@ section h1 {
 }
 .single-project .top-section--floydian-portfolio .project-screen {
   background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
-}
-.single-project .top-section--dancer-portfolio {
-  background-color: #d81b60;
 }
 .single-project .top-section--dancer-portfolio .project-screen {
   position: absolute;
@@ -1320,9 +1276,6 @@ section h1 {
 .single-project .top-section--dancer-portfolio .project-screen {
   background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
 }
-.single-project .top-section--physioterapy {
-  background-color: #6071c3;
-}
 .single-project .top-section--physioterapy .project-screen {
   position: absolute;
   z-index: 0;
@@ -1339,9 +1292,6 @@ section h1 {
 }
 .single-project .top-section--physioterapy .project-screen {
   background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
-}
-.single-project .top-section--weather-forecast {
-  background-color: #0077d1;
 }
 .single-project .top-section--weather-forecast .project-screen {
   position: absolute;
@@ -1360,9 +1310,6 @@ section h1 {
 .single-project .top-section--weather-forecast .project-screen {
   background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
 }
-.single-project .top-section--google-books-finder {
-  background-color: #117f8d;
-}
 .single-project .top-section--google-books-finder .project-screen {
   position: absolute;
   z-index: 0;
@@ -1380,9 +1327,6 @@ section h1 {
 .single-project .top-section--google-books-finder .project-screen {
   background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
 }
-.single-project .top-section--decision-tree {
-  background-color: #3f51b5;
-}
 .single-project .top-section--decision-tree .project-screen {
   position: absolute;
   z-index: 0;
@@ -1399,9 +1343,6 @@ section h1 {
 }
 .single-project .top-section--decision-tree .project-screen {
   background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
-}
-.single-project .top-section--youtube-player {
-  background-color: #27817b;
 }
 .single-project .top-section--youtube-player .project-screen {
   position: absolute;
