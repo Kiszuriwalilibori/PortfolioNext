@@ -1,5 +1,5 @@
 import { DesktopSidebarWrapper } from "@/components";
-import DesktopSidebar from "@/components/sidebar/desktopSidebar/DesktopSidebar";
+import DesktopSidebar from "@/components/sidebar/desktopSidebar/Sidebar.Desktop";
 import MobileSidebar from "@/components/sidebar/mobileSidebar";
 import { ViewportProvider } from "@/contexts";
 

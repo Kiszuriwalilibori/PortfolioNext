@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 
 import Contacts from "./Contacts";
-import { authorSx, descriptionSx, sidebarSx } from "./DesktopSidebar.styles";
+import { authorSx, descriptionSx, sidebarSx } from "./Sidebar.Desktop.styles";
 
 import AuthorImage from "./Image";
 import Box from "@mui/material/Box";
