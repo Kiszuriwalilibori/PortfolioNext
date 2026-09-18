@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
-import Contacts from "./contacts";
+import Contacts from "./MobileSidebar.contacts";
 
 export function MobileSidebar() {
     return (
