@@ -1,20 +1,21 @@
 import Typography from "@mui/material/Typography";
 
 import Contacts from "./Contacts";
-import { descriptionSx } from "./DesktopSidebar.styles";
+import { authorSx, descriptionSx, sidebarSx } from "./DesktopSidebar.styles";
 
 import AuthorImage from "./Image";
+import Box from "@mui/material/Box";
 
 const DesktopSidebar = () => {
     return (
-        <aside className="sidebar" aria-label="Author information and contact links">
-            <div className="author" aria-label="information about site author">
+        <Box component="aside" sx={sidebarSx} aria-label="Author information and contact links">
+            <Box sx={authorSx} aria-label="information about site author">
                 <AuthorImage />
                 <Typography variant="sidebarName">Piotr Maksymiuk</Typography>
                 <Typography sx={descriptionSx}>Front-End Developer</Typography>
                 <Contacts />
-            </div>
-        </aside>
+            </Box>
+        </Box>
     );
 };
 
