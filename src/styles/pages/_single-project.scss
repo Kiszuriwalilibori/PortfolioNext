@@ -13,32 +13,6 @@
             margin-left: auto;
             margin-right: auto;
             padding: 4vw 0;
-            & .header {
-                position: relative;
-                z-index: 1;
-                margin: 200px auto 600px;
-                text-align: center;
-                color: white;
-                padding: 0 10px;
-                @include mobile {
-                    margin: 50px auto 250px;
-                }
-                &__title {
-                    font-size: 1rem;
-                    line-height: 1.5;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    letter-spacing: 3px;
-                }
-                &__subtitle {
-                    font-size: 3.5rem;
-                    line-height: 1.285;
-                    font-weight: 100;
-                    @include mobile {
-                        font-size: 2.5rem;
-                    }
-                }
-            }
         }
         &--firebase {
             background-color: $firebase-background-color;

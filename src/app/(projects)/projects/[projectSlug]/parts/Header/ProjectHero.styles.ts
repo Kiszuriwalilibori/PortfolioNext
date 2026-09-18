@@ -14,3 +14,10 @@ export const projectHeroSx: SxProps = {
         margin: "50px auto 250px",
     },
 };
+export const projectContainerSx: SxProps = {
+    boxSizing: "content-box",
+    maxWidth: 1200,
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "4vw 0",
+};

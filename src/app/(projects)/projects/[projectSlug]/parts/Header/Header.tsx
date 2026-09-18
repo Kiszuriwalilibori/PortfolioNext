@@ -2,7 +2,7 @@ import { Project } from "@/types";
 
 import { HeaderSubtitle } from "./Header.Subtitle";
 import { HeaderTitle } from "./Header.Title";
-import { projectHeroSx } from "./ProjectHero.styles";
+import { projectContainerSx, projectHeroSx } from "./ProjectHero.styles";
 import Box from "@mui/material/Box";
 
 interface Props {
@@ -15,12 +15,12 @@ export const Header = (props: Props) => {
     return (
         <header className={`top-section top-section--${title.toLowerCase().split(" ").join("-")}`}>
             <div className="project-screen"></div>
-            <div className="project-container">
+            <Box sx={projectContainerSx}>
                 <Box sx={projectHeroSx}>
                     <HeaderTitle>{title}</HeaderTitle>
                     <HeaderSubtitle>{description}</HeaderSubtitle>
                 </Box>
-            </div>
+            </Box>
         </header>
     );
 };

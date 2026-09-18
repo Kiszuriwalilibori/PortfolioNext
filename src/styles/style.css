@@ -787,11 +787,6 @@ section h1 {
   }
 }
 
-.header {
-  z-index: 100;
-  position: relative;
-}
-
 .header-mobile {
   display: block;
   z-index: 100;
@@ -1104,36 +1099,6 @@ section h1 {
   margin-left: auto;
   margin-right: auto;
   padding: 4vw 0;
-}
-.single-project .top-section .project-container .header {
-  position: relative;
-  z-index: 1;
-  margin: 200px auto 600px;
-  text-align: center;
-  color: white;
-  padding: 0 10px;
-}
-@media (max-width: 767px) {
-  .single-project .top-section .project-container .header {
-    margin: 50px auto 250px;
-  }
-}
-.single-project .top-section .project-container .header__title {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-.single-project .top-section .project-container .header__subtitle {
-  font-size: 3.5rem;
-  line-height: 1.285;
-  font-weight: 100;
-}
-@media (max-width: 767px) {
-  .single-project .top-section .project-container .header__subtitle {
-    font-size: 2.5rem;
-  }
 }
 .single-project .top-section--firebase {
   background-color: #2b8251;
