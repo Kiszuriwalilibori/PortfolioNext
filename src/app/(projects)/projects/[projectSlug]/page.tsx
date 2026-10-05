@@ -81,7 +81,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ pro
         <>
             <ProjectsSwitch projectSlug={projectSlug} />
             <BackToProjects />
-            <Header title={project.title} description={project.description} />
+            <Header title={project.title} description={project.description} slug={project.slug} />
             <SingleProjectInformations direction={{ md: "row" }} divider={<StackDivider />}>
                 <SingleProjectInformationsColumn>
                     <Links github={project.github} live={project.live} />
