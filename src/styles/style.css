@@ -1082,13 +1082,6 @@ section h1 {
   }
 }
 
-.single-project .top-section .project-container {
-  box-sizing: content-box;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4vw 0;
-}
 .single-project .top-section--firebase .project-screen {
   position: absolute;
   z-index: 0;
@@ -1104,7 +1097,7 @@ section h1 {
   }
 }
 .single-project .top-section--firebase .project-screen {
-  background: url("/images/project_images_with_device/firebase.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/firebase-application.webp") no-repeat bottom;
 }
 .single-project .top-section--portfolionext .project-screen {
   position: absolute;
@@ -1121,7 +1114,7 @@ section h1 {
   }
 }
 .single-project .top-section--portfolionext .project-screen {
-  background: url("/images/project_images_with_device/portfolio-next.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/portfolio-next.webp") no-repeat bottom;
 }
 .single-project .top-section--unsplash .project-screen {
   position: absolute;
@@ -1138,7 +1131,7 @@ section h1 {
   }
 }
 .single-project .top-section--unsplash .project-screen {
-  background: url("/images/project_images_with_device/unsplash.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/unsplash.webp") no-repeat bottom;
 }
 .single-project .top-section--athletes .project-screen {
   position: absolute;
@@ -1155,7 +1148,7 @@ section h1 {
   }
 }
 .single-project .top-section--athletes .project-screen {
-  background: url("/images/project_images_with_device/athletes.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/athletes.webp") no-repeat bottom;
 }
 .single-project .top-section--chat .project-screen {
   position: absolute;
@@ -1172,7 +1165,7 @@ section h1 {
   }
 }
 .single-project .top-section--chat .project-screen {
-  background: url("/images/project_images_with_device/chat.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/fake-chat.webp") no-repeat bottom;
 }
 .single-project .top-section--cryptocurrency-tracker .project-screen {
   position: absolute;
@@ -1189,7 +1182,7 @@ section h1 {
   }
 }
 .single-project .top-section--cryptocurrency-tracker .project-screen {
-  background: url("/images/project_images_with_device/cryptocurrency-tracker.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/cryptocurrency-tracker.webp") no-repeat bottom;
 }
 .single-project .top-section--minifigs .project-screen {
   position: absolute;
@@ -1206,7 +1199,7 @@ section h1 {
   }
 }
 .single-project .top-section--minifigs .project-screen {
-  background: url("/images/project_images_with_device/minifigs.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/minifigs.webp") no-repeat bottom;
 }
 .single-project .top-section--cookbook .project-screen {
   position: absolute;
@@ -1223,7 +1216,7 @@ section h1 {
   }
 }
 .single-project .top-section--cookbook .project-screen {
-  background: url("/images/project_images_with_device/cookbook.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/cookbook.webp") no-repeat bottom;
 }
 .single-project .top-section--space-portfolio .project-screen {
   position: absolute;
@@ -1240,7 +1233,7 @@ section h1 {
   }
 }
 .single-project .top-section--space-portfolio .project-screen {
-  background: url("/images/project_images_with_device/space-portfolio.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/space-portfolio.webp") no-repeat bottom;
 }
 .single-project .top-section--floydian-portfolio .project-screen {
   position: absolute;
@@ -1257,7 +1250,7 @@ section h1 {
   }
 }
 .single-project .top-section--floydian-portfolio .project-screen {
-  background: url("/images/project_images_with_device/floydian-portfolio.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/floydian-portfolio.webp") no-repeat bottom;
 }
 .single-project .top-section--dancer-portfolio .project-screen {
   position: absolute;
@@ -1274,7 +1267,7 @@ section h1 {
   }
 }
 .single-project .top-section--dancer-portfolio .project-screen {
-  background: url("/images/project_images_with_device/dancer-portfolio-2.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/dancer-portfolio.webp") no-repeat bottom;
 }
 .single-project .top-section--physioterapy .project-screen {
   position: absolute;
@@ -1291,7 +1284,7 @@ section h1 {
   }
 }
 .single-project .top-section--physioterapy .project-screen {
-  background: url("/images/project_images_with_device/physioterapy.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/physioterapy-clinic.webp") no-repeat bottom;
 }
 .single-project .top-section--weather-forecast .project-screen {
   position: absolute;
@@ -1308,7 +1301,7 @@ section h1 {
   }
 }
 .single-project .top-section--weather-forecast .project-screen {
-  background: url("/images/project_images_with_device/weather-forecast.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/weather-forecast.webp") no-repeat bottom;
 }
 .single-project .top-section--google-books-finder .project-screen {
   position: absolute;
@@ -1325,7 +1318,7 @@ section h1 {
   }
 }
 .single-project .top-section--google-books-finder .project-screen {
-  background: url("/images/project_images_with_device/google-books-finder.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/google-books-finder.webp") no-repeat bottom;
 }
 .single-project .top-section--decision-tree .project-screen {
   position: absolute;
@@ -1342,7 +1335,7 @@ section h1 {
   }
 }
 .single-project .top-section--decision-tree .project-screen {
-  background: url("/images/project_images_with_device/decision-tree.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/decision-tree-builder.webp") no-repeat bottom;
 }
 .single-project .top-section--youtube-player .project-screen {
   position: absolute;
@@ -1359,7 +1352,7 @@ section h1 {
   }
 }
 .single-project .top-section--youtube-player .project-screen {
-  background: url("/images/project_images_with_device/youtube.png") no-repeat bottom;
+  background: url("/images/project_images_with_device/youtube-player.webp") no-repeat bottom;
 }
 
 .privacy {
