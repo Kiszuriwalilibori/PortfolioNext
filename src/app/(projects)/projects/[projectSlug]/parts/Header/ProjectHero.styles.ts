@@ -33,6 +33,7 @@ export const projectScreenSx = (image: string): SxProps => ({
     backgroundImage: `url("${image}")`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "bottom",
+
     [`@media (max-width: ${design.breakpoints.values.md - 1}px)`]: {
         backgroundSize: "contain !important",
     },

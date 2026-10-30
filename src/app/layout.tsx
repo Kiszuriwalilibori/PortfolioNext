@@ -2,9 +2,8 @@ import "./globals.css";
 import "@/styles/style.css";
 
 import Navigation from "@/components/navigation/Navigation";
-import { MenuVisibilityContextProvider /*, FirebaseAuthContextProvider*/ } from "@/contexts";
+import { MenuVisibilityContextProvider } from "@/contexts";
 import { Pages } from "@/models/pages";
-// import dynamic from "next/dynamic";
 import { headers } from "next/headers";
 import { metadata } from "../../public/metadata/metadata";
 import { Noto_Sans } from "next/font/google";
@@ -17,11 +16,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 const fonts = Noto_Sans({ subsets: ["latin"], weight: ["200", "300", "400", "500", "600", "700"] });
 
-// import { LoggedUser } from "@/components";
 import SnackbarProviderWrapper from "@/components/common/SnackBarClientProvider";
-// const LoggedUserWithAuth = dynamic(() => import("@/components/LoggedUser/LoggedUserWithAuth"), {
-//     ssr: false,
-// });
 
 import LoggedUserClient from "@/components/LoggedUser/LoggedUserClient";
 
